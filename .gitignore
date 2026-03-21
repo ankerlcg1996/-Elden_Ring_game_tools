@@ -1,0 +1,8 @@
+/build/
+/build-cl/
+/build-ninja/
+/.vs/
+/*.user
+/*.suo
+/*.vcxproj.user
+/*.log

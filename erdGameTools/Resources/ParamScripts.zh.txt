@@ -1,9 +1,0 @@
-# 分组|脚本名|ParamName|RowId|Offset|Type|Value|说明
-通用|更快复活|MenuCommonParam|0|0x0|f32|0.0|单人死亡淡出时间归零
-通用|更快复活|MenuCommonParam|0|0x4|f32|0.0|联机死亡淡出时间归零
-赐福|小地牢强制传出|SpEffectParam|4270|0x156|u16|0|清空 stateInfo
-灯笼|永久灯笼|SpEffectParam|3245|0x141|u8|0|清空 saveCategory
-相机|锁定 FOV 60|LockCamParam|0|0x14|f32|60.0|默认视角
-相机|锁定 FOV 75|LockCamParam|0|0x14|f32|75.0|广角视角
-相机|镜头距离 8|LockCamParam|0|0x0|f32|8.0|默认镜头距离
-相机|镜头距离 12|LockCamParam|0|0x0|f32|12.0|拉远镜头距离

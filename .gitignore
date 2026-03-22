@@ -1,0 +1,10 @@
+/build/
+/build-selfcontained/
+/build-erdGameTools/
+/build-root-verify/
+/erdGameTools/
+/out/
+/.vs/
+*.user
+*.VC.db
+*.obj

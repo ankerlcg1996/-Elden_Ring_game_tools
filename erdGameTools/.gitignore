@@ -1,7 +1,0 @@
-/build/
-/build-selfcontained/
-/build-erdGameTools/
-/out/
-/.vs/
-*.user
-*.VC.db

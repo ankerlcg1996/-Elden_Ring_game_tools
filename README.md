@@ -23,6 +23,31 @@ This project injects an `erdGameTools` entry into the in-game Site of Grace menu
 - Persistent unlock actions with auto-apply when loading into a save
 - External quick-entry menu items loaded from `Resources/NpcMenus.zh.txt`
 
+## 使用说明
+
+1. 下载最新版本的 `ModEngine2`，然后把它解压到任意目录。
+2. 下载本模组，把 `erdGameTools.dll` 和 `config.ini` 解压到 `ModEngine-2.1.0.0-win64` 文件夹中。
+3. 用记事本打开 `config_eldenring.toml`，找到以 `external_dlls = [` 开头的配置段，把本模组加入列表。
+
+单个 DLL 示例：
+
+```toml
+external_dlls = [
+  "erdGameTools.dll",
+]
+```
+
+多个 DLL 示例：
+
+```toml
+external_dlls = [
+  "ertransmogrify.dll",
+  "erdGameTools.dll",
+]
+```
+
+4. 双击 `launchmod_eldenring.bat` 开始游戏。
+
 ## Project Layout
 
 ```text

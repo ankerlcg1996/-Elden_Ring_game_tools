@@ -34,26 +34,26 @@ add_library(
   src/grace_test_runtime.cpp
   src/grace_test_messages.cpp
   src/grace_test_talkscript.cpp
-  ../Source/Game/SingletonRegistry.cpp
-  ../Source/Game/EventFlags.cpp
-  ../Source/Main/Logger.cpp
-  ../Source/Features/CharacterFlags.cpp
-  ../Source/Features/PostureBars.cpp
-  ../Source/Features/ParamPatches.cpp
-  ../Source/Features/InspectorTools.cpp
-  ../Source/Features/Unlocks.cpp
-  ../Source/ThirdParty/ImGui/imgui.cpp
-  ../Source/ThirdParty/ImGui/imgui_demo.cpp
-  ../Source/ThirdParty/ImGui/imgui_draw.cpp
-  ../Source/ThirdParty/ImGui/imgui_tables.cpp
-  ../Source/ThirdParty/ImGui/imgui_widgets.cpp
-  ../Source/ThirdParty/ImGui/imgui_impl_dx12.cpp
-  ../Source/ThirdParty/ImGui/imgui_impl_win32.cpp
-  ../Source/ThirdParty/MinHook/buffer.c
-  ../Source/ThirdParty/MinHook/hook.c
-  ../Source/ThirdParty/MinHook/hde32.c
-  ../Source/ThirdParty/MinHook/hde64.c
-  ../Source/ThirdParty/MinHook/trampoline.c)
+  Source/Game/SingletonRegistry.cpp
+  Source/Game/EventFlags.cpp
+  Source/Main/Logger.cpp
+  Source/Features/CharacterFlags.cpp
+  Source/Features/PostureBars.cpp
+  Source/Features/ParamPatches.cpp
+  Source/Features/InspectorTools.cpp
+  Source/Features/Unlocks.cpp
+  Source/ThirdParty/ImGui/imgui.cpp
+  Source/ThirdParty/ImGui/imgui_demo.cpp
+  Source/ThirdParty/ImGui/imgui_draw.cpp
+  Source/ThirdParty/ImGui/imgui_tables.cpp
+  Source/ThirdParty/ImGui/imgui_widgets.cpp
+  Source/ThirdParty/ImGui/imgui_impl_dx12.cpp
+  Source/ThirdParty/ImGui/imgui_impl_win32.cpp
+  Source/ThirdParty/MinHook/buffer.c
+  Source/ThirdParty/MinHook/hook.c
+  Source/ThirdParty/MinHook/hde32.c
+  Source/ThirdParty/MinHook/hde64.c
+  Source/ThirdParty/MinHook/trampoline.c)
 
 add_definitions(-DPROJECT_VERSION="${CMAKE_PROJECT_VERSION}")
 add_definitions(-D_ITERATOR_DEBUG_LEVEL=0)
@@ -76,7 +76,7 @@ target_include_directories(
   ${PROJECT_NAME}
   PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/src
-  ${CMAKE_CURRENT_SOURCE_DIR}/../Source)
+  ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 
 add_custom_command(
   TARGET ${PROJECT_NAME}
@@ -84,10 +84,10 @@ add_custom_command(
   COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${PROJECT_NAME}>/Resources"
   COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${PROJECT_NAME}>/Resources/Lang"
   COMMAND ${CMAKE_COMMAND} -E copy_if_different
-          "${CMAKE_CURRENT_SOURCE_DIR}/../Resources/NpcMenus.zh.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/Resources/NpcMenus.zh.txt"
           "$<TARGET_FILE_DIR:${PROJECT_NAME}>/Resources/NpcMenus.zh.txt"
   COMMAND ${CMAKE_COMMAND} -E copy_if_different
-          "${CMAKE_CURRENT_SOURCE_DIR}/../Resources/ParamScripts.zh.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/Resources/ParamScripts.zh.txt"
           "$<TARGET_FILE_DIR:${PROJECT_NAME}>/Resources/ParamScripts.zh.txt"
   COMMAND ${CMAKE_COMMAND} -E copy_directory
           "${CMAKE_CURRENT_SOURCE_DIR}/Resources/Lang"

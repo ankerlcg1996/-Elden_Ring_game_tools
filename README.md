@@ -25,9 +25,10 @@ This project injects an `erdGameTools` entry into the in-game Site of Grace menu
 
 ## 使用说明
 
-1. 下载最新版本的 `ModEngine2`，然后把它解压到任意目录。
-2. 下载本模组，把 `erdGameTools.dll` 和 `config.ini` 解压到 `ModEngine-2.1.0.0-win64` 文件夹中。
-3. 用记事本打开 `config_eldenring.toml`，找到以 `external_dlls = [` 开头的配置段，把本模组加入列表。
+1. 先安装并准备好 `Elden Mod Loader`。
+2. 下载本模组，并把压缩包里的 `mods` 目录解压到游戏根目录。
+3. 在游戏根目录下找到模组配置文件，一般是 `config_eldenring.toml`，用记事本打开。
+4. 找到以 `external_dlls = [` 开头的配置段，把本模组加入列表。
 
 单个 DLL 示例：
 
@@ -46,7 +47,7 @@ external_dlls = [
 ]
 ```
 
-4. 双击 `launchmod_eldenring.bat` 开始游戏。
+5. 双击 `launchmod_eldenring.bat` 开始游戏。
 
 ## Project Layout
 

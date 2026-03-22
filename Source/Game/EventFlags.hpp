@@ -11,6 +11,7 @@ bool IsDlcOwned(const SingletonRegistry& singletons, int dlc_index);
 
 // 直接写 Event Flag。
 bool SetEventFlag(const SingletonRegistry& singletons, std::uint32_t flag_id, bool enabled);
+bool GetEventFlag(const SingletonRegistry& singletons, std::uint32_t flag_id, bool& enabled);
 
 // 对一组 flag 批量置位。
 template <std::size_t N>

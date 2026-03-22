@@ -11,14 +11,18 @@ namespace ERD::Features {
 class Unlocks {
 public:
     void Tick(const Game::SingletonRegistry& singletons);
+    void ResetSessionState();
 
 private:
+    bool UnlockAllGestures(const Game::SingletonRegistry& singletons) const;
+
     bool maps_applied_ = false;
     bool cookbooks_applied_ = false;
     bool whetblades_applied_ = false;
     bool graces_applied_ = false;
     bool summoning_pools_applied_ = false;
     bool colosseums_applied_ = false;
+    bool gestures_applied_ = false;
 };
 
 }  // namespace ERD::Features

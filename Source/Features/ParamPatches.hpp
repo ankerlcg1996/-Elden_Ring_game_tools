@@ -31,6 +31,8 @@ private:
     void SyncNoMagicRequirements(const Game::SingletonRegistry& singletons);
     void SyncAllMagicOneSlot(const Game::SingletonRegistry& singletons);
     void SyncWeightlessEquipment(const Game::SingletonRegistry& singletons);
+    void SyncCustomFov(const Game::SingletonRegistry& singletons);
+    void SyncCustomCameraDistance(const Game::SingletonRegistry& singletons);
     void SyncMountAnywhere(const Game::SingletonRegistry& singletons);
     void SyncSpiritAshesAnywhere(const Game::SingletonRegistry& singletons);
     void SyncItemDiscovery(const Game::SingletonRegistry& singletons);
@@ -108,6 +110,12 @@ private:
         float weight = 0.0f;
     };
 
+    struct LockCamState {
+        LockCamParam* row = nullptr;
+        float cam_dist_target = 0.0f;
+        float cam_fov_y = 0.0f;
+    };
+
     FasterRespawnState faster_respawn_;
     MiniDungeonWarpState mini_dungeon_warp_;
 
@@ -131,6 +139,11 @@ private:
     std::vector<EquipmentWeightState> equipment_weight_rows_;
     bool equipment_weight_rows_captured_ = false;
     bool equipment_weight_active_ = false;
+
+    std::vector<LockCamState> lock_cam_rows_;
+    bool lock_cam_rows_captured_ = false;
+    bool custom_fov_active_ = false;
+    bool custom_camera_distance_active_ = false;
 
     CodePatchState mount_anywhere_patch_primary_;
     CodePatchState mount_anywhere_patch_secondary_;

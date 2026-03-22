@@ -77,6 +77,12 @@ struct MagicParam {
     std::byte reserved[1];
 };
 
+struct LockCamParam {
+    float camDistTarget = 0.0f;
+    std::byte reserved0[0x14 - sizeof(float)];
+    float camFovY = 0.0f;
+};
+
 namespace detail {
 
 inline constexpr std::size_t kRegulationParamListBeginOffset = 0x18;
@@ -213,6 +219,7 @@ using Game::EquipParamProtector;
 using Game::EquipParamWeapon;
 using Game::MenuCommonParam;
 using Game::MagicParam;
+using Game::LockCamParam;
 using Game::ShopLineupParam;
 using Game::SpEffectParam;
 

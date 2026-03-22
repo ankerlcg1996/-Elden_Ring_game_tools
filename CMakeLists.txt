@@ -22,7 +22,11 @@ add_library(ERDMod SHARED
     Source/Game/SingletonRegistry.cpp
     Source/Features/CharacterFlags.cpp
     Source/Features/GameActions.cpp
+    Source/Features/InspectorTools.cpp
+    Source/Features/MovementMods.cpp
+    Source/Features/NpcDebug.cpp
     Source/Features/ParamPatches.cpp
+    Source/Features/PostureBars.cpp
     Source/Features/Unlocks.cpp
     Source/ThirdParty/ImGui/imgui.cpp
     Source/ThirdParty/ImGui/imgui_demo.cpp

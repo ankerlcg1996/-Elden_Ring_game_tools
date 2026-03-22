@@ -51,6 +51,21 @@ constexpr const char* kSpiritAshesAnywherePatternSecondary =
 constexpr std::uint8_t kMountAnywherePrimaryPatch[] = {0xC6, 0x41, 0x36, 0x00, 0xB0, 0x00, 0x90};
 constexpr float kSpiritAshesAnywhereRadius = 1000.0f;
 
+void LogProtectedException(const char* scope, const char* detail) {
+    Main::Logger::Instance().Error((std::string(scope) + " failed: " + detail).c_str());
+}
+
+#define ERD_PROTECTED_STEP(SCOPE, CALL)                           \
+    do {                                                          \
+        try {                                                     \
+            CALL;                                                 \
+        } catch (const std::exception& ex) {                      \
+            LogProtectedException(SCOPE, ex.what());              \
+        } catch (...) {                                           \
+            LogProtectedException(SCOPE, "unknown exception");     \
+        }                                                         \
+    } while (false)
+
 bool RegionFromMainModuleText(Region& region) {
     HMODULE module = GetModuleHandleW(nullptr);
     if (module == nullptr) {
@@ -614,19 +629,21 @@ bool RestoreCodePatch(ParamPatches::CodePatchState& state) {
 }  // namespace
 
 void ParamPatches::Tick(const Game::SingletonRegistry& singletons) {
-    SyncFasterRespawn(singletons);
-    SyncMiniDungeonWarp(singletons);
-    SyncFreePurchase(singletons);
-    SyncNoCraftingMaterialCost(singletons);
-    SyncNoUpgradeMaterialCost(singletons);
-    SyncNoMagicRequirements(singletons);
-    SyncAllMagicOneSlot(singletons);
-    SyncWeightlessEquipment(singletons);
-    SyncMountAnywhere(singletons);
-    SyncSpiritAshesAnywhere(singletons);
-    SyncItemDiscovery(singletons);
-    SyncPermanentLantern(singletons);
-    SyncInvisibleHelmets(singletons);
+    ERD_PROTECTED_STEP("ParamPatches.FasterRespawn", SyncFasterRespawn(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.MiniDungeonWarp", SyncMiniDungeonWarp(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.FreePurchase", SyncFreePurchase(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.NoCraftingMaterialCost", SyncNoCraftingMaterialCost(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.NoUpgradeMaterialCost", SyncNoUpgradeMaterialCost(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.NoMagicRequirements", SyncNoMagicRequirements(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.AllMagicOneSlot", SyncAllMagicOneSlot(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.WeightlessEquipment", SyncWeightlessEquipment(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.CustomFov", SyncCustomFov(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.CustomCameraDistance", SyncCustomCameraDistance(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.MountAnywhere", SyncMountAnywhere(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.SpiritAshesAnywhere", SyncSpiritAshesAnywhere(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.ItemDiscovery", SyncItemDiscovery(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.PermanentLantern", SyncPermanentLantern(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.InvisibleHelmets", SyncInvisibleHelmets(singletons));
 }
 
 void ParamPatches::SyncFasterRespawn(const Game::SingletonRegistry& singletons) {
@@ -1014,6 +1031,101 @@ void ParamPatches::SyncWeightlessEquipment(const Game::SingletonRegistry& single
         }
         equipment_weight_active_ = false;
         Main::Logger::Instance().Info("Weightless equipment patch restored.");
+    }
+}
+
+void ParamPatches::SyncCustomFov(const Game::SingletonRegistry& singletons) {
+    const bool desired = Main::g_FeatureStatus.custom_fov_enabled.load();
+    const float requested_value = std::clamp(Main::g_FeatureStatus.custom_fov_value.load(), 20.0f, 120.0f);
+
+    if (!lock_cam_rows_captured_ && (desired || Main::g_FeatureStatus.custom_camera_distance_enabled.load())) {
+        lock_cam_rows_.clear();
+        const bool found_rows = Game::ForEachParamRow<LockCamParam>(
+            singletons,
+            L"LockCamParam",
+            [this](std::uint64_t, LockCamParam* row) {
+                lock_cam_rows_.push_back(LockCamState{
+                    row,
+                    row->camDistTarget,
+                    row->camFovY,
+                });
+            }
+        );
+
+        if (!found_rows || lock_cam_rows_.empty()) {
+            return;
+        }
+
+        lock_cam_rows_captured_ = true;
+    }
+
+    if (!lock_cam_rows_captured_) {
+        return;
+    }
+
+    if (desired) {
+        for (LockCamState& entry : lock_cam_rows_) {
+            entry.row->camFovY = requested_value;
+        }
+
+        if (!custom_fov_active_) {
+            Main::Logger::Instance().Info("Custom FOV patch applied.");
+        }
+        custom_fov_active_ = true;
+    } else if (custom_fov_active_) {
+        for (const LockCamState& entry : lock_cam_rows_) {
+            entry.row->camFovY = entry.cam_fov_y;
+        }
+        custom_fov_active_ = false;
+        Main::Logger::Instance().Info("Custom FOV patch restored.");
+    }
+}
+
+void ParamPatches::SyncCustomCameraDistance(const Game::SingletonRegistry& singletons) {
+    const bool desired = Main::g_FeatureStatus.custom_camera_distance_enabled.load();
+    const float requested_value =
+        std::clamp(Main::g_FeatureStatus.custom_camera_distance_value.load(), 1.0f, 20.0f);
+
+    if (!lock_cam_rows_captured_ && (desired || Main::g_FeatureStatus.custom_fov_enabled.load())) {
+        lock_cam_rows_.clear();
+        const bool found_rows = Game::ForEachParamRow<LockCamParam>(
+            singletons,
+            L"LockCamParam",
+            [this](std::uint64_t, LockCamParam* row) {
+                lock_cam_rows_.push_back(LockCamState{
+                    row,
+                    row->camDistTarget,
+                    row->camFovY,
+                });
+            }
+        );
+
+        if (!found_rows || lock_cam_rows_.empty()) {
+            return;
+        }
+
+        lock_cam_rows_captured_ = true;
+    }
+
+    if (!lock_cam_rows_captured_) {
+        return;
+    }
+
+    if (desired) {
+        for (LockCamState& entry : lock_cam_rows_) {
+            entry.row->camDistTarget = requested_value;
+        }
+
+        if (!custom_camera_distance_active_) {
+            Main::Logger::Instance().Info("Custom camera distance patch applied.");
+        }
+        custom_camera_distance_active_ = true;
+    } else if (custom_camera_distance_active_) {
+        for (const LockCamState& entry : lock_cam_rows_) {
+            entry.row->camDistTarget = entry.cam_dist_target;
+        }
+        custom_camera_distance_active_ = false;
+        Main::Logger::Instance().Info("Custom camera distance patch restored.");
     }
 }
 

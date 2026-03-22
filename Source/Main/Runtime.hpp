@@ -4,7 +4,11 @@
 
 #include "../Features/CharacterFlags.hpp"
 #include "../Features/GameActions.hpp"
+#include "../Features/InspectorTools.hpp"
+#include "../Features/MovementMods.hpp"
+#include "../Features/NpcDebug.hpp"
 #include "../Features/ParamPatches.hpp"
+#include "../Features/PostureBars.hpp"
 #include "../Features/Unlocks.hpp"
 #include "../Game/SingletonRegistry.hpp"
 #include "Config.hpp"
@@ -39,6 +43,10 @@ private:
     Features::Unlocks unlocks_;
     Features::ParamPatches param_patches_;
     Features::GameActions game_actions_;
+    Features::InspectorTools inspector_tools_;
+    Features::MovementMods movement_mods_;
+    Features::NpcDebug npc_debug_;
+    Features::PostureBars posture_bars_;
 };
 
 }  // namespace ERD::Main

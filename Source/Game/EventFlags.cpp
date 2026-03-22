@@ -3,24 +3,18 @@
 #include "Memory.hpp"
 
 namespace ERD::Game {
+namespace {
 
-bool IsDlcOwned(const SingletonRegistry& singletons, int dlc_index) {
-    const uintptr_t cs_dlc = singletons.GetObjectPointer("CsDlc");
-    if (cs_dlc == 0) {
-        return false;
-    }
-
-    std::uint8_t owned = 0;
-    return ReadValue(cs_dlc + 0x10 + dlc_index, owned) && owned == 1;
-}
-
-bool SetEventFlag(const SingletonRegistry& singletons, std::uint32_t flag_id, bool enabled) {
+bool ResolveEventFlagAddress(
+    const SingletonRegistry& singletons,
+    std::uint32_t flag_id,
+    uintptr_t& byte_address,
+    int& bit_index) {
     const uintptr_t virtual_memory_flag = singletons.GetObjectPointer("CSFD4VirtualMemoryFlag");
     if (virtual_memory_flag == 0) {
         return false;
     }
 
-    // Event Flag 按 block 存在树结构里，先定位 block，再定位 block 内部位偏移。
     std::int32_t block_mod = 0;
     if (!ReadValue(virtual_memory_flag + 0x1C, block_mod) || block_mod <= 0) {
         return false;
@@ -66,7 +60,6 @@ bool SetEventFlag(const SingletonRegistry& singletons, std::uint32_t flag_id, bo
         node = next;
     }
 
-    // 某些 block 是直接指针，某些 block 是索引，需要再解一层。
     std::int32_t address_mode = 0;
     uintptr_t block_address = 0;
     if (!ReadValue(node + 0x28, address_mode) || !ReadValue(node + 0x30, block_address)) {
@@ -88,8 +81,44 @@ bool SetEventFlag(const SingletonRegistry& singletons, std::uint32_t flag_id, bo
     }
 
     const std::int32_t byte_index = index / 8;
-    const int bit_index = 7 - (index - (byte_index * 8));
-    return SetBitFlag(block_address + byte_index, bit_index, enabled);
+    bit_index = 7 - (index - (byte_index * 8));
+    byte_address = block_address + byte_index;
+    return true;
+}
+
+}  // namespace
+
+bool IsDlcOwned(const SingletonRegistry& singletons, int dlc_index) {
+    const uintptr_t cs_dlc = singletons.GetObjectPointer("CsDlc");
+    if (cs_dlc == 0) {
+        return false;
+    }
+
+    std::uint8_t owned = 0;
+    return ReadValue(cs_dlc + 0x10 + dlc_index, owned) && owned == 1;
+}
+
+bool SetEventFlag(const SingletonRegistry& singletons, std::uint32_t flag_id, bool enabled) {
+    uintptr_t byte_address = 0;
+    int bit_index = 0;
+    return ResolveEventFlagAddress(singletons, flag_id, byte_address, bit_index) &&
+           SetBitFlag(byte_address, bit_index, enabled);
+}
+
+bool GetEventFlag(const SingletonRegistry& singletons, std::uint32_t flag_id, bool& enabled) {
+    uintptr_t byte_address = 0;
+    int bit_index = 0;
+    if (!ResolveEventFlagAddress(singletons, flag_id, byte_address, bit_index)) {
+        return false;
+    }
+
+    std::uint8_t value = 0;
+    if (!ReadValue(byte_address, value)) {
+        return false;
+    }
+
+    enabled = ((value >> bit_index) & 0x1u) != 0;
+    return true;
 }
 
 }  // namespace ERD::Game

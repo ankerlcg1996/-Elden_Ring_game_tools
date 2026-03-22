@@ -1,160 +1,143 @@
-# ERDMod
+# erdGameTools
 
-这是一个按照《艾尔登法环》常见 DLL mod 方式组织的 C++ 插件工程，结构参考了 `EldenRing-PostureBarMod` 这类正式 Elden Mod Loader 插件。
+`erdGameTools` 是一个面向《艾尔登法环》`1.16.1` 的本地 DLL mod 工程。  
+当前仓库的主要目标是把中文 CT 表里的高频功能逐步迁移成可维护的 C++ 插件，并在游戏原生菜单里提供入口。
 
-当前仓库已经包含：
-- 标准的 `DllMain + MainThread` 启动链路
-- 按 DLL 相对路径加载配置、日志和资源
-- `Source/Main`、`Source/Game`、`Source/Features` 三层结构
-- CT 风格的角色标志、事件标志解锁、参数表补丁功能
-- DX12 + ImGui 状态/控制菜单
-- 直接打包到 `mods` 目录的脚本
+## 项目说明
 
-## 目录结构
+当前仓库主要包含两条功能线：
+
+- `erdGameTools/`
+  原生赐福菜单插件。参考 ThomasJClark 系列项目的 DLL 结构，把菜单直接插入游戏内容内。
+- `Source/`
+  早期 `ERDMod` 主工程与通用功能模块。`erdGameTools` 复用了这里的大量底层能力，例如角色标志、参数补丁、解锁功能、姿态条采集、NPC 菜单读取等。
+
+当前 `erdGameTools` 已包含：
+
+- 原生赐福菜单注入
+- 中英文自动切换与外置语言文本
+- 架势条与伤害弹字显示
+- 游戏修改类开关
+- 解锁类功能
+- 快捷入口菜单
+- 本地配置持久化与进档自动重应用
+
+## 目录说明
 
 ```text
 .
-|-- Config
-|   `-- ERDMod.ini
-|-- Resources
-|   `-- README.txt
-|-- Source
-|   |-- Common.hpp
-|   |-- ERDMod.cpp
-|   |-- ERDMod.hpp
-|   |-- dllmain.cpp
-|   |-- Features
-|   |-- Game
-|   `-- Main
-|-- scripts
-|   |-- build.ps1
-|   `-- package_mod.ps1
-`-- README.md
+|-- erdGameTools/               # 当前主插件工程
+|-- Source/                     # 通用功能与旧主工程代码
+|-- Resources/                  # 外置菜单、脚本、下拉表资源
+|-- Config/                     # 旧 ERDMod 配置
+|-- scripts/                    # 构建与辅助脚本
+`-- dist/                       # 打包输出
 ```
 
-## 模块说明
-
-- `Source/dllmain.cpp`
-  只负责处理 `DLL_PROCESS_ATTACH / DETACH`，并启动工作线程。
-- `Source/ERDMod.cpp`
-  主线程入口，负责初始化路径、配置、日志、运行时和 overlay。
-- `Source/Main`
-  放插件框架代码，比如配置、日志、路径、运行循环和 ImGui 菜单。
-- `Source/Game`
-  放与游戏内存、FD4 单例、事件标志、参数表访问相关的底层逻辑。
-- `Source/Features`
-  放具体功能模块，例如无限 FP、无限道具、解锁地图、参数补丁。
-- `Config`
-  放插件配置文件。
-- `Resources`
-  预留给后续图片、字体、脚本或其他资源。
-
-## 当前已实现功能
-
-### Character Flags
-
-- `infinite_fp`
-  对应 CT 的 `NoFPConsumption`
-- `infinite_items`
-  对应 CT 的 `NoGoodsConsume`
-
-### World Unlocks
-
-- `unlock_all_maps`
-- `unlock_all_cookbooks`
-- `unlock_all_whetblades`
-
-### Param Patches
-
-- `faster_respawn`
-- `warp_out_of_uncleared_minidungeons`
-
-### ImGui Menu
-
-- 游戏内 DX12 Overlay
-- `Insert` 显示/隐藏菜单
-- 可点击切换持续型功能
-- 可点击触发一次性解锁/补丁功能
-
-## 配置文件
-
-默认路径：
+和当前 `erdGameTools` 直接相关的关键目录：
 
 ```text
-Config/ERDMod.ini
+erdGameTools/
+|-- CMakeLists.txt
+|-- config.ini
+|-- Resources/
+|   `-- Lang/
+|       |-- en-US.txt
+|       `-- zh-CN.txt
+`-- src/
+    |-- dllmain.cpp
+    |-- grace_test_config.cpp
+    |-- grace_test_localization.cpp
+    |-- grace_test_messages.cpp
+    |-- grace_test_overlay.cpp
+    |-- grace_test_runtime.cpp
+    `-- grace_test_talkscript.cpp
 ```
 
-示例：
+## 构建说明
 
-```ini
-[General]
-create_console=false
-enable_file_log=true
-show_message_box=false
-message_box_text=ERDMod loaded.
-
-[CharacterFlags]
-infinite_fp=true
-infinite_items=true
-
-[WorldUnlocks]
-unlock_all_maps=true
-unlock_all_cookbooks=true
-unlock_all_whetblades=true
-
-[ParamPatches]
-faster_respawn=true
-warp_out_of_uncleared_minidungeons=true
-```
-
-## 构建
-
-### 用 CMake + Visual Studio
+### 配置
 
 ```powershell
-cmake -S . -B build -A x64
-cmake --build build --config Release
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S .\erdGameTools -B .\erdGameTools\build-erdGameTools
 ```
 
-### 直接运行脚本
+### 编译
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --build .\erdGameTools\build-erdGameTools --config Release
 ```
 
-输出：
+### 输出
 
-```text
-build-cl/ERDMod.dll
-```
+编译产物：
 
-## 打包
+- `erdGameTools\build-erdGameTools\Release\erdGameTools.dll`
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\package_mod.ps1
-```
+当前打包目录：
 
-输出目录：
+- `dist\erdGameTools\erdGameTools.dll`
+- `dist\erdGameTools\config.ini`
+- `dist\erdGameTools\Resources\Lang\*.txt`
 
-```text
-dist/mods/
-```
+## 配置说明
 
-其中会包含：
-- `ERDMod.dll`
-- `Config/ERDMod.ini`
-- `Resources/...`
+当前插件配置文件路径：
 
-## 使用思路
+- `erdGameTools\config.ini`
+- 打包副本：`dist\erdGameTools\config.ini`
 
-1. 准备 Elden Mod Loader。
-2. 只在离线环境测试。
-3. 把 `dist/mods` 下的内容放进游戏目录下的 `mods` 文件夹。
-4. 启动游戏并检查 `Logs/ERDMod.log`。
+配置分为：
 
-## 后续扩展建议
+- `[GameMods]`
+- `[Unlocks]`
+- `[Localization]`
 
-- 继续给 `Features` 增加新 CT 功能
-- 增加热键绑定
-- 给菜单加分页和功能说明
-- 引入更多 hook 功能，而不只是内存写值
+其中：
+
+- `ui_language=auto` 会根据游戏当前文本语言自动选择 `zh-CN` 或 `en-US`
+- 也可以手动写成 `zh-CN` 或 `en-US`
+
+## 引用说明
+
+本仓库使用或参考了以下开源项目与组件：
+
+- [ThomasJClark/elden-ring-transmog](https://github.com/ThomasJClark/elden-ring-transmog)
+- [ThomasJClark/elden-ring-glorious-merchant](https://github.com/ThomasJClark/elden-ring-glorious-merchant)
+- [ThomasJClark/elden-x](https://github.com/ThomasJClark/elden-x)
+- [gabime/spdlog](https://github.com/gabime/spdlog)
+- [TsudaKageyu/minhook](https://github.com/TsudaKageyu/minhook)
+- [ocornut/imgui](https://github.com/ocornut/imgui)
+
+## 参考项目说明
+
+### `elden-ring-transmog`
+
+本项目主要借鉴了它的：
+
+- ModEngine 扩展 DLL 组织方式
+- `DllMain -> worker thread -> modutils::initialize -> hook -> enable_hooks` 初始化流程
+- 原生 `talkscript` 菜单注入思路
+- 自定义 `event_text_for_talk` 文本拦截方式
+
+### `elden-ring-glorious-merchant`
+
+本项目主要借鉴了它的：
+
+- 原生菜单扩展的工程结构
+- 与游戏菜单脚本交互的设计方式
+- 原生菜单型 mod 的目录布局和初始化风格
+
+### 说明
+
+本仓库不是以上项目的镜像，也不是直接改名发布版本。  
+当前实现是在参考其架构思路后，结合中文 CT 表功能迁移需求，重新组织出的本地工程。
+
+## 当前仓库用途
+
+这个仓库当前主要用于：
+
+- 备份 `erdGameTools` 与 `ERDMod` 的当前开发状态
+- 持续迁移中文 CT 表功能到 DLL
+- 逐步把功能从 ImGui 菜单迁移到原生游戏菜单
+- 为后续继续扩展语言包、快捷入口、参数工具和更多原生菜单功能做基础

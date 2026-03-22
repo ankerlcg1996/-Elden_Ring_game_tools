@@ -114,4 +114,21 @@ inline constexpr std::array<std::uint32_t, 3> kColosseumFlagsBase{
     60370,
 };
 
+inline constexpr std::array<std::int32_t, 47> kGestureIdsBase{
+    1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21,
+    41, 43, 45, 47, 49, 51, 61, 81, 83,
+    101, 103, 105, 107, 109, 121, 141, 143, 145, 147,
+    161, 181, 183, 185, 187, 189, 191, 195, 197, 201,
+    203, 205, 207, 209, 211, 213, 0,
+};
+
+inline constexpr std::array<std::int32_t, 5> kGestureIdsDlc1{
+    223, 225, 0, 229, 231,
+};
+
+inline constexpr std::int32_t kTheRingGestureIdOwned = 217;
+inline constexpr std::int32_t kTheRingGestureIdFallback = 219;
+inline constexpr std::int32_t kRingOfMiquellaGestureIdOwned = 227;
+inline constexpr std::int32_t kRingOfMiquellaGestureIdFallback = 233;
+
 }  // namespace ERD::Features::UnlockData

@@ -9,6 +9,7 @@
 GitHub 仓库地址：
 
 - [https://github.com/ankerlcg1996/-Elden_Ring_game_tools](https://github.com/ankerlcg1996/-Elden_Ring_game_tools)
+- 双语功能说明： [MOD_FEATURES.md](./MOD_FEATURES.md)
 
 ## 截图
 

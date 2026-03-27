@@ -9,6 +9,7 @@ Instead of relying on a separate trainer window, it injects a new `erdGameTools`
 GitHub repository:
 
 - [https://github.com/ankerlcg1996/-Elden_Ring_game_tools](https://github.com/ankerlcg1996/-Elden_Ring_game_tools)
+- Feature overview (bilingual): [MOD_FEATURES.md](./MOD_FEATURES.md)
 
 ## Screenshots
 

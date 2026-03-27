@@ -1,0 +1,390 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/ATK_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_ATK_PARAM_ST_FIELDS(X) \\
+    X(hit0_Radius, offsetof(::er::paramdef::atk_param_st, hit0_Radius)) \\
+    X(hit1_Radius, offsetof(::er::paramdef::atk_param_st, hit1_Radius)) \\
+    X(hit2_Radius, offsetof(::er::paramdef::atk_param_st, hit2_Radius)) \\
+    X(hit3_Radius, offsetof(::er::paramdef::atk_param_st, hit3_Radius)) \\
+    X(knockbackDist, offsetof(::er::paramdef::atk_param_st, knockbackDist)) \\
+    X(hitStopTime, offsetof(::er::paramdef::atk_param_st, hitStopTime)) \\
+    X(spEffectId0, offsetof(::er::paramdef::atk_param_st, spEffectId0)) \\
+    X(spEffectId1, offsetof(::er::paramdef::atk_param_st, spEffectId1)) \\
+    X(spEffectId2, offsetof(::er::paramdef::atk_param_st, spEffectId2)) \\
+    X(spEffectId3, offsetof(::er::paramdef::atk_param_st, spEffectId3)) \\
+    X(spEffectId4, offsetof(::er::paramdef::atk_param_st, spEffectId4)) \\
+    X(hit0_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit0_DmyPoly1)) \\
+    X(hit1_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit1_DmyPoly1)) \\
+    X(hit2_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit2_DmyPoly1)) \\
+    X(hit3_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit3_DmyPoly1)) \\
+    X(hit0_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit0_DmyPoly2)) \\
+    X(hit1_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit1_DmyPoly2)) \\
+    X(hit2_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit2_DmyPoly2)) \\
+    X(hit3_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit3_DmyPoly2)) \\
+    X(blowingCorrection, offsetof(::er::paramdef::atk_param_st, blowingCorrection)) \\
+    X(atkPhysCorrection, offsetof(::er::paramdef::atk_param_st, atkPhysCorrection)) \\
+    X(atkMagCorrection, offsetof(::er::paramdef::atk_param_st, atkMagCorrection)) \\
+    X(atkFireCorrection, offsetof(::er::paramdef::atk_param_st, atkFireCorrection)) \\
+    X(atkThunCorrection, offsetof(::er::paramdef::atk_param_st, atkThunCorrection)) \\
+    X(atkStamCorrection, offsetof(::er::paramdef::atk_param_st, atkStamCorrection)) \\
+    X(guardAtkRateCorrection, offsetof(::er::paramdef::atk_param_st, guardAtkRateCorrection)) \\
+    X(guardBreakCorrection, offsetof(::er::paramdef::atk_param_st, guardBreakCorrection)) \\
+    X(atkThrowEscapeCorrection, offsetof(::er::paramdef::atk_param_st, atkThrowEscapeCorrection)) \\
+    X(subCategory1, offsetof(::er::paramdef::atk_param_st, subCategory1)) \\
+    X(subCategory2, offsetof(::er::paramdef::atk_param_st, subCategory2)) \\
+    X(atkPhys, offsetof(::er::paramdef::atk_param_st, atkPhys)) \\
+    X(atkMag, offsetof(::er::paramdef::atk_param_st, atkMag)) \\
+    X(atkFire, offsetof(::er::paramdef::atk_param_st, atkFire)) \\
+    X(atkThun, offsetof(::er::paramdef::atk_param_st, atkThun)) \\
+    X(atkStam, offsetof(::er::paramdef::atk_param_st, atkStam)) \\
+    X(guardAtkRate, offsetof(::er::paramdef::atk_param_st, guardAtkRate)) \\
+    X(guardBreakRate, offsetof(::er::paramdef::atk_param_st, guardBreakRate)) \\
+    X(pad6, offsetof(::er::paramdef::atk_param_st, pad6)) \\
+    X(isEnableCalcDamageForBushesObj, offsetof(::er::paramdef::atk_param_st, isEnableCalcDamageForBushesObj)) \\
+    X(atkThrowEscape, offsetof(::er::paramdef::atk_param_st, atkThrowEscape)) \\
+    X(atkObj, offsetof(::er::paramdef::atk_param_st, atkObj)) \\
+    X(guardStaminaCutRate, offsetof(::er::paramdef::atk_param_st, guardStaminaCutRate)) \\
+    X(guardRate, offsetof(::er::paramdef::atk_param_st, guardRate)) \\
+    X(throwTypeId, offsetof(::er::paramdef::atk_param_st, throwTypeId)) \\
+    X(hit0_hitType, offsetof(::er::paramdef::atk_param_st, hit0_hitType)) \\
+    X(hit1_hitType, offsetof(::er::paramdef::atk_param_st, hit1_hitType)) \\
+    X(hit2_hitType, offsetof(::er::paramdef::atk_param_st, hit2_hitType)) \\
+    X(hit3_hitType, offsetof(::er::paramdef::atk_param_st, hit3_hitType)) \\
+    X(hti0_Priority, offsetof(::er::paramdef::atk_param_st, hti0_Priority)) \\
+    X(hti1_Priority, offsetof(::er::paramdef::atk_param_st, hti1_Priority)) \\
+    X(hti2_Priority, offsetof(::er::paramdef::atk_param_st, hti2_Priority)) \\
+    X(hti3_Priority, offsetof(::er::paramdef::atk_param_st, hti3_Priority)) \\
+    X(dmgLevel, offsetof(::er::paramdef::atk_param_st, dmgLevel)) \\
+    X(mapHitType, offsetof(::er::paramdef::atk_param_st, mapHitType)) \\
+    X(guardCutCancelRate, offsetof(::er::paramdef::atk_param_st, guardCutCancelRate)) \\
+    X(atkAttribute, offsetof(::er::paramdef::atk_param_st, atkAttribute)) \\
+    X(spAttribute, offsetof(::er::paramdef::atk_param_st, spAttribute)) \\
+    X(atkType, offsetof(::er::paramdef::atk_param_st, atkType)) \\
+    X(atkMaterial, offsetof(::er::paramdef::atk_param_st, atkMaterial)) \\
+    X(guardRangeType, offsetof(::er::paramdef::atk_param_st, guardRangeType)) \\
+    X(defSeMaterial1, offsetof(::er::paramdef::atk_param_st, defSeMaterial1)) \\
+    X(hitSourceType, offsetof(::er::paramdef::atk_param_st, hitSourceType)) \\
+    X(throwFlag, offsetof(::er::paramdef::atk_param_st, throwFlag)) \\
+    X(atkPow_forSfx, offsetof(::er::paramdef::atk_param_st, atkPow_forSfx)) \\
+    X(atkDir_forSfx, offsetof(::er::paramdef::atk_param_st, atkDir_forSfx)) \\
+    X(atkBehaviorId, offsetof(::er::paramdef::atk_param_st, atkBehaviorId)) \\
+    X(atkPow_forSe, offsetof(::er::paramdef::atk_param_st, atkPow_forSe)) \\
+    X(atkSuperArmor, offsetof(::er::paramdef::atk_param_st, atkSuperArmor)) \\
+    X(decalId1, offsetof(::er::paramdef::atk_param_st, decalId1)) \\
+    X(decalId2, offsetof(::er::paramdef::atk_param_st, decalId2)) \\
+    X(AppearAiSoundId, offsetof(::er::paramdef::atk_param_st, AppearAiSoundId)) \\
+    X(HitAiSoundId, offsetof(::er::paramdef::atk_param_st, HitAiSoundId)) \\
+    X(HitRumbleId, offsetof(::er::paramdef::atk_param_st, HitRumbleId)) \\
+    X(HitRumbleIdByNormal, offsetof(::er::paramdef::atk_param_st, HitRumbleIdByNormal)) \\
+    X(HitRumbleIdByMiddle, offsetof(::er::paramdef::atk_param_st, HitRumbleIdByMiddle)) \\
+    X(HitRumbleIdByRoot, offsetof(::er::paramdef::atk_param_st, HitRumbleIdByRoot)) \\
+    X(traceSfxId0, offsetof(::er::paramdef::atk_param_st, traceSfxId0)) \\
+    X(traceDmyIdHead0, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead0)) \\
+    X(traceDmyIdTail0, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail0)) \\
+    X(traceSfxId1, offsetof(::er::paramdef::atk_param_st, traceSfxId1)) \\
+    X(traceDmyIdHead1, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead1)) \\
+    X(traceDmyIdTail1, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail1)) \\
+    X(traceSfxId2, offsetof(::er::paramdef::atk_param_st, traceSfxId2)) \\
+    X(traceDmyIdHead2, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead2)) \\
+    X(traceDmyIdTail2, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail2)) \\
+    X(traceSfxId3, offsetof(::er::paramdef::atk_param_st, traceSfxId3)) \\
+    X(traceDmyIdHead3, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead3)) \\
+    X(traceDmyIdTail3, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail3)) \\
+    X(traceSfxId4, offsetof(::er::paramdef::atk_param_st, traceSfxId4)) \\
+    X(traceDmyIdHead4, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead4)) \\
+    X(traceDmyIdTail4, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail4)) \\
+    X(traceSfxId5, offsetof(::er::paramdef::atk_param_st, traceSfxId5)) \\
+    X(traceDmyIdHead5, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead5)) \\
+    X(traceDmyIdTail5, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail5)) \\
+    X(traceSfxId6, offsetof(::er::paramdef::atk_param_st, traceSfxId6)) \\
+    X(traceDmyIdHead6, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead6)) \\
+    X(traceDmyIdTail6, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail6)) \\
+    X(traceSfxId7, offsetof(::er::paramdef::atk_param_st, traceSfxId7)) \\
+    X(traceDmyIdHead7, offsetof(::er::paramdef::atk_param_st, traceDmyIdHead7)) \\
+    X(traceDmyIdTail7, offsetof(::er::paramdef::atk_param_st, traceDmyIdTail7)) \\
+    X(hit4_Radius, offsetof(::er::paramdef::atk_param_st, hit4_Radius)) \\
+    X(hit5_Radius, offsetof(::er::paramdef::atk_param_st, hit5_Radius)) \\
+    X(hit6_Radius, offsetof(::er::paramdef::atk_param_st, hit6_Radius)) \\
+    X(hit7_Radius, offsetof(::er::paramdef::atk_param_st, hit7_Radius)) \\
+    X(hit8_Radius, offsetof(::er::paramdef::atk_param_st, hit8_Radius)) \\
+    X(hit9_Radius, offsetof(::er::paramdef::atk_param_st, hit9_Radius)) \\
+    X(hit10_Radius, offsetof(::er::paramdef::atk_param_st, hit10_Radius)) \\
+    X(hit11_Radius, offsetof(::er::paramdef::atk_param_st, hit11_Radius)) \\
+    X(hit12_Radius, offsetof(::er::paramdef::atk_param_st, hit12_Radius)) \\
+    X(hit13_Radius, offsetof(::er::paramdef::atk_param_st, hit13_Radius)) \\
+    X(hit14_Radius, offsetof(::er::paramdef::atk_param_st, hit14_Radius)) \\
+    X(hit15_Radius, offsetof(::er::paramdef::atk_param_st, hit15_Radius)) \\
+    X(hit4_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit4_DmyPoly1)) \\
+    X(hit5_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit5_DmyPoly1)) \\
+    X(hit6_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit6_DmyPoly1)) \\
+    X(hit7_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit7_DmyPoly1)) \\
+    X(hit8_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit8_DmyPoly1)) \\
+    X(hit9_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit9_DmyPoly1)) \\
+    X(hit10_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit10_DmyPoly1)) \\
+    X(hit11_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit11_DmyPoly1)) \\
+    X(hit12_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit12_DmyPoly1)) \\
+    X(hit13_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit13_DmyPoly1)) \\
+    X(hit14_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit14_DmyPoly1)) \\
+    X(hit15_DmyPoly1, offsetof(::er::paramdef::atk_param_st, hit15_DmyPoly1)) \\
+    X(hit4_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit4_DmyPoly2)) \\
+    X(hit5_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit5_DmyPoly2)) \\
+    X(hit6_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit6_DmyPoly2)) \\
+    X(hit7_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit7_DmyPoly2)) \\
+    X(hit8_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit8_DmyPoly2)) \\
+    X(hit9_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit9_DmyPoly2)) \\
+    X(hit10_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit10_DmyPoly2)) \\
+    X(hit11_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit11_DmyPoly2)) \\
+    X(hit12_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit12_DmyPoly2)) \\
+    X(hit13_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit13_DmyPoly2)) \\
+    X(hit14_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit14_DmyPoly2)) \\
+    X(hit15_DmyPoly2, offsetof(::er::paramdef::atk_param_st, hit15_DmyPoly2)) \\
+    X(hit4_hitType, offsetof(::er::paramdef::atk_param_st, hit4_hitType)) \\
+    X(hit5_hitType, offsetof(::er::paramdef::atk_param_st, hit5_hitType)) \\
+    X(hit6_hitType, offsetof(::er::paramdef::atk_param_st, hit6_hitType)) \\
+    X(hit7_hitType, offsetof(::er::paramdef::atk_param_st, hit7_hitType)) \\
+    X(hit8_hitType, offsetof(::er::paramdef::atk_param_st, hit8_hitType)) \\
+    X(hit9_hitType, offsetof(::er::paramdef::atk_param_st, hit9_hitType)) \\
+    X(hit10_hitType, offsetof(::er::paramdef::atk_param_st, hit10_hitType)) \\
+    X(hit11_hitType, offsetof(::er::paramdef::atk_param_st, hit11_hitType)) \\
+    X(hit12_hitType, offsetof(::er::paramdef::atk_param_st, hit12_hitType)) \\
+    X(hit13_hitType, offsetof(::er::paramdef::atk_param_st, hit13_hitType)) \\
+    X(hit14_hitType, offsetof(::er::paramdef::atk_param_st, hit14_hitType)) \\
+    X(hit15_hitType, offsetof(::er::paramdef::atk_param_st, hit15_hitType)) \\
+    X(hti4_Priority, offsetof(::er::paramdef::atk_param_st, hti4_Priority)) \\
+    X(hti5_Priority, offsetof(::er::paramdef::atk_param_st, hti5_Priority)) \\
+    X(hti6_Priority, offsetof(::er::paramdef::atk_param_st, hti6_Priority)) \\
+    X(hti7_Priority, offsetof(::er::paramdef::atk_param_st, hti7_Priority)) \\
+    X(hti8_Priority, offsetof(::er::paramdef::atk_param_st, hti8_Priority)) \\
+    X(hti9_Priority, offsetof(::er::paramdef::atk_param_st, hti9_Priority)) \\
+    X(hti10_Priority, offsetof(::er::paramdef::atk_param_st, hti10_Priority)) \\
+    X(hti11_Priority, offsetof(::er::paramdef::atk_param_st, hti11_Priority)) \\
+    X(hti12_Priority, offsetof(::er::paramdef::atk_param_st, hti12_Priority)) \\
+    X(hti13_Priority, offsetof(::er::paramdef::atk_param_st, hti13_Priority)) \\
+    X(hti14_Priority, offsetof(::er::paramdef::atk_param_st, hti14_Priority)) \\
+    X(hti15_Priority, offsetof(::er::paramdef::atk_param_st, hti15_Priority)) \\
+    X(defSfxMaterial1, offsetof(::er::paramdef::atk_param_st, defSfxMaterial1)) \\
+    X(defSeMaterial2, offsetof(::er::paramdef::atk_param_st, defSeMaterial2)) \\
+    X(defSfxMaterial2, offsetof(::er::paramdef::atk_param_st, defSfxMaterial2)) \\
+    X(atkDarkCorrection, offsetof(::er::paramdef::atk_param_st, atkDarkCorrection)) \\
+    X(atkDark, offsetof(::er::paramdef::atk_param_st, atkDark)) \\
+    X(dmgLevel_vsPlayer, offsetof(::er::paramdef::atk_param_st, dmgLevel_vsPlayer)) \\
+    X(statusAilmentAtkPowerCorrectRate, offsetof(::er::paramdef::atk_param_st, statusAilmentAtkPowerCorrectRate)) \\
+    X(spEffectAtkPowerCorrectRate_byPoint, offsetof(::er::paramdef::atk_param_st, spEffectAtkPowerCorrectRate_byPoint)) \\
+    X(spEffectAtkPowerCorrectRate_byRate, offsetof(::er::paramdef::atk_param_st, spEffectAtkPowerCorrectRate_byRate)) \\
+    X(spEffectAtkPowerCorrectRate_byDmg, offsetof(::er::paramdef::atk_param_st, spEffectAtkPowerCorrectRate_byDmg)) \\
+    X(atkBehaviorId_2, offsetof(::er::paramdef::atk_param_st, atkBehaviorId_2)) \\
+    X(throwDamageAttribute, offsetof(::er::paramdef::atk_param_st, throwDamageAttribute)) \\
+    X(statusAilmentAtkPowerCorrectRate_byPoint, offsetof(::er::paramdef::atk_param_st, statusAilmentAtkPowerCorrectRate_byPoint)) \\
+    X(overwriteAttackElementCorrectId, offsetof(::er::paramdef::atk_param_st, overwriteAttackElementCorrectId)) \\
+    X(decalBaseId1, offsetof(::er::paramdef::atk_param_st, decalBaseId1)) \\
+    X(decalBaseId2, offsetof(::er::paramdef::atk_param_st, decalBaseId2)) \\
+    X(wepRegainHpScale, offsetof(::er::paramdef::atk_param_st, wepRegainHpScale)) \\
+    X(atkRegainHp, offsetof(::er::paramdef::atk_param_st, atkRegainHp)) \\
+    X(regainableTimeScale, offsetof(::er::paramdef::atk_param_st, regainableTimeScale)) \\
+    X(regainableHpRateScale, offsetof(::er::paramdef::atk_param_st, regainableHpRateScale)) \\
+    X(regainableSlotId, offsetof(::er::paramdef::atk_param_st, regainableSlotId)) \\
+    X(spAttributeVariationValue, offsetof(::er::paramdef::atk_param_st, spAttributeVariationValue)) \\
+    X(parryForwardOffset, offsetof(::er::paramdef::atk_param_st, parryForwardOffset)) \\
+    X(atkSuperArmorCorrection, offsetof(::er::paramdef::atk_param_st, atkSuperArmorCorrection)) \\
+    X(defSfxMaterialVariationValue, offsetof(::er::paramdef::atk_param_st, defSfxMaterialVariationValue)) \\
+    X(pad4, offsetof(::er::paramdef::atk_param_st, pad4)) \\
+    X(finalDamageRateId, offsetof(::er::paramdef::atk_param_st, finalDamageRateId)) \\
+    X(subCategory3, offsetof(::er::paramdef::atk_param_st, subCategory3)) \\
+    X(subCategory4, offsetof(::er::paramdef::atk_param_st, subCategory4)) \\
+    X(pad7, offsetof(::er::paramdef::atk_param_st, pad7))
+
+#define ERD_OFFSET_ATK_PARAM_ST_hit0_Radius offsetof(::er::paramdef::atk_param_st, hit0_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit1_Radius offsetof(::er::paramdef::atk_param_st, hit1_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit2_Radius offsetof(::er::paramdef::atk_param_st, hit2_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit3_Radius offsetof(::er::paramdef::atk_param_st, hit3_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_knockbackDist offsetof(::er::paramdef::atk_param_st, knockbackDist)
+#define ERD_OFFSET_ATK_PARAM_ST_hitStopTime offsetof(::er::paramdef::atk_param_st, hitStopTime)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectId0 offsetof(::er::paramdef::atk_param_st, spEffectId0)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectId1 offsetof(::er::paramdef::atk_param_st, spEffectId1)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectId2 offsetof(::er::paramdef::atk_param_st, spEffectId2)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectId3 offsetof(::er::paramdef::atk_param_st, spEffectId3)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectId4 offsetof(::er::paramdef::atk_param_st, spEffectId4)
+#define ERD_OFFSET_ATK_PARAM_ST_hit0_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit0_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit1_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit1_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit2_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit2_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit3_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit3_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit0_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit0_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit1_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit1_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit2_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit2_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit3_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit3_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_blowingCorrection offsetof(::er::paramdef::atk_param_st, blowingCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_atkPhysCorrection offsetof(::er::paramdef::atk_param_st, atkPhysCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_atkMagCorrection offsetof(::er::paramdef::atk_param_st, atkMagCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_atkFireCorrection offsetof(::er::paramdef::atk_param_st, atkFireCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_atkThunCorrection offsetof(::er::paramdef::atk_param_st, atkThunCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_atkStamCorrection offsetof(::er::paramdef::atk_param_st, atkStamCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_guardAtkRateCorrection offsetof(::er::paramdef::atk_param_st, guardAtkRateCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_guardBreakCorrection offsetof(::er::paramdef::atk_param_st, guardBreakCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_atkThrowEscapeCorrection offsetof(::er::paramdef::atk_param_st, atkThrowEscapeCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_subCategory1 offsetof(::er::paramdef::atk_param_st, subCategory1)
+#define ERD_OFFSET_ATK_PARAM_ST_subCategory2 offsetof(::er::paramdef::atk_param_st, subCategory2)
+#define ERD_OFFSET_ATK_PARAM_ST_atkPhys offsetof(::er::paramdef::atk_param_st, atkPhys)
+#define ERD_OFFSET_ATK_PARAM_ST_atkMag offsetof(::er::paramdef::atk_param_st, atkMag)
+#define ERD_OFFSET_ATK_PARAM_ST_atkFire offsetof(::er::paramdef::atk_param_st, atkFire)
+#define ERD_OFFSET_ATK_PARAM_ST_atkThun offsetof(::er::paramdef::atk_param_st, atkThun)
+#define ERD_OFFSET_ATK_PARAM_ST_atkStam offsetof(::er::paramdef::atk_param_st, atkStam)
+#define ERD_OFFSET_ATK_PARAM_ST_guardAtkRate offsetof(::er::paramdef::atk_param_st, guardAtkRate)
+#define ERD_OFFSET_ATK_PARAM_ST_guardBreakRate offsetof(::er::paramdef::atk_param_st, guardBreakRate)
+#define ERD_OFFSET_ATK_PARAM_ST_pad6 offsetof(::er::paramdef::atk_param_st, pad6)
+#define ERD_OFFSET_ATK_PARAM_ST_isEnableCalcDamageForBushesObj offsetof(::er::paramdef::atk_param_st, isEnableCalcDamageForBushesObj)
+#define ERD_OFFSET_ATK_PARAM_ST_atkThrowEscape offsetof(::er::paramdef::atk_param_st, atkThrowEscape)
+#define ERD_OFFSET_ATK_PARAM_ST_atkObj offsetof(::er::paramdef::atk_param_st, atkObj)
+#define ERD_OFFSET_ATK_PARAM_ST_guardStaminaCutRate offsetof(::er::paramdef::atk_param_st, guardStaminaCutRate)
+#define ERD_OFFSET_ATK_PARAM_ST_guardRate offsetof(::er::paramdef::atk_param_st, guardRate)
+#define ERD_OFFSET_ATK_PARAM_ST_throwTypeId offsetof(::er::paramdef::atk_param_st, throwTypeId)
+#define ERD_OFFSET_ATK_PARAM_ST_hit0_hitType offsetof(::er::paramdef::atk_param_st, hit0_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit1_hitType offsetof(::er::paramdef::atk_param_st, hit1_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit2_hitType offsetof(::er::paramdef::atk_param_st, hit2_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit3_hitType offsetof(::er::paramdef::atk_param_st, hit3_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hti0_Priority offsetof(::er::paramdef::atk_param_st, hti0_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti1_Priority offsetof(::er::paramdef::atk_param_st, hti1_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti2_Priority offsetof(::er::paramdef::atk_param_st, hti2_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti3_Priority offsetof(::er::paramdef::atk_param_st, hti3_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_dmgLevel offsetof(::er::paramdef::atk_param_st, dmgLevel)
+#define ERD_OFFSET_ATK_PARAM_ST_mapHitType offsetof(::er::paramdef::atk_param_st, mapHitType)
+#define ERD_OFFSET_ATK_PARAM_ST_guardCutCancelRate offsetof(::er::paramdef::atk_param_st, guardCutCancelRate)
+#define ERD_OFFSET_ATK_PARAM_ST_atkAttribute offsetof(::er::paramdef::atk_param_st, atkAttribute)
+#define ERD_OFFSET_ATK_PARAM_ST_spAttribute offsetof(::er::paramdef::atk_param_st, spAttribute)
+#define ERD_OFFSET_ATK_PARAM_ST_atkType offsetof(::er::paramdef::atk_param_st, atkType)
+#define ERD_OFFSET_ATK_PARAM_ST_atkMaterial offsetof(::er::paramdef::atk_param_st, atkMaterial)
+#define ERD_OFFSET_ATK_PARAM_ST_guardRangeType offsetof(::er::paramdef::atk_param_st, guardRangeType)
+#define ERD_OFFSET_ATK_PARAM_ST_defSeMaterial1 offsetof(::er::paramdef::atk_param_st, defSeMaterial1)
+#define ERD_OFFSET_ATK_PARAM_ST_hitSourceType offsetof(::er::paramdef::atk_param_st, hitSourceType)
+#define ERD_OFFSET_ATK_PARAM_ST_throwFlag offsetof(::er::paramdef::atk_param_st, throwFlag)
+#define ERD_OFFSET_ATK_PARAM_ST_atkPow_forSfx offsetof(::er::paramdef::atk_param_st, atkPow_forSfx)
+#define ERD_OFFSET_ATK_PARAM_ST_atkDir_forSfx offsetof(::er::paramdef::atk_param_st, atkDir_forSfx)
+#define ERD_OFFSET_ATK_PARAM_ST_atkBehaviorId offsetof(::er::paramdef::atk_param_st, atkBehaviorId)
+#define ERD_OFFSET_ATK_PARAM_ST_atkPow_forSe offsetof(::er::paramdef::atk_param_st, atkPow_forSe)
+#define ERD_OFFSET_ATK_PARAM_ST_atkSuperArmor offsetof(::er::paramdef::atk_param_st, atkSuperArmor)
+#define ERD_OFFSET_ATK_PARAM_ST_decalId1 offsetof(::er::paramdef::atk_param_st, decalId1)
+#define ERD_OFFSET_ATK_PARAM_ST_decalId2 offsetof(::er::paramdef::atk_param_st, decalId2)
+#define ERD_OFFSET_ATK_PARAM_ST_AppearAiSoundId offsetof(::er::paramdef::atk_param_st, AppearAiSoundId)
+#define ERD_OFFSET_ATK_PARAM_ST_HitAiSoundId offsetof(::er::paramdef::atk_param_st, HitAiSoundId)
+#define ERD_OFFSET_ATK_PARAM_ST_HitRumbleId offsetof(::er::paramdef::atk_param_st, HitRumbleId)
+#define ERD_OFFSET_ATK_PARAM_ST_HitRumbleIdByNormal offsetof(::er::paramdef::atk_param_st, HitRumbleIdByNormal)
+#define ERD_OFFSET_ATK_PARAM_ST_HitRumbleIdByMiddle offsetof(::er::paramdef::atk_param_st, HitRumbleIdByMiddle)
+#define ERD_OFFSET_ATK_PARAM_ST_HitRumbleIdByRoot offsetof(::er::paramdef::atk_param_st, HitRumbleIdByRoot)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId0 offsetof(::er::paramdef::atk_param_st, traceSfxId0)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead0 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead0)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail0 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail0)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId1 offsetof(::er::paramdef::atk_param_st, traceSfxId1)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead1 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead1)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail1 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail1)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId2 offsetof(::er::paramdef::atk_param_st, traceSfxId2)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead2 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead2)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail2 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail2)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId3 offsetof(::er::paramdef::atk_param_st, traceSfxId3)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead3 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead3)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail3 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail3)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId4 offsetof(::er::paramdef::atk_param_st, traceSfxId4)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead4 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead4)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail4 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail4)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId5 offsetof(::er::paramdef::atk_param_st, traceSfxId5)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead5 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead5)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail5 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail5)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId6 offsetof(::er::paramdef::atk_param_st, traceSfxId6)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead6 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead6)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail6 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail6)
+#define ERD_OFFSET_ATK_PARAM_ST_traceSfxId7 offsetof(::er::paramdef::atk_param_st, traceSfxId7)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdHead7 offsetof(::er::paramdef::atk_param_st, traceDmyIdHead7)
+#define ERD_OFFSET_ATK_PARAM_ST_traceDmyIdTail7 offsetof(::er::paramdef::atk_param_st, traceDmyIdTail7)
+#define ERD_OFFSET_ATK_PARAM_ST_hit4_Radius offsetof(::er::paramdef::atk_param_st, hit4_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit5_Radius offsetof(::er::paramdef::atk_param_st, hit5_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit6_Radius offsetof(::er::paramdef::atk_param_st, hit6_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit7_Radius offsetof(::er::paramdef::atk_param_st, hit7_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit8_Radius offsetof(::er::paramdef::atk_param_st, hit8_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit9_Radius offsetof(::er::paramdef::atk_param_st, hit9_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit10_Radius offsetof(::er::paramdef::atk_param_st, hit10_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit11_Radius offsetof(::er::paramdef::atk_param_st, hit11_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit12_Radius offsetof(::er::paramdef::atk_param_st, hit12_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit13_Radius offsetof(::er::paramdef::atk_param_st, hit13_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit14_Radius offsetof(::er::paramdef::atk_param_st, hit14_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit15_Radius offsetof(::er::paramdef::atk_param_st, hit15_Radius)
+#define ERD_OFFSET_ATK_PARAM_ST_hit4_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit4_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit5_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit5_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit6_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit6_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit7_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit7_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit8_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit8_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit9_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit9_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit10_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit10_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit11_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit11_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit12_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit12_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit13_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit13_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit14_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit14_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit15_DmyPoly1 offsetof(::er::paramdef::atk_param_st, hit15_DmyPoly1)
+#define ERD_OFFSET_ATK_PARAM_ST_hit4_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit4_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit5_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit5_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit6_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit6_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit7_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit7_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit8_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit8_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit9_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit9_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit10_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit10_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit11_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit11_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit12_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit12_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit13_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit13_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit14_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit14_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit15_DmyPoly2 offsetof(::er::paramdef::atk_param_st, hit15_DmyPoly2)
+#define ERD_OFFSET_ATK_PARAM_ST_hit4_hitType offsetof(::er::paramdef::atk_param_st, hit4_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit5_hitType offsetof(::er::paramdef::atk_param_st, hit5_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit6_hitType offsetof(::er::paramdef::atk_param_st, hit6_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit7_hitType offsetof(::er::paramdef::atk_param_st, hit7_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit8_hitType offsetof(::er::paramdef::atk_param_st, hit8_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit9_hitType offsetof(::er::paramdef::atk_param_st, hit9_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit10_hitType offsetof(::er::paramdef::atk_param_st, hit10_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit11_hitType offsetof(::er::paramdef::atk_param_st, hit11_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit12_hitType offsetof(::er::paramdef::atk_param_st, hit12_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit13_hitType offsetof(::er::paramdef::atk_param_st, hit13_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit14_hitType offsetof(::er::paramdef::atk_param_st, hit14_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hit15_hitType offsetof(::er::paramdef::atk_param_st, hit15_hitType)
+#define ERD_OFFSET_ATK_PARAM_ST_hti4_Priority offsetof(::er::paramdef::atk_param_st, hti4_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti5_Priority offsetof(::er::paramdef::atk_param_st, hti5_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti6_Priority offsetof(::er::paramdef::atk_param_st, hti6_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti7_Priority offsetof(::er::paramdef::atk_param_st, hti7_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti8_Priority offsetof(::er::paramdef::atk_param_st, hti8_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti9_Priority offsetof(::er::paramdef::atk_param_st, hti9_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti10_Priority offsetof(::er::paramdef::atk_param_st, hti10_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti11_Priority offsetof(::er::paramdef::atk_param_st, hti11_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti12_Priority offsetof(::er::paramdef::atk_param_st, hti12_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti13_Priority offsetof(::er::paramdef::atk_param_st, hti13_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti14_Priority offsetof(::er::paramdef::atk_param_st, hti14_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_hti15_Priority offsetof(::er::paramdef::atk_param_st, hti15_Priority)
+#define ERD_OFFSET_ATK_PARAM_ST_defSfxMaterial1 offsetof(::er::paramdef::atk_param_st, defSfxMaterial1)
+#define ERD_OFFSET_ATK_PARAM_ST_defSeMaterial2 offsetof(::er::paramdef::atk_param_st, defSeMaterial2)
+#define ERD_OFFSET_ATK_PARAM_ST_defSfxMaterial2 offsetof(::er::paramdef::atk_param_st, defSfxMaterial2)
+#define ERD_OFFSET_ATK_PARAM_ST_atkDarkCorrection offsetof(::er::paramdef::atk_param_st, atkDarkCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_atkDark offsetof(::er::paramdef::atk_param_st, atkDark)
+#define ERD_OFFSET_ATK_PARAM_ST_dmgLevel_vsPlayer offsetof(::er::paramdef::atk_param_st, dmgLevel_vsPlayer)
+#define ERD_OFFSET_ATK_PARAM_ST_statusAilmentAtkPowerCorrectRate offsetof(::er::paramdef::atk_param_st, statusAilmentAtkPowerCorrectRate)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectAtkPowerCorrectRate_byPoint offsetof(::er::paramdef::atk_param_st, spEffectAtkPowerCorrectRate_byPoint)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectAtkPowerCorrectRate_byRate offsetof(::er::paramdef::atk_param_st, spEffectAtkPowerCorrectRate_byRate)
+#define ERD_OFFSET_ATK_PARAM_ST_spEffectAtkPowerCorrectRate_byDmg offsetof(::er::paramdef::atk_param_st, spEffectAtkPowerCorrectRate_byDmg)
+#define ERD_OFFSET_ATK_PARAM_ST_atkBehaviorId_2 offsetof(::er::paramdef::atk_param_st, atkBehaviorId_2)
+#define ERD_OFFSET_ATK_PARAM_ST_throwDamageAttribute offsetof(::er::paramdef::atk_param_st, throwDamageAttribute)
+#define ERD_OFFSET_ATK_PARAM_ST_statusAilmentAtkPowerCorrectRate_byPoint offsetof(::er::paramdef::atk_param_st, statusAilmentAtkPowerCorrectRate_byPoint)
+#define ERD_OFFSET_ATK_PARAM_ST_overwriteAttackElementCorrectId offsetof(::er::paramdef::atk_param_st, overwriteAttackElementCorrectId)
+#define ERD_OFFSET_ATK_PARAM_ST_decalBaseId1 offsetof(::er::paramdef::atk_param_st, decalBaseId1)
+#define ERD_OFFSET_ATK_PARAM_ST_decalBaseId2 offsetof(::er::paramdef::atk_param_st, decalBaseId2)
+#define ERD_OFFSET_ATK_PARAM_ST_wepRegainHpScale offsetof(::er::paramdef::atk_param_st, wepRegainHpScale)
+#define ERD_OFFSET_ATK_PARAM_ST_atkRegainHp offsetof(::er::paramdef::atk_param_st, atkRegainHp)
+#define ERD_OFFSET_ATK_PARAM_ST_regainableTimeScale offsetof(::er::paramdef::atk_param_st, regainableTimeScale)
+#define ERD_OFFSET_ATK_PARAM_ST_regainableHpRateScale offsetof(::er::paramdef::atk_param_st, regainableHpRateScale)
+#define ERD_OFFSET_ATK_PARAM_ST_regainableSlotId offsetof(::er::paramdef::atk_param_st, regainableSlotId)
+#define ERD_OFFSET_ATK_PARAM_ST_spAttributeVariationValue offsetof(::er::paramdef::atk_param_st, spAttributeVariationValue)
+#define ERD_OFFSET_ATK_PARAM_ST_parryForwardOffset offsetof(::er::paramdef::atk_param_st, parryForwardOffset)
+#define ERD_OFFSET_ATK_PARAM_ST_atkSuperArmorCorrection offsetof(::er::paramdef::atk_param_st, atkSuperArmorCorrection)
+#define ERD_OFFSET_ATK_PARAM_ST_defSfxMaterialVariationValue offsetof(::er::paramdef::atk_param_st, defSfxMaterialVariationValue)
+#define ERD_OFFSET_ATK_PARAM_ST_pad4 offsetof(::er::paramdef::atk_param_st, pad4)
+#define ERD_OFFSET_ATK_PARAM_ST_finalDamageRateId offsetof(::er::paramdef::atk_param_st, finalDamageRateId)
+#define ERD_OFFSET_ATK_PARAM_ST_subCategory3 offsetof(::er::paramdef::atk_param_st, subCategory3)
+#define ERD_OFFSET_ATK_PARAM_ST_subCategory4 offsetof(::er::paramdef::atk_param_st, subCategory4)
+#define ERD_OFFSET_ATK_PARAM_ST_pad7 offsetof(::er::paramdef::atk_param_st, pad7)

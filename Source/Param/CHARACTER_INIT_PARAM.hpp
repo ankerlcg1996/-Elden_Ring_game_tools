@@ -1,0 +1,236 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/CHARACTER_INIT_PARAM.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_CHARACTER_INIT_PARAM_FIELDS(X) \\
+    X(baseRec_mp, offsetof(::er::paramdef::character_init_param, baseRec_mp)) \\
+    X(baseRec_sp, offsetof(::er::paramdef::character_init_param, baseRec_sp)) \\
+    X(red_Falldam, offsetof(::er::paramdef::character_init_param, red_Falldam)) \\
+    X(soul, offsetof(::er::paramdef::character_init_param, soul)) \\
+    X(equip_Wep_Right, offsetof(::er::paramdef::character_init_param, equip_Wep_Right)) \\
+    X(equip_Subwep_Right, offsetof(::er::paramdef::character_init_param, equip_Subwep_Right)) \\
+    X(equip_Wep_Left, offsetof(::er::paramdef::character_init_param, equip_Wep_Left)) \\
+    X(equip_Subwep_Left, offsetof(::er::paramdef::character_init_param, equip_Subwep_Left)) \\
+    X(equip_Helm, offsetof(::er::paramdef::character_init_param, equip_Helm)) \\
+    X(equip_Armer, offsetof(::er::paramdef::character_init_param, equip_Armer)) \\
+    X(equip_Gaunt, offsetof(::er::paramdef::character_init_param, equip_Gaunt)) \\
+    X(equip_Leg, offsetof(::er::paramdef::character_init_param, equip_Leg)) \\
+    X(equip_Arrow, offsetof(::er::paramdef::character_init_param, equip_Arrow)) \\
+    X(equip_Bolt, offsetof(::er::paramdef::character_init_param, equip_Bolt)) \\
+    X(equip_SubArrow, offsetof(::er::paramdef::character_init_param, equip_SubArrow)) \\
+    X(equip_SubBolt, offsetof(::er::paramdef::character_init_param, equip_SubBolt)) \\
+    X(equip_Accessory01, offsetof(::er::paramdef::character_init_param, equip_Accessory01)) \\
+    X(equip_Accessory02, offsetof(::er::paramdef::character_init_param, equip_Accessory02)) \\
+    X(equip_Accessory03, offsetof(::er::paramdef::character_init_param, equip_Accessory03)) \\
+    X(equip_Accessory04, offsetof(::er::paramdef::character_init_param, equip_Accessory04)) \\
+    X(unknown_0x50, offsetof(::er::paramdef::character_init_param, unknown_0x50)) \\
+    X(unknown_0x51, offsetof(::er::paramdef::character_init_param, unknown_0x51)) \\
+    X(pad8, offsetof(::er::paramdef::character_init_param, pad8)) \\
+    X(elixir_material00, offsetof(::er::paramdef::character_init_param, elixir_material00)) \\
+    X(elixir_material01, offsetof(::er::paramdef::character_init_param, elixir_material01)) \\
+    X(elixir_material02, offsetof(::er::paramdef::character_init_param, elixir_material02)) \\
+    X(equip_Spell_01, offsetof(::er::paramdef::character_init_param, equip_Spell_01)) \\
+    X(equip_Spell_02, offsetof(::er::paramdef::character_init_param, equip_Spell_02)) \\
+    X(equip_Spell_03, offsetof(::er::paramdef::character_init_param, equip_Spell_03)) \\
+    X(equip_Spell_04, offsetof(::er::paramdef::character_init_param, equip_Spell_04)) \\
+    X(equip_Spell_05, offsetof(::er::paramdef::character_init_param, equip_Spell_05)) \\
+    X(equip_Spell_06, offsetof(::er::paramdef::character_init_param, equip_Spell_06)) \\
+    X(equip_Spell_07, offsetof(::er::paramdef::character_init_param, equip_Spell_07)) \\
+    X(item_01, offsetof(::er::paramdef::character_init_param, item_01)) \\
+    X(item_02, offsetof(::er::paramdef::character_init_param, item_02)) \\
+    X(item_03, offsetof(::er::paramdef::character_init_param, item_03)) \\
+    X(item_04, offsetof(::er::paramdef::character_init_param, item_04)) \\
+    X(item_05, offsetof(::er::paramdef::character_init_param, item_05)) \\
+    X(item_06, offsetof(::er::paramdef::character_init_param, item_06)) \\
+    X(item_07, offsetof(::er::paramdef::character_init_param, item_07)) \\
+    X(item_08, offsetof(::er::paramdef::character_init_param, item_08)) \\
+    X(item_09, offsetof(::er::paramdef::character_init_param, item_09)) \\
+    X(item_10, offsetof(::er::paramdef::character_init_param, item_10)) \\
+    X(npcPlayerFaceGenId, offsetof(::er::paramdef::character_init_param, npcPlayerFaceGenId)) \\
+    X(npcPlayerThinkId, offsetof(::er::paramdef::character_init_param, npcPlayerThinkId)) \\
+    X(baseHp, offsetof(::er::paramdef::character_init_param, baseHp)) \\
+    X(baseMp, offsetof(::er::paramdef::character_init_param, baseMp)) \\
+    X(baseSp, offsetof(::er::paramdef::character_init_param, baseSp)) \\
+    X(arrowNum, offsetof(::er::paramdef::character_init_param, arrowNum)) \\
+    X(boltNum, offsetof(::er::paramdef::character_init_param, boltNum)) \\
+    X(subArrowNum, offsetof(::er::paramdef::character_init_param, subArrowNum)) \\
+    X(subBoltNum, offsetof(::er::paramdef::character_init_param, subBoltNum)) \\
+    X(pad4, offsetof(::er::paramdef::character_init_param, pad4)) \\
+    X(soulLv, offsetof(::er::paramdef::character_init_param, soulLv)) \\
+    X(baseVit, offsetof(::er::paramdef::character_init_param, baseVit)) \\
+    X(baseWil, offsetof(::er::paramdef::character_init_param, baseWil)) \\
+    X(baseEnd, offsetof(::er::paramdef::character_init_param, baseEnd)) \\
+    X(baseStr, offsetof(::er::paramdef::character_init_param, baseStr)) \\
+    X(baseDex, offsetof(::er::paramdef::character_init_param, baseDex)) \\
+    X(baseMag, offsetof(::er::paramdef::character_init_param, baseMag)) \\
+    X(baseFai, offsetof(::er::paramdef::character_init_param, baseFai)) \\
+    X(baseLuc, offsetof(::er::paramdef::character_init_param, baseLuc)) \\
+    X(baseHeroPoint, offsetof(::er::paramdef::character_init_param, baseHeroPoint)) \\
+    X(baseDurability, offsetof(::er::paramdef::character_init_param, baseDurability)) \\
+    X(itemNum_01, offsetof(::er::paramdef::character_init_param, itemNum_01)) \\
+    X(itemNum_02, offsetof(::er::paramdef::character_init_param, itemNum_02)) \\
+    X(itemNum_03, offsetof(::er::paramdef::character_init_param, itemNum_03)) \\
+    X(itemNum_04, offsetof(::er::paramdef::character_init_param, itemNum_04)) \\
+    X(itemNum_05, offsetof(::er::paramdef::character_init_param, itemNum_05)) \\
+    X(itemNum_06, offsetof(::er::paramdef::character_init_param, itemNum_06)) \\
+    X(itemNum_07, offsetof(::er::paramdef::character_init_param, itemNum_07)) \\
+    X(itemNum_08, offsetof(::er::paramdef::character_init_param, itemNum_08)) \\
+    X(itemNum_09, offsetof(::er::paramdef::character_init_param, itemNum_09)) \\
+    X(itemNum_10, offsetof(::er::paramdef::character_init_param, itemNum_10)) \\
+    X(pad5, offsetof(::er::paramdef::character_init_param, pad5)) \\
+    X(gestureId0, offsetof(::er::paramdef::character_init_param, gestureId0)) \\
+    X(gestureId1, offsetof(::er::paramdef::character_init_param, gestureId1)) \\
+    X(gestureId2, offsetof(::er::paramdef::character_init_param, gestureId2)) \\
+    X(gestureId3, offsetof(::er::paramdef::character_init_param, gestureId3)) \\
+    X(gestureId4, offsetof(::er::paramdef::character_init_param, gestureId4)) \\
+    X(gestureId5, offsetof(::er::paramdef::character_init_param, gestureId5)) \\
+    X(gestureId6, offsetof(::er::paramdef::character_init_param, gestureId6)) \\
+    X(npcPlayerType, offsetof(::er::paramdef::character_init_param, npcPlayerType)) \\
+    X(npcPlayerDrawType, offsetof(::er::paramdef::character_init_param, npcPlayerDrawType)) \\
+    X(npcPlayerSex, offsetof(::er::paramdef::character_init_param, npcPlayerSex)) \\
+    X(pad6, offsetof(::er::paramdef::character_init_param, pad6)) \\
+    X(wepParamType_Right1, offsetof(::er::paramdef::character_init_param, wepParamType_Right1)) \\
+    X(wepParamType_Right2, offsetof(::er::paramdef::character_init_param, wepParamType_Right2)) \\
+    X(wepParamType_Right3, offsetof(::er::paramdef::character_init_param, wepParamType_Right3)) \\
+    X(wepParamType_Left1, offsetof(::er::paramdef::character_init_param, wepParamType_Left1)) \\
+    X(wepParamType_Left2, offsetof(::er::paramdef::character_init_param, wepParamType_Left2)) \\
+    X(wepParamType_Left3, offsetof(::er::paramdef::character_init_param, wepParamType_Left3)) \\
+    X(pad2, offsetof(::er::paramdef::character_init_param, pad2)) \\
+    X(equip_Subwep_Right3, offsetof(::er::paramdef::character_init_param, equip_Subwep_Right3)) \\
+    X(equip_Subwep_Left3, offsetof(::er::paramdef::character_init_param, equip_Subwep_Left3)) \\
+    X(pad3, offsetof(::er::paramdef::character_init_param, pad3)) \\
+    X(secondaryItem_01, offsetof(::er::paramdef::character_init_param, secondaryItem_01)) \\
+    X(secondaryItem_02, offsetof(::er::paramdef::character_init_param, secondaryItem_02)) \\
+    X(secondaryItem_03, offsetof(::er::paramdef::character_init_param, secondaryItem_03)) \\
+    X(secondaryItem_04, offsetof(::er::paramdef::character_init_param, secondaryItem_04)) \\
+    X(secondaryItem_05, offsetof(::er::paramdef::character_init_param, secondaryItem_05)) \\
+    X(secondaryItem_06, offsetof(::er::paramdef::character_init_param, secondaryItem_06)) \\
+    X(secondaryItemNum_01, offsetof(::er::paramdef::character_init_param, secondaryItemNum_01)) \\
+    X(secondaryItemNum_02, offsetof(::er::paramdef::character_init_param, secondaryItemNum_02)) \\
+    X(secondaryItemNum_03, offsetof(::er::paramdef::character_init_param, secondaryItemNum_03)) \\
+    X(secondaryItemNum_04, offsetof(::er::paramdef::character_init_param, secondaryItemNum_04)) \\
+    X(secondaryItemNum_05, offsetof(::er::paramdef::character_init_param, secondaryItemNum_05)) \\
+    X(secondaryItemNum_06, offsetof(::er::paramdef::character_init_param, secondaryItemNum_06)) \\
+    X(HpEstMax, offsetof(::er::paramdef::character_init_param, HpEstMax)) \\
+    X(MpEstMax, offsetof(::er::paramdef::character_init_param, MpEstMax)) \\
+    X(pad7, offsetof(::er::paramdef::character_init_param, pad7)) \\
+    X(voiceType, offsetof(::er::paramdef::character_init_param, voiceType)) \\
+    X(reserve, offsetof(::er::paramdef::character_init_param, reserve))
+
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseRec_mp offsetof(::er::paramdef::character_init_param, baseRec_mp)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseRec_sp offsetof(::er::paramdef::character_init_param, baseRec_sp)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_red_Falldam offsetof(::er::paramdef::character_init_param, red_Falldam)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_soul offsetof(::er::paramdef::character_init_param, soul)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Wep_Right offsetof(::er::paramdef::character_init_param, equip_Wep_Right)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Subwep_Right offsetof(::er::paramdef::character_init_param, equip_Subwep_Right)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Wep_Left offsetof(::er::paramdef::character_init_param, equip_Wep_Left)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Subwep_Left offsetof(::er::paramdef::character_init_param, equip_Subwep_Left)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Helm offsetof(::er::paramdef::character_init_param, equip_Helm)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Armer offsetof(::er::paramdef::character_init_param, equip_Armer)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Gaunt offsetof(::er::paramdef::character_init_param, equip_Gaunt)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Leg offsetof(::er::paramdef::character_init_param, equip_Leg)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Arrow offsetof(::er::paramdef::character_init_param, equip_Arrow)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Bolt offsetof(::er::paramdef::character_init_param, equip_Bolt)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_SubArrow offsetof(::er::paramdef::character_init_param, equip_SubArrow)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_SubBolt offsetof(::er::paramdef::character_init_param, equip_SubBolt)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Accessory01 offsetof(::er::paramdef::character_init_param, equip_Accessory01)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Accessory02 offsetof(::er::paramdef::character_init_param, equip_Accessory02)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Accessory03 offsetof(::er::paramdef::character_init_param, equip_Accessory03)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Accessory04 offsetof(::er::paramdef::character_init_param, equip_Accessory04)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_unknown_0x50 offsetof(::er::paramdef::character_init_param, unknown_0x50)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_unknown_0x51 offsetof(::er::paramdef::character_init_param, unknown_0x51)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_pad8 offsetof(::er::paramdef::character_init_param, pad8)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_elixir_material00 offsetof(::er::paramdef::character_init_param, elixir_material00)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_elixir_material01 offsetof(::er::paramdef::character_init_param, elixir_material01)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_elixir_material02 offsetof(::er::paramdef::character_init_param, elixir_material02)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Spell_01 offsetof(::er::paramdef::character_init_param, equip_Spell_01)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Spell_02 offsetof(::er::paramdef::character_init_param, equip_Spell_02)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Spell_03 offsetof(::er::paramdef::character_init_param, equip_Spell_03)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Spell_04 offsetof(::er::paramdef::character_init_param, equip_Spell_04)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Spell_05 offsetof(::er::paramdef::character_init_param, equip_Spell_05)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Spell_06 offsetof(::er::paramdef::character_init_param, equip_Spell_06)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Spell_07 offsetof(::er::paramdef::character_init_param, equip_Spell_07)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_01 offsetof(::er::paramdef::character_init_param, item_01)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_02 offsetof(::er::paramdef::character_init_param, item_02)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_03 offsetof(::er::paramdef::character_init_param, item_03)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_04 offsetof(::er::paramdef::character_init_param, item_04)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_05 offsetof(::er::paramdef::character_init_param, item_05)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_06 offsetof(::er::paramdef::character_init_param, item_06)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_07 offsetof(::er::paramdef::character_init_param, item_07)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_08 offsetof(::er::paramdef::character_init_param, item_08)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_09 offsetof(::er::paramdef::character_init_param, item_09)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_item_10 offsetof(::er::paramdef::character_init_param, item_10)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_npcPlayerFaceGenId offsetof(::er::paramdef::character_init_param, npcPlayerFaceGenId)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_npcPlayerThinkId offsetof(::er::paramdef::character_init_param, npcPlayerThinkId)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseHp offsetof(::er::paramdef::character_init_param, baseHp)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseMp offsetof(::er::paramdef::character_init_param, baseMp)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseSp offsetof(::er::paramdef::character_init_param, baseSp)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_arrowNum offsetof(::er::paramdef::character_init_param, arrowNum)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_boltNum offsetof(::er::paramdef::character_init_param, boltNum)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_subArrowNum offsetof(::er::paramdef::character_init_param, subArrowNum)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_subBoltNum offsetof(::er::paramdef::character_init_param, subBoltNum)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_pad4 offsetof(::er::paramdef::character_init_param, pad4)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_soulLv offsetof(::er::paramdef::character_init_param, soulLv)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseVit offsetof(::er::paramdef::character_init_param, baseVit)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseWil offsetof(::er::paramdef::character_init_param, baseWil)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseEnd offsetof(::er::paramdef::character_init_param, baseEnd)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseStr offsetof(::er::paramdef::character_init_param, baseStr)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseDex offsetof(::er::paramdef::character_init_param, baseDex)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseMag offsetof(::er::paramdef::character_init_param, baseMag)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseFai offsetof(::er::paramdef::character_init_param, baseFai)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseLuc offsetof(::er::paramdef::character_init_param, baseLuc)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseHeroPoint offsetof(::er::paramdef::character_init_param, baseHeroPoint)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_baseDurability offsetof(::er::paramdef::character_init_param, baseDurability)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_01 offsetof(::er::paramdef::character_init_param, itemNum_01)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_02 offsetof(::er::paramdef::character_init_param, itemNum_02)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_03 offsetof(::er::paramdef::character_init_param, itemNum_03)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_04 offsetof(::er::paramdef::character_init_param, itemNum_04)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_05 offsetof(::er::paramdef::character_init_param, itemNum_05)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_06 offsetof(::er::paramdef::character_init_param, itemNum_06)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_07 offsetof(::er::paramdef::character_init_param, itemNum_07)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_08 offsetof(::er::paramdef::character_init_param, itemNum_08)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_09 offsetof(::er::paramdef::character_init_param, itemNum_09)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_itemNum_10 offsetof(::er::paramdef::character_init_param, itemNum_10)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_pad5 offsetof(::er::paramdef::character_init_param, pad5)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_gestureId0 offsetof(::er::paramdef::character_init_param, gestureId0)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_gestureId1 offsetof(::er::paramdef::character_init_param, gestureId1)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_gestureId2 offsetof(::er::paramdef::character_init_param, gestureId2)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_gestureId3 offsetof(::er::paramdef::character_init_param, gestureId3)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_gestureId4 offsetof(::er::paramdef::character_init_param, gestureId4)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_gestureId5 offsetof(::er::paramdef::character_init_param, gestureId5)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_gestureId6 offsetof(::er::paramdef::character_init_param, gestureId6)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_npcPlayerType offsetof(::er::paramdef::character_init_param, npcPlayerType)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_npcPlayerDrawType offsetof(::er::paramdef::character_init_param, npcPlayerDrawType)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_npcPlayerSex offsetof(::er::paramdef::character_init_param, npcPlayerSex)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_pad6 offsetof(::er::paramdef::character_init_param, pad6)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_wepParamType_Right1 offsetof(::er::paramdef::character_init_param, wepParamType_Right1)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_wepParamType_Right2 offsetof(::er::paramdef::character_init_param, wepParamType_Right2)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_wepParamType_Right3 offsetof(::er::paramdef::character_init_param, wepParamType_Right3)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_wepParamType_Left1 offsetof(::er::paramdef::character_init_param, wepParamType_Left1)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_wepParamType_Left2 offsetof(::er::paramdef::character_init_param, wepParamType_Left2)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_wepParamType_Left3 offsetof(::er::paramdef::character_init_param, wepParamType_Left3)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_pad2 offsetof(::er::paramdef::character_init_param, pad2)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Subwep_Right3 offsetof(::er::paramdef::character_init_param, equip_Subwep_Right3)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_equip_Subwep_Left3 offsetof(::er::paramdef::character_init_param, equip_Subwep_Left3)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_pad3 offsetof(::er::paramdef::character_init_param, pad3)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItem_01 offsetof(::er::paramdef::character_init_param, secondaryItem_01)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItem_02 offsetof(::er::paramdef::character_init_param, secondaryItem_02)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItem_03 offsetof(::er::paramdef::character_init_param, secondaryItem_03)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItem_04 offsetof(::er::paramdef::character_init_param, secondaryItem_04)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItem_05 offsetof(::er::paramdef::character_init_param, secondaryItem_05)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItem_06 offsetof(::er::paramdef::character_init_param, secondaryItem_06)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItemNum_01 offsetof(::er::paramdef::character_init_param, secondaryItemNum_01)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItemNum_02 offsetof(::er::paramdef::character_init_param, secondaryItemNum_02)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItemNum_03 offsetof(::er::paramdef::character_init_param, secondaryItemNum_03)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItemNum_04 offsetof(::er::paramdef::character_init_param, secondaryItemNum_04)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItemNum_05 offsetof(::er::paramdef::character_init_param, secondaryItemNum_05)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_secondaryItemNum_06 offsetof(::er::paramdef::character_init_param, secondaryItemNum_06)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_HpEstMax offsetof(::er::paramdef::character_init_param, HpEstMax)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_MpEstMax offsetof(::er::paramdef::character_init_param, MpEstMax)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_pad7 offsetof(::er::paramdef::character_init_param, pad7)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_voiceType offsetof(::er::paramdef::character_init_param, voiceType)
+#define ERD_OFFSET_CHARACTER_INIT_PARAM_reserve offsetof(::er::paramdef::character_init_param, reserve)

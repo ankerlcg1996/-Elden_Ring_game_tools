@@ -1,0 +1,647 @@
+﻿<windows:TopmostWindow x:Class="TarnishedTool.Views.Windows.ParamEditorWindow"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:converters="clr-namespace:TarnishedTool.Converters"
+                       xmlns:controls="clr-namespace:TarnishedTool.Controls"
+                       xmlns:windows="clr-namespace:TarnishedTool.Views.Windows"
+                       xmlns:behaviors="clr-namespace:TarnishedTool.Behaviors"
+                       mc:Ignorable="d"
+                       Style="{StaticResource DefaultWindowStyle}"
+                       WindowStyle="None"
+                       AllowsTransparency="True"
+                       MinHeight="640" MinWidth="1155"
+                       Height="700" Width="1600"
+                       ResizeMode="CanResize"
+                       behaviors:WindowResizeBehavior.EnableCustomResize="True">
+
+
+    <windows:TopmostWindow.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <converters:ParamEntryToDisplayTextConverter x:Key="ParamEntryToDisplayTextConverter" />
+        <converters:BoolToShowHideConverter x:Key="BoolToShowHideConverter" />
+        <converters:BoolToGridLengthConverter x:Key="BoolToGridLengthConverter" />
+        
+
+        <Style x:Key="EnumMenuItemStyle" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+            <Setter Property="Header" Value="{Binding DisplayText}" />
+            <Setter Property="Padding" Value="20,6" />
+            <Setter Property="Tag" Value="{Binding Value}" />
+
+            <EventSetter Event="Click" Handler="EnumMenuItem_Click" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="MenuItem">
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}"
+                                MinWidth="150">
+                            <ContentPresenter ContentSource="Header" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="True">
+                                <Setter TargetName="Border"
+                                        Property="Background"
+                                        Value="{StaticResource AccentBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </windows:TopmostWindow.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <controls:TitleBarWithMaximize Title="Param Editor" />
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="147" MinWidth="147" /> <!-- Param Categories-->
+                <ColumnDefinition Width="*" MinWidth="420" /> <!-- Rows View -->
+                <ColumnDefinition Width="5" /> <!-- Splitter Column -->
+                <ColumnDefinition Width="1.05*" MinWidth="563" /> <!-- Fields View-->
+            </Grid.ColumnDefinitions>
+
+            <!-- Param Categories-->
+            <Grid Grid.Column="0" Margin="0,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+
+                    <Button
+                        Content="Back"
+                        Margin="0,0,10,5"
+                        Command="{Binding NavigateBackCommand}"
+                        IsEnabled="{Binding CanGoBack}">
+                    </Button>
+                    <Button
+                        Content="Forward"
+                        Margin="0,0,0,5"
+                        Command="{Binding NavigateForwardCommand}"
+                        IsEnabled="{Binding CanGoForward}">
+                    </Button>
+
+                </StackPanel>
+
+
+                <TextBlock Grid.Row="1" Text="Params" Margin="0,0,0,5" />
+
+                <ListBox Grid.Row="2"
+                         ItemsSource="{Binding ParamEntries.Groups}"
+                         SelectedItem="{Binding ParamEntries.SelectedGroup}"
+                         BorderThickness="1"
+                         BorderBrush="#333">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border x:Name="Border"
+                                                Background="Transparent"
+                                                Padding="8,4">
+                                            <ContentPresenter />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background"
+                                                        Value="{StaticResource AccentBrush}" />
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background"
+                                                        Value="{StaticResource HoverBrush}" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+            </Grid>
+
+            <!-- Rows View -->
+            <Grid Grid.Column="1" Margin="0,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBox
+                            Text="{Binding ParamEntries.SearchText, UpdateSourceTrigger=PropertyChanged}"
+                            Height="25"
+                            Width="250"
+                            Margin="20,0,0,5">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="3" />
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Template>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border x:Name="border"
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="3">
+                                        <Grid>
+                                            <ScrollViewer x:Name="PART_ContentHost"
+                                                          Focusable="false"
+                                                          HorizontalScrollBarVisibility="Hidden"
+                                                          VerticalScrollBarVisibility="Hidden"
+                                                          VerticalAlignment="Center"
+                                                          Margin="5,0,0,0" />
+                                            <TextBlock Text="Search params..."
+                                                       VerticalAlignment="Center"
+                                                       Margin="5,0,0,0"
+                                                       Foreground="Gray"
+                                                       IsHitTestVisible="False">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <MultiDataTrigger>
+                                                                <MultiDataTrigger.Conditions>
+                                                                    <Condition
+                                                                        Binding="{Binding Path=Text, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                                        Value="" />
+                                                                    <Condition
+                                                                        Binding="{Binding Path=IsKeyboardFocused, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                                        Value="False" />
+                                                                </MultiDataTrigger.Conditions>
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </MultiDataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter TargetName="border" Property="BorderBrush"
+                                                    Value="{StaticResource AccentBrush}" />
+                                            <Setter TargetName="border" Property="BorderThickness" Value="1.5" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </TextBox.Template>
+                        </TextBox>
+
+                        <CheckBox
+                            Margin="15,0,0,5"
+                            Content="Show Modified Only"
+                            IsChecked="{Binding ShowModifiedEntriesOnly}" />
+                        <CheckBox
+                            Margin="15,0,0,5"
+                            Content="Search All Params"
+                            IsChecked="{Binding IsSearchAllParamsEnabled}" />
+
+                        <Button Content="Restore All Params" Margin="15,0,0,5"
+                                Command="{Binding RestoreAllEntriesCommand}"
+                                IsEnabled="{Binding HasAnyModified}" />
+                    </WrapPanel>
+
+                </Grid>
+
+                <Expander Header="📌 Pinned" IsExpanded="True"
+                          Grid.Row="1" Margin="0,0,0,5">
+                    <ListView x:Name="PinnedListView"
+                              ItemsSource="{Binding PinnedEntries}"
+                              MaxHeight="80"
+                              BorderThickness="0">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border x:Name="Border" Background="Transparent" Padding="4,2">
+                                                <ContentPresenter />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="Border" Property="Background"
+                                                            Value="{StaticResource AccentBrush}" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="Border" Property="Background"
+                                                            Value="{StaticResource HoverBrush}" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <EventSetter Event="MouseDoubleClick" Handler="PinnedItem_MouseDoubleClick" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock
+                                    Text="{Binding Converter={StaticResource ParamEntryToDisplayTextConverter}}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Unpin" Click="UnpinMenuItem_Click"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Expander>
+
+
+                <Border Grid.Row="2" BorderThickness="1" BorderBrush="#333">
+                    <ListView x:Name="EntriesListView"
+                              ItemsSource="{Binding ParamEntries.Items}"
+                              SelectedItem="{Binding ParamEntries.SelectedItem}"
+                              SelectionChanged="EntriesListView_SelectionChanged"
+                              VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.VirtualizationMode="Recycling"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              BorderThickness="0"
+                              AlternationCount="2">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Pin"
+                                          Command="{Binding TogglePinCommand}"
+                                          CommandParameter="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType=ContextMenu}}" />
+                                <MenuItem Header="Rename Row"
+                                          Command="{Binding RenameRowCommand}"
+                                          CommandParameter="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource AncestorType=ContextMenu}}" />
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListBox.InputBindings>
+                            <KeyBinding Command="ApplicationCommands.SelectAll"
+                                        Modifiers="Ctrl"
+                                        Key="A" />
+                        </ListBox.InputBindings>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                <Setter Property="Padding" Value="8,4" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border x:Name="Border"
+                                                    Background="{TemplateBinding Background}"
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    SnapsToDevicePixels="true">
+                                                <ContentPresenter
+                                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                    Margin="{TemplateBinding Padding}"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                                    <Setter TargetName="Border" Property="Background"
+                                                            Value="Transparent" />
+                                                </Trigger>
+                                                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                                    <Setter TargetName="Border" Property="Background" Value="#1A1A1A" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="Border" Property="Background"
+                                                            Value="{StaticResource AccentBrush}" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="Border" Property="Background"
+                                                            Value="{StaticResource HoverBrush}" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Text" Value="{Binding Id}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding HasName}" Value="True">
+                                                        <Setter Property="Text">
+                                                            <Setter.Value>
+                                                                <MultiBinding StringFormat="{}{0}: {1}">
+                                                                    <Binding Path="Id" />
+                                                                    <Binding Path="DisplayName" />
+                                                                </MultiBinding>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding ParentName}"
+                                               Foreground="#ceccca"
+                                               FontStyle="Italic"
+                                               Margin="10,0,0,0"
+                                               Visibility="{Binding DataContext.ParamEntries.IsSearchActive, 
+                                           RelativeSource={RelativeSource AncestorType=Window}, 
+                                           Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Border>
+            </Grid>
+            <!-- Splitter Column -->
+            <GridSplitter Grid.Column="2"
+                          VerticalAlignment="Stretch"
+                          Width="3"
+                          Background="#333"
+                          ShowsPreview="False"
+                          HorizontalAlignment="Center"
+                          Margin="-6,0,3,0">
+            </GridSplitter>
+
+            <!-- Fields View-->
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <WrapPanel Grid.Row="0" Orientation="Horizontal">
+                    <TextBox
+                        Text="{Binding FieldSearchText, UpdateSourceTrigger=PropertyChanged}"
+                        Height="25"
+                        MinWidth="150"
+                        Width="250"
+                        MaxWidth="500"
+                        Margin="0,0,15,5">
+                        <TextBox.Template>
+                            <ControlTemplate TargetType="TextBox">
+                                <Border x:Name="border"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="3">
+                                    <Grid>
+                                        <ScrollViewer x:Name="PART_ContentHost"
+                                                      Focusable="false"
+                                                      HorizontalScrollBarVisibility="Hidden"
+                                                      VerticalScrollBarVisibility="Hidden"
+                                                      VerticalAlignment="Center"
+                                                      Margin="5,0,0,0" />
+                                        <TextBlock Text="Search fields..."
+                                                   VerticalAlignment="Center"
+                                                   Margin="5,0,0,0"
+                                                   Foreground="Gray"
+                                                   IsHitTestVisible="False">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <MultiDataTrigger>
+                                                            <MultiDataTrigger.Conditions>
+                                                                <Condition
+                                                                    Binding="{Binding Path=Text, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                                    Value="" />
+                                                                <Condition
+                                                                    Binding="{Binding Path=IsKeyboardFocused, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                                    Value="False" />
+                                                            </MultiDataTrigger.Conditions>
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </MultiDataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush"
+                                                Value="{StaticResource AccentBrush}" />
+                                        <Setter TargetName="border" Property="BorderThickness" Value="1.5" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </TextBox.Template>
+                    </TextBox>
+                    <!-- Restore Vanilla Values button-->
+                    <Button Content="Restore vanilla values"
+                            Margin="0,0,10,5"
+                            IsEnabled="{Binding IsSelectedEntryModified}"
+                            Command="{Binding RestoreSelectedEntryCommand}" />
+                    <Button
+                        Margin="0,0,10,5"
+                        Width="115"
+                        Content="{Binding ShowVanillaValues, Converter={StaticResource BoolToShowHideConverter}}"
+                        Command="{Binding ToggleVanillaValuesCommand}" />
+                    <Button Content="Switch View"
+                            Margin="0,0,10,5"
+                            Command="{Binding CycleParamFieldDisplayModeCommand}"
+                            ToolTip="Cycle field name display mode" />
+
+                    <CheckBox
+                        x:Name="AlwaysOnTopCheckBox"
+                        Content="Always on Top"
+                        VerticalAlignment="Center"
+                        Margin="0,0,0,5"
+                        Checked="AlwaysOnTopCheckBox_Checked"
+                        Unchecked="AlwaysOnTopCheckBox_Unchecked" />
+                </WrapPanel>
+
+                <!-- Column Headers -->
+                <Grid Grid.Row="1" Margin="0,0,17,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" MinWidth="150" />
+                        <ColumnDefinition Width="130" MinWidth="130" />
+                        <ColumnDefinition
+                            Width="{Binding ShowVanillaValues, Converter={StaticResource BoolToGridLengthConverter}}" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Name" FontWeight="SemiBold" Padding="8,4" />
+                    <TextBlock Grid.Column="1" Text="Current Value" FontWeight="SemiBold" Padding="8,4" />
+                    <TextBlock Grid.Column="2"
+                               Text="Vanilla Value"
+                               FontWeight="SemiBold"
+                               Padding="8,4"
+                               HorizontalAlignment="Center"
+                               Visibility="{Binding ShowVanillaValues, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                </Grid>
+
+                <!-- Data Rows -->
+                <Border Grid.Row="2" BorderThickness="1" BorderBrush="#333">
+                    <ListView ItemsSource="{Binding FieldsView}"
+                              VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.VirtualizationMode="Recycling"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              BorderThickness="0">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                <Setter Property="Padding" Value="8,6" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border x:Name="Border"
+                                                    Background="{TemplateBinding Background}"
+                                                    BorderBrush="#222"
+                                                    BorderThickness="0,0,0,1"
+                                                    SnapsToDevicePixels="true">
+                                                <ContentPresenter
+                                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                    Margin="{TemplateBinding Padding}"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="Border" Property="Background"
+                                                            Value="{StaticResource AccentBrush}" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!-- Fields here -->
+                                <Grid MinWidth="500">
+                                    <Grid.ColumnDefinitions>
+                                        <!-- Names -->
+                                        <ColumnDefinition Width="*" MinWidth="150" />
+                                        <!-- Current Values -->
+                                        <ColumnDefinition Width="120" MinWidth="120" />
+                                        <!-- Vanilla Values -->
+                                        <ColumnDefinition
+                                            Width="{Binding DataContext.ShowVanillaValues, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToGridLengthConverter}}" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Names Column -->
+                                    <TextBlock Grid.Column="0"
+                                               Text="{Binding FullName}"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               TextWrapping="Wrap"
+                                               TextTrimming="CharacterEllipsis"
+                                               MaxHeight="45"
+                                               Margin="0, 0, 10, 0" />
+
+                                    <!-- Current Values Column -->
+                                    <ContentControl Grid.Column="1"
+                                                    Content="{Binding}">
+                                        <ContentControl.Template>
+                                            <ControlTemplate TargetType="ContentControl">
+                                                <Border BorderThickness="3,0,0,0" Padding="5,0,5,0">
+                                                    <Border.Style>
+                                                        <Style TargetType="Border">
+                                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding IsModified}"
+                                                                             Value="True">
+                                                                    <Setter Property="BorderBrush" Value="#DCDCAA" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Border.Style>
+                                                    <ContentPresenter HorizontalAlignment="Stretch" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </ContentControl.Template>
+                                        <ContentControl.Style>
+                                            <Style TargetType="ContentControl">
+                                                <Setter Property="ContentTemplate">
+                                                    <Setter.Value>
+                                                        <!-- Current Value Text Box -->
+                                                        <DataTemplate>
+                                                            <TextBox MaxHeight="45"
+                                                                     behaviors:TextBoxBehavior.CommitOnEnter="True"
+                                                                     Text="{Binding ValueText, UpdateSourceTrigger=LostFocus}">
+                                                                <TextBox.Style>
+                                                                    <Style TargetType="TextBox"
+                                                                           BasedOn="{StaticResource {x:Type TextBox}}">
+                                                                        <Style.Triggers>
+                                                                            <DataTrigger
+                                                                                Binding="{Binding HasEnum}"
+                                                                                Value="True">
+                                                                                <Setter Property="ContextMenu">
+                                                                                    <Setter.Value>
+                                                                                        <ContextMenu Height="360"
+                                                                                            ItemsSource="{Binding EnumValues}">
+                                                                                            <ContextMenu.ItemContainerStyle>
+                                                                                                <StaticResource
+                                                                                                    ResourceKey="EnumMenuItemStyle" />
+                                                                                            </ContextMenu.ItemContainerStyle>
+                                                                                        </ContextMenu>
+                                                                                    </Setter.Value>
+                                                                                </Setter>
+                                                                            </DataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </TextBox.Style>
+                                                            </TextBox>
+                                                        </DataTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsBitfield}" Value="True">
+                                                        <Setter Property="ContentTemplate">
+                                                            <Setter.Value>
+                                                                <DataTemplate>
+                                                                    <CheckBox IsChecked="{Binding Value}"
+                                                                              Background="#2D2D2D"
+                                                                              HorizontalAlignment="Center" />
+                                                                </DataTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ContentControl.Style>
+                                    </ContentControl>
+                                    <!-- Vanilla Values Column -->
+                                    <TextBlock Grid.Column="2"
+                                               Text="{Binding VanillaValueText}"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="#888"
+                                               MaxHeight="45"
+                                               Padding="8,0,0,0"
+                                               Visibility="{Binding DataContext.ShowVanillaValues, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</windows:TopmostWindow>

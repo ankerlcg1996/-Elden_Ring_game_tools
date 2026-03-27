@@ -1,0 +1,222 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/ASSET_GEOMETORY_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_ASSET_GEOMETORY_PARAM_ST_FIELDS(X) \\
+    X(soundBankId, offsetof(::er::paramdef::asset_geometory_param_st, soundBankId)) \\
+    X(soundBreakSEId, offsetof(::er::paramdef::asset_geometory_param_st, soundBreakSEId)) \\
+    X(refDrawParamId, offsetof(::er::paramdef::asset_geometory_param_st, refDrawParamId)) \\
+    X(hitCreateType, offsetof(::er::paramdef::asset_geometory_param_st, hitCreateType)) \\
+    X(behaviorType, offsetof(::er::paramdef::asset_geometory_param_st, behaviorType)) \\
+    X(collisionType, offsetof(::er::paramdef::asset_geometory_param_st, collisionType)) \\
+    X(rainBlockingType, offsetof(::er::paramdef::asset_geometory_param_st, rainBlockingType)) \\
+    X(hp, offsetof(::er::paramdef::asset_geometory_param_st, hp)) \\
+    X(defense, offsetof(::er::paramdef::asset_geometory_param_st, defense)) \\
+    X(breakStopTime, offsetof(::er::paramdef::asset_geometory_param_st, breakStopTime)) \\
+    X(breakSfxId, offsetof(::er::paramdef::asset_geometory_param_st, breakSfxId)) \\
+    X(breakSfxCpId, offsetof(::er::paramdef::asset_geometory_param_st, breakSfxCpId)) \\
+    X(breakLandingSfxId, offsetof(::er::paramdef::asset_geometory_param_st, breakLandingSfxId)) \\
+    X(breakBulletBehaviorId, offsetof(::er::paramdef::asset_geometory_param_st, breakBulletBehaviorId)) \\
+    X(breakBulletCpId, offsetof(::er::paramdef::asset_geometory_param_st, breakBulletCpId)) \\
+    X(FragmentInvisibleWaitTime, offsetof(::er::paramdef::asset_geometory_param_st, FragmentInvisibleWaitTime)) \\
+    X(FragmentInvisibleTime, offsetof(::er::paramdef::asset_geometory_param_st, FragmentInvisibleTime)) \\
+    X(BreakAiSoundID, offsetof(::er::paramdef::asset_geometory_param_st, BreakAiSoundID)) \\
+    X(breakItemLotType, offsetof(::er::paramdef::asset_geometory_param_st, breakItemLotType)) \\
+    X(animBreakIdMax, offsetof(::er::paramdef::asset_geometory_param_st, animBreakIdMax)) \\
+    X(breakBulletAttributeDamageType, offsetof(::er::paramdef::asset_geometory_param_st, breakBulletAttributeDamageType)) \\
+    X(navimeshFlag, offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlag)) \\
+    X(burnBulletInterval, offsetof(::er::paramdef::asset_geometory_param_st, burnBulletInterval)) \\
+    X(clothUpdateDist, offsetof(::er::paramdef::asset_geometory_param_st, clothUpdateDist)) \\
+    X(lifeTime_forRuntimeCreate, offsetof(::er::paramdef::asset_geometory_param_st, lifeTime_forRuntimeCreate)) \\
+    X(contactSeId, offsetof(::er::paramdef::asset_geometory_param_st, contactSeId)) \\
+    X(repickAnimIdOffset, offsetof(::er::paramdef::asset_geometory_param_st, repickAnimIdOffset)) \\
+    X(windEffectRate_0, offsetof(::er::paramdef::asset_geometory_param_st, windEffectRate_0)) \\
+    X(windEffectRate_1, offsetof(::er::paramdef::asset_geometory_param_st, windEffectRate_1)) \\
+    X(windEffectType_0, offsetof(::er::paramdef::asset_geometory_param_st, windEffectType_0)) \\
+    X(windEffectType_1, offsetof(::er::paramdef::asset_geometory_param_st, windEffectType_1)) \\
+    X(overrideMaterialId, offsetof(::er::paramdef::asset_geometory_param_st, overrideMaterialId)) \\
+    X(autoCreateOffsetHeight, offsetof(::er::paramdef::asset_geometory_param_st, autoCreateOffsetHeight)) \\
+    X(burnTime, offsetof(::er::paramdef::asset_geometory_param_st, burnTime)) \\
+    X(burnBraekRate, offsetof(::er::paramdef::asset_geometory_param_st, burnBraekRate)) \\
+    X(burnSfxId, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId)) \\
+    X(burnSfxId_1, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId_1)) \\
+    X(burnSfxId_2, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId_2)) \\
+    X(burnSfxId_3, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId_3)) \\
+    X(burnSfxDelayTimeMin, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin)) \\
+    X(burnSfxDelayTimeMin_1, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin_1)) \\
+    X(burnSfxDelayTimeMin_2, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin_2)) \\
+    X(burnSfxDelayTimeMin_3, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin_3)) \\
+    X(burnSfxDelayTimeMax, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax)) \\
+    X(burnSfxDelayTimeMax_1, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax_1)) \\
+    X(burnSfxDelayTimeMax_2, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax_2)) \\
+    X(burnSfxDelayTimeMax_3, offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax_3)) \\
+    X(burnBulletBehaviorId, offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId)) \\
+    X(burnBulletBehaviorId_1, offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId_1)) \\
+    X(burnBulletBehaviorId_2, offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId_2)) \\
+    X(burnBulletBehaviorId_3, offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId_3)) \\
+    X(burnBulletDelayTime, offsetof(::er::paramdef::asset_geometory_param_st, burnBulletDelayTime)) \\
+    X(paintDecalTargetTextureSize, offsetof(::er::paramdef::asset_geometory_param_st, paintDecalTargetTextureSize)) \\
+    X(navimeshFlag_after, offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlag_after)) \\
+    X(camNearBehaviorType, offsetof(::er::paramdef::asset_geometory_param_st, camNearBehaviorType)) \\
+    X(breakItemLotParamId, offsetof(::er::paramdef::asset_geometory_param_st, breakItemLotParamId)) \\
+    X(pickUpActionButtonParamId, offsetof(::er::paramdef::asset_geometory_param_st, pickUpActionButtonParamId)) \\
+    X(pickUpItemLotParamId, offsetof(::er::paramdef::asset_geometory_param_st, pickUpItemLotParamId)) \\
+    X(autoDrawGroupBackFaceCheck, offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupBackFaceCheck)) \\
+    X(autoDrawGroupDepthWrite, offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupDepthWrite)) \\
+    X(autoDrawGroupShadowTest, offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupShadowTest)) \\
+    X(debug_isHeightCheckEnable, offsetof(::er::paramdef::asset_geometory_param_st, debug_isHeightCheckEnable)) \\
+    X(hitCarverCancelAreaFlag, offsetof(::er::paramdef::asset_geometory_param_st, hitCarverCancelAreaFlag)) \\
+    X(assetNavimeshNoCombine, offsetof(::er::paramdef::asset_geometory_param_st, assetNavimeshNoCombine)) \\
+    X(navimeshFlagApply, offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlagApply)) \\
+    X(navimeshFlagApply_after, offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlagApply_after)) \\
+    X(autoDrawGroupPassPixelNum, offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupPassPixelNum)) \\
+    X(pickUpReplacementEventFlag, offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementEventFlag)) \\
+    X(pickUpReplacementAnimIdOffset, offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementAnimIdOffset)) \\
+    X(pickUpReplacementActionButtonParamId, offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementActionButtonParamId)) \\
+    X(pickUpReplacementItemLotParamId, offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementItemLotParamId)) \\
+    X(slidingBulletHitType, offsetof(::er::paramdef::asset_geometory_param_st, slidingBulletHitType)) \\
+    X(isBushesForDamage, offsetof(::er::paramdef::asset_geometory_param_st, isBushesForDamage)) \\
+    X(penetrationBulletType, offsetof(::er::paramdef::asset_geometory_param_st, penetrationBulletType)) \\
+    X(Reserve_3, offsetof(::er::paramdef::asset_geometory_param_st, Reserve_3)) \\
+    X(Reserve_4, offsetof(::er::paramdef::asset_geometory_param_st, Reserve_4)) \\
+    X(soundBreakSECpId, offsetof(::er::paramdef::asset_geometory_param_st, soundBreakSECpId)) \\
+    X(debug_HeightCheckCapacityMin, offsetof(::er::paramdef::asset_geometory_param_st, debug_HeightCheckCapacityMin)) \\
+    X(debug_HeightCheckCapacityMax, offsetof(::er::paramdef::asset_geometory_param_st, debug_HeightCheckCapacityMax)) \\
+    X(repickActionButtonParamId, offsetof(::er::paramdef::asset_geometory_param_st, repickActionButtonParamId)) \\
+    X(repickItemLotParamId, offsetof(::er::paramdef::asset_geometory_param_st, repickItemLotParamId)) \\
+    X(repickReplacementAnimIdOffset, offsetof(::er::paramdef::asset_geometory_param_st, repickReplacementAnimIdOffset)) \\
+    X(repickReplacementActionButtonParamId, offsetof(::er::paramdef::asset_geometory_param_st, repickReplacementActionButtonParamId)) \\
+    X(repickReplacementItemLotParamId, offsetof(::er::paramdef::asset_geometory_param_st, repickReplacementItemLotParamId)) \\
+    X(noGenerateCarver, offsetof(::er::paramdef::asset_geometory_param_st, noGenerateCarver)) \\
+    X(noHitHugeAfterBreak, offsetof(::er::paramdef::asset_geometory_param_st, noHitHugeAfterBreak)) \\
+    X(generateMultiForbiddenRegion, offsetof(::er::paramdef::asset_geometory_param_st, generateMultiForbiddenRegion)) \\
+    X(residentSeId0, offsetof(::er::paramdef::asset_geometory_param_st, residentSeId0)) \\
+    X(residentSeId1, offsetof(::er::paramdef::asset_geometory_param_st, residentSeId1)) \\
+    X(residentSeId2, offsetof(::er::paramdef::asset_geometory_param_st, residentSeId2)) \\
+    X(residentSeId3, offsetof(::er::paramdef::asset_geometory_param_st, residentSeId3)) \\
+    X(residentSeDmypolyId0, offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId0)) \\
+    X(residentSeDmypolyId1, offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId1)) \\
+    X(residentSeDmypolyId2, offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId2)) \\
+    X(residentSeDmypolyId3, offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId3)) \\
+    X(excludeActivateRatio_Xboxone_Grid, offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_Xboxone_Grid)) \\
+    X(excludeActivateRatio_Xboxone_Legacy, offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_Xboxone_Legacy)) \\
+    X(excludeActivateRatio_PS4_Grid, offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_PS4_Grid)) \\
+    X(excludeActivateRatio_PS4_Legacy, offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_PS4_Legacy)) \\
+    X(unknown_0x120, offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x120)) \\
+    X(unknown_0x121, offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x121)) \\
+    X(unknown_0x122, offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x122)) \\
+    X(unknown_0x123, offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x123)) \\
+    X(unknown_0x124, offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x124)) \\
+    X(unknown_0x125, offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x125)) \\
+    X(Reserve_0, offsetof(::er::paramdef::asset_geometory_param_st, Reserve_0))
+
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_soundBankId offsetof(::er::paramdef::asset_geometory_param_st, soundBankId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_soundBreakSEId offsetof(::er::paramdef::asset_geometory_param_st, soundBreakSEId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_refDrawParamId offsetof(::er::paramdef::asset_geometory_param_st, refDrawParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_hitCreateType offsetof(::er::paramdef::asset_geometory_param_st, hitCreateType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_behaviorType offsetof(::er::paramdef::asset_geometory_param_st, behaviorType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_collisionType offsetof(::er::paramdef::asset_geometory_param_st, collisionType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_rainBlockingType offsetof(::er::paramdef::asset_geometory_param_st, rainBlockingType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_hp offsetof(::er::paramdef::asset_geometory_param_st, hp)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_defense offsetof(::er::paramdef::asset_geometory_param_st, defense)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakStopTime offsetof(::er::paramdef::asset_geometory_param_st, breakStopTime)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakSfxId offsetof(::er::paramdef::asset_geometory_param_st, breakSfxId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakSfxCpId offsetof(::er::paramdef::asset_geometory_param_st, breakSfxCpId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakLandingSfxId offsetof(::er::paramdef::asset_geometory_param_st, breakLandingSfxId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakBulletBehaviorId offsetof(::er::paramdef::asset_geometory_param_st, breakBulletBehaviorId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakBulletCpId offsetof(::er::paramdef::asset_geometory_param_st, breakBulletCpId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_FragmentInvisibleWaitTime offsetof(::er::paramdef::asset_geometory_param_st, FragmentInvisibleWaitTime)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_FragmentInvisibleTime offsetof(::er::paramdef::asset_geometory_param_st, FragmentInvisibleTime)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_BreakAiSoundID offsetof(::er::paramdef::asset_geometory_param_st, BreakAiSoundID)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakItemLotType offsetof(::er::paramdef::asset_geometory_param_st, breakItemLotType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_animBreakIdMax offsetof(::er::paramdef::asset_geometory_param_st, animBreakIdMax)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakBulletAttributeDamageType offsetof(::er::paramdef::asset_geometory_param_st, breakBulletAttributeDamageType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_navimeshFlag offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlag)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnBulletInterval offsetof(::er::paramdef::asset_geometory_param_st, burnBulletInterval)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_clothUpdateDist offsetof(::er::paramdef::asset_geometory_param_st, clothUpdateDist)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_lifeTime_forRuntimeCreate offsetof(::er::paramdef::asset_geometory_param_st, lifeTime_forRuntimeCreate)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_contactSeId offsetof(::er::paramdef::asset_geometory_param_st, contactSeId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_repickAnimIdOffset offsetof(::er::paramdef::asset_geometory_param_st, repickAnimIdOffset)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_windEffectRate_0 offsetof(::er::paramdef::asset_geometory_param_st, windEffectRate_0)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_windEffectRate_1 offsetof(::er::paramdef::asset_geometory_param_st, windEffectRate_1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_windEffectType_0 offsetof(::er::paramdef::asset_geometory_param_st, windEffectType_0)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_windEffectType_1 offsetof(::er::paramdef::asset_geometory_param_st, windEffectType_1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_overrideMaterialId offsetof(::er::paramdef::asset_geometory_param_st, overrideMaterialId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_autoCreateOffsetHeight offsetof(::er::paramdef::asset_geometory_param_st, autoCreateOffsetHeight)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnTime offsetof(::er::paramdef::asset_geometory_param_st, burnTime)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnBraekRate offsetof(::er::paramdef::asset_geometory_param_st, burnBraekRate)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxId offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxId_1 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId_1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxId_2 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId_2)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxId_3 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxId_3)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMin offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMin_1 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin_1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMin_2 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin_2)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMin_3 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMin_3)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMax offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMax_1 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax_1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMax_2 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax_2)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnSfxDelayTimeMax_3 offsetof(::er::paramdef::asset_geometory_param_st, burnSfxDelayTimeMax_3)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnBulletBehaviorId offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnBulletBehaviorId_1 offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId_1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnBulletBehaviorId_2 offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId_2)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnBulletBehaviorId_3 offsetof(::er::paramdef::asset_geometory_param_st, burnBulletBehaviorId_3)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_burnBulletDelayTime offsetof(::er::paramdef::asset_geometory_param_st, burnBulletDelayTime)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_paintDecalTargetTextureSize offsetof(::er::paramdef::asset_geometory_param_st, paintDecalTargetTextureSize)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_navimeshFlag_after offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlag_after)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_camNearBehaviorType offsetof(::er::paramdef::asset_geometory_param_st, camNearBehaviorType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_breakItemLotParamId offsetof(::er::paramdef::asset_geometory_param_st, breakItemLotParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_pickUpActionButtonParamId offsetof(::er::paramdef::asset_geometory_param_st, pickUpActionButtonParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_pickUpItemLotParamId offsetof(::er::paramdef::asset_geometory_param_st, pickUpItemLotParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_autoDrawGroupBackFaceCheck offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupBackFaceCheck)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_autoDrawGroupDepthWrite offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupDepthWrite)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_autoDrawGroupShadowTest offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupShadowTest)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_debug_isHeightCheckEnable offsetof(::er::paramdef::asset_geometory_param_st, debug_isHeightCheckEnable)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_hitCarverCancelAreaFlag offsetof(::er::paramdef::asset_geometory_param_st, hitCarverCancelAreaFlag)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_assetNavimeshNoCombine offsetof(::er::paramdef::asset_geometory_param_st, assetNavimeshNoCombine)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_navimeshFlagApply offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlagApply)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_navimeshFlagApply_after offsetof(::er::paramdef::asset_geometory_param_st, navimeshFlagApply_after)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_autoDrawGroupPassPixelNum offsetof(::er::paramdef::asset_geometory_param_st, autoDrawGroupPassPixelNum)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_pickUpReplacementEventFlag offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementEventFlag)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_pickUpReplacementAnimIdOffset offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementAnimIdOffset)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_pickUpReplacementActionButtonParamId offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementActionButtonParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_pickUpReplacementItemLotParamId offsetof(::er::paramdef::asset_geometory_param_st, pickUpReplacementItemLotParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_slidingBulletHitType offsetof(::er::paramdef::asset_geometory_param_st, slidingBulletHitType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_isBushesForDamage offsetof(::er::paramdef::asset_geometory_param_st, isBushesForDamage)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_penetrationBulletType offsetof(::er::paramdef::asset_geometory_param_st, penetrationBulletType)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_Reserve_3 offsetof(::er::paramdef::asset_geometory_param_st, Reserve_3)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_Reserve_4 offsetof(::er::paramdef::asset_geometory_param_st, Reserve_4)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_soundBreakSECpId offsetof(::er::paramdef::asset_geometory_param_st, soundBreakSECpId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_debug_HeightCheckCapacityMin offsetof(::er::paramdef::asset_geometory_param_st, debug_HeightCheckCapacityMin)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_debug_HeightCheckCapacityMax offsetof(::er::paramdef::asset_geometory_param_st, debug_HeightCheckCapacityMax)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_repickActionButtonParamId offsetof(::er::paramdef::asset_geometory_param_st, repickActionButtonParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_repickItemLotParamId offsetof(::er::paramdef::asset_geometory_param_st, repickItemLotParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_repickReplacementAnimIdOffset offsetof(::er::paramdef::asset_geometory_param_st, repickReplacementAnimIdOffset)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_repickReplacementActionButtonParamId offsetof(::er::paramdef::asset_geometory_param_st, repickReplacementActionButtonParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_repickReplacementItemLotParamId offsetof(::er::paramdef::asset_geometory_param_st, repickReplacementItemLotParamId)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_noGenerateCarver offsetof(::er::paramdef::asset_geometory_param_st, noGenerateCarver)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_noHitHugeAfterBreak offsetof(::er::paramdef::asset_geometory_param_st, noHitHugeAfterBreak)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_generateMultiForbiddenRegion offsetof(::er::paramdef::asset_geometory_param_st, generateMultiForbiddenRegion)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeId0 offsetof(::er::paramdef::asset_geometory_param_st, residentSeId0)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeId1 offsetof(::er::paramdef::asset_geometory_param_st, residentSeId1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeId2 offsetof(::er::paramdef::asset_geometory_param_st, residentSeId2)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeId3 offsetof(::er::paramdef::asset_geometory_param_st, residentSeId3)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeDmypolyId0 offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId0)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeDmypolyId1 offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId1)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeDmypolyId2 offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId2)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_residentSeDmypolyId3 offsetof(::er::paramdef::asset_geometory_param_st, residentSeDmypolyId3)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_excludeActivateRatio_Xboxone_Grid offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_Xboxone_Grid)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_excludeActivateRatio_Xboxone_Legacy offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_Xboxone_Legacy)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_excludeActivateRatio_PS4_Grid offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_PS4_Grid)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_excludeActivateRatio_PS4_Legacy offsetof(::er::paramdef::asset_geometory_param_st, excludeActivateRatio_PS4_Legacy)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_unknown_0x120 offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x120)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_unknown_0x121 offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x121)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_unknown_0x122 offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x122)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_unknown_0x123 offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x123)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_unknown_0x124 offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x124)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_unknown_0x125 offsetof(::er::paramdef::asset_geometory_param_st, unknown_0x125)
+#define ERD_OFFSET_ASSET_GEOMETORY_PARAM_ST_Reserve_0 offsetof(::er::paramdef::asset_geometory_param_st, Reserve_0)

@@ -1,0 +1,51 @@
+﻿// 
+
+using System;
+using System.Numerics;
+using TarnishedTool.Models;
+
+namespace TarnishedTool.Interfaces;
+
+public interface ITargetService
+{
+    void ToggleTargetHook(bool isEnabled);
+    nint GetTargetChrIns();
+    void SetHp(int hp);
+    int GetCurrentHp();
+    int GetMaxHp();
+    float GetCurrentPoise();
+    float GetMaxPoise();
+    float GetPoiseTimer();
+    Vector3 GetLocalCoords();
+    float GetSpeed();
+    void SetSpeed(float speed);
+    void ToggleTargetAi(bool isDisableTargetAiEnabled);
+    bool IsAiDisabled();
+    void ToggleNoAttack(bool isNoAttackEnabled);
+    bool IsNoAttackEnabled();
+    void ToggleNoMove(bool isNoMoveEnabled);
+    bool IsNoMoveEnabled(); 
+    void ForceAct(int forceAct);
+    int GetLastAct();
+    int GetForceAct();
+    void ToggleRepeatAct(bool isRepeatActEnabled);
+    bool IsTargetRepeating();
+    int GetCurrentAnimation();
+    void ToggleTargetingView(bool isTargetingViewEnabled);
+    bool IsTargetViewEnabled();
+    void ToggleTargetNoDamage(bool isNoDamageEnabled);
+    bool IsNoDamageEnabled();
+    void ToggleNoStagger(bool isEnabled);
+    void KillAllBesidesTarget();
+    void ToggleDisableAllExceptTarget(bool isEnabled);
+    int GetNpcThinkParamId();
+    ResistanceData GetAllResistances();
+    bool[] GetImmunities();
+    float[] GetDefenses();
+    float GetDist();
+    uint GetEntityId();
+    int GetNpcChrId();
+    uint GetNpcParamId();
+    void ToggleNoHeal(bool isNoHealEnabled);
+    nint GetAiThinkPtr();
+}

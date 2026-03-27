@@ -1,0 +1,660 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/GAME_SYSTEM_COMMON_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_GAME_SYSTEM_COMMON_PARAM_ST_FIELDS(X) \\
+    X(baseToughnessRecoverTime, offsetof(::er::paramdef::game_system_common_param_st, baseToughnessRecoverTime)) \\
+    X(chrEventTrun_byLeft90, offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byLeft90)) \\
+    X(chrEventTrun_byRight90, offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byRight90)) \\
+    X(chrEventTrun_byLeft180, offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byLeft180)) \\
+    X(chrEventTrun_byRight180, offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byRight180)) \\
+    X(chrEventTrun_90TurnStartAngle, offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_90TurnStartAngle)) \\
+    X(chrEventTrun_180TurnStartAngle, offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_180TurnStartAngle)) \\
+    X(stealthAtkDamageRate, offsetof(::er::paramdef::game_system_common_param_st, stealthAtkDamageRate)) \\
+    X(flickDamageCutRateSuccessGurad, offsetof(::er::paramdef::game_system_common_param_st, flickDamageCutRateSuccessGurad)) \\
+    X(npcTalkAnimBeginDiffAngle, offsetof(::er::paramdef::game_system_common_param_st, npcTalkAnimBeginDiffAngle)) \\
+    X(npcTalkAnimEndDiffAngle, offsetof(::er::paramdef::game_system_common_param_st, npcTalkAnimEndDiffAngle)) \\
+    X(sleepCollectorItemActionButtonParamId, offsetof(::er::paramdef::game_system_common_param_st, sleepCollectorItemActionButtonParamId)) \\
+    X(allowUseBuddyItem_sfxInterval, offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxInterval)) \\
+    X(allowUseBuddyItem_sfxDmyPolyId, offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxDmyPolyId)) \\
+    X(allowUseBuddyItem_sfxDmyPolyId_horse, offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxDmyPolyId_horse)) \\
+    X(allowUseBuddyItem_sfxId, offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxId)) \\
+    X(onBuddySummon_inActivateRange_sfxInterval, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxInterval)) \\
+    X(onBuddySummon_inActivateRange_sfxDmyPolyId, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxDmyPolyId)) \\
+    X(onBuddySummon_inActivateRange_sfxDmyPolyId_horse, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxDmyPolyId_horse)) \\
+    X(onBuddySummon_inActivateRange_sfxId, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxId)) \\
+    X(onBuddySummon_inActivateRange_spEffectId_pc, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_spEffectId_pc)) \\
+    X(onBuddySummon_inWarnRange_spEffectId_pc, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inWarnRange_spEffectId_pc)) \\
+    X(onBuddySummon_atBuddyUnsummon_spEffectId_pc, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_atBuddyUnsummon_spEffectId_pc)) \\
+    X(onBuddySummon_inWarnRange_spEffectId_buddy, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inWarnRange_spEffectId_buddy)) \\
+    X(morningIngameHour, offsetof(::er::paramdef::game_system_common_param_st, morningIngameHour)) \\
+    X(morningIngameMinute, offsetof(::er::paramdef::game_system_common_param_st, morningIngameMinute)) \\
+    X(morningIngameSecond, offsetof(::er::paramdef::game_system_common_param_st, morningIngameSecond)) \\
+    X(noonIngameHour, offsetof(::er::paramdef::game_system_common_param_st, noonIngameHour)) \\
+    X(noonIngameMinute, offsetof(::er::paramdef::game_system_common_param_st, noonIngameMinute)) \\
+    X(noonIngameSecond, offsetof(::er::paramdef::game_system_common_param_st, noonIngameSecond)) \\
+    X(nightIngameHour, offsetof(::er::paramdef::game_system_common_param_st, nightIngameHour)) \\
+    X(nightIngameMinute, offsetof(::er::paramdef::game_system_common_param_st, nightIngameMinute)) \\
+    X(nightIngameSecond, offsetof(::er::paramdef::game_system_common_param_st, nightIngameSecond)) \\
+    X(aiSightRateStart_Morning_Hour, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Morning_Hour)) \\
+    X(aiSightRateStart_Morning_Minute, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Morning_Minute)) \\
+    X(aiSightRateStart_Noon_Hour, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Noon_Hour)) \\
+    X(aiSightRateStart_Noon_Minute, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Noon_Minute)) \\
+    X(aiSightRateStart_Evening_Hour, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Evening_Hour)) \\
+    X(aiSightRateStart_Evening_Minute, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Evening_Minute)) \\
+    X(aiSightRateStart_Night_Hour, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Night_Hour)) \\
+    X(aiSightRateStart_Night_Minute, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Night_Minute)) \\
+    X(aiSightRateStart_Midnight_Hour, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Midnight_Hour)) \\
+    X(aiSightRateStart_Midnight_Minute, offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Midnight_Minute)) \\
+    X(saLargeDamageHitSfx_Threshold, offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_Threshold)) \\
+    X(saLargeDamageHitSfx_SfxId, offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_SfxId)) \\
+    X(signCreatableDistFromSafePos, offsetof(::er::paramdef::game_system_common_param_st, signCreatableDistFromSafePos)) \\
+    X(guestResummonDist, offsetof(::er::paramdef::game_system_common_param_st, guestResummonDist)) \\
+    X(guestLeavingMessageDistMax, offsetof(::er::paramdef::game_system_common_param_st, guestLeavingMessageDistMax)) \\
+    X(guestLeavingMessageDistMin, offsetof(::er::paramdef::game_system_common_param_st, guestLeavingMessageDistMin)) \\
+    X(guestLeaveSessionDist, offsetof(::er::paramdef::game_system_common_param_st, guestLeaveSessionDist)) \\
+    X(retryPointAreaRadius, offsetof(::er::paramdef::game_system_common_param_st, retryPointAreaRadius)) \\
+    X(sleepCollectorSpEffectId, offsetof(::er::paramdef::game_system_common_param_st, sleepCollectorSpEffectId)) \\
+    X(recoverBelowMaxHpCompletionNoticeSpEffectId, offsetof(::er::paramdef::game_system_common_param_st, recoverBelowMaxHpCompletionNoticeSpEffectId)) \\
+    X(estusFlaskRecovery_AbsorptionProductionSfxId_byHp, offsetof(::er::paramdef::game_system_common_param_st, estusFlaskRecovery_AbsorptionProductionSfxId_byHp)) \\
+    X(estusFlaskRecovery_AbsorptionProductionSfxId_byMp, offsetof(::er::paramdef::game_system_common_param_st, estusFlaskRecovery_AbsorptionProductionSfxId_byMp)) \\
+    X(respawnSpecialEffectActiveCheckerSpEffectId, offsetof(::er::paramdef::game_system_common_param_st, respawnSpecialEffectActiveCheckerSpEffectId)) \\
+    X(onBuddySummon_inActivateRange_spEffectId_buddy, offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_spEffectId_buddy)) \\
+    X(estusFlaskRecovery_AddEstusTime, offsetof(::er::paramdef::game_system_common_param_st, estusFlaskRecovery_AddEstusTime)) \\
+    X(defeatMultiModeEnemyOfSoulCorrectRate_byHost, offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeEnemyOfSoulCorrectRate_byHost)) \\
+    X(defeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost, offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost)) \\
+    X(defeatMultiModeBossOfSoulCorrectRate_byHost, offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeBossOfSoulCorrectRate_byHost)) \\
+    X(defeatMultiModeBossOfSoulCorrectRate_byTeamGhost, offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeBossOfSoulCorrectRate_byTeamGhost)) \\
+    X(enemyHpGaugeScreenOffset_byUp, offsetof(::er::paramdef::game_system_common_param_st, enemyHpGaugeScreenOffset_byUp)) \\
+    X(playRegionCollectDist, offsetof(::er::paramdef::game_system_common_param_st, playRegionCollectDist)) \\
+    X(enemyDetectionSpEffect_ShootBulletDummypolyId, offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_ShootBulletDummypolyId)) \\
+    X(bigRuneGreaterDemonBreakInGoodsNum, offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemonBreakInGoodsNum)) \\
+    X(bigRuneGreaterDemonBreakInGoodsId, offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemonBreakInGoodsId)) \\
+    X(rideJumpRegionDefaultSfxId, offsetof(::er::paramdef::game_system_common_param_st, rideJumpRegionDefaultSfxId)) \\
+    X(saAttackRate_forVsRideAtk, offsetof(::er::paramdef::game_system_common_param_st, saAttackRate_forVsRideAtk)) \\
+    X(enemySpEffectIdAfterSleepCollectorItemLot, offsetof(::er::paramdef::game_system_common_param_st, enemySpEffectIdAfterSleepCollectorItemLot)) \\
+    X(afterEndingMapUid, offsetof(::er::paramdef::game_system_common_param_st, afterEndingMapUid)) \\
+    X(afterEndingReturnPointEntityId, offsetof(::er::paramdef::game_system_common_param_st, afterEndingReturnPointEntityId)) \\
+    X(enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter, offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter)) \\
+    X(enemyDetectionSpEffect_BulletId_byInvadeOrb_None, offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_BulletId_byInvadeOrb_None)) \\
+    X(tutorialFlagOnAccessDistView, offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnAccessDistView)) \\
+    X(tutorialFlagOnAccessRetryPoint, offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnAccessRetryPoint)) \\
+    X(tutorialFlagOnGetGroupReward, offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnGetGroupReward)) \\
+    X(tutorialFlagOnEnterRideJumpRegion, offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnEnterRideJumpRegion)) \\
+    X(tutorialCheckRideJumpRegionExpandRange, offsetof(::er::paramdef::game_system_common_param_st, tutorialCheckRideJumpRegionExpandRange)) \\
+    X(retryPointActivatedPcAnimId, offsetof(::er::paramdef::game_system_common_param_st, retryPointActivatedPcAnimId)) \\
+    X(retryPointActivatedDialogDelayTime, offsetof(::er::paramdef::game_system_common_param_st, retryPointActivatedDialogDelayTime)) \\
+    X(retryPointActivatedDialogTextId, offsetof(::er::paramdef::game_system_common_param_st, retryPointActivatedDialogTextId)) \\
+    X(signPuddleOpenPcAnimId, offsetof(::er::paramdef::game_system_common_param_st, signPuddleOpenPcAnimId)) \\
+    X(signPuddleOpenDialogDelayTime, offsetof(::er::paramdef::game_system_common_param_st, signPuddleOpenDialogDelayTime)) \\
+    X(activityOfDeadSpEffect_BulletId, offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadSpEffect_BulletId)) \\
+    X(activityOfDeadSpEffect_ShootBulletDummypolyId, offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadSpEffect_ShootBulletDummypolyId)) \\
+    X(activityOfDeadSpEffect_DeadFadeOutTime, offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadSpEffect_DeadFadeOutTime)) \\
+    X(ignorNetStateSyncTime_ForThrow, offsetof(::er::paramdef::game_system_common_param_st, ignorNetStateSyncTime_ForThrow)) \\
+    X(netPenaltyPointLanDisconnect, offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointLanDisconnect)) \\
+    X(netPenaltyPointProfileSignout, offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointProfileSignout)) \\
+    X(netPenaltyPointReboot, offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointReboot)) \\
+    X(netPnaltyPointSuspend, offsetof(::er::paramdef::game_system_common_param_st, netPnaltyPointSuspend)) \\
+    X(netPenaltyForgiveItemLimitTime, offsetof(::er::paramdef::game_system_common_param_st, netPenaltyForgiveItemLimitTime)) \\
+    X(netPenaltyPointThreshold, offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointThreshold)) \\
+    X(uncontrolledMoveThresholdTime, offsetof(::er::paramdef::game_system_common_param_st, uncontrolledMoveThresholdTime)) \\
+    X(enemyDetectionSpEffect_BulletId_byNpcEnemy, offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_BulletId_byNpcEnemy)) \\
+    X(activityOfDeadTargetSearchSpEffect_OnHitSpEffect, offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadTargetSearchSpEffect_OnHitSpEffect)) \\
+    X(activityOfDeadTargetSearchSpEffect_MaxLength, offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadTargetSearchSpEffect_MaxLength)) \\
+    X(sightRangeLowerPromiseRate, offsetof(::er::paramdef::game_system_common_param_st, sightRangeLowerPromiseRate)) \\
+    X(saLargeDamageHitSfx_MinDamage, offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_MinDamage)) \\
+    X(saLargeDamageHitSfx_ForceDamage, offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_ForceDamage)) \\
+    X(soloBreakInMaxPoint, offsetof(::er::paramdef::game_system_common_param_st, soloBreakInMaxPoint)) \\
+    X(npcTalkTimeOutThreshold, offsetof(::er::paramdef::game_system_common_param_st, npcTalkTimeOutThreshold)) \\
+    X(sendPlayLogIntervalTime, offsetof(::er::paramdef::game_system_common_param_st, sendPlayLogIntervalTime)) \\
+    X(item370_MaxSfxNum, offsetof(::er::paramdef::game_system_common_param_st, item370_MaxSfxNum)) \\
+    X(chrActivateDist_forLeavePC, offsetof(::er::paramdef::game_system_common_param_st, chrActivateDist_forLeavePC)) \\
+    X(summonDataCoopMatchingLevelUpperAbs, offsetof(::er::paramdef::game_system_common_param_st, summonDataCoopMatchingLevelUpperAbs)) \\
+    X(summonDataCoopMatchingLevelUpperRel, offsetof(::er::paramdef::game_system_common_param_st, summonDataCoopMatchingLevelUpperRel)) \\
+    X(summonDataCoopMatchingWepLevelMul, offsetof(::er::paramdef::game_system_common_param_st, summonDataCoopMatchingWepLevelMul)) \\
+    X(pickUpBerserkerSignSpEffectBulletId, offsetof(::er::paramdef::game_system_common_param_st, pickUpBerserkerSignSpEffectBulletId)) \\
+    X(succeedBerserkerSelfKillingEffectId, offsetof(::er::paramdef::game_system_common_param_st, succeedBerserkerSelfKillingEffectId)) \\
+    X(machingLevelWhiteSignUpperRel, offsetof(::er::paramdef::game_system_common_param_st, machingLevelWhiteSignUpperRel)) \\
+    X(machingLevelWhiteSignUpperAbs, offsetof(::er::paramdef::game_system_common_param_st, machingLevelWhiteSignUpperAbs)) \\
+    X(machingLevelRedSignUpperRel, offsetof(::er::paramdef::game_system_common_param_st, machingLevelRedSignUpperRel)) \\
+    X(machingLevelRedSignUpperAbs, offsetof(::er::paramdef::game_system_common_param_st, machingLevelRedSignUpperAbs)) \\
+    X(machingWeaponLevelUpperWhiteSign_0, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_0)) \\
+    X(machingWeaponLevelUpperWhiteSign_1, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_1)) \\
+    X(machingWeaponLevelUpperWhiteSign_2, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_2)) \\
+    X(machingWeaponLevelUpperWhiteSign_3, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_3)) \\
+    X(machingWeaponLevelUpperWhiteSign_4, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_4)) \\
+    X(machingWeaponLevelUpperWhiteSign_5, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_5)) \\
+    X(machingWeaponLevelUpperWhiteSign_6, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_6)) \\
+    X(machingWeaponLevelUpperWhiteSign_7, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_7)) \\
+    X(machingWeaponLevelUpperWhiteSign_8, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_8)) \\
+    X(machingWeaponLevelUpperWhiteSign_9, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_9)) \\
+    X(machingWeaponLevelUpperWhiteSign_10, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_10)) \\
+    X(machingWeaponLevelUpperRedSign_0, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_0)) \\
+    X(machingWeaponLevelUpperRedSign_1, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_1)) \\
+    X(machingWeaponLevelUpperRedSign_2, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_2)) \\
+    X(machingWeaponLevelUpperRedSign_3, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_3)) \\
+    X(machingWeaponLevelUpperRedSign_4, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_4)) \\
+    X(machingWeaponLevelUpperRedSign_5, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_5)) \\
+    X(machingWeaponLevelUpperRedSign_6, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_6)) \\
+    X(machingWeaponLevelUpperRedSign_7, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_7)) \\
+    X(machingWeaponLevelUpperRedSign_8, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_8)) \\
+    X(machingWeaponLevelUpperRedSign_9, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_9)) \\
+    X(machingWeaponLevelUpperRedSign_10, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_10)) \\
+    X(autoInvadePoint_generateDist, offsetof(::er::paramdef::game_system_common_param_st, autoInvadePoint_generateDist)) \\
+    X(autoInvadePoint_cancelDist, offsetof(::er::paramdef::game_system_common_param_st, autoInvadePoint_cancelDist)) \\
+    X(sendGlobalEventLogIntervalTime, offsetof(::er::paramdef::game_system_common_param_st, sendGlobalEventLogIntervalTime)) \\
+    X(addSoloBreakInPoint_White, offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_White)) \\
+    X(addSoloBreakInPoint_Black, offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_Black)) \\
+    X(addSoloBreakInPoint_ForceJoin, offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_ForceJoin)) \\
+    X(addSoloBreakInPoint_VisitorGuardian, offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_VisitorGuardian)) \\
+    X(addSoloBreakInPoint_VisitorRedHunter, offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_VisitorRedHunter)) \\
+    X(invincibleTimer_forNetPC_initSync, offsetof(::er::paramdef::game_system_common_param_st, invincibleTimer_forNetPC_initSync)) \\
+    X(invincibleTimer_forNetPC, offsetof(::er::paramdef::game_system_common_param_st, invincibleTimer_forNetPC)) \\
+    X(redHunter_HostBossAreaGetSoulRate, offsetof(::er::paramdef::game_system_common_param_st, redHunter_HostBossAreaGetSoulRate)) \\
+    X(ghostFootprintDecalParamId, offsetof(::er::paramdef::game_system_common_param_st, ghostFootprintDecalParamId)) \\
+    X(leaveAroundHostWarningTime, offsetof(::er::paramdef::game_system_common_param_st, leaveAroundHostWarningTime)) \\
+    X(hostModeCostItemId, offsetof(::er::paramdef::game_system_common_param_st, hostModeCostItemId)) \\
+    X(aIJump_DecelerateParam, offsetof(::er::paramdef::game_system_common_param_st, aIJump_DecelerateParam)) \\
+    X(buddyDisappearDelaySec, offsetof(::er::paramdef::game_system_common_param_st, buddyDisappearDelaySec)) \\
+    X(aIJump_AnimYMoveCorrectRate_onJumpOff, offsetof(::er::paramdef::game_system_common_param_st, aIJump_AnimYMoveCorrectRate_onJumpOff)) \\
+    X(stealthSystemSightRate_NotInStealthRigid_NotSightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_NotInStealthRigid_NotSightHide_StealthMode)) \\
+    X(stealthSystemSightRate_NotInStealthRigid_SightHide_NotStealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_NotInStealthRigid_SightHide_NotStealthMode)) \\
+    X(stealthSystemSightRate_NotInStealthRigid_SightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_NotInStealthRigid_SightHide_StealthMode)) \\
+    X(stealthSystemSightRate_InStealthRigid_NotSightHide_NotStealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_NotSightHide_NotStealthMode)) \\
+    X(stealthSystemSightRate_InStealthRigid_NotSightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_NotSightHide_StealthMode)) \\
+    X(stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode)) \\
+    X(stealthSystemSightRate_InStealthRigid_SightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_SightHide_StealthMode)) \\
+    X(msbEventGeomTreasureInfo_actionButtonParamId_corpse, offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_actionButtonParamId_corpse)) \\
+    X(msbEventGeomTreasureInfo_itemGetAnimId_corpse, offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_itemGetAnimId_corpse)) \\
+    X(msbEventGeomTreasureInfo_actionButtonParamId_box, offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_actionButtonParamId_box)) \\
+    X(msbEventGeomTreasureInfo_itemGetAnimId_box, offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_itemGetAnimId_box)) \\
+    X(msbEventGeomTreasureInfo_actionButtonParamId_shine, offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_actionButtonParamId_shine)) \\
+    X(msbEventGeomTreasureInfo_itemGetAnimId_shine, offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_itemGetAnimId_shine)) \\
+    X(signPuddleAssetId, offsetof(::er::paramdef::game_system_common_param_st, signPuddleAssetId)) \\
+    X(signPuddleAppearDmypolyId0, offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId0)) \\
+    X(signPuddleAppearDmypolyId1, offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId1)) \\
+    X(signPuddleAppearDmypolyId2, offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId2)) \\
+    X(signPuddleAppearDmypolyId3, offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId3)) \\
+    X(fallDamageRate_forRidePC, offsetof(::er::paramdef::game_system_common_param_st, fallDamageRate_forRidePC)) \\
+    X(fallDamageRate_forRideNPC, offsetof(::er::paramdef::game_system_common_param_st, fallDamageRate_forRideNPC)) \\
+    X(OldMonkOfYellow_CreateSignSpEffectId, offsetof(::er::paramdef::game_system_common_param_st, OldMonkOfYellow_CreateSignSpEffectId)) \\
+    X(StragglerActivateDist, offsetof(::er::paramdef::game_system_common_param_st, StragglerActivateDist)) \\
+    X(SpEffectId_EnableUseItem_StragglerActivate, offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_EnableUseItem_StragglerActivate)) \\
+    X(SpEffectId_StragglerWakeUp, offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_StragglerWakeUp)) \\
+    X(SpEffectId_StragglerTarget, offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_StragglerTarget)) \\
+    X(SpEffectId_StragglerOppose, offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_StragglerOppose)) \\
+    X(buddyWarp_TriggerTimeRayBlocked, offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_TriggerTimeRayBlocked)) \\
+    X(buddyWarp_TriggerDistToPlayer, offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_TriggerDistToPlayer)) \\
+    X(buddyWarp_ThresholdTimePathStacked, offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_ThresholdTimePathStacked)) \\
+    X(buddyWarp_ThresholdRangePathStacked, offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_ThresholdRangePathStacked)) \\
+    X(aiSightRate_morning, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_morning)) \\
+    X(aiSightRate_noonA, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_noonA)) \\
+    X(buddyPassThroughTriggerTime, offsetof(::er::paramdef::game_system_common_param_st, buddyPassThroughTriggerTime)) \\
+    X(aiSightRate_evening, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_evening)) \\
+    X(aiSightRate_night, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_night)) \\
+    X(aiSightRate_midnightA, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_midnightA)) \\
+    X(unknown_0x230, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x230)) \\
+    X(aiSightRate_sunloss_light, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_sunloss_light)) \\
+    X(aiSightRate_sunloss_dark, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_sunloss_dark)) \\
+    X(aiSightRate_sunloss_veryDark, offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_sunloss_veryDark)) \\
+    X(stealthSystemSightAngleReduceRate_NotInStealthRigid_NotSightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_NotInStealthRigid_NotSightHide_StealthMode)) \\
+    X(stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_NotStealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_NotStealthMode)) \\
+    X(stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_StealthMode)) \\
+    X(stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_NotStealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_NotStealthMode)) \\
+    X(stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_StealthMode)) \\
+    X(stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_NotStealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_NotStealthMode)) \\
+    X(stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_StealthMode, offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_StealthMode)) \\
+    X(weatherLotConditionStart_Morning_Hour, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Morning_Hour)) \\
+    X(weatherLotConditionStart_Morning_Minute, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Morning_Minute)) \\
+    X(weatherLotConditionStart_Day_Hour, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Day_Hour)) \\
+    X(weatherLotConditionStart_Day_Minute, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Day_Minute)) \\
+    X(weatherLotConditionStart_Evening_Hour, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Evening_Hour)) \\
+    X(weatherLotConditionStart_Evening_Minute, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Evening_Minute)) \\
+    X(weatherLotConditionStart_Night_Hour, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Night_Hour)) \\
+    X(weatherLotConditionStart_Night_Minute, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Night_Minute)) \\
+    X(weatherLotConditionStart_DayBreak_Hour, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_DayBreak_Hour)) \\
+    X(weatherLotConditionStart_DayBreak_Minute, offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_DayBreak_Minute)) \\
+    X(weatherLotCondition_reserved, offsetof(::er::paramdef::game_system_common_param_st, weatherLotCondition_reserved)) \\
+    X(pclightScaleChangeStart_Hour, offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeStart_Hour)) \\
+    X(pclightScaleChangeStart_Minute, offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeStart_Minute)) \\
+    X(pclightScaleChangeEnd_Hour, offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeEnd_Hour)) \\
+    X(pclightScaleChangeEnd_Minute, offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeEnd_Minute)) \\
+    X(pclightScaleByTimezone, offsetof(::er::paramdef::game_system_common_param_st, pclightScaleByTimezone)) \\
+    X(bigRuneGreaterDemon_SummonBuddySpecialEffectId_Buddy, offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemon_SummonBuddySpecialEffectId_Buddy)) \\
+    X(bigRuneGreaterDemon_SummonBuddySpecialEffectId_Pc, offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemon_SummonBuddySpecialEffectId_Pc)) \\
+    X(homeBonfireParamId, offsetof(::er::paramdef::game_system_common_param_st, homeBonfireParamId)) \\
+    X(machingWeaponLevelUpperWhiteSign_11, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_11)) \\
+    X(machingWeaponLevelUpperWhiteSign_12, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_12)) \\
+    X(machingWeaponLevelUpperWhiteSign_13, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_13)) \\
+    X(machingWeaponLevelUpperWhiteSign_14, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_14)) \\
+    X(machingWeaponLevelUpperWhiteSign_15, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_15)) \\
+    X(machingWeaponLevelUpperWhiteSign_16, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_16)) \\
+    X(machingWeaponLevelUpperWhiteSign_17, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_17)) \\
+    X(machingWeaponLevelUpperWhiteSign_18, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_18)) \\
+    X(machingWeaponLevelUpperWhiteSign_19, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_19)) \\
+    X(machingWeaponLevelUpperWhiteSign_20, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_20)) \\
+    X(machingWeaponLevelUpperWhiteSign_21, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_21)) \\
+    X(machingWeaponLevelUpperWhiteSign_22, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_22)) \\
+    X(machingWeaponLevelUpperWhiteSign_23, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_23)) \\
+    X(machingWeaponLevelUpperWhiteSign_24, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_24)) \\
+    X(machingWeaponLevelUpperWhiteSign_25, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_25)) \\
+    X(machingWeaponLevelUpperRedSign_11, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_11)) \\
+    X(machingWeaponLevelUpperRedSign_12, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_12)) \\
+    X(machingWeaponLevelUpperRedSign_13, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_13)) \\
+    X(machingWeaponLevelUpperRedSign_14, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_14)) \\
+    X(machingWeaponLevelUpperRedSign_15, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_15)) \\
+    X(machingWeaponLevelUpperRedSign_16, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_16)) \\
+    X(machingWeaponLevelUpperRedSign_17, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_17)) \\
+    X(machingWeaponLevelUpperRedSign_18, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_18)) \\
+    X(machingWeaponLevelUpperRedSign_19, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_19)) \\
+    X(machingWeaponLevelUpperRedSign_20, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_20)) \\
+    X(machingWeaponLevelUpperRedSign_21, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_21)) \\
+    X(machingWeaponLevelUpperRedSign_22, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_22)) \\
+    X(machingWeaponLevelUpperRedSign_23, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_23)) \\
+    X(machingWeaponLevelUpperRedSign_24, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_24)) \\
+    X(machingWeaponLevelUpperRedSign_25, offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_25)) \\
+    X(menuTimezoneStart_Morning_Hour, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Morning_Hour)) \\
+    X(menuTimezoneStart_Morning_Minute, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Morning_Minute)) \\
+    X(menuTimezoneStart_Day1_Hour, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day1_Hour)) \\
+    X(menuTimezoneStart_Day1_Minute, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day1_Minute)) \\
+    X(menuTimezoneStart_Day2_Hour, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day2_Hour)) \\
+    X(menuTimezoneStart_Day2_Minute, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day2_Minute)) \\
+    X(menuTimezoneStart_Evening_Hour, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Evening_Hour)) \\
+    X(menuTimezoneStart_Evening_Minute, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Evening_Minute)) \\
+    X(menuTimezoneStart_Night_Hour, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Night_Hour)) \\
+    X(menuTimezoneStart_Night_Minute, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Night_Minute)) \\
+    X(menuTimezoneStart_Midnight_Hour, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Midnight_Hour)) \\
+    X(menuTimezoneStart_Midnight_Minute, offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Midnight_Minute)) \\
+    X(remotePlayerThreatLvNotify_ThreatLv, offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_ThreatLv)) \\
+    X(remotePlayerThreatLvNotify_NotifyDist, offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_NotifyDist)) \\
+    X(remotePlayerThreatLvNotify_EndNotifyDist, offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_EndNotifyDist)) \\
+    X(worldMapPointDiscoveryExpandRange, offsetof(::er::paramdef::game_system_common_param_st, worldMapPointDiscoveryExpandRange)) \\
+    X(worldMapPointReentryExpandRange, offsetof(::er::paramdef::game_system_common_param_st, worldMapPointReentryExpandRange)) \\
+    X(remotePlayerThreatLvNotify_NotifyTime, offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_NotifyTime)) \\
+    X(breakIn_A_rebreakInGoodsNum, offsetof(::er::paramdef::game_system_common_param_st, breakIn_A_rebreakInGoodsNum)) \\
+    X(breakIn_A_rebreakInGoodsId, offsetof(::er::paramdef::game_system_common_param_st, breakIn_A_rebreakInGoodsId)) \\
+    X(rideJumpoff_SfxId, offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SfxId)) \\
+    X(rideJumpoff_SfxHeightOffset, offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SfxHeightOffset)) \\
+    X(rideJumpoff_SpEffectId, offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SpEffectId)) \\
+    X(rideJumpoff_SpEffectIdPc, offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SpEffectIdPc)) \\
+    X(unlockExchangeMenuEventFlagId, offsetof(::er::paramdef::game_system_common_param_st, unlockExchangeMenuEventFlagId)) \\
+    X(unlockMessageMenuEventFlagId, offsetof(::er::paramdef::game_system_common_param_st, unlockMessageMenuEventFlagId)) \\
+    X(breakInOnce_A_rebreakInGoodsNum, offsetof(::er::paramdef::game_system_common_param_st, breakInOnce_A_rebreakInGoodsNum)) \\
+    X(breakIn_B_rebreakInGoodsNum, offsetof(::er::paramdef::game_system_common_param_st, breakIn_B_rebreakInGoodsNum)) \\
+    X(breakInOnce_A_rebreakInGoodsId, offsetof(::er::paramdef::game_system_common_param_st, breakInOnce_A_rebreakInGoodsId)) \\
+    X(breakIn_B_rebreakInGoodsId, offsetof(::er::paramdef::game_system_common_param_st, breakIn_B_rebreakInGoodsId)) \\
+    X(actionButtonInputCancelTime, offsetof(::er::paramdef::game_system_common_param_st, actionButtonInputCancelTime)) \\
+    X(blockClearBonusDelayTime, offsetof(::er::paramdef::game_system_common_param_st, blockClearBonusDelayTime)) \\
+    X(bonfireCheckEnemyRange, offsetof(::er::paramdef::game_system_common_param_st, bonfireCheckEnemyRange)) \\
+    X(unknown_0x2f0, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2f0)) \\
+    X(unknown_0x2f4, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2f4)) \\
+    X(unknown_0x2f8, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2f8)) \\
+    X(unknown_0x2fc, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2fc)) \\
+    X(unknown_0x300, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x300)) \\
+    X(unknown_0x304, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x304)) \\
+    X(unknown_0x308, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x308)) \\
+    X(unknown_0x30c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x30c)) \\
+    X(unknown_0x310, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x310)) \\
+    X(unknown_0x314, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x314)) \\
+    X(unknown_0x318, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x318)) \\
+    X(unknown_0x31c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x31c)) \\
+    X(unknown_0x320, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x320)) \\
+    X(unknown_0x324, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x324)) \\
+    X(unknown_0x328, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x328)) \\
+    X(unknown_0x32c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x32c)) \\
+    X(unknown_0x330, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x330)) \\
+    X(unknown_0x334, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x334)) \\
+    X(unknown_0x338, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x338)) \\
+    X(unknown_0x33c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x33c)) \\
+    X(unknown_0x340, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x340)) \\
+    X(unknown_0x344, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x344)) \\
+    X(unknown_0x34c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x34c)) \\
+    X(unknown_0x350, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x350)) \\
+    X(unknown_0x354, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x354)) \\
+    X(unknown_0x358, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x358)) \\
+    X(unknown_0x35c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x35c)) \\
+    X(unknown_0x360, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x360)) \\
+    X(unknown_0x364, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x364)) \\
+    X(unknown_0x368, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x368)) \\
+    X(unknown_0x36c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x36c)) \\
+    X(unknown_0x370, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x370)) \\
+    X(unknown_0x374, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x374)) \\
+    X(unknown_0x378, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x378)) \\
+    X(unknown_0x37c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x37c)) \\
+    X(unknown_0x380, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x380)) \\
+    X(unknown_0x384, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x384)) \\
+    X(unknown_0x388, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x388)) \\
+    X(unknown_0x38c, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x38c)) \\
+    X(unknown_0x390, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x390)) \\
+    X(unknown_0x394, offsetof(::er::paramdef::game_system_common_param_st, unknown_0x394)) \\
+    X(endPad, offsetof(::er::paramdef::game_system_common_param_st, endPad))
+
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_baseToughnessRecoverTime offsetof(::er::paramdef::game_system_common_param_st, baseToughnessRecoverTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_chrEventTrun_byLeft90 offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byLeft90)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_chrEventTrun_byRight90 offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byRight90)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_chrEventTrun_byLeft180 offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byLeft180)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_chrEventTrun_byRight180 offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_byRight180)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_chrEventTrun_90TurnStartAngle offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_90TurnStartAngle)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_chrEventTrun_180TurnStartAngle offsetof(::er::paramdef::game_system_common_param_st, chrEventTrun_180TurnStartAngle)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthAtkDamageRate offsetof(::er::paramdef::game_system_common_param_st, stealthAtkDamageRate)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_flickDamageCutRateSuccessGurad offsetof(::er::paramdef::game_system_common_param_st, flickDamageCutRateSuccessGurad)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_npcTalkAnimBeginDiffAngle offsetof(::er::paramdef::game_system_common_param_st, npcTalkAnimBeginDiffAngle)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_npcTalkAnimEndDiffAngle offsetof(::er::paramdef::game_system_common_param_st, npcTalkAnimEndDiffAngle)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_sleepCollectorItemActionButtonParamId offsetof(::er::paramdef::game_system_common_param_st, sleepCollectorItemActionButtonParamId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_allowUseBuddyItem_sfxInterval offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxInterval)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_allowUseBuddyItem_sfxDmyPolyId offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxDmyPolyId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_allowUseBuddyItem_sfxDmyPolyId_horse offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxDmyPolyId_horse)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_allowUseBuddyItem_sfxId offsetof(::er::paramdef::game_system_common_param_st, allowUseBuddyItem_sfxId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inActivateRange_sfxInterval offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxInterval)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inActivateRange_sfxDmyPolyId offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxDmyPolyId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inActivateRange_sfxDmyPolyId_horse offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxDmyPolyId_horse)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inActivateRange_sfxId offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_sfxId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inActivateRange_spEffectId_pc offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_spEffectId_pc)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inWarnRange_spEffectId_pc offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inWarnRange_spEffectId_pc)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_atBuddyUnsummon_spEffectId_pc offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_atBuddyUnsummon_spEffectId_pc)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inWarnRange_spEffectId_buddy offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inWarnRange_spEffectId_buddy)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_morningIngameHour offsetof(::er::paramdef::game_system_common_param_st, morningIngameHour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_morningIngameMinute offsetof(::er::paramdef::game_system_common_param_st, morningIngameMinute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_morningIngameSecond offsetof(::er::paramdef::game_system_common_param_st, morningIngameSecond)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_noonIngameHour offsetof(::er::paramdef::game_system_common_param_st, noonIngameHour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_noonIngameMinute offsetof(::er::paramdef::game_system_common_param_st, noonIngameMinute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_noonIngameSecond offsetof(::er::paramdef::game_system_common_param_st, noonIngameSecond)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_nightIngameHour offsetof(::er::paramdef::game_system_common_param_st, nightIngameHour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_nightIngameMinute offsetof(::er::paramdef::game_system_common_param_st, nightIngameMinute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_nightIngameSecond offsetof(::er::paramdef::game_system_common_param_st, nightIngameSecond)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Morning_Hour offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Morning_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Morning_Minute offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Morning_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Noon_Hour offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Noon_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Noon_Minute offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Noon_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Evening_Hour offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Evening_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Evening_Minute offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Evening_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Night_Hour offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Night_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Night_Minute offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Night_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Midnight_Hour offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Midnight_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRateStart_Midnight_Minute offsetof(::er::paramdef::game_system_common_param_st, aiSightRateStart_Midnight_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_saLargeDamageHitSfx_Threshold offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_Threshold)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_saLargeDamageHitSfx_SfxId offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_SfxId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signCreatableDistFromSafePos offsetof(::er::paramdef::game_system_common_param_st, signCreatableDistFromSafePos)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_guestResummonDist offsetof(::er::paramdef::game_system_common_param_st, guestResummonDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_guestLeavingMessageDistMax offsetof(::er::paramdef::game_system_common_param_st, guestLeavingMessageDistMax)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_guestLeavingMessageDistMin offsetof(::er::paramdef::game_system_common_param_st, guestLeavingMessageDistMin)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_guestLeaveSessionDist offsetof(::er::paramdef::game_system_common_param_st, guestLeaveSessionDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_retryPointAreaRadius offsetof(::er::paramdef::game_system_common_param_st, retryPointAreaRadius)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_sleepCollectorSpEffectId offsetof(::er::paramdef::game_system_common_param_st, sleepCollectorSpEffectId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_recoverBelowMaxHpCompletionNoticeSpEffectId offsetof(::er::paramdef::game_system_common_param_st, recoverBelowMaxHpCompletionNoticeSpEffectId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_estusFlaskRecovery_AbsorptionProductionSfxId_byHp offsetof(::er::paramdef::game_system_common_param_st, estusFlaskRecovery_AbsorptionProductionSfxId_byHp)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_estusFlaskRecovery_AbsorptionProductionSfxId_byMp offsetof(::er::paramdef::game_system_common_param_st, estusFlaskRecovery_AbsorptionProductionSfxId_byMp)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_respawnSpecialEffectActiveCheckerSpEffectId offsetof(::er::paramdef::game_system_common_param_st, respawnSpecialEffectActiveCheckerSpEffectId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_onBuddySummon_inActivateRange_spEffectId_buddy offsetof(::er::paramdef::game_system_common_param_st, onBuddySummon_inActivateRange_spEffectId_buddy)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_estusFlaskRecovery_AddEstusTime offsetof(::er::paramdef::game_system_common_param_st, estusFlaskRecovery_AddEstusTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_defeatMultiModeEnemyOfSoulCorrectRate_byHost offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeEnemyOfSoulCorrectRate_byHost)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_defeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_defeatMultiModeBossOfSoulCorrectRate_byHost offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeBossOfSoulCorrectRate_byHost)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_defeatMultiModeBossOfSoulCorrectRate_byTeamGhost offsetof(::er::paramdef::game_system_common_param_st, defeatMultiModeBossOfSoulCorrectRate_byTeamGhost)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_enemyHpGaugeScreenOffset_byUp offsetof(::er::paramdef::game_system_common_param_st, enemyHpGaugeScreenOffset_byUp)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_playRegionCollectDist offsetof(::er::paramdef::game_system_common_param_st, playRegionCollectDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_enemyDetectionSpEffect_ShootBulletDummypolyId offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_ShootBulletDummypolyId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_bigRuneGreaterDemonBreakInGoodsNum offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemonBreakInGoodsNum)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_bigRuneGreaterDemonBreakInGoodsId offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemonBreakInGoodsId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_rideJumpRegionDefaultSfxId offsetof(::er::paramdef::game_system_common_param_st, rideJumpRegionDefaultSfxId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_saAttackRate_forVsRideAtk offsetof(::er::paramdef::game_system_common_param_st, saAttackRate_forVsRideAtk)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_enemySpEffectIdAfterSleepCollectorItemLot offsetof(::er::paramdef::game_system_common_param_st, enemySpEffectIdAfterSleepCollectorItemLot)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_afterEndingMapUid offsetof(::er::paramdef::game_system_common_param_st, afterEndingMapUid)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_afterEndingReturnPointEntityId offsetof(::er::paramdef::game_system_common_param_st, afterEndingReturnPointEntityId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_BulletId_byCoopRing_RedHunter)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_enemyDetectionSpEffect_BulletId_byInvadeOrb_None offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_BulletId_byInvadeOrb_None)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_tutorialFlagOnAccessDistView offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnAccessDistView)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_tutorialFlagOnAccessRetryPoint offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnAccessRetryPoint)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_tutorialFlagOnGetGroupReward offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnGetGroupReward)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_tutorialFlagOnEnterRideJumpRegion offsetof(::er::paramdef::game_system_common_param_st, tutorialFlagOnEnterRideJumpRegion)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_tutorialCheckRideJumpRegionExpandRange offsetof(::er::paramdef::game_system_common_param_st, tutorialCheckRideJumpRegionExpandRange)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_retryPointActivatedPcAnimId offsetof(::er::paramdef::game_system_common_param_st, retryPointActivatedPcAnimId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_retryPointActivatedDialogDelayTime offsetof(::er::paramdef::game_system_common_param_st, retryPointActivatedDialogDelayTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_retryPointActivatedDialogTextId offsetof(::er::paramdef::game_system_common_param_st, retryPointActivatedDialogTextId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signPuddleOpenPcAnimId offsetof(::er::paramdef::game_system_common_param_st, signPuddleOpenPcAnimId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signPuddleOpenDialogDelayTime offsetof(::er::paramdef::game_system_common_param_st, signPuddleOpenDialogDelayTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_activityOfDeadSpEffect_BulletId offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadSpEffect_BulletId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_activityOfDeadSpEffect_ShootBulletDummypolyId offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadSpEffect_ShootBulletDummypolyId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_activityOfDeadSpEffect_DeadFadeOutTime offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadSpEffect_DeadFadeOutTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_ignorNetStateSyncTime_ForThrow offsetof(::er::paramdef::game_system_common_param_st, ignorNetStateSyncTime_ForThrow)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_netPenaltyPointLanDisconnect offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointLanDisconnect)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_netPenaltyPointProfileSignout offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointProfileSignout)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_netPenaltyPointReboot offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointReboot)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_netPnaltyPointSuspend offsetof(::er::paramdef::game_system_common_param_st, netPnaltyPointSuspend)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_netPenaltyForgiveItemLimitTime offsetof(::er::paramdef::game_system_common_param_st, netPenaltyForgiveItemLimitTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_netPenaltyPointThreshold offsetof(::er::paramdef::game_system_common_param_st, netPenaltyPointThreshold)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_uncontrolledMoveThresholdTime offsetof(::er::paramdef::game_system_common_param_st, uncontrolledMoveThresholdTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_enemyDetectionSpEffect_BulletId_byNpcEnemy offsetof(::er::paramdef::game_system_common_param_st, enemyDetectionSpEffect_BulletId_byNpcEnemy)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_activityOfDeadTargetSearchSpEffect_OnHitSpEffect offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadTargetSearchSpEffect_OnHitSpEffect)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_activityOfDeadTargetSearchSpEffect_MaxLength offsetof(::er::paramdef::game_system_common_param_st, activityOfDeadTargetSearchSpEffect_MaxLength)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_sightRangeLowerPromiseRate offsetof(::er::paramdef::game_system_common_param_st, sightRangeLowerPromiseRate)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_saLargeDamageHitSfx_MinDamage offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_MinDamage)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_saLargeDamageHitSfx_ForceDamage offsetof(::er::paramdef::game_system_common_param_st, saLargeDamageHitSfx_ForceDamage)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_soloBreakInMaxPoint offsetof(::er::paramdef::game_system_common_param_st, soloBreakInMaxPoint)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_npcTalkTimeOutThreshold offsetof(::er::paramdef::game_system_common_param_st, npcTalkTimeOutThreshold)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_sendPlayLogIntervalTime offsetof(::er::paramdef::game_system_common_param_st, sendPlayLogIntervalTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_item370_MaxSfxNum offsetof(::er::paramdef::game_system_common_param_st, item370_MaxSfxNum)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_chrActivateDist_forLeavePC offsetof(::er::paramdef::game_system_common_param_st, chrActivateDist_forLeavePC)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_summonDataCoopMatchingLevelUpperAbs offsetof(::er::paramdef::game_system_common_param_st, summonDataCoopMatchingLevelUpperAbs)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_summonDataCoopMatchingLevelUpperRel offsetof(::er::paramdef::game_system_common_param_st, summonDataCoopMatchingLevelUpperRel)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_summonDataCoopMatchingWepLevelMul offsetof(::er::paramdef::game_system_common_param_st, summonDataCoopMatchingWepLevelMul)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_pickUpBerserkerSignSpEffectBulletId offsetof(::er::paramdef::game_system_common_param_st, pickUpBerserkerSignSpEffectBulletId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_succeedBerserkerSelfKillingEffectId offsetof(::er::paramdef::game_system_common_param_st, succeedBerserkerSelfKillingEffectId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingLevelWhiteSignUpperRel offsetof(::er::paramdef::game_system_common_param_st, machingLevelWhiteSignUpperRel)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingLevelWhiteSignUpperAbs offsetof(::er::paramdef::game_system_common_param_st, machingLevelWhiteSignUpperAbs)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingLevelRedSignUpperRel offsetof(::er::paramdef::game_system_common_param_st, machingLevelRedSignUpperRel)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingLevelRedSignUpperAbs offsetof(::er::paramdef::game_system_common_param_st, machingLevelRedSignUpperAbs)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_0 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_0)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_1 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_1)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_2 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_2)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_3 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_3)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_4 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_4)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_5 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_5)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_6 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_6)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_7 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_7)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_8 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_8)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_9 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_9)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_10 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_10)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_0 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_0)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_1 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_1)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_2 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_2)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_3 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_3)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_4 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_4)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_5 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_5)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_6 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_6)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_7 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_7)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_8 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_8)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_9 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_9)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_10 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_10)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_autoInvadePoint_generateDist offsetof(::er::paramdef::game_system_common_param_st, autoInvadePoint_generateDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_autoInvadePoint_cancelDist offsetof(::er::paramdef::game_system_common_param_st, autoInvadePoint_cancelDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_sendGlobalEventLogIntervalTime offsetof(::er::paramdef::game_system_common_param_st, sendGlobalEventLogIntervalTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_addSoloBreakInPoint_White offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_White)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_addSoloBreakInPoint_Black offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_Black)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_addSoloBreakInPoint_ForceJoin offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_ForceJoin)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_addSoloBreakInPoint_VisitorGuardian offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_VisitorGuardian)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_addSoloBreakInPoint_VisitorRedHunter offsetof(::er::paramdef::game_system_common_param_st, addSoloBreakInPoint_VisitorRedHunter)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_invincibleTimer_forNetPC_initSync offsetof(::er::paramdef::game_system_common_param_st, invincibleTimer_forNetPC_initSync)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_invincibleTimer_forNetPC offsetof(::er::paramdef::game_system_common_param_st, invincibleTimer_forNetPC)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_redHunter_HostBossAreaGetSoulRate offsetof(::er::paramdef::game_system_common_param_st, redHunter_HostBossAreaGetSoulRate)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_ghostFootprintDecalParamId offsetof(::er::paramdef::game_system_common_param_st, ghostFootprintDecalParamId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_leaveAroundHostWarningTime offsetof(::er::paramdef::game_system_common_param_st, leaveAroundHostWarningTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_hostModeCostItemId offsetof(::er::paramdef::game_system_common_param_st, hostModeCostItemId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aIJump_DecelerateParam offsetof(::er::paramdef::game_system_common_param_st, aIJump_DecelerateParam)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_buddyDisappearDelaySec offsetof(::er::paramdef::game_system_common_param_st, buddyDisappearDelaySec)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aIJump_AnimYMoveCorrectRate_onJumpOff offsetof(::er::paramdef::game_system_common_param_st, aIJump_AnimYMoveCorrectRate_onJumpOff)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightRate_NotInStealthRigid_NotSightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_NotInStealthRigid_NotSightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightRate_NotInStealthRigid_SightHide_NotStealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_NotInStealthRigid_SightHide_NotStealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightRate_NotInStealthRigid_SightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_NotInStealthRigid_SightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightRate_InStealthRigid_NotSightHide_NotStealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_NotSightHide_NotStealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightRate_InStealthRigid_NotSightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_NotSightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightRate_InStealthRigid_SightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightRate_InStealthRigid_SightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_msbEventGeomTreasureInfo_actionButtonParamId_corpse offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_actionButtonParamId_corpse)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_msbEventGeomTreasureInfo_itemGetAnimId_corpse offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_itemGetAnimId_corpse)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_msbEventGeomTreasureInfo_actionButtonParamId_box offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_actionButtonParamId_box)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_msbEventGeomTreasureInfo_itemGetAnimId_box offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_itemGetAnimId_box)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_msbEventGeomTreasureInfo_actionButtonParamId_shine offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_actionButtonParamId_shine)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_msbEventGeomTreasureInfo_itemGetAnimId_shine offsetof(::er::paramdef::game_system_common_param_st, msbEventGeomTreasureInfo_itemGetAnimId_shine)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signPuddleAssetId offsetof(::er::paramdef::game_system_common_param_st, signPuddleAssetId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signPuddleAppearDmypolyId0 offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId0)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signPuddleAppearDmypolyId1 offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId1)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signPuddleAppearDmypolyId2 offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId2)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_signPuddleAppearDmypolyId3 offsetof(::er::paramdef::game_system_common_param_st, signPuddleAppearDmypolyId3)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_fallDamageRate_forRidePC offsetof(::er::paramdef::game_system_common_param_st, fallDamageRate_forRidePC)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_fallDamageRate_forRideNPC offsetof(::er::paramdef::game_system_common_param_st, fallDamageRate_forRideNPC)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_OldMonkOfYellow_CreateSignSpEffectId offsetof(::er::paramdef::game_system_common_param_st, OldMonkOfYellow_CreateSignSpEffectId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_StragglerActivateDist offsetof(::er::paramdef::game_system_common_param_st, StragglerActivateDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_SpEffectId_EnableUseItem_StragglerActivate offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_EnableUseItem_StragglerActivate)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_SpEffectId_StragglerWakeUp offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_StragglerWakeUp)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_SpEffectId_StragglerTarget offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_StragglerTarget)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_SpEffectId_StragglerOppose offsetof(::er::paramdef::game_system_common_param_st, SpEffectId_StragglerOppose)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_buddyWarp_TriggerTimeRayBlocked offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_TriggerTimeRayBlocked)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_buddyWarp_TriggerDistToPlayer offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_TriggerDistToPlayer)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_buddyWarp_ThresholdTimePathStacked offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_ThresholdTimePathStacked)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_buddyWarp_ThresholdRangePathStacked offsetof(::er::paramdef::game_system_common_param_st, buddyWarp_ThresholdRangePathStacked)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_morning offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_morning)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_noonA offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_noonA)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_buddyPassThroughTriggerTime offsetof(::er::paramdef::game_system_common_param_st, buddyPassThroughTriggerTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_evening offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_evening)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_night offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_night)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_midnightA offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_midnightA)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x230 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x230)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_sunloss_light offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_sunloss_light)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_sunloss_dark offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_sunloss_dark)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_aiSightRate_sunloss_veryDark offsetof(::er::paramdef::game_system_common_param_st, aiSightRate_sunloss_veryDark)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightAngleReduceRate_NotInStealthRigid_NotSightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_NotInStealthRigid_NotSightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_NotStealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_NotStealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_NotInStealthRigid_SightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_NotStealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_NotStealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_NotStealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_NotStealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_StealthMode offsetof(::er::paramdef::game_system_common_param_st, stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_StealthMode)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Morning_Hour offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Morning_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Morning_Minute offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Morning_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Day_Hour offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Day_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Day_Minute offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Day_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Evening_Hour offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Evening_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Evening_Minute offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Evening_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Night_Hour offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Night_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_Night_Minute offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_Night_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_DayBreak_Hour offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_DayBreak_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotConditionStart_DayBreak_Minute offsetof(::er::paramdef::game_system_common_param_st, weatherLotConditionStart_DayBreak_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_weatherLotCondition_reserved offsetof(::er::paramdef::game_system_common_param_st, weatherLotCondition_reserved)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_pclightScaleChangeStart_Hour offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeStart_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_pclightScaleChangeStart_Minute offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeStart_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_pclightScaleChangeEnd_Hour offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeEnd_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_pclightScaleChangeEnd_Minute offsetof(::er::paramdef::game_system_common_param_st, pclightScaleChangeEnd_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_pclightScaleByTimezone offsetof(::er::paramdef::game_system_common_param_st, pclightScaleByTimezone)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_bigRuneGreaterDemon_SummonBuddySpecialEffectId_Buddy offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemon_SummonBuddySpecialEffectId_Buddy)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_bigRuneGreaterDemon_SummonBuddySpecialEffectId_Pc offsetof(::er::paramdef::game_system_common_param_st, bigRuneGreaterDemon_SummonBuddySpecialEffectId_Pc)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_homeBonfireParamId offsetof(::er::paramdef::game_system_common_param_st, homeBonfireParamId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_11 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_11)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_12 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_12)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_13 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_13)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_14 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_14)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_15 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_15)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_16 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_16)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_17 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_17)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_18 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_18)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_19 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_19)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_20 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_20)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_21 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_21)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_22 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_22)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_23 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_23)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_24 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_24)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperWhiteSign_25 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperWhiteSign_25)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_11 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_11)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_12 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_12)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_13 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_13)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_14 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_14)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_15 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_15)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_16 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_16)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_17 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_17)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_18 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_18)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_19 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_19)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_20 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_20)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_21 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_21)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_22 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_22)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_23 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_23)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_24 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_24)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_machingWeaponLevelUpperRedSign_25 offsetof(::er::paramdef::game_system_common_param_st, machingWeaponLevelUpperRedSign_25)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Morning_Hour offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Morning_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Morning_Minute offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Morning_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Day1_Hour offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day1_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Day1_Minute offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day1_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Day2_Hour offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day2_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Day2_Minute offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Day2_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Evening_Hour offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Evening_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Evening_Minute offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Evening_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Night_Hour offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Night_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Night_Minute offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Night_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Midnight_Hour offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Midnight_Hour)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_menuTimezoneStart_Midnight_Minute offsetof(::er::paramdef::game_system_common_param_st, menuTimezoneStart_Midnight_Minute)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_remotePlayerThreatLvNotify_ThreatLv offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_ThreatLv)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_remotePlayerThreatLvNotify_NotifyDist offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_NotifyDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_remotePlayerThreatLvNotify_EndNotifyDist offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_EndNotifyDist)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_worldMapPointDiscoveryExpandRange offsetof(::er::paramdef::game_system_common_param_st, worldMapPointDiscoveryExpandRange)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_worldMapPointReentryExpandRange offsetof(::er::paramdef::game_system_common_param_st, worldMapPointReentryExpandRange)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_remotePlayerThreatLvNotify_NotifyTime offsetof(::er::paramdef::game_system_common_param_st, remotePlayerThreatLvNotify_NotifyTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_breakIn_A_rebreakInGoodsNum offsetof(::er::paramdef::game_system_common_param_st, breakIn_A_rebreakInGoodsNum)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_breakIn_A_rebreakInGoodsId offsetof(::er::paramdef::game_system_common_param_st, breakIn_A_rebreakInGoodsId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_rideJumpoff_SfxId offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SfxId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_rideJumpoff_SfxHeightOffset offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SfxHeightOffset)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_rideJumpoff_SpEffectId offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SpEffectId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_rideJumpoff_SpEffectIdPc offsetof(::er::paramdef::game_system_common_param_st, rideJumpoff_SpEffectIdPc)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unlockExchangeMenuEventFlagId offsetof(::er::paramdef::game_system_common_param_st, unlockExchangeMenuEventFlagId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unlockMessageMenuEventFlagId offsetof(::er::paramdef::game_system_common_param_st, unlockMessageMenuEventFlagId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_breakInOnce_A_rebreakInGoodsNum offsetof(::er::paramdef::game_system_common_param_st, breakInOnce_A_rebreakInGoodsNum)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_breakIn_B_rebreakInGoodsNum offsetof(::er::paramdef::game_system_common_param_st, breakIn_B_rebreakInGoodsNum)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_breakInOnce_A_rebreakInGoodsId offsetof(::er::paramdef::game_system_common_param_st, breakInOnce_A_rebreakInGoodsId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_breakIn_B_rebreakInGoodsId offsetof(::er::paramdef::game_system_common_param_st, breakIn_B_rebreakInGoodsId)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_actionButtonInputCancelTime offsetof(::er::paramdef::game_system_common_param_st, actionButtonInputCancelTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_blockClearBonusDelayTime offsetof(::er::paramdef::game_system_common_param_st, blockClearBonusDelayTime)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_bonfireCheckEnemyRange offsetof(::er::paramdef::game_system_common_param_st, bonfireCheckEnemyRange)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x2f0 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2f0)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x2f4 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2f4)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x2f8 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2f8)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x2fc offsetof(::er::paramdef::game_system_common_param_st, unknown_0x2fc)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x300 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x300)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x304 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x304)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x308 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x308)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x30c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x30c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x310 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x310)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x314 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x314)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x318 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x318)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x31c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x31c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x320 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x320)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x324 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x324)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x328 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x328)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x32c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x32c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x330 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x330)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x334 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x334)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x338 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x338)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x33c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x33c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x340 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x340)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x344 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x344)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x34c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x34c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x350 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x350)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x354 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x354)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x358 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x358)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x35c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x35c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x360 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x360)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x364 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x364)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x368 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x368)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x36c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x36c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x370 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x370)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x374 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x374)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x378 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x378)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x37c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x37c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x380 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x380)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x384 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x384)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x388 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x388)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x38c offsetof(::er::paramdef::game_system_common_param_st, unknown_0x38c)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x390 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x390)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_unknown_0x394 offsetof(::er::paramdef::game_system_common_param_st, unknown_0x394)
+#define ERD_OFFSET_GAME_SYSTEM_COMMON_PARAM_ST_endPad offsetof(::er::paramdef::game_system_common_param_st, endPad)

@@ -1,0 +1,174 @@
+28	i
+3	Height
+3	WidthAndHeight
+3	ID
+3	禁用 AI
+2	OK
+2	Lua 数值
+2	Lua 计时器
+2	Lock Phase
+2	s
+2	Save &amp; Close
+2	Interrupts
+2	SpEffect Observers
+2	Target: 
+2	ID：
+2	ID: 
+2	Spawn
+2	Sleep
+2	GracePresetWindow
+2	Import
+2	设置 HP
+2	事件 ID：
+2	Rot
+2	Remember toggled speed across app restarts
+2	No Death
+2	No Hit
+2	Upgrade:
+2	Wind
+1	Set Max Level
+1	Set Custom Hp
+1	Remembers HP/Stamina when saving position
+1	Remove ID from exclude
+1	Search All Params
+1	Rename Row
+1	Scadutree
+1	Reset Enemies with Rest
+1	Rest Character
+1	Rest on Revive
+1	Restore Pos 1
+1	Save Pos 2
+1	Restore Pos 2
+1	Save Pos 1
+1	Revive All Bosses
+1	Revive All Bosses as First Encounter
+1	Revive Boss as First Encounter
+1	Rykard no Mega Attack
+1	Set RFBS on load in
+1	Rykard
+1	RFBS
+1	Rot 
+1	Set Rune Level 1
+1	Show:
+1	Show a popup reminder when starting a new game while hotkeys are still enabled
+1	This is a newly introduced stat modifier that increases the HP of bosses and enemies in the DLC.&#x0a;This modifier activates after defeating Promised Consort Radahn and going to the next game cycle.&#x0a;This modifier does not go away once it's activated and is a flat value meaning if you go to the next cycle the HP boost % remains the same.&#x0a;This modifier also does NOT affect base game bosses and enemies.
+1	This is mostly for ease of testing custom/modded weapons, please use the normal item spawn if you are not into that
+1	This will finish the quest as well as skip the invader before Metyr
+1	Thrust:
+1	Toggle Distance, Last Act and Current Animation
+1	Toggle Flags
+1	Torrent Anywhere
+1	Torrent No Death
+1	Target Controls
+1	TurnTime:
+1	Unlock All Gestures
+1	Unlock Metyr
+1	Unpin
+1	Vanilla Value
+1	Vertical movement with Ctrl/Space or L2/R2 on controller
+1	Vigor
+1	Will only stay on top of game in windowed mode
+1	Will require a reload for fia's champions to update&#x0A;if you are already in the area
+1	Unlock All Affinities
+1	ShopSelectorWindow
+1	Switch View
+1	Strength
+1	Show All
+1	Show Modified Only
+1	Regenerate 3.3% of max HP per tick
+1	Silent
+1	Slash:
+1	Sleep 
+1	Spawn loadout at start
+1	Spawn Selected Preset
+1	Strike:
+1	Spawn weapon at start
+1	Speed Modifier:
+1	SpEffectObserversOverlayWindow
+1	SpEffects
+1	SpEffectsOverlayWindow
+1	SpEffectsWindow
+1	Spirit Ash
+1	Standard:
+1	State:
+1	Spawn with Equip Param ID
+1	Regenerate 3.3% of max FP per tick
+1	 Cooldown: 
+1	Preset Graces
+1	狮舞小 Boss
+1	狮舞主 Boss
+1	输入以空格分隔的动作序列，最多 10 个。&#x0A;并非完全稳定，但多数情况下可用。&#x0A;建议绑定热键并在敌人动作收尾时触发
+1	锁定 HP
+1	通过 ID 添加或移除特殊效果
+1	通过事件 ID 读取或设置事件
+1	显示 AI 信息
+1	显示 Lua 计时器
+1	显示 Lua 数值
+1	效果 ID：
+1	新开周目时自动设为 New Game+7
+1	选择 Boss
+1	隐藏 Logo
+1	隐藏重复 ID
+1	装备 ID：
+1	设置 FPS 上限
+1	清空唯一 ID
+1	清空全部排除 ID
+1	强制释放艾尔登流星并接后续选定攻击&#x0A;并非完全稳定，但多数情况下可用&#x0A;建议绑定热键并在 Boss 动作收尾时触发
+1	 Last used: 
+1	 Special Effect ID: 
+1	 x
+1	📌 Pinned
+1	按下此处绑定热键时阻止游戏原动作。&#x0A;根据配置可能有少量延迟
+1	导出 CSV
+1	导出排除 ID
+1	自动设为 NG+7
+1	导入排除 ID
+1	复活 Boss
+1	解锁 DLC 地图
+1	解锁 DLC 全部赐福
+1	解锁 DLC 全部地下赐福
+1	禁用除目标外所有 AI
+1	排除的事件 ID
+1	强制动作：&#x0A;• 输入 0 为正常行为&#x0A;• 输入数字可重复指定动作&#x0A;• 超出可用动作范围会被忽略
+1	发现附近有多个 Boss
+1	最大 HP
+1	AI
+1	AI 信息
+1	LuaTimersOverlayWindow
+1	Madness 
+1	Modify the game params temporarily, effects last until you restart the game or revert all values to default.
+1	Must be in general area
+1	Need to be somewhere in Deeproot Depths
+1	No
+1	No Rune Arc Loss on Death
+1	LuaNumbersOverlayWindow
+1	No Rune Loss on Death
+1	No Time Pass on Death
+1	Only works with controller for now
+1	Option to disable CTRL and space for vertical movement on keyboard
+1	Param Editor
+1	Poise 
+1	Poison 
+1	Pop out Resistances
+1	No Runes from Enemies
+1	Reduced Targeting View
+1	Lock his hp if you don't want snake attacks in p2 when he gets past 50%
+1	InterruptsOverlayWindow
+1	AI窗口
+1	Bleed 
+1	Boss
+1	Boss 传送后休息
+1	Boss 复活
+1	CoolTimesOverlayWindow
+1	Deathblight 
+1	Lock Current HP, Functions similar to ERTool's Max/1HP Toggles
+1	DLC 通关标记
+1	FP 无限
+1	Frost 
+1	GoalsOverlayWindow
+1	Health: 
+1	HP Regen
+1	HP：
+1	Inject AI Script
+1	FP 回复
+1	Yes

@@ -1,0 +1,7 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+executeEzStateEvent(EzStateEvent.OpenRegularShop, {100550,100574})
+disableMemrec(memrec)
+[DISABLE]
+

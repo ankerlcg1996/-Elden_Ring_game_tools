@@ -1,0 +1,172 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/WORLD_MAP_POINT_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_WORLD_MAP_POINT_PARAM_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::world_map_point_param_st, disableParamReserve2)) \\
+    X(eventFlagId, offsetof(::er::paramdef::world_map_point_param_st, eventFlagId)) \\
+    X(distViewEventFlagId, offsetof(::er::paramdef::world_map_point_param_st, distViewEventFlagId)) \\
+    X(iconId, offsetof(::er::paramdef::world_map_point_param_st, iconId)) \\
+    X(bgmPlaceType, offsetof(::er::paramdef::world_map_point_param_st, bgmPlaceType)) \\
+    X(areaNo_forDistViewMark, offsetof(::er::paramdef::world_map_point_param_st, areaNo_forDistViewMark)) \\
+    X(gridXNo_forDistViewMark, offsetof(::er::paramdef::world_map_point_param_st, gridXNo_forDistViewMark)) \\
+    X(gridZNo_forDistViewMark, offsetof(::er::paramdef::world_map_point_param_st, gridZNo_forDistViewMark)) \\
+    X(clearedEventFlagId, offsetof(::er::paramdef::world_map_point_param_st, clearedEventFlagId)) \\
+    X(pad2, offsetof(::er::paramdef::world_map_point_param_st, pad2)) \\
+    X(distViewIconId, offsetof(::er::paramdef::world_map_point_param_st, distViewIconId)) \\
+    X(angle, offsetof(::er::paramdef::world_map_point_param_st, angle)) \\
+    X(areaNo, offsetof(::er::paramdef::world_map_point_param_st, areaNo)) \\
+    X(gridXNo, offsetof(::er::paramdef::world_map_point_param_st, gridXNo)) \\
+    X(gridZNo, offsetof(::er::paramdef::world_map_point_param_st, gridZNo)) \\
+    X(pad, offsetof(::er::paramdef::world_map_point_param_st, pad)) \\
+    X(posX, offsetof(::er::paramdef::world_map_point_param_st, posX)) \\
+    X(posY, offsetof(::er::paramdef::world_map_point_param_st, posY)) \\
+    X(posZ, offsetof(::er::paramdef::world_map_point_param_st, posZ)) \\
+    X(textId1, offsetof(::er::paramdef::world_map_point_param_st, textId1)) \\
+    X(textEnableFlagId1, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId1)) \\
+    X(textDisableFlagId1, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId1)) \\
+    X(textId2, offsetof(::er::paramdef::world_map_point_param_st, textId2)) \\
+    X(textEnableFlagId2, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId2)) \\
+    X(textDisableFlagId2, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId2)) \\
+    X(textId3, offsetof(::er::paramdef::world_map_point_param_st, textId3)) \\
+    X(textEnableFlagId3, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId3)) \\
+    X(textDisableFlagId3, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId3)) \\
+    X(textId4, offsetof(::er::paramdef::world_map_point_param_st, textId4)) \\
+    X(textEnableFlagId4, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId4)) \\
+    X(textDisableFlagId4, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId4)) \\
+    X(textId5, offsetof(::er::paramdef::world_map_point_param_st, textId5)) \\
+    X(textEnableFlagId5, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId5)) \\
+    X(textDisableFlagId5, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId5)) \\
+    X(textId6, offsetof(::er::paramdef::world_map_point_param_st, textId6)) \\
+    X(textEnableFlagId6, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId6)) \\
+    X(textDisableFlagId6, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId6)) \\
+    X(textId7, offsetof(::er::paramdef::world_map_point_param_st, textId7)) \\
+    X(textEnableFlagId7, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId7)) \\
+    X(textDisableFlagId7, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId7)) \\
+    X(textId8, offsetof(::er::paramdef::world_map_point_param_st, textId8)) \\
+    X(textEnableFlagId8, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId8)) \\
+    X(textDisableFlagId8, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId8)) \\
+    X(textType1, offsetof(::er::paramdef::world_map_point_param_st, textType1)) \\
+    X(textType2, offsetof(::er::paramdef::world_map_point_param_st, textType2)) \\
+    X(textType3, offsetof(::er::paramdef::world_map_point_param_st, textType3)) \\
+    X(textType4, offsetof(::er::paramdef::world_map_point_param_st, textType4)) \\
+    X(textType5, offsetof(::er::paramdef::world_map_point_param_st, textType5)) \\
+    X(textType6, offsetof(::er::paramdef::world_map_point_param_st, textType6)) \\
+    X(textType7, offsetof(::er::paramdef::world_map_point_param_st, textType7)) \\
+    X(textType8, offsetof(::er::paramdef::world_map_point_param_st, textType8)) \\
+    X(distViewId, offsetof(::er::paramdef::world_map_point_param_st, distViewId)) \\
+    X(posX_forDistViewMark, offsetof(::er::paramdef::world_map_point_param_st, posX_forDistViewMark)) \\
+    X(posY_forDistViewMark, offsetof(::er::paramdef::world_map_point_param_st, posY_forDistViewMark)) \\
+    X(posZ_forDistViewMark, offsetof(::er::paramdef::world_map_point_param_st, posZ_forDistViewMark)) \\
+    X(distViewId1, offsetof(::er::paramdef::world_map_point_param_st, distViewId1)) \\
+    X(distViewId2, offsetof(::er::paramdef::world_map_point_param_st, distViewId2)) \\
+    X(distViewId3, offsetof(::er::paramdef::world_map_point_param_st, distViewId3)) \\
+    X(dispMinZoomStep, offsetof(::er::paramdef::world_map_point_param_st, dispMinZoomStep)) \\
+    X(selectMinZoomStep, offsetof(::er::paramdef::world_map_point_param_st, selectMinZoomStep)) \\
+    X(entryFEType, offsetof(::er::paramdef::world_map_point_param_st, entryFEType)) \\
+    X(unknown_0xb7, offsetof(::er::paramdef::world_map_point_param_st, unknown_0xb7)) \\
+    X(unknown_0xb8, offsetof(::er::paramdef::world_map_point_param_st, unknown_0xb8)) \\
+    X(unknown_0xb9, offsetof(::er::paramdef::world_map_point_param_st, unknown_0xb9)) \\
+    X(pad4, offsetof(::er::paramdef::world_map_point_param_st, pad4)) \\
+    X(textEnableFlag2Id1, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id1)) \\
+    X(textEnableFlag2Id2, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id2)) \\
+    X(textEnableFlag2Id3, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id3)) \\
+    X(textEnableFlag2Id4, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id4)) \\
+    X(textEnableFlag2Id5, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id5)) \\
+    X(textEnableFlag2Id6, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id6)) \\
+    X(textEnableFlag2Id7, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id7)) \\
+    X(textEnableFlag2Id8, offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id8)) \\
+    X(textDisableFlag2Id1, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id1)) \\
+    X(textDisableFlag2Id2, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id2)) \\
+    X(textDisableFlag2Id3, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id3)) \\
+    X(textDisableFlag2Id4, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id4)) \\
+    X(textDisableFlag2Id5, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id5)) \\
+    X(textDisableFlag2Id6, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id6)) \\
+    X(textDisableFlag2Id7, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id7)) \\
+    X(textDisableFlag2Id8, offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id8))
+
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_disableParamReserve2 offsetof(::er::paramdef::world_map_point_param_st, disableParamReserve2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_eventFlagId offsetof(::er::paramdef::world_map_point_param_st, eventFlagId)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_distViewEventFlagId offsetof(::er::paramdef::world_map_point_param_st, distViewEventFlagId)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_iconId offsetof(::er::paramdef::world_map_point_param_st, iconId)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_bgmPlaceType offsetof(::er::paramdef::world_map_point_param_st, bgmPlaceType)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_areaNo_forDistViewMark offsetof(::er::paramdef::world_map_point_param_st, areaNo_forDistViewMark)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_gridXNo_forDistViewMark offsetof(::er::paramdef::world_map_point_param_st, gridXNo_forDistViewMark)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_gridZNo_forDistViewMark offsetof(::er::paramdef::world_map_point_param_st, gridZNo_forDistViewMark)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_clearedEventFlagId offsetof(::er::paramdef::world_map_point_param_st, clearedEventFlagId)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_pad2 offsetof(::er::paramdef::world_map_point_param_st, pad2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_distViewIconId offsetof(::er::paramdef::world_map_point_param_st, distViewIconId)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_angle offsetof(::er::paramdef::world_map_point_param_st, angle)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_areaNo offsetof(::er::paramdef::world_map_point_param_st, areaNo)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_gridXNo offsetof(::er::paramdef::world_map_point_param_st, gridXNo)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_gridZNo offsetof(::er::paramdef::world_map_point_param_st, gridZNo)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_pad offsetof(::er::paramdef::world_map_point_param_st, pad)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_posX offsetof(::er::paramdef::world_map_point_param_st, posX)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_posY offsetof(::er::paramdef::world_map_point_param_st, posY)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_posZ offsetof(::er::paramdef::world_map_point_param_st, posZ)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId1 offsetof(::er::paramdef::world_map_point_param_st, textId1)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId1 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId1)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId1 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId1)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId2 offsetof(::er::paramdef::world_map_point_param_st, textId2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId2 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId2 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId3 offsetof(::er::paramdef::world_map_point_param_st, textId3)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId3 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId3)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId3 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId3)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId4 offsetof(::er::paramdef::world_map_point_param_st, textId4)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId4 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId4)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId4 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId4)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId5 offsetof(::er::paramdef::world_map_point_param_st, textId5)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId5 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId5)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId5 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId5)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId6 offsetof(::er::paramdef::world_map_point_param_st, textId6)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId6 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId6)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId6 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId6)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId7 offsetof(::er::paramdef::world_map_point_param_st, textId7)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId7 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId7)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId7 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId7)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textId8 offsetof(::er::paramdef::world_map_point_param_st, textId8)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlagId8 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlagId8)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlagId8 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlagId8)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType1 offsetof(::er::paramdef::world_map_point_param_st, textType1)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType2 offsetof(::er::paramdef::world_map_point_param_st, textType2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType3 offsetof(::er::paramdef::world_map_point_param_st, textType3)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType4 offsetof(::er::paramdef::world_map_point_param_st, textType4)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType5 offsetof(::er::paramdef::world_map_point_param_st, textType5)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType6 offsetof(::er::paramdef::world_map_point_param_st, textType6)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType7 offsetof(::er::paramdef::world_map_point_param_st, textType7)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textType8 offsetof(::er::paramdef::world_map_point_param_st, textType8)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_distViewId offsetof(::er::paramdef::world_map_point_param_st, distViewId)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_posX_forDistViewMark offsetof(::er::paramdef::world_map_point_param_st, posX_forDistViewMark)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_posY_forDistViewMark offsetof(::er::paramdef::world_map_point_param_st, posY_forDistViewMark)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_posZ_forDistViewMark offsetof(::er::paramdef::world_map_point_param_st, posZ_forDistViewMark)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_distViewId1 offsetof(::er::paramdef::world_map_point_param_st, distViewId1)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_distViewId2 offsetof(::er::paramdef::world_map_point_param_st, distViewId2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_distViewId3 offsetof(::er::paramdef::world_map_point_param_st, distViewId3)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_dispMinZoomStep offsetof(::er::paramdef::world_map_point_param_st, dispMinZoomStep)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_selectMinZoomStep offsetof(::er::paramdef::world_map_point_param_st, selectMinZoomStep)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_entryFEType offsetof(::er::paramdef::world_map_point_param_st, entryFEType)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_unknown_0xb7 offsetof(::er::paramdef::world_map_point_param_st, unknown_0xb7)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_unknown_0xb8 offsetof(::er::paramdef::world_map_point_param_st, unknown_0xb8)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_unknown_0xb9 offsetof(::er::paramdef::world_map_point_param_st, unknown_0xb9)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_pad4 offsetof(::er::paramdef::world_map_point_param_st, pad4)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id1 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id1)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id2 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id3 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id3)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id4 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id4)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id5 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id5)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id6 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id6)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id7 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id7)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textEnableFlag2Id8 offsetof(::er::paramdef::world_map_point_param_st, textEnableFlag2Id8)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id1 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id1)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id2 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id2)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id3 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id3)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id4 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id4)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id5 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id5)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id6 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id6)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id7 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id7)
+#define ERD_OFFSET_WORLD_MAP_POINT_PARAM_ST_textDisableFlag2Id8 offsetof(::er::paramdef::world_map_point_param_st, textDisableFlag2Id8)

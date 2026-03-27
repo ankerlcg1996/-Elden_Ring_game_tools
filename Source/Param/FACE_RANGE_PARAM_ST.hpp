@@ -1,0 +1,422 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/FACE_RANGE_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_FACE_RANGE_PARAM_ST_FIELDS(X) \\
+    X(face_partsId, offsetof(::er::paramdef::face_range_param_st, face_partsId)) \\
+    X(skin_color_R, offsetof(::er::paramdef::face_range_param_st, skin_color_R)) \\
+    X(skin_color_G, offsetof(::er::paramdef::face_range_param_st, skin_color_G)) \\
+    X(skin_color_B, offsetof(::er::paramdef::face_range_param_st, skin_color_B)) \\
+    X(skin_gloss, offsetof(::er::paramdef::face_range_param_st, skin_gloss)) \\
+    X(skin_pores, offsetof(::er::paramdef::face_range_param_st, skin_pores)) \\
+    X(face_beard, offsetof(::er::paramdef::face_range_param_st, face_beard)) \\
+    X(face_aroundEye, offsetof(::er::paramdef::face_range_param_st, face_aroundEye)) \\
+    X(face_aroundEyeColor_R, offsetof(::er::paramdef::face_range_param_st, face_aroundEyeColor_R)) \\
+    X(face_aroundEyeColor_G, offsetof(::er::paramdef::face_range_param_st, face_aroundEyeColor_G)) \\
+    X(face_aroundEyeColor_B, offsetof(::er::paramdef::face_range_param_st, face_aroundEyeColor_B)) \\
+    X(face_cheek, offsetof(::er::paramdef::face_range_param_st, face_cheek)) \\
+    X(face_cheekColor_R, offsetof(::er::paramdef::face_range_param_st, face_cheekColor_R)) \\
+    X(face_cheekColor_G, offsetof(::er::paramdef::face_range_param_st, face_cheekColor_G)) \\
+    X(face_cheekColor_B, offsetof(::er::paramdef::face_range_param_st, face_cheekColor_B)) \\
+    X(face_eyeLine, offsetof(::er::paramdef::face_range_param_st, face_eyeLine)) \\
+    X(face_eyeLineColor_R, offsetof(::er::paramdef::face_range_param_st, face_eyeLineColor_R)) \\
+    X(face_eyeLineColor_G, offsetof(::er::paramdef::face_range_param_st, face_eyeLineColor_G)) \\
+    X(face_eyeLineColor_B, offsetof(::er::paramdef::face_range_param_st, face_eyeLineColor_B)) \\
+    X(face_eyeShadowDown, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDown)) \\
+    X(face_eyeShadowDownColor_R, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDownColor_R)) \\
+    X(face_eyeShadowDownColor_G, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDownColor_G)) \\
+    X(face_eyeShadowDownColor_B, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDownColor_B)) \\
+    X(face_eyeShadowUp, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUp)) \\
+    X(face_eyeShadowUpColor_R, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUpColor_R)) \\
+    X(face_eyeShadowUpColor_G, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUpColor_G)) \\
+    X(face_eyeShadowUpColor_B, offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUpColor_B)) \\
+    X(face_lip, offsetof(::er::paramdef::face_range_param_st, face_lip)) \\
+    X(face_lipColor_R, offsetof(::er::paramdef::face_range_param_st, face_lipColor_R)) \\
+    X(face_lipColor_G, offsetof(::er::paramdef::face_range_param_st, face_lipColor_G)) \\
+    X(face_lipColor_B, offsetof(::er::paramdef::face_range_param_st, face_lipColor_B)) \\
+    X(body_hair, offsetof(::er::paramdef::face_range_param_st, body_hair)) \\
+    X(body_hairColor_R, offsetof(::er::paramdef::face_range_param_st, body_hairColor_R)) \\
+    X(body_hairColor_G, offsetof(::er::paramdef::face_range_param_st, body_hairColor_G)) \\
+    X(body_hairColor_B, offsetof(::er::paramdef::face_range_param_st, body_hairColor_B)) \\
+    X(eye_partsId, offsetof(::er::paramdef::face_range_param_st, eye_partsId)) \\
+    X(eyeR_irisColor_R, offsetof(::er::paramdef::face_range_param_st, eyeR_irisColor_R)) \\
+    X(eyeR_irisColor_G, offsetof(::er::paramdef::face_range_param_st, eyeR_irisColor_G)) \\
+    X(eyeR_irisColor_B, offsetof(::er::paramdef::face_range_param_st, eyeR_irisColor_B)) \\
+    X(eyeR_irisScale, offsetof(::er::paramdef::face_range_param_st, eyeR_irisScale)) \\
+    X(eyeR_cataract, offsetof(::er::paramdef::face_range_param_st, eyeR_cataract)) \\
+    X(eyeR_cataractColor_R, offsetof(::er::paramdef::face_range_param_st, eyeR_cataractColor_R)) \\
+    X(eyeR_cataractColor_G, offsetof(::er::paramdef::face_range_param_st, eyeR_cataractColor_G)) \\
+    X(eyeR_cataractColor_B, offsetof(::er::paramdef::face_range_param_st, eyeR_cataractColor_B)) \\
+    X(eyeR_scleraColor_R, offsetof(::er::paramdef::face_range_param_st, eyeR_scleraColor_R)) \\
+    X(eyeR_scleraColor_G, offsetof(::er::paramdef::face_range_param_st, eyeR_scleraColor_G)) \\
+    X(eyeR_scleraColor_B, offsetof(::er::paramdef::face_range_param_st, eyeR_scleraColor_B)) \\
+    X(eyeR_irisDistance, offsetof(::er::paramdef::face_range_param_st, eyeR_irisDistance)) \\
+    X(eyeL_irisColor_R, offsetof(::er::paramdef::face_range_param_st, eyeL_irisColor_R)) \\
+    X(eyeL_irisColor_G, offsetof(::er::paramdef::face_range_param_st, eyeL_irisColor_G)) \\
+    X(eyeL_irisColor_B, offsetof(::er::paramdef::face_range_param_st, eyeL_irisColor_B)) \\
+    X(eyeL_irisScale, offsetof(::er::paramdef::face_range_param_st, eyeL_irisScale)) \\
+    X(eyeL_cataract, offsetof(::er::paramdef::face_range_param_st, eyeL_cataract)) \\
+    X(eyeL_cataractColor_R, offsetof(::er::paramdef::face_range_param_st, eyeL_cataractColor_R)) \\
+    X(eyeL_cataractColor_G, offsetof(::er::paramdef::face_range_param_st, eyeL_cataractColor_G)) \\
+    X(eyeL_cataractColor_B, offsetof(::er::paramdef::face_range_param_st, eyeL_cataractColor_B)) \\
+    X(eyeL_scleraColor_R, offsetof(::er::paramdef::face_range_param_st, eyeL_scleraColor_R)) \\
+    X(eyeL_scleraColor_G, offsetof(::er::paramdef::face_range_param_st, eyeL_scleraColor_G)) \\
+    X(eyeL_scleraColor_B, offsetof(::er::paramdef::face_range_param_st, eyeL_scleraColor_B)) \\
+    X(eyeL_irisDistance, offsetof(::er::paramdef::face_range_param_st, eyeL_irisDistance)) \\
+    X(hair_partsId, offsetof(::er::paramdef::face_range_param_st, hair_partsId)) \\
+    X(hair_color_R, offsetof(::er::paramdef::face_range_param_st, hair_color_R)) \\
+    X(hair_color_G, offsetof(::er::paramdef::face_range_param_st, hair_color_G)) \\
+    X(hair_color_B, offsetof(::er::paramdef::face_range_param_st, hair_color_B)) \\
+    X(hair_shininess, offsetof(::er::paramdef::face_range_param_st, hair_shininess)) \\
+    X(hair_rootBlack, offsetof(::er::paramdef::face_range_param_st, hair_rootBlack)) \\
+    X(hair_whiteDensity, offsetof(::er::paramdef::face_range_param_st, hair_whiteDensity)) \\
+    X(beard_partsId, offsetof(::er::paramdef::face_range_param_st, beard_partsId)) \\
+    X(beard_color_R, offsetof(::er::paramdef::face_range_param_st, beard_color_R)) \\
+    X(beard_color_G, offsetof(::er::paramdef::face_range_param_st, beard_color_G)) \\
+    X(beard_color_B, offsetof(::er::paramdef::face_range_param_st, beard_color_B)) \\
+    X(beard_shininess, offsetof(::er::paramdef::face_range_param_st, beard_shininess)) \\
+    X(beard_rootBlack, offsetof(::er::paramdef::face_range_param_st, beard_rootBlack)) \\
+    X(beard_whiteDensity, offsetof(::er::paramdef::face_range_param_st, beard_whiteDensity)) \\
+    X(eyebrow_partsId, offsetof(::er::paramdef::face_range_param_st, eyebrow_partsId)) \\
+    X(eyebrow_color_R, offsetof(::er::paramdef::face_range_param_st, eyebrow_color_R)) \\
+    X(eyebrow_color_G, offsetof(::er::paramdef::face_range_param_st, eyebrow_color_G)) \\
+    X(eyebrow_color_B, offsetof(::er::paramdef::face_range_param_st, eyebrow_color_B)) \\
+    X(eyebrow_shininess, offsetof(::er::paramdef::face_range_param_st, eyebrow_shininess)) \\
+    X(eyebrow_rootBlack, offsetof(::er::paramdef::face_range_param_st, eyebrow_rootBlack)) \\
+    X(eyebrow_whiteDensity, offsetof(::er::paramdef::face_range_param_st, eyebrow_whiteDensity)) \\
+    X(eyelash_partsId, offsetof(::er::paramdef::face_range_param_st, eyelash_partsId)) \\
+    X(eyelash_color_R, offsetof(::er::paramdef::face_range_param_st, eyelash_color_R)) \\
+    X(eyelash_color_G, offsetof(::er::paramdef::face_range_param_st, eyelash_color_G)) \\
+    X(eyelash_color_B, offsetof(::er::paramdef::face_range_param_st, eyelash_color_B)) \\
+    X(accessories_partsId, offsetof(::er::paramdef::face_range_param_st, accessories_partsId)) \\
+    X(accessories_color_R, offsetof(::er::paramdef::face_range_param_st, accessories_color_R)) \\
+    X(accessories_color_G, offsetof(::er::paramdef::face_range_param_st, accessories_color_G)) \\
+    X(accessories_color_B, offsetof(::er::paramdef::face_range_param_st, accessories_color_B)) \\
+    X(decal_partsId, offsetof(::er::paramdef::face_range_param_st, decal_partsId)) \\
+    X(decal_posX, offsetof(::er::paramdef::face_range_param_st, decal_posX)) \\
+    X(decal_posY, offsetof(::er::paramdef::face_range_param_st, decal_posY)) \\
+    X(decal_angle, offsetof(::er::paramdef::face_range_param_st, decal_angle)) \\
+    X(decal_scale, offsetof(::er::paramdef::face_range_param_st, decal_scale)) \\
+    X(decal_color_R, offsetof(::er::paramdef::face_range_param_st, decal_color_R)) \\
+    X(decal_color_G, offsetof(::er::paramdef::face_range_param_st, decal_color_G)) \\
+    X(decal_color_B, offsetof(::er::paramdef::face_range_param_st, decal_color_B)) \\
+    X(decal_gloss, offsetof(::er::paramdef::face_range_param_st, decal_gloss)) \\
+    X(decal_mirror, offsetof(::er::paramdef::face_range_param_st, decal_mirror)) \\
+    X(chrBodyScaleHead, offsetof(::er::paramdef::face_range_param_st, chrBodyScaleHead)) \\
+    X(chrBodyScaleBreast, offsetof(::er::paramdef::face_range_param_st, chrBodyScaleBreast)) \\
+    X(chrBodyScaleAbdomen, offsetof(::er::paramdef::face_range_param_st, chrBodyScaleAbdomen)) \\
+    X(chrBodyScaleArm, offsetof(::er::paramdef::face_range_param_st, chrBodyScaleArm)) \\
+    X(chrBodyScaleLeg, offsetof(::er::paramdef::face_range_param_st, chrBodyScaleLeg)) \\
+    X(age, offsetof(::er::paramdef::face_range_param_st, age)) \\
+    X(gender, offsetof(::er::paramdef::face_range_param_st, gender)) \\
+    X(caricatureGeometry, offsetof(::er::paramdef::face_range_param_st, caricatureGeometry)) \\
+    X(caricatureTexture, offsetof(::er::paramdef::face_range_param_st, caricatureTexture)) \\
+    X(faceGeoData00, offsetof(::er::paramdef::face_range_param_st, faceGeoData00)) \\
+    X(faceGeoData01, offsetof(::er::paramdef::face_range_param_st, faceGeoData01)) \\
+    X(faceGeoData02, offsetof(::er::paramdef::face_range_param_st, faceGeoData02)) \\
+    X(faceGeoData03, offsetof(::er::paramdef::face_range_param_st, faceGeoData03)) \\
+    X(faceGeoData04, offsetof(::er::paramdef::face_range_param_st, faceGeoData04)) \\
+    X(faceGeoData05, offsetof(::er::paramdef::face_range_param_st, faceGeoData05)) \\
+    X(faceGeoData06, offsetof(::er::paramdef::face_range_param_st, faceGeoData06)) \\
+    X(faceGeoData07, offsetof(::er::paramdef::face_range_param_st, faceGeoData07)) \\
+    X(faceGeoData08, offsetof(::er::paramdef::face_range_param_st, faceGeoData08)) \\
+    X(faceGeoData09, offsetof(::er::paramdef::face_range_param_st, faceGeoData09)) \\
+    X(faceGeoData10, offsetof(::er::paramdef::face_range_param_st, faceGeoData10)) \\
+    X(faceGeoData11, offsetof(::er::paramdef::face_range_param_st, faceGeoData11)) \\
+    X(faceGeoData12, offsetof(::er::paramdef::face_range_param_st, faceGeoData12)) \\
+    X(faceGeoData13, offsetof(::er::paramdef::face_range_param_st, faceGeoData13)) \\
+    X(faceGeoData14, offsetof(::er::paramdef::face_range_param_st, faceGeoData14)) \\
+    X(faceGeoData15, offsetof(::er::paramdef::face_range_param_st, faceGeoData15)) \\
+    X(faceGeoData16, offsetof(::er::paramdef::face_range_param_st, faceGeoData16)) \\
+    X(faceGeoData17, offsetof(::er::paramdef::face_range_param_st, faceGeoData17)) \\
+    X(faceGeoData18, offsetof(::er::paramdef::face_range_param_st, faceGeoData18)) \\
+    X(faceGeoData19, offsetof(::er::paramdef::face_range_param_st, faceGeoData19)) \\
+    X(faceGeoData20, offsetof(::er::paramdef::face_range_param_st, faceGeoData20)) \\
+    X(faceGeoData21, offsetof(::er::paramdef::face_range_param_st, faceGeoData21)) \\
+    X(faceGeoData22, offsetof(::er::paramdef::face_range_param_st, faceGeoData22)) \\
+    X(faceGeoData23, offsetof(::er::paramdef::face_range_param_st, faceGeoData23)) \\
+    X(faceGeoData24, offsetof(::er::paramdef::face_range_param_st, faceGeoData24)) \\
+    X(faceGeoData25, offsetof(::er::paramdef::face_range_param_st, faceGeoData25)) \\
+    X(faceGeoData26, offsetof(::er::paramdef::face_range_param_st, faceGeoData26)) \\
+    X(faceGeoData27, offsetof(::er::paramdef::face_range_param_st, faceGeoData27)) \\
+    X(faceGeoData28, offsetof(::er::paramdef::face_range_param_st, faceGeoData28)) \\
+    X(faceGeoData29, offsetof(::er::paramdef::face_range_param_st, faceGeoData29)) \\
+    X(faceGeoData30, offsetof(::er::paramdef::face_range_param_st, faceGeoData30)) \\
+    X(faceGeoData31, offsetof(::er::paramdef::face_range_param_st, faceGeoData31)) \\
+    X(faceGeoData32, offsetof(::er::paramdef::face_range_param_st, faceGeoData32)) \\
+    X(faceGeoData33, offsetof(::er::paramdef::face_range_param_st, faceGeoData33)) \\
+    X(faceGeoData34, offsetof(::er::paramdef::face_range_param_st, faceGeoData34)) \\
+    X(faceGeoData35, offsetof(::er::paramdef::face_range_param_st, faceGeoData35)) \\
+    X(faceGeoData36, offsetof(::er::paramdef::face_range_param_st, faceGeoData36)) \\
+    X(faceGeoData37, offsetof(::er::paramdef::face_range_param_st, faceGeoData37)) \\
+    X(faceGeoData38, offsetof(::er::paramdef::face_range_param_st, faceGeoData38)) \\
+    X(faceGeoData39, offsetof(::er::paramdef::face_range_param_st, faceGeoData39)) \\
+    X(faceGeoData40, offsetof(::er::paramdef::face_range_param_st, faceGeoData40)) \\
+    X(faceGeoData41, offsetof(::er::paramdef::face_range_param_st, faceGeoData41)) \\
+    X(faceGeoData42, offsetof(::er::paramdef::face_range_param_st, faceGeoData42)) \\
+    X(faceGeoData43, offsetof(::er::paramdef::face_range_param_st, faceGeoData43)) \\
+    X(faceGeoData44, offsetof(::er::paramdef::face_range_param_st, faceGeoData44)) \\
+    X(faceGeoData45, offsetof(::er::paramdef::face_range_param_st, faceGeoData45)) \\
+    X(faceGeoData46, offsetof(::er::paramdef::face_range_param_st, faceGeoData46)) \\
+    X(faceGeoData47, offsetof(::er::paramdef::face_range_param_st, faceGeoData47)) \\
+    X(faceGeoData48, offsetof(::er::paramdef::face_range_param_st, faceGeoData48)) \\
+    X(faceGeoData49, offsetof(::er::paramdef::face_range_param_st, faceGeoData49)) \\
+    X(faceGeoData50, offsetof(::er::paramdef::face_range_param_st, faceGeoData50)) \\
+    X(faceGeoData51, offsetof(::er::paramdef::face_range_param_st, faceGeoData51)) \\
+    X(faceGeoData52, offsetof(::er::paramdef::face_range_param_st, faceGeoData52)) \\
+    X(faceGeoData53, offsetof(::er::paramdef::face_range_param_st, faceGeoData53)) \\
+    X(faceGeoData54, offsetof(::er::paramdef::face_range_param_st, faceGeoData54)) \\
+    X(faceGeoData55, offsetof(::er::paramdef::face_range_param_st, faceGeoData55)) \\
+    X(faceGeoData56, offsetof(::er::paramdef::face_range_param_st, faceGeoData56)) \\
+    X(faceGeoData57, offsetof(::er::paramdef::face_range_param_st, faceGeoData57)) \\
+    X(faceGeoData58, offsetof(::er::paramdef::face_range_param_st, faceGeoData58)) \\
+    X(faceGeoData59, offsetof(::er::paramdef::face_range_param_st, faceGeoData59)) \\
+    X(faceGeoData60, offsetof(::er::paramdef::face_range_param_st, faceGeoData60)) \\
+    X(faceTexData00, offsetof(::er::paramdef::face_range_param_st, faceTexData00)) \\
+    X(faceTexData01, offsetof(::er::paramdef::face_range_param_st, faceTexData01)) \\
+    X(faceTexData02, offsetof(::er::paramdef::face_range_param_st, faceTexData02)) \\
+    X(faceTexData03, offsetof(::er::paramdef::face_range_param_st, faceTexData03)) \\
+    X(faceTexData04, offsetof(::er::paramdef::face_range_param_st, faceTexData04)) \\
+    X(faceTexData05, offsetof(::er::paramdef::face_range_param_st, faceTexData05)) \\
+    X(faceTexData06, offsetof(::er::paramdef::face_range_param_st, faceTexData06)) \\
+    X(faceTexData07, offsetof(::er::paramdef::face_range_param_st, faceTexData07)) \\
+    X(faceTexData08, offsetof(::er::paramdef::face_range_param_st, faceTexData08)) \\
+    X(faceTexData09, offsetof(::er::paramdef::face_range_param_st, faceTexData09)) \\
+    X(faceTexData10, offsetof(::er::paramdef::face_range_param_st, faceTexData10)) \\
+    X(faceTexData11, offsetof(::er::paramdef::face_range_param_st, faceTexData11)) \\
+    X(faceTexData12, offsetof(::er::paramdef::face_range_param_st, faceTexData12)) \\
+    X(faceTexData13, offsetof(::er::paramdef::face_range_param_st, faceTexData13)) \\
+    X(faceTexData14, offsetof(::er::paramdef::face_range_param_st, faceTexData14)) \\
+    X(faceTexData15, offsetof(::er::paramdef::face_range_param_st, faceTexData15)) \\
+    X(faceTexData16, offsetof(::er::paramdef::face_range_param_st, faceTexData16)) \\
+    X(faceTexData17, offsetof(::er::paramdef::face_range_param_st, faceTexData17)) \\
+    X(faceTexData18, offsetof(::er::paramdef::face_range_param_st, faceTexData18)) \\
+    X(faceTexData19, offsetof(::er::paramdef::face_range_param_st, faceTexData19)) \\
+    X(faceTexData20, offsetof(::er::paramdef::face_range_param_st, faceTexData20)) \\
+    X(faceTexData21, offsetof(::er::paramdef::face_range_param_st, faceTexData21)) \\
+    X(faceTexData22, offsetof(::er::paramdef::face_range_param_st, faceTexData22)) \\
+    X(faceTexData23, offsetof(::er::paramdef::face_range_param_st, faceTexData23)) \\
+    X(faceTexData24, offsetof(::er::paramdef::face_range_param_st, faceTexData24)) \\
+    X(faceTexData25, offsetof(::er::paramdef::face_range_param_st, faceTexData25)) \\
+    X(faceTexData26, offsetof(::er::paramdef::face_range_param_st, faceTexData26)) \\
+    X(faceTexData27, offsetof(::er::paramdef::face_range_param_st, faceTexData27)) \\
+    X(faceTexData28, offsetof(::er::paramdef::face_range_param_st, faceTexData28)) \\
+    X(faceTexData29, offsetof(::er::paramdef::face_range_param_st, faceTexData29)) \\
+    X(faceTexData30, offsetof(::er::paramdef::face_range_param_st, faceTexData30)) \\
+    X(faceTexData31, offsetof(::er::paramdef::face_range_param_st, faceTexData31)) \\
+    X(faceTexData32, offsetof(::er::paramdef::face_range_param_st, faceTexData32)) \\
+    X(faceTexData33, offsetof(::er::paramdef::face_range_param_st, faceTexData33)) \\
+    X(faceTexData34, offsetof(::er::paramdef::face_range_param_st, faceTexData34)) \\
+    X(faceTexData35, offsetof(::er::paramdef::face_range_param_st, faceTexData35)) \\
+    X(burn_scar, offsetof(::er::paramdef::face_range_param_st, burn_scar))
+
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_partsId offsetof(::er::paramdef::face_range_param_st, face_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_skin_color_R offsetof(::er::paramdef::face_range_param_st, skin_color_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_skin_color_G offsetof(::er::paramdef::face_range_param_st, skin_color_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_skin_color_B offsetof(::er::paramdef::face_range_param_st, skin_color_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_skin_gloss offsetof(::er::paramdef::face_range_param_st, skin_gloss)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_skin_pores offsetof(::er::paramdef::face_range_param_st, skin_pores)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_beard offsetof(::er::paramdef::face_range_param_st, face_beard)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_aroundEye offsetof(::er::paramdef::face_range_param_st, face_aroundEye)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_aroundEyeColor_R offsetof(::er::paramdef::face_range_param_st, face_aroundEyeColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_aroundEyeColor_G offsetof(::er::paramdef::face_range_param_st, face_aroundEyeColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_aroundEyeColor_B offsetof(::er::paramdef::face_range_param_st, face_aroundEyeColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_cheek offsetof(::er::paramdef::face_range_param_st, face_cheek)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_cheekColor_R offsetof(::er::paramdef::face_range_param_st, face_cheekColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_cheekColor_G offsetof(::er::paramdef::face_range_param_st, face_cheekColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_cheekColor_B offsetof(::er::paramdef::face_range_param_st, face_cheekColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeLine offsetof(::er::paramdef::face_range_param_st, face_eyeLine)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeLineColor_R offsetof(::er::paramdef::face_range_param_st, face_eyeLineColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeLineColor_G offsetof(::er::paramdef::face_range_param_st, face_eyeLineColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeLineColor_B offsetof(::er::paramdef::face_range_param_st, face_eyeLineColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowDown offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDown)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowDownColor_R offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDownColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowDownColor_G offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDownColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowDownColor_B offsetof(::er::paramdef::face_range_param_st, face_eyeShadowDownColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowUp offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUp)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowUpColor_R offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUpColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowUpColor_G offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUpColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_eyeShadowUpColor_B offsetof(::er::paramdef::face_range_param_st, face_eyeShadowUpColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_lip offsetof(::er::paramdef::face_range_param_st, face_lip)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_lipColor_R offsetof(::er::paramdef::face_range_param_st, face_lipColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_lipColor_G offsetof(::er::paramdef::face_range_param_st, face_lipColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_face_lipColor_B offsetof(::er::paramdef::face_range_param_st, face_lipColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_body_hair offsetof(::er::paramdef::face_range_param_st, body_hair)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_body_hairColor_R offsetof(::er::paramdef::face_range_param_st, body_hairColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_body_hairColor_G offsetof(::er::paramdef::face_range_param_st, body_hairColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_body_hairColor_B offsetof(::er::paramdef::face_range_param_st, body_hairColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eye_partsId offsetof(::er::paramdef::face_range_param_st, eye_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_irisColor_R offsetof(::er::paramdef::face_range_param_st, eyeR_irisColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_irisColor_G offsetof(::er::paramdef::face_range_param_st, eyeR_irisColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_irisColor_B offsetof(::er::paramdef::face_range_param_st, eyeR_irisColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_irisScale offsetof(::er::paramdef::face_range_param_st, eyeR_irisScale)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_cataract offsetof(::er::paramdef::face_range_param_st, eyeR_cataract)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_cataractColor_R offsetof(::er::paramdef::face_range_param_st, eyeR_cataractColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_cataractColor_G offsetof(::er::paramdef::face_range_param_st, eyeR_cataractColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_cataractColor_B offsetof(::er::paramdef::face_range_param_st, eyeR_cataractColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_scleraColor_R offsetof(::er::paramdef::face_range_param_st, eyeR_scleraColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_scleraColor_G offsetof(::er::paramdef::face_range_param_st, eyeR_scleraColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_scleraColor_B offsetof(::er::paramdef::face_range_param_st, eyeR_scleraColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeR_irisDistance offsetof(::er::paramdef::face_range_param_st, eyeR_irisDistance)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_irisColor_R offsetof(::er::paramdef::face_range_param_st, eyeL_irisColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_irisColor_G offsetof(::er::paramdef::face_range_param_st, eyeL_irisColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_irisColor_B offsetof(::er::paramdef::face_range_param_st, eyeL_irisColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_irisScale offsetof(::er::paramdef::face_range_param_st, eyeL_irisScale)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_cataract offsetof(::er::paramdef::face_range_param_st, eyeL_cataract)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_cataractColor_R offsetof(::er::paramdef::face_range_param_st, eyeL_cataractColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_cataractColor_G offsetof(::er::paramdef::face_range_param_st, eyeL_cataractColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_cataractColor_B offsetof(::er::paramdef::face_range_param_st, eyeL_cataractColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_scleraColor_R offsetof(::er::paramdef::face_range_param_st, eyeL_scleraColor_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_scleraColor_G offsetof(::er::paramdef::face_range_param_st, eyeL_scleraColor_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_scleraColor_B offsetof(::er::paramdef::face_range_param_st, eyeL_scleraColor_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyeL_irisDistance offsetof(::er::paramdef::face_range_param_st, eyeL_irisDistance)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_hair_partsId offsetof(::er::paramdef::face_range_param_st, hair_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_hair_color_R offsetof(::er::paramdef::face_range_param_st, hair_color_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_hair_color_G offsetof(::er::paramdef::face_range_param_st, hair_color_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_hair_color_B offsetof(::er::paramdef::face_range_param_st, hair_color_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_hair_shininess offsetof(::er::paramdef::face_range_param_st, hair_shininess)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_hair_rootBlack offsetof(::er::paramdef::face_range_param_st, hair_rootBlack)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_hair_whiteDensity offsetof(::er::paramdef::face_range_param_st, hair_whiteDensity)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_beard_partsId offsetof(::er::paramdef::face_range_param_st, beard_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_beard_color_R offsetof(::er::paramdef::face_range_param_st, beard_color_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_beard_color_G offsetof(::er::paramdef::face_range_param_st, beard_color_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_beard_color_B offsetof(::er::paramdef::face_range_param_st, beard_color_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_beard_shininess offsetof(::er::paramdef::face_range_param_st, beard_shininess)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_beard_rootBlack offsetof(::er::paramdef::face_range_param_st, beard_rootBlack)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_beard_whiteDensity offsetof(::er::paramdef::face_range_param_st, beard_whiteDensity)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyebrow_partsId offsetof(::er::paramdef::face_range_param_st, eyebrow_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyebrow_color_R offsetof(::er::paramdef::face_range_param_st, eyebrow_color_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyebrow_color_G offsetof(::er::paramdef::face_range_param_st, eyebrow_color_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyebrow_color_B offsetof(::er::paramdef::face_range_param_st, eyebrow_color_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyebrow_shininess offsetof(::er::paramdef::face_range_param_st, eyebrow_shininess)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyebrow_rootBlack offsetof(::er::paramdef::face_range_param_st, eyebrow_rootBlack)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyebrow_whiteDensity offsetof(::er::paramdef::face_range_param_st, eyebrow_whiteDensity)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyelash_partsId offsetof(::er::paramdef::face_range_param_st, eyelash_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyelash_color_R offsetof(::er::paramdef::face_range_param_st, eyelash_color_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyelash_color_G offsetof(::er::paramdef::face_range_param_st, eyelash_color_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_eyelash_color_B offsetof(::er::paramdef::face_range_param_st, eyelash_color_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_accessories_partsId offsetof(::er::paramdef::face_range_param_st, accessories_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_accessories_color_R offsetof(::er::paramdef::face_range_param_st, accessories_color_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_accessories_color_G offsetof(::er::paramdef::face_range_param_st, accessories_color_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_accessories_color_B offsetof(::er::paramdef::face_range_param_st, accessories_color_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_partsId offsetof(::er::paramdef::face_range_param_st, decal_partsId)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_posX offsetof(::er::paramdef::face_range_param_st, decal_posX)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_posY offsetof(::er::paramdef::face_range_param_st, decal_posY)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_angle offsetof(::er::paramdef::face_range_param_st, decal_angle)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_scale offsetof(::er::paramdef::face_range_param_st, decal_scale)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_color_R offsetof(::er::paramdef::face_range_param_st, decal_color_R)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_color_G offsetof(::er::paramdef::face_range_param_st, decal_color_G)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_color_B offsetof(::er::paramdef::face_range_param_st, decal_color_B)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_gloss offsetof(::er::paramdef::face_range_param_st, decal_gloss)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_decal_mirror offsetof(::er::paramdef::face_range_param_st, decal_mirror)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_chrBodyScaleHead offsetof(::er::paramdef::face_range_param_st, chrBodyScaleHead)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_chrBodyScaleBreast offsetof(::er::paramdef::face_range_param_st, chrBodyScaleBreast)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_chrBodyScaleAbdomen offsetof(::er::paramdef::face_range_param_st, chrBodyScaleAbdomen)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_chrBodyScaleArm offsetof(::er::paramdef::face_range_param_st, chrBodyScaleArm)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_chrBodyScaleLeg offsetof(::er::paramdef::face_range_param_st, chrBodyScaleLeg)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_age offsetof(::er::paramdef::face_range_param_st, age)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_gender offsetof(::er::paramdef::face_range_param_st, gender)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_caricatureGeometry offsetof(::er::paramdef::face_range_param_st, caricatureGeometry)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_caricatureTexture offsetof(::er::paramdef::face_range_param_st, caricatureTexture)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData00 offsetof(::er::paramdef::face_range_param_st, faceGeoData00)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData01 offsetof(::er::paramdef::face_range_param_st, faceGeoData01)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData02 offsetof(::er::paramdef::face_range_param_st, faceGeoData02)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData03 offsetof(::er::paramdef::face_range_param_st, faceGeoData03)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData04 offsetof(::er::paramdef::face_range_param_st, faceGeoData04)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData05 offsetof(::er::paramdef::face_range_param_st, faceGeoData05)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData06 offsetof(::er::paramdef::face_range_param_st, faceGeoData06)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData07 offsetof(::er::paramdef::face_range_param_st, faceGeoData07)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData08 offsetof(::er::paramdef::face_range_param_st, faceGeoData08)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData09 offsetof(::er::paramdef::face_range_param_st, faceGeoData09)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData10 offsetof(::er::paramdef::face_range_param_st, faceGeoData10)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData11 offsetof(::er::paramdef::face_range_param_st, faceGeoData11)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData12 offsetof(::er::paramdef::face_range_param_st, faceGeoData12)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData13 offsetof(::er::paramdef::face_range_param_st, faceGeoData13)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData14 offsetof(::er::paramdef::face_range_param_st, faceGeoData14)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData15 offsetof(::er::paramdef::face_range_param_st, faceGeoData15)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData16 offsetof(::er::paramdef::face_range_param_st, faceGeoData16)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData17 offsetof(::er::paramdef::face_range_param_st, faceGeoData17)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData18 offsetof(::er::paramdef::face_range_param_st, faceGeoData18)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData19 offsetof(::er::paramdef::face_range_param_st, faceGeoData19)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData20 offsetof(::er::paramdef::face_range_param_st, faceGeoData20)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData21 offsetof(::er::paramdef::face_range_param_st, faceGeoData21)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData22 offsetof(::er::paramdef::face_range_param_st, faceGeoData22)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData23 offsetof(::er::paramdef::face_range_param_st, faceGeoData23)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData24 offsetof(::er::paramdef::face_range_param_st, faceGeoData24)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData25 offsetof(::er::paramdef::face_range_param_st, faceGeoData25)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData26 offsetof(::er::paramdef::face_range_param_st, faceGeoData26)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData27 offsetof(::er::paramdef::face_range_param_st, faceGeoData27)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData28 offsetof(::er::paramdef::face_range_param_st, faceGeoData28)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData29 offsetof(::er::paramdef::face_range_param_st, faceGeoData29)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData30 offsetof(::er::paramdef::face_range_param_st, faceGeoData30)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData31 offsetof(::er::paramdef::face_range_param_st, faceGeoData31)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData32 offsetof(::er::paramdef::face_range_param_st, faceGeoData32)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData33 offsetof(::er::paramdef::face_range_param_st, faceGeoData33)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData34 offsetof(::er::paramdef::face_range_param_st, faceGeoData34)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData35 offsetof(::er::paramdef::face_range_param_st, faceGeoData35)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData36 offsetof(::er::paramdef::face_range_param_st, faceGeoData36)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData37 offsetof(::er::paramdef::face_range_param_st, faceGeoData37)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData38 offsetof(::er::paramdef::face_range_param_st, faceGeoData38)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData39 offsetof(::er::paramdef::face_range_param_st, faceGeoData39)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData40 offsetof(::er::paramdef::face_range_param_st, faceGeoData40)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData41 offsetof(::er::paramdef::face_range_param_st, faceGeoData41)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData42 offsetof(::er::paramdef::face_range_param_st, faceGeoData42)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData43 offsetof(::er::paramdef::face_range_param_st, faceGeoData43)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData44 offsetof(::er::paramdef::face_range_param_st, faceGeoData44)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData45 offsetof(::er::paramdef::face_range_param_st, faceGeoData45)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData46 offsetof(::er::paramdef::face_range_param_st, faceGeoData46)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData47 offsetof(::er::paramdef::face_range_param_st, faceGeoData47)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData48 offsetof(::er::paramdef::face_range_param_st, faceGeoData48)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData49 offsetof(::er::paramdef::face_range_param_st, faceGeoData49)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData50 offsetof(::er::paramdef::face_range_param_st, faceGeoData50)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData51 offsetof(::er::paramdef::face_range_param_st, faceGeoData51)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData52 offsetof(::er::paramdef::face_range_param_st, faceGeoData52)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData53 offsetof(::er::paramdef::face_range_param_st, faceGeoData53)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData54 offsetof(::er::paramdef::face_range_param_st, faceGeoData54)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData55 offsetof(::er::paramdef::face_range_param_st, faceGeoData55)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData56 offsetof(::er::paramdef::face_range_param_st, faceGeoData56)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData57 offsetof(::er::paramdef::face_range_param_st, faceGeoData57)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData58 offsetof(::er::paramdef::face_range_param_st, faceGeoData58)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData59 offsetof(::er::paramdef::face_range_param_st, faceGeoData59)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceGeoData60 offsetof(::er::paramdef::face_range_param_st, faceGeoData60)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData00 offsetof(::er::paramdef::face_range_param_st, faceTexData00)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData01 offsetof(::er::paramdef::face_range_param_st, faceTexData01)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData02 offsetof(::er::paramdef::face_range_param_st, faceTexData02)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData03 offsetof(::er::paramdef::face_range_param_st, faceTexData03)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData04 offsetof(::er::paramdef::face_range_param_st, faceTexData04)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData05 offsetof(::er::paramdef::face_range_param_st, faceTexData05)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData06 offsetof(::er::paramdef::face_range_param_st, faceTexData06)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData07 offsetof(::er::paramdef::face_range_param_st, faceTexData07)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData08 offsetof(::er::paramdef::face_range_param_st, faceTexData08)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData09 offsetof(::er::paramdef::face_range_param_st, faceTexData09)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData10 offsetof(::er::paramdef::face_range_param_st, faceTexData10)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData11 offsetof(::er::paramdef::face_range_param_st, faceTexData11)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData12 offsetof(::er::paramdef::face_range_param_st, faceTexData12)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData13 offsetof(::er::paramdef::face_range_param_st, faceTexData13)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData14 offsetof(::er::paramdef::face_range_param_st, faceTexData14)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData15 offsetof(::er::paramdef::face_range_param_st, faceTexData15)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData16 offsetof(::er::paramdef::face_range_param_st, faceTexData16)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData17 offsetof(::er::paramdef::face_range_param_st, faceTexData17)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData18 offsetof(::er::paramdef::face_range_param_st, faceTexData18)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData19 offsetof(::er::paramdef::face_range_param_st, faceTexData19)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData20 offsetof(::er::paramdef::face_range_param_st, faceTexData20)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData21 offsetof(::er::paramdef::face_range_param_st, faceTexData21)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData22 offsetof(::er::paramdef::face_range_param_st, faceTexData22)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData23 offsetof(::er::paramdef::face_range_param_st, faceTexData23)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData24 offsetof(::er::paramdef::face_range_param_st, faceTexData24)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData25 offsetof(::er::paramdef::face_range_param_st, faceTexData25)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData26 offsetof(::er::paramdef::face_range_param_st, faceTexData26)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData27 offsetof(::er::paramdef::face_range_param_st, faceTexData27)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData28 offsetof(::er::paramdef::face_range_param_st, faceTexData28)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData29 offsetof(::er::paramdef::face_range_param_st, faceTexData29)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData30 offsetof(::er::paramdef::face_range_param_st, faceTexData30)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData31 offsetof(::er::paramdef::face_range_param_st, faceTexData31)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData32 offsetof(::er::paramdef::face_range_param_st, faceTexData32)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData33 offsetof(::er::paramdef::face_range_param_st, faceTexData33)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData34 offsetof(::er::paramdef::face_range_param_st, faceTexData34)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_faceTexData35 offsetof(::er::paramdef::face_range_param_st, faceTexData35)
+#define ERD_OFFSET_FACE_RANGE_PARAM_ST_burn_scar offsetof(::er::paramdef::face_range_param_st, burn_scar)

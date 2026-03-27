@@ -1,0 +1,410 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_FIELDS(X) \\
+    X(param000, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param000)) \\
+    X(param001, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param001)) \\
+    X(param002, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param002)) \\
+    X(param003, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param003)) \\
+    X(param004, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param004)) \\
+    X(param005, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param005)) \\
+    X(param006, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param006)) \\
+    X(param007, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param007)) \\
+    X(param008, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param008)) \\
+    X(param009, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param009)) \\
+    X(param010, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param010)) \\
+    X(param011, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param011)) \\
+    X(param012, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param012)) \\
+    X(param013, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param013)) \\
+    X(param014, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param014)) \\
+    X(param015, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param015)) \\
+    X(param016, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param016)) \\
+    X(param017, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param017)) \\
+    X(param018, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param018)) \\
+    X(param019, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param019)) \\
+    X(param020, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param020)) \\
+    X(param021, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param021)) \\
+    X(param022, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param022)) \\
+    X(param023, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param023)) \\
+    X(param024, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param024)) \\
+    X(param025, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param025)) \\
+    X(param026, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param026)) \\
+    X(param027, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param027)) \\
+    X(param028, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param028)) \\
+    X(param029, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param029)) \\
+    X(param030, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param030)) \\
+    X(param031, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param031)) \\
+    X(param032, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param032)) \\
+    X(param033, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param033)) \\
+    X(param034, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param034)) \\
+    X(param035, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param035)) \\
+    X(param036, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param036)) \\
+    X(param037, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param037)) \\
+    X(param038, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param038)) \\
+    X(param039, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param039)) \\
+    X(param040, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param040)) \\
+    X(param041, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param041)) \\
+    X(param042, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param042)) \\
+    X(param043, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param043)) \\
+    X(param044, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param044)) \\
+    X(param045, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param045)) \\
+    X(param046, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param046)) \\
+    X(param047, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param047)) \\
+    X(param048, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param048)) \\
+    X(param049, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param049)) \\
+    X(param050, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param050)) \\
+    X(param051, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param051)) \\
+    X(param052, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param052)) \\
+    X(param053, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param053)) \\
+    X(param054, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param054)) \\
+    X(param055, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param055)) \\
+    X(param056, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param056)) \\
+    X(param057, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param057)) \\
+    X(param058, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param058)) \\
+    X(param059, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param059)) \\
+    X(param060, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param060)) \\
+    X(param061, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param061)) \\
+    X(param062, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param062)) \\
+    X(param063, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param063)) \\
+    X(param064, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param064)) \\
+    X(param065, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param065)) \\
+    X(param066, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param066)) \\
+    X(param067, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param067)) \\
+    X(param068, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param068)) \\
+    X(param069, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param069)) \\
+    X(param070, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param070)) \\
+    X(param071, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param071)) \\
+    X(param072, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param072)) \\
+    X(param073, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param073)) \\
+    X(param074, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param074)) \\
+    X(param075, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param075)) \\
+    X(param076, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param076)) \\
+    X(param077, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param077)) \\
+    X(param078, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param078)) \\
+    X(param079, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param079)) \\
+    X(param080, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param080)) \\
+    X(param081, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param081)) \\
+    X(param082, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param082)) \\
+    X(param083, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param083)) \\
+    X(param084, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param084)) \\
+    X(param085, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param085)) \\
+    X(param086, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param086)) \\
+    X(param087, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param087)) \\
+    X(param088, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param088)) \\
+    X(param089, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param089)) \\
+    X(param090, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param090)) \\
+    X(param091, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param091)) \\
+    X(param092, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param092)) \\
+    X(param093, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param093)) \\
+    X(param094, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param094)) \\
+    X(param095, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param095)) \\
+    X(param096, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param096)) \\
+    X(param097, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param097)) \\
+    X(param098, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param098)) \\
+    X(param099, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param099)) \\
+    X(param100, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param100)) \\
+    X(param101, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param101)) \\
+    X(param102, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param102)) \\
+    X(param103, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param103)) \\
+    X(param104, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param104)) \\
+    X(param105, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param105)) \\
+    X(param106, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param106)) \\
+    X(param107, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param107)) \\
+    X(param108, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param108)) \\
+    X(param109, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param109)) \\
+    X(param110, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param110)) \\
+    X(param111, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param111)) \\
+    X(param112, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param112)) \\
+    X(param113, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param113)) \\
+    X(param114, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param114)) \\
+    X(param115, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param115)) \\
+    X(param116, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param116)) \\
+    X(param117, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param117)) \\
+    X(param118, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param118)) \\
+    X(param119, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param119)) \\
+    X(param120, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param120)) \\
+    X(param121, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param121)) \\
+    X(param122, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param122)) \\
+    X(param123, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param123)) \\
+    X(param124, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param124)) \\
+    X(param125, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param125)) \\
+    X(param126, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param126)) \\
+    X(param127, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param127)) \\
+    X(param128, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param128)) \\
+    X(param129, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param129)) \\
+    X(param130, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param130)) \\
+    X(param131, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param131)) \\
+    X(param132, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param132)) \\
+    X(param133, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param133)) \\
+    X(param134, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param134)) \\
+    X(param135, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param135)) \\
+    X(param136, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param136)) \\
+    X(param137, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param137)) \\
+    X(param138, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param138)) \\
+    X(param139, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param139)) \\
+    X(param140, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param140)) \\
+    X(param141, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param141)) \\
+    X(param142, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param142)) \\
+    X(param143, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param143)) \\
+    X(param144, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param144)) \\
+    X(param145, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param145)) \\
+    X(param146, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param146)) \\
+    X(param147, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param147)) \\
+    X(param148, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param148)) \\
+    X(param149, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param149)) \\
+    X(param150, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param150)) \\
+    X(param151, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param151)) \\
+    X(param152, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param152)) \\
+    X(param153, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param153)) \\
+    X(param154, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param154)) \\
+    X(param155, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param155)) \\
+    X(param156, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param156)) \\
+    X(param157, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param157)) \\
+    X(param158, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param158)) \\
+    X(param159, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param159)) \\
+    X(param160, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param160)) \\
+    X(param161, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param161)) \\
+    X(param162, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param162)) \\
+    X(param163, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param163)) \\
+    X(param164, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param164)) \\
+    X(param165, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param165)) \\
+    X(param166, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param166)) \\
+    X(param167, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param167)) \\
+    X(param168, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param168)) \\
+    X(param169, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param169)) \\
+    X(param170, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param170)) \\
+    X(param171, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param171)) \\
+    X(param172, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param172)) \\
+    X(param173, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param173)) \\
+    X(param174, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param174)) \\
+    X(param175, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param175)) \\
+    X(param176, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param176)) \\
+    X(param177, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param177)) \\
+    X(param178, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param178)) \\
+    X(param179, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param179)) \\
+    X(param180, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param180)) \\
+    X(param181, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param181)) \\
+    X(param182, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param182)) \\
+    X(param183, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param183)) \\
+    X(param184, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param184)) \\
+    X(param185, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param185)) \\
+    X(param186, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param186)) \\
+    X(param187, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param187)) \\
+    X(param188, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param188)) \\
+    X(param189, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param189)) \\
+    X(param190, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param190)) \\
+    X(param191, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param191)) \\
+    X(param192, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param192)) \\
+    X(param193, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param193)) \\
+    X(param194, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param194)) \\
+    X(param195, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param195)) \\
+    X(param196, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param196)) \\
+    X(param197, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param197)) \\
+    X(param198, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param198)) \\
+    X(param199, offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param199))
+
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param000 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param000)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param001 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param001)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param002 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param002)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param003 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param003)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param004 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param004)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param005 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param005)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param006 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param006)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param007 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param007)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param008 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param008)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param009 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param009)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param010 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param010)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param011 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param011)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param012 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param012)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param013 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param013)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param014 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param014)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param015 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param015)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param016 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param016)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param017 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param017)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param018 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param018)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param019 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param019)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param020 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param020)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param021 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param021)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param022 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param022)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param023 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param023)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param024 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param024)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param025 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param025)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param026 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param026)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param027 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param027)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param028 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param028)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param029 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param029)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param030 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param030)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param031 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param031)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param032 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param032)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param033 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param033)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param034 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param034)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param035 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param035)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param036 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param036)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param037 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param037)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param038 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param038)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param039 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param039)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param040 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param040)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param041 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param041)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param042 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param042)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param043 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param043)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param044 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param044)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param045 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param045)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param046 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param046)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param047 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param047)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param048 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param048)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param049 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param049)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param050 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param050)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param051 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param051)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param052 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param052)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param053 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param053)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param054 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param054)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param055 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param055)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param056 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param056)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param057 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param057)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param058 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param058)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param059 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param059)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param060 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param060)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param061 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param061)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param062 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param062)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param063 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param063)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param064 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param064)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param065 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param065)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param066 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param066)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param067 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param067)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param068 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param068)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param069 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param069)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param070 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param070)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param071 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param071)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param072 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param072)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param073 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param073)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param074 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param074)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param075 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param075)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param076 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param076)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param077 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param077)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param078 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param078)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param079 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param079)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param080 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param080)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param081 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param081)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param082 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param082)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param083 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param083)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param084 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param084)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param085 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param085)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param086 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param086)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param087 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param087)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param088 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param088)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param089 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param089)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param090 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param090)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param091 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param091)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param092 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param092)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param093 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param093)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param094 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param094)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param095 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param095)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param096 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param096)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param097 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param097)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param098 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param098)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param099 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param099)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param100 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param100)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param101 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param101)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param102 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param102)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param103 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param103)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param104 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param104)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param105 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param105)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param106 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param106)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param107 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param107)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param108 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param108)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param109 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param109)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param110 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param110)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param111 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param111)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param112 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param112)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param113 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param113)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param114 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param114)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param115 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param115)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param116 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param116)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param117 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param117)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param118 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param118)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param119 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param119)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param120 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param120)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param121 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param121)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param122 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param122)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param123 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param123)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param124 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param124)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param125 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param125)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param126 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param126)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param127 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param127)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param128 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param128)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param129 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param129)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param130 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param130)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param131 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param131)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param132 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param132)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param133 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param133)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param134 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param134)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param135 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param135)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param136 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param136)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param137 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param137)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param138 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param138)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param139 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param139)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param140 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param140)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param141 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param141)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param142 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param142)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param143 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param143)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param144 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param144)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param145 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param145)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param146 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param146)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param147 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param147)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param148 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param148)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param149 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param149)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param150 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param150)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param151 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param151)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param152 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param152)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param153 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param153)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param154 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param154)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param155 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param155)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param156 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param156)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param157 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param157)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param158 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param158)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param159 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param159)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param160 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param160)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param161 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param161)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param162 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param162)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param163 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param163)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param164 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param164)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param165 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param165)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param166 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param166)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param167 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param167)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param168 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param168)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param169 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param169)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param170 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param170)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param171 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param171)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param172 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param172)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param173 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param173)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param174 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param174)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param175 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param175)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param176 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param176)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param177 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param177)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param178 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param178)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param179 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param179)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param180 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param180)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param181 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param181)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param182 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param182)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param183 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param183)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param184 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param184)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param185 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param185)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param186 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param186)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param187 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param187)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param188 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param188)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param189 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param189)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param190 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param190)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param191 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param191)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param192 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param192)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param193 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param193)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param194 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param194)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param195 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param195)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param196 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param196)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param197 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param197)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param198 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param198)
+#define ERD_OFFSET_NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST_param199 offsetof(::er::paramdef::npc_ai_behavior_probability_param_st, param199)

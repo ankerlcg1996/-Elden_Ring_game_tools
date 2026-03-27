@@ -1,0 +1,132 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/OBJECT_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_OBJECT_PARAM_ST_FIELDS(X) \\
+    X(hp, offsetof(::er::paramdef::object_param_st, hp)) \\
+    X(defense, offsetof(::er::paramdef::object_param_st, defense)) \\
+    X(extRefTexId, offsetof(::er::paramdef::object_param_st, extRefTexId)) \\
+    X(materialId, offsetof(::er::paramdef::object_param_st, materialId)) \\
+    X(animBreakIdMax, offsetof(::er::paramdef::object_param_st, animBreakIdMax)) \\
+    X(defaultLodParamId, offsetof(::er::paramdef::object_param_st, defaultLodParamId)) \\
+    X(breakSfxId, offsetof(::er::paramdef::object_param_st, breakSfxId)) \\
+    X(breakSfxCpId, offsetof(::er::paramdef::object_param_st, breakSfxCpId)) \\
+    X(breakBulletBehaviorId, offsetof(::er::paramdef::object_param_st, breakBulletBehaviorId)) \\
+    X(breakBulletCpId, offsetof(::er::paramdef::object_param_st, breakBulletCpId)) \\
+    X(breakFallHeight, offsetof(::er::paramdef::object_param_st, breakFallHeight)) \\
+    X(windEffectType_0, offsetof(::er::paramdef::object_param_st, windEffectType_0)) \\
+    X(windEffectType_1, offsetof(::er::paramdef::object_param_st, windEffectType_1)) \\
+    X(camAvoidType, offsetof(::er::paramdef::object_param_st, camAvoidType)) \\
+    X(windEffectRate_0, offsetof(::er::paramdef::object_param_st, windEffectRate_0)) \\
+    X(windEffectRate_1, offsetof(::er::paramdef::object_param_st, windEffectRate_1)) \\
+    X(breakStopTime, offsetof(::er::paramdef::object_param_st, breakStopTime)) \\
+    X(burnTime, offsetof(::er::paramdef::object_param_st, burnTime)) \\
+    X(burnBraekRate, offsetof(::er::paramdef::object_param_st, burnBraekRate)) \\
+    X(burnSfxId, offsetof(::er::paramdef::object_param_st, burnSfxId)) \\
+    X(burnSfxId_1, offsetof(::er::paramdef::object_param_st, burnSfxId_1)) \\
+    X(burnSfxId_2, offsetof(::er::paramdef::object_param_st, burnSfxId_2)) \\
+    X(burnSfxId_3, offsetof(::er::paramdef::object_param_st, burnSfxId_3)) \\
+    X(burnBulletBehaviorId, offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId)) \\
+    X(burnBulletBehaviorId_1, offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId_1)) \\
+    X(burnBulletBehaviorId_2, offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId_2)) \\
+    X(burnBulletBehaviorId_3, offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId_3)) \\
+    X(burnBulletInterval, offsetof(::er::paramdef::object_param_st, burnBulletInterval)) \\
+    X(navimeshFlag, offsetof(::er::paramdef::object_param_st, navimeshFlag)) \\
+    X(collisionType, offsetof(::er::paramdef::object_param_st, collisionType)) \\
+    X(burnBulletDelayTime, offsetof(::er::paramdef::object_param_st, burnBulletDelayTime)) \\
+    X(burnSfxDelayTimeMin, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin)) \\
+    X(burnSfxDelayTimeMin_1, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin_1)) \\
+    X(burnSfxDelayTimeMin_2, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin_2)) \\
+    X(burnSfxDelayTimeMin_3, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin_3)) \\
+    X(burnSfxDelayTimeMax, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax)) \\
+    X(burnSfxDelayTimeMax_1, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax_1)) \\
+    X(burnSfxDelayTimeMax_2, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax_2)) \\
+    X(burnSfxDelayTimeMax_3, offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax_3)) \\
+    X(BreakAiSoundID, offsetof(::er::paramdef::object_param_st, BreakAiSoundID)) \\
+    X(FragmentInvisibleWaitTime, offsetof(::er::paramdef::object_param_st, FragmentInvisibleWaitTime)) \\
+    X(FragmentInvisibleTime, offsetof(::er::paramdef::object_param_st, FragmentInvisibleTime)) \\
+    X(pad_3, offsetof(::er::paramdef::object_param_st, pad_3)) \\
+    X(RigidPenetrationScale_Soft, offsetof(::er::paramdef::object_param_st, RigidPenetrationScale_Soft)) \\
+    X(RigidPenetrationScale_Normal, offsetof(::er::paramdef::object_param_st, RigidPenetrationScale_Normal)) \\
+    X(RigidPenetrationScale_Hard, offsetof(::er::paramdef::object_param_st, RigidPenetrationScale_Hard)) \\
+    X(LandTouchSfxId, offsetof(::er::paramdef::object_param_st, LandTouchSfxId)) \\
+    X(pad_4, offsetof(::er::paramdef::object_param_st, pad_4)) \\
+    X(paintDecalTargetTextureSize, offsetof(::er::paramdef::object_param_st, paintDecalTargetTextureSize)) \\
+    X(lifeTime_forDC, offsetof(::er::paramdef::object_param_st, lifeTime_forDC)) \\
+    X(clothUpdateDist, offsetof(::er::paramdef::object_param_st, clothUpdateDist)) \\
+    X(contactSeId, offsetof(::er::paramdef::object_param_st, contactSeId)) \\
+    X(breakLandingSfxId, offsetof(::er::paramdef::object_param_st, breakLandingSfxId)) \\
+    X(waypointDummyPolyId_0, offsetof(::er::paramdef::object_param_st, waypointDummyPolyId_0)) \\
+    X(waypointParamId_0, offsetof(::er::paramdef::object_param_st, waypointParamId_0)) \\
+    X(soundBankId, offsetof(::er::paramdef::object_param_st, soundBankId)) \\
+    X(refDrawParamId, offsetof(::er::paramdef::object_param_st, refDrawParamId)) \\
+    X(autoCreateDynamicOffsetHeight, offsetof(::er::paramdef::object_param_st, autoCreateDynamicOffsetHeight)) \\
+    X(reserved0, offsetof(::er::paramdef::object_param_st, reserved0)) \\
+    X(soundBreakSEId, offsetof(::er::paramdef::object_param_st, soundBreakSEId)) \\
+    X(pad_5, offsetof(::er::paramdef::object_param_st, pad_5))
+
+#define ERD_OFFSET_OBJECT_PARAM_ST_hp offsetof(::er::paramdef::object_param_st, hp)
+#define ERD_OFFSET_OBJECT_PARAM_ST_defense offsetof(::er::paramdef::object_param_st, defense)
+#define ERD_OFFSET_OBJECT_PARAM_ST_extRefTexId offsetof(::er::paramdef::object_param_st, extRefTexId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_materialId offsetof(::er::paramdef::object_param_st, materialId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_animBreakIdMax offsetof(::er::paramdef::object_param_st, animBreakIdMax)
+#define ERD_OFFSET_OBJECT_PARAM_ST_defaultLodParamId offsetof(::er::paramdef::object_param_st, defaultLodParamId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_breakSfxId offsetof(::er::paramdef::object_param_st, breakSfxId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_breakSfxCpId offsetof(::er::paramdef::object_param_st, breakSfxCpId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_breakBulletBehaviorId offsetof(::er::paramdef::object_param_st, breakBulletBehaviorId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_breakBulletCpId offsetof(::er::paramdef::object_param_st, breakBulletCpId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_breakFallHeight offsetof(::er::paramdef::object_param_st, breakFallHeight)
+#define ERD_OFFSET_OBJECT_PARAM_ST_windEffectType_0 offsetof(::er::paramdef::object_param_st, windEffectType_0)
+#define ERD_OFFSET_OBJECT_PARAM_ST_windEffectType_1 offsetof(::er::paramdef::object_param_st, windEffectType_1)
+#define ERD_OFFSET_OBJECT_PARAM_ST_camAvoidType offsetof(::er::paramdef::object_param_st, camAvoidType)
+#define ERD_OFFSET_OBJECT_PARAM_ST_windEffectRate_0 offsetof(::er::paramdef::object_param_st, windEffectRate_0)
+#define ERD_OFFSET_OBJECT_PARAM_ST_windEffectRate_1 offsetof(::er::paramdef::object_param_st, windEffectRate_1)
+#define ERD_OFFSET_OBJECT_PARAM_ST_breakStopTime offsetof(::er::paramdef::object_param_st, breakStopTime)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnTime offsetof(::er::paramdef::object_param_st, burnTime)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnBraekRate offsetof(::er::paramdef::object_param_st, burnBraekRate)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxId offsetof(::er::paramdef::object_param_st, burnSfxId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxId_1 offsetof(::er::paramdef::object_param_st, burnSfxId_1)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxId_2 offsetof(::er::paramdef::object_param_st, burnSfxId_2)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxId_3 offsetof(::er::paramdef::object_param_st, burnSfxId_3)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnBulletBehaviorId offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnBulletBehaviorId_1 offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId_1)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnBulletBehaviorId_2 offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId_2)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnBulletBehaviorId_3 offsetof(::er::paramdef::object_param_st, burnBulletBehaviorId_3)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnBulletInterval offsetof(::er::paramdef::object_param_st, burnBulletInterval)
+#define ERD_OFFSET_OBJECT_PARAM_ST_navimeshFlag offsetof(::er::paramdef::object_param_st, navimeshFlag)
+#define ERD_OFFSET_OBJECT_PARAM_ST_collisionType offsetof(::er::paramdef::object_param_st, collisionType)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnBulletDelayTime offsetof(::er::paramdef::object_param_st, burnBulletDelayTime)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMin offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMin_1 offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin_1)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMin_2 offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin_2)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMin_3 offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMin_3)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMax offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMax_1 offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax_1)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMax_2 offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax_2)
+#define ERD_OFFSET_OBJECT_PARAM_ST_burnSfxDelayTimeMax_3 offsetof(::er::paramdef::object_param_st, burnSfxDelayTimeMax_3)
+#define ERD_OFFSET_OBJECT_PARAM_ST_BreakAiSoundID offsetof(::er::paramdef::object_param_st, BreakAiSoundID)
+#define ERD_OFFSET_OBJECT_PARAM_ST_FragmentInvisibleWaitTime offsetof(::er::paramdef::object_param_st, FragmentInvisibleWaitTime)
+#define ERD_OFFSET_OBJECT_PARAM_ST_FragmentInvisibleTime offsetof(::er::paramdef::object_param_st, FragmentInvisibleTime)
+#define ERD_OFFSET_OBJECT_PARAM_ST_pad_3 offsetof(::er::paramdef::object_param_st, pad_3)
+#define ERD_OFFSET_OBJECT_PARAM_ST_RigidPenetrationScale_Soft offsetof(::er::paramdef::object_param_st, RigidPenetrationScale_Soft)
+#define ERD_OFFSET_OBJECT_PARAM_ST_RigidPenetrationScale_Normal offsetof(::er::paramdef::object_param_st, RigidPenetrationScale_Normal)
+#define ERD_OFFSET_OBJECT_PARAM_ST_RigidPenetrationScale_Hard offsetof(::er::paramdef::object_param_st, RigidPenetrationScale_Hard)
+#define ERD_OFFSET_OBJECT_PARAM_ST_LandTouchSfxId offsetof(::er::paramdef::object_param_st, LandTouchSfxId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_pad_4 offsetof(::er::paramdef::object_param_st, pad_4)
+#define ERD_OFFSET_OBJECT_PARAM_ST_paintDecalTargetTextureSize offsetof(::er::paramdef::object_param_st, paintDecalTargetTextureSize)
+#define ERD_OFFSET_OBJECT_PARAM_ST_lifeTime_forDC offsetof(::er::paramdef::object_param_st, lifeTime_forDC)
+#define ERD_OFFSET_OBJECT_PARAM_ST_clothUpdateDist offsetof(::er::paramdef::object_param_st, clothUpdateDist)
+#define ERD_OFFSET_OBJECT_PARAM_ST_contactSeId offsetof(::er::paramdef::object_param_st, contactSeId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_breakLandingSfxId offsetof(::er::paramdef::object_param_st, breakLandingSfxId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_waypointDummyPolyId_0 offsetof(::er::paramdef::object_param_st, waypointDummyPolyId_0)
+#define ERD_OFFSET_OBJECT_PARAM_ST_waypointParamId_0 offsetof(::er::paramdef::object_param_st, waypointParamId_0)
+#define ERD_OFFSET_OBJECT_PARAM_ST_soundBankId offsetof(::er::paramdef::object_param_st, soundBankId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_refDrawParamId offsetof(::er::paramdef::object_param_st, refDrawParamId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_autoCreateDynamicOffsetHeight offsetof(::er::paramdef::object_param_st, autoCreateDynamicOffsetHeight)
+#define ERD_OFFSET_OBJECT_PARAM_ST_reserved0 offsetof(::er::paramdef::object_param_st, reserved0)
+#define ERD_OFFSET_OBJECT_PARAM_ST_soundBreakSEId offsetof(::er::paramdef::object_param_st, soundBreakSEId)
+#define ERD_OFFSET_OBJECT_PARAM_ST_pad_5 offsetof(::er::paramdef::object_param_st, pad_5)

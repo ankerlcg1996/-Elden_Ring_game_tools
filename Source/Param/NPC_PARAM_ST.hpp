@@ -1,0 +1,500 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/NPC_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_NPC_PARAM_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::npc_param_st, disableParamReserve2)) \\
+    X(behaviorVariationId, offsetof(::er::paramdef::npc_param_st, behaviorVariationId)) \\
+    X(resistCorrectId_poison, offsetof(::er::paramdef::npc_param_st, resistCorrectId_poison)) \\
+    X(nameId, offsetof(::er::paramdef::npc_param_st, nameId)) \\
+    X(turnVellocity, offsetof(::er::paramdef::npc_param_st, turnVellocity)) \\
+    X(hitHeight, offsetof(::er::paramdef::npc_param_st, hitHeight)) \\
+    X(hitRadius, offsetof(::er::paramdef::npc_param_st, hitRadius)) \\
+    X(weight, offsetof(::er::paramdef::npc_param_st, weight)) \\
+    X(hitYOffset, offsetof(::er::paramdef::npc_param_st, hitYOffset)) \\
+    X(hp, offsetof(::er::paramdef::npc_param_st, hp)) \\
+    X(mp, offsetof(::er::paramdef::npc_param_st, mp)) \\
+    X(getSoul, offsetof(::er::paramdef::npc_param_st, getSoul)) \\
+    X(itemLotId_enemy, offsetof(::er::paramdef::npc_param_st, itemLotId_enemy)) \\
+    X(itemLotId_map, offsetof(::er::paramdef::npc_param_st, itemLotId_map)) \\
+    X(maxAnkleRollAngle, offsetof(::er::paramdef::npc_param_st, maxAnkleRollAngle)) \\
+    X(chrHitGroupAndNavimesh, offsetof(::er::paramdef::npc_param_st, chrHitGroupAndNavimesh)) \\
+    X(faceIconId, offsetof(::er::paramdef::npc_param_st, faceIconId)) \\
+    X(deactivateDist, offsetof(::er::paramdef::npc_param_st, deactivateDist)) \\
+    X(chrActivateConditionParamId, offsetof(::er::paramdef::npc_param_st, chrActivateConditionParamId)) \\
+    X(footIkErrorHeightLimit, offsetof(::er::paramdef::npc_param_st, footIkErrorHeightLimit)) \\
+    X(humanityLotId, offsetof(::er::paramdef::npc_param_st, humanityLotId)) \\
+    X(spEffectID0, offsetof(::er::paramdef::npc_param_st, spEffectID0)) \\
+    X(spEffectID1, offsetof(::er::paramdef::npc_param_st, spEffectID1)) \\
+    X(spEffectID2, offsetof(::er::paramdef::npc_param_st, spEffectID2)) \\
+    X(spEffectID3, offsetof(::er::paramdef::npc_param_st, spEffectID3)) \\
+    X(spEffectID4, offsetof(::er::paramdef::npc_param_st, spEffectID4)) \\
+    X(spEffectID5, offsetof(::er::paramdef::npc_param_st, spEffectID5)) \\
+    X(spEffectID6, offsetof(::er::paramdef::npc_param_st, spEffectID6)) \\
+    X(spEffectID7, offsetof(::er::paramdef::npc_param_st, spEffectID7)) \\
+    X(GameClearSpEffectID, offsetof(::er::paramdef::npc_param_st, GameClearSpEffectID)) \\
+    X(physGuardCutRate, offsetof(::er::paramdef::npc_param_st, physGuardCutRate)) \\
+    X(magGuardCutRate, offsetof(::er::paramdef::npc_param_st, magGuardCutRate)) \\
+    X(fireGuardCutRate, offsetof(::er::paramdef::npc_param_st, fireGuardCutRate)) \\
+    X(thunGuardCutRate, offsetof(::er::paramdef::npc_param_st, thunGuardCutRate)) \\
+    X(animIdOffset, offsetof(::er::paramdef::npc_param_st, animIdOffset)) \\
+    X(lockGazePoint0, offsetof(::er::paramdef::npc_param_st, lockGazePoint0)) \\
+    X(lockGazePoint1, offsetof(::er::paramdef::npc_param_st, lockGazePoint1)) \\
+    X(lockGazePoint2, offsetof(::er::paramdef::npc_param_st, lockGazePoint2)) \\
+    X(lockGazePoint3, offsetof(::er::paramdef::npc_param_st, lockGazePoint3)) \\
+    X(lockGazePoint4, offsetof(::er::paramdef::npc_param_st, lockGazePoint4)) \\
+    X(lockGazePoint5, offsetof(::er::paramdef::npc_param_st, lockGazePoint5)) \\
+    X(networkWarpDist, offsetof(::er::paramdef::npc_param_st, networkWarpDist)) \\
+    X(dbgBehaviorR1, offsetof(::er::paramdef::npc_param_st, dbgBehaviorR1)) \\
+    X(dbgBehaviorL1, offsetof(::er::paramdef::npc_param_st, dbgBehaviorL1)) \\
+    X(dbgBehaviorR2, offsetof(::er::paramdef::npc_param_st, dbgBehaviorR2)) \\
+    X(dbgBehaviorL2, offsetof(::er::paramdef::npc_param_st, dbgBehaviorL2)) \\
+    X(dbgBehaviorRL, offsetof(::er::paramdef::npc_param_st, dbgBehaviorRL)) \\
+    X(dbgBehaviorRR, offsetof(::er::paramdef::npc_param_st, dbgBehaviorRR)) \\
+    X(dbgBehaviorRD, offsetof(::er::paramdef::npc_param_st, dbgBehaviorRD)) \\
+    X(dbgBehaviorRU, offsetof(::er::paramdef::npc_param_st, dbgBehaviorRU)) \\
+    X(dbgBehaviorLL, offsetof(::er::paramdef::npc_param_st, dbgBehaviorLL)) \\
+    X(dbgBehaviorLR, offsetof(::er::paramdef::npc_param_st, dbgBehaviorLR)) \\
+    X(dbgBehaviorLD, offsetof(::er::paramdef::npc_param_st, dbgBehaviorLD)) \\
+    X(dbgBehaviorLU, offsetof(::er::paramdef::npc_param_st, dbgBehaviorLU)) \\
+    X(animIdOffset2, offsetof(::er::paramdef::npc_param_st, animIdOffset2)) \\
+    X(partsDamageRate1, offsetof(::er::paramdef::npc_param_st, partsDamageRate1)) \\
+    X(partsDamageRate2, offsetof(::er::paramdef::npc_param_st, partsDamageRate2)) \\
+    X(partsDamageRate3, offsetof(::er::paramdef::npc_param_st, partsDamageRate3)) \\
+    X(partsDamageRate4, offsetof(::er::paramdef::npc_param_st, partsDamageRate4)) \\
+    X(partsDamageRate5, offsetof(::er::paramdef::npc_param_st, partsDamageRate5)) \\
+    X(partsDamageRate6, offsetof(::er::paramdef::npc_param_st, partsDamageRate6)) \\
+    X(partsDamageRate7, offsetof(::er::paramdef::npc_param_st, partsDamageRate7)) \\
+    X(partsDamageRate8, offsetof(::er::paramdef::npc_param_st, partsDamageRate8)) \\
+    X(weakPartsDamageRate, offsetof(::er::paramdef::npc_param_st, weakPartsDamageRate)) \\
+    X(superArmorRecoverCorrection, offsetof(::er::paramdef::npc_param_st, superArmorRecoverCorrection)) \\
+    X(superArmorBrakeKnockbackDist, offsetof(::er::paramdef::npc_param_st, superArmorBrakeKnockbackDist)) \\
+    X(stamina, offsetof(::er::paramdef::npc_param_st, stamina)) \\
+    X(staminaRecoverBaseVel, offsetof(::er::paramdef::npc_param_st, staminaRecoverBaseVel)) \\
+    X(def_phys, offsetof(::er::paramdef::npc_param_st, def_phys)) \\
+    X(def_slash, offsetof(::er::paramdef::npc_param_st, def_slash)) \\
+    X(def_blow, offsetof(::er::paramdef::npc_param_st, def_blow)) \\
+    X(def_thrust, offsetof(::er::paramdef::npc_param_st, def_thrust)) \\
+    X(def_mag, offsetof(::er::paramdef::npc_param_st, def_mag)) \\
+    X(def_fire, offsetof(::er::paramdef::npc_param_st, def_fire)) \\
+    X(def_thunder, offsetof(::er::paramdef::npc_param_st, def_thunder)) \\
+    X(defFlickPower, offsetof(::er::paramdef::npc_param_st, defFlickPower)) \\
+    X(resist_poison, offsetof(::er::paramdef::npc_param_st, resist_poison)) \\
+    X(resist_desease, offsetof(::er::paramdef::npc_param_st, resist_desease)) \\
+    X(resist_blood, offsetof(::er::paramdef::npc_param_st, resist_blood)) \\
+    X(resist_curse, offsetof(::er::paramdef::npc_param_st, resist_curse)) \\
+    X(ghostModelId, offsetof(::er::paramdef::npc_param_st, ghostModelId)) \\
+    X(normalChangeResouceId, offsetof(::er::paramdef::npc_param_st, normalChangeResouceId)) \\
+    X(guardAngle, offsetof(::er::paramdef::npc_param_st, guardAngle)) \\
+    X(slashGuardCutRate, offsetof(::er::paramdef::npc_param_st, slashGuardCutRate)) \\
+    X(blowGuardCutRate, offsetof(::er::paramdef::npc_param_st, blowGuardCutRate)) \\
+    X(thrustGuardCutRate, offsetof(::er::paramdef::npc_param_st, thrustGuardCutRate)) \\
+    X(lockGazePoint6, offsetof(::er::paramdef::npc_param_st, lockGazePoint6)) \\
+    X(normalChangeTexChrId, offsetof(::er::paramdef::npc_param_st, normalChangeTexChrId)) \\
+    X(dropType, offsetof(::er::paramdef::npc_param_st, dropType)) \\
+    X(knockbackRate, offsetof(::er::paramdef::npc_param_st, knockbackRate)) \\
+    X(knockbackParamId, offsetof(::er::paramdef::npc_param_st, knockbackParamId)) \\
+    X(fallDamageDump, offsetof(::er::paramdef::npc_param_st, fallDamageDump)) \\
+    X(staminaGuardDef, offsetof(::er::paramdef::npc_param_st, staminaGuardDef)) \\
+    X(resist_sleep, offsetof(::er::paramdef::npc_param_st, resist_sleep)) \\
+    X(resist_madness, offsetof(::er::paramdef::npc_param_st, resist_madness)) \\
+    X(sleepGuardResist, offsetof(::er::paramdef::npc_param_st, sleepGuardResist)) \\
+    X(madnessGuardResist, offsetof(::er::paramdef::npc_param_st, madnessGuardResist)) \\
+    X(lockGazePoint7, offsetof(::er::paramdef::npc_param_st, lockGazePoint7)) \\
+    X(mpRecoverBaseVel, offsetof(::er::paramdef::npc_param_st, mpRecoverBaseVel)) \\
+    X(flickDamageCutRate, offsetof(::er::paramdef::npc_param_st, flickDamageCutRate)) \\
+    X(defaultLodParamId, offsetof(::er::paramdef::npc_param_st, defaultLodParamId)) \\
+    X(drawType, offsetof(::er::paramdef::npc_param_st, drawType)) \\
+    X(npcType, offsetof(::er::paramdef::npc_param_st, npcType)) \\
+    X(teamType, offsetof(::er::paramdef::npc_param_st, teamType)) \\
+    X(moveType, offsetof(::er::paramdef::npc_param_st, moveType)) \\
+    X(lockDist, offsetof(::er::paramdef::npc_param_st, lockDist)) \\
+    X(materialSe_Weak1, offsetof(::er::paramdef::npc_param_st, materialSe_Weak1)) \\
+    X(materialSfx_Weak1, offsetof(::er::paramdef::npc_param_st, materialSfx_Weak1)) \\
+    X(partsDamageType, offsetof(::er::paramdef::npc_param_st, partsDamageType)) \\
+    X(vowType, offsetof(::er::paramdef::npc_param_st, vowType)) \\
+    X(guardLevel, offsetof(::er::paramdef::npc_param_st, guardLevel)) \\
+    X(burnSfxType, offsetof(::er::paramdef::npc_param_st, burnSfxType)) \\
+    X(poisonGuardResist, offsetof(::er::paramdef::npc_param_st, poisonGuardResist)) \\
+    X(diseaseGuardResist, offsetof(::er::paramdef::npc_param_st, diseaseGuardResist)) \\
+    X(bloodGuardResist, offsetof(::er::paramdef::npc_param_st, bloodGuardResist)) \\
+    X(curseGuardResist, offsetof(::er::paramdef::npc_param_st, curseGuardResist)) \\
+    X(parryAttack, offsetof(::er::paramdef::npc_param_st, parryAttack)) \\
+    X(parryDefence, offsetof(::er::paramdef::npc_param_st, parryDefence)) \\
+    X(sfxSize, offsetof(::er::paramdef::npc_param_st, sfxSize)) \\
+    X(pushOutCamRegionRadius, offsetof(::er::paramdef::npc_param_st, pushOutCamRegionRadius)) \\
+    X(hitStopType, offsetof(::er::paramdef::npc_param_st, hitStopType)) \\
+    X(ladderEndChkOffsetTop, offsetof(::er::paramdef::npc_param_st, ladderEndChkOffsetTop)) \\
+    X(ladderEndChkOffsetLow, offsetof(::er::paramdef::npc_param_st, ladderEndChkOffsetLow)) \\
+    X(itemSearchRadius, offsetof(::er::paramdef::npc_param_st, itemSearchRadius)) \\
+    X(chrHitHeight, offsetof(::er::paramdef::npc_param_st, chrHitHeight)) \\
+    X(chrHitRadius, offsetof(::er::paramdef::npc_param_st, chrHitRadius)) \\
+    X(specialTurnType, offsetof(::er::paramdef::npc_param_st, specialTurnType)) \\
+    X(def_dark, offsetof(::er::paramdef::npc_param_st, def_dark)) \\
+    X(threatLv, offsetof(::er::paramdef::npc_param_st, threatLv)) \\
+    X(specialTurnDistanceThreshold, offsetof(::er::paramdef::npc_param_st, specialTurnDistanceThreshold)) \\
+    X(autoFootEffectSfxId, offsetof(::er::paramdef::npc_param_st, autoFootEffectSfxId)) \\
+    X(materialSe1, offsetof(::er::paramdef::npc_param_st, materialSe1)) \\
+    X(materialSfx1, offsetof(::er::paramdef::npc_param_st, materialSfx1)) \\
+    X(materialSe_Weak2, offsetof(::er::paramdef::npc_param_st, materialSe_Weak2)) \\
+    X(materialSfx_Weak2, offsetof(::er::paramdef::npc_param_st, materialSfx_Weak2)) \\
+    X(materialSe2, offsetof(::er::paramdef::npc_param_st, materialSe2)) \\
+    X(materialSfx2, offsetof(::er::paramdef::npc_param_st, materialSfx2)) \\
+    X(spEffectID8, offsetof(::er::paramdef::npc_param_st, spEffectID8)) \\
+    X(spEffectID9, offsetof(::er::paramdef::npc_param_st, spEffectID9)) \\
+    X(spEffectID10, offsetof(::er::paramdef::npc_param_st, spEffectID10)) \\
+    X(spEffectID11, offsetof(::er::paramdef::npc_param_st, spEffectID11)) \\
+    X(spEffectID12, offsetof(::er::paramdef::npc_param_st, spEffectID12)) \\
+    X(spEffectID13, offsetof(::er::paramdef::npc_param_st, spEffectID13)) \\
+    X(spEffectID14, offsetof(::er::paramdef::npc_param_st, spEffectID14)) \\
+    X(spEffectID15, offsetof(::er::paramdef::npc_param_st, spEffectID15)) \\
+    X(autoFootEffectDecalBaseId1, offsetof(::er::paramdef::npc_param_st, autoFootEffectDecalBaseId1)) \\
+    X(toughness, offsetof(::er::paramdef::npc_param_st, toughness)) \\
+    X(toughnessRecoverCorrection, offsetof(::er::paramdef::npc_param_st, toughnessRecoverCorrection)) \\
+    X(neutralDamageCutRate, offsetof(::er::paramdef::npc_param_st, neutralDamageCutRate)) \\
+    X(slashDamageCutRate, offsetof(::er::paramdef::npc_param_st, slashDamageCutRate)) \\
+    X(blowDamageCutRate, offsetof(::er::paramdef::npc_param_st, blowDamageCutRate)) \\
+    X(thrustDamageCutRate, offsetof(::er::paramdef::npc_param_st, thrustDamageCutRate)) \\
+    X(magicDamageCutRate, offsetof(::er::paramdef::npc_param_st, magicDamageCutRate)) \\
+    X(fireDamageCutRate, offsetof(::er::paramdef::npc_param_st, fireDamageCutRate)) \\
+    X(thunderDamageCutRate, offsetof(::er::paramdef::npc_param_st, thunderDamageCutRate)) \\
+    X(darkDamageCutRate, offsetof(::er::paramdef::npc_param_st, darkDamageCutRate)) \\
+    X(darkGuardCutRate, offsetof(::er::paramdef::npc_param_st, darkGuardCutRate)) \\
+    X(clothUpdateOffset, offsetof(::er::paramdef::npc_param_st, clothUpdateOffset)) \\
+    X(npcPlayerWeightType, offsetof(::er::paramdef::npc_param_st, npcPlayerWeightType)) \\
+    X(normalChangeModelId, offsetof(::er::paramdef::npc_param_st, normalChangeModelId)) \\
+    X(normalChangeAnimChrId, offsetof(::er::paramdef::npc_param_st, normalChangeAnimChrId)) \\
+    X(paintRenderTargetSize, offsetof(::er::paramdef::npc_param_st, paintRenderTargetSize)) \\
+    X(resistCorrectId_disease, offsetof(::er::paramdef::npc_param_st, resistCorrectId_disease)) \\
+    X(phantomShaderId, offsetof(::er::paramdef::npc_param_st, phantomShaderId)) \\
+    X(multiPlayCorrectionParamId, offsetof(::er::paramdef::npc_param_st, multiPlayCorrectionParamId)) \\
+    X(maxAnklePitchAngle, offsetof(::er::paramdef::npc_param_st, maxAnklePitchAngle)) \\
+    X(resist_freeze, offsetof(::er::paramdef::npc_param_st, resist_freeze)) \\
+    X(freezeGuardResist, offsetof(::er::paramdef::npc_param_st, freezeGuardResist)) \\
+    X(unknown_0x1e3, offsetof(::er::paramdef::npc_param_st, unknown_0x1e3)) \\
+    X(lockCameraParamId, offsetof(::er::paramdef::npc_param_st, lockCameraParamId)) \\
+    X(spEffectID16, offsetof(::er::paramdef::npc_param_st, spEffectID16)) \\
+    X(spEffectID17, offsetof(::er::paramdef::npc_param_st, spEffectID17)) \\
+    X(spEffectID18, offsetof(::er::paramdef::npc_param_st, spEffectID18)) \\
+    X(spEffectID19, offsetof(::er::paramdef::npc_param_st, spEffectID19)) \\
+    X(spEffectID20, offsetof(::er::paramdef::npc_param_st, spEffectID20)) \\
+    X(spEffectID21, offsetof(::er::paramdef::npc_param_st, spEffectID21)) \\
+    X(spEffectID22, offsetof(::er::paramdef::npc_param_st, spEffectID22)) \\
+    X(spEffectID23, offsetof(::er::paramdef::npc_param_st, spEffectID23)) \\
+    X(spEffectID24, offsetof(::er::paramdef::npc_param_st, spEffectID24)) \\
+    X(spEffectID25, offsetof(::er::paramdef::npc_param_st, spEffectID25)) \\
+    X(spEffectID26, offsetof(::er::paramdef::npc_param_st, spEffectID26)) \\
+    X(spEffectID27, offsetof(::er::paramdef::npc_param_st, spEffectID27)) \\
+    X(spEffectID28, offsetof(::er::paramdef::npc_param_st, spEffectID28)) \\
+    X(spEffectID29, offsetof(::er::paramdef::npc_param_st, spEffectID29)) \\
+    X(spEffectID30, offsetof(::er::paramdef::npc_param_st, spEffectID30)) \\
+    X(spEffectID31, offsetof(::er::paramdef::npc_param_st, spEffectID31)) \\
+    X(disableLockOnAng, offsetof(::er::paramdef::npc_param_st, disableLockOnAng)) \\
+    X(clothOffLodLevel, offsetof(::er::paramdef::npc_param_st, clothOffLodLevel)) \\
+    X(estusFlaskRecoveryParamId, offsetof(::er::paramdef::npc_param_st, estusFlaskRecoveryParamId)) \\
+    X(roleNameId, offsetof(::er::paramdef::npc_param_st, roleNameId)) \\
+    X(estusFlaskLotPoint, offsetof(::er::paramdef::npc_param_st, estusFlaskLotPoint)) \\
+    X(hpEstusFlaskLotPoint, offsetof(::er::paramdef::npc_param_st, hpEstusFlaskLotPoint)) \\
+    X(mpEstusFlaskLotPoint, offsetof(::er::paramdef::npc_param_st, mpEstusFlaskLotPoint)) \\
+    X(estusFlaskRecovery_failedLotPointAdd, offsetof(::er::paramdef::npc_param_st, estusFlaskRecovery_failedLotPointAdd)) \\
+    X(hpEstusFlaskRecovery_failedLotPointAdd, offsetof(::er::paramdef::npc_param_st, hpEstusFlaskRecovery_failedLotPointAdd)) \\
+    X(mpEstusFlaskRecovery_failedLotPointAdd, offsetof(::er::paramdef::npc_param_st, mpEstusFlaskRecovery_failedLotPointAdd)) \\
+    X(WanderGhostPhantomId, offsetof(::er::paramdef::npc_param_st, WanderGhostPhantomId)) \\
+    X(hearingHeadSize, offsetof(::er::paramdef::npc_param_st, hearingHeadSize)) \\
+    X(SoundBankId, offsetof(::er::paramdef::npc_param_st, SoundBankId)) \\
+    X(forwardUndulationLimit, offsetof(::er::paramdef::npc_param_st, forwardUndulationLimit)) \\
+    X(sideUndulationLimit, offsetof(::er::paramdef::npc_param_st, sideUndulationLimit)) \\
+    X(deactiveMoveSpeed, offsetof(::er::paramdef::npc_param_st, deactiveMoveSpeed)) \\
+    X(deactiveMoveDist, offsetof(::er::paramdef::npc_param_st, deactiveMoveDist)) \\
+    X(enableSoundObjDist, offsetof(::er::paramdef::npc_param_st, enableSoundObjDist)) \\
+    X(undulationCorrectGain, offsetof(::er::paramdef::npc_param_st, undulationCorrectGain)) \\
+    X(autoFootEffectDecalBaseId2, offsetof(::er::paramdef::npc_param_st, autoFootEffectDecalBaseId2)) \\
+    X(autoFootEffectDecalBaseId3, offsetof(::er::paramdef::npc_param_st, autoFootEffectDecalBaseId3)) \\
+    X(RetargetReferenceChrId, offsetof(::er::paramdef::npc_param_st, RetargetReferenceChrId)) \\
+    X(SfxResBankId, offsetof(::er::paramdef::npc_param_st, SfxResBankId)) \\
+    X(updateActivatePriolity, offsetof(::er::paramdef::npc_param_st, updateActivatePriolity)) \\
+    X(chrNavimeshFlag_Alive, offsetof(::er::paramdef::npc_param_st, chrNavimeshFlag_Alive)) \\
+    X(chrNavimeshFlag_Dead, offsetof(::er::paramdef::npc_param_st, chrNavimeshFlag_Dead)) \\
+    X(isConsideredUndead, offsetof(::er::paramdef::npc_param_st, isConsideredUndead)) \\
+    X(wheelRotType, offsetof(::er::paramdef::npc_param_st, wheelRotType)) \\
+    X(wheelRotRadius, offsetof(::er::paramdef::npc_param_st, wheelRotRadius)) \\
+    X(retargetMoveRate, offsetof(::er::paramdef::npc_param_st, retargetMoveRate)) \\
+    X(ladderWarpOffset, offsetof(::er::paramdef::npc_param_st, ladderWarpOffset)) \\
+    X(loadAssetId, offsetof(::er::paramdef::npc_param_st, loadAssetId)) \\
+    X(overlapCameraDmypolyId, offsetof(::er::paramdef::npc_param_st, overlapCameraDmypolyId)) \\
+    X(residentMaterialExParamId00, offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId00)) \\
+    X(residentMaterialExParamId01, offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId01)) \\
+    X(residentMaterialExParamId02, offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId02)) \\
+    X(residentMaterialExParamId03, offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId03)) \\
+    X(residentMaterialExParamId04, offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId04)) \\
+    X(sleepCollectorItemLotId_enemy, offsetof(::er::paramdef::npc_param_st, sleepCollectorItemLotId_enemy)) \\
+    X(sleepCollectorItemLotId_map, offsetof(::er::paramdef::npc_param_st, sleepCollectorItemLotId_map)) \\
+    X(footIkErrorOnGain, offsetof(::er::paramdef::npc_param_st, footIkErrorOnGain)) \\
+    X(footIkErrorOffGain, offsetof(::er::paramdef::npc_param_st, footIkErrorOffGain)) \\
+    X(SoundAddBankId, offsetof(::er::paramdef::npc_param_st, SoundAddBankId)) \\
+    X(materialVariationValue, offsetof(::er::paramdef::npc_param_st, materialVariationValue)) \\
+    X(materialVariationValue_Weak, offsetof(::er::paramdef::npc_param_st, materialVariationValue_Weak)) \\
+    X(superArmorDurability, offsetof(::er::paramdef::npc_param_st, superArmorDurability)) \\
+    X(saRecoveryRate, offsetof(::er::paramdef::npc_param_st, saRecoveryRate)) \\
+    X(saGuardCutRate, offsetof(::er::paramdef::npc_param_st, saGuardCutRate)) \\
+    X(resistCorrectId_blood, offsetof(::er::paramdef::npc_param_st, resistCorrectId_blood)) \\
+    X(resistCorrectId_curse, offsetof(::er::paramdef::npc_param_st, resistCorrectId_curse)) \\
+    X(resistCorrectId_freeze, offsetof(::er::paramdef::npc_param_st, resistCorrectId_freeze)) \\
+    X(resistCorrectId_sleep, offsetof(::er::paramdef::npc_param_st, resistCorrectId_sleep)) \\
+    X(resistCorrectId_madness, offsetof(::er::paramdef::npc_param_st, resistCorrectId_madness)) \\
+    X(chrDeadTutorialFlagId, offsetof(::er::paramdef::npc_param_st, chrDeadTutorialFlagId)) \\
+    X(stepDispInterpolateTime, offsetof(::er::paramdef::npc_param_st, stepDispInterpolateTime)) \\
+    X(stepDispInterpolateTriggerValue, offsetof(::er::paramdef::npc_param_st, stepDispInterpolateTriggerValue)) \\
+    X(lockScoreOffset, offsetof(::er::paramdef::npc_param_st, lockScoreOffset)) \\
+    X(dlcGameClearSpEffectID, offsetof(::er::paramdef::npc_param_st, dlcGameClearSpEffectID)) \\
+    X(pad12, offsetof(::er::paramdef::npc_param_st, pad12))
+
+#define ERD_OFFSET_NPC_PARAM_ST_disableParamReserve2 offsetof(::er::paramdef::npc_param_st, disableParamReserve2)
+#define ERD_OFFSET_NPC_PARAM_ST_behaviorVariationId offsetof(::er::paramdef::npc_param_st, behaviorVariationId)
+#define ERD_OFFSET_NPC_PARAM_ST_resistCorrectId_poison offsetof(::er::paramdef::npc_param_st, resistCorrectId_poison)
+#define ERD_OFFSET_NPC_PARAM_ST_nameId offsetof(::er::paramdef::npc_param_st, nameId)
+#define ERD_OFFSET_NPC_PARAM_ST_turnVellocity offsetof(::er::paramdef::npc_param_st, turnVellocity)
+#define ERD_OFFSET_NPC_PARAM_ST_hitHeight offsetof(::er::paramdef::npc_param_st, hitHeight)
+#define ERD_OFFSET_NPC_PARAM_ST_hitRadius offsetof(::er::paramdef::npc_param_st, hitRadius)
+#define ERD_OFFSET_NPC_PARAM_ST_weight offsetof(::er::paramdef::npc_param_st, weight)
+#define ERD_OFFSET_NPC_PARAM_ST_hitYOffset offsetof(::er::paramdef::npc_param_st, hitYOffset)
+#define ERD_OFFSET_NPC_PARAM_ST_hp offsetof(::er::paramdef::npc_param_st, hp)
+#define ERD_OFFSET_NPC_PARAM_ST_mp offsetof(::er::paramdef::npc_param_st, mp)
+#define ERD_OFFSET_NPC_PARAM_ST_getSoul offsetof(::er::paramdef::npc_param_st, getSoul)
+#define ERD_OFFSET_NPC_PARAM_ST_itemLotId_enemy offsetof(::er::paramdef::npc_param_st, itemLotId_enemy)
+#define ERD_OFFSET_NPC_PARAM_ST_itemLotId_map offsetof(::er::paramdef::npc_param_st, itemLotId_map)
+#define ERD_OFFSET_NPC_PARAM_ST_maxAnkleRollAngle offsetof(::er::paramdef::npc_param_st, maxAnkleRollAngle)
+#define ERD_OFFSET_NPC_PARAM_ST_chrHitGroupAndNavimesh offsetof(::er::paramdef::npc_param_st, chrHitGroupAndNavimesh)
+#define ERD_OFFSET_NPC_PARAM_ST_faceIconId offsetof(::er::paramdef::npc_param_st, faceIconId)
+#define ERD_OFFSET_NPC_PARAM_ST_deactivateDist offsetof(::er::paramdef::npc_param_st, deactivateDist)
+#define ERD_OFFSET_NPC_PARAM_ST_chrActivateConditionParamId offsetof(::er::paramdef::npc_param_st, chrActivateConditionParamId)
+#define ERD_OFFSET_NPC_PARAM_ST_footIkErrorHeightLimit offsetof(::er::paramdef::npc_param_st, footIkErrorHeightLimit)
+#define ERD_OFFSET_NPC_PARAM_ST_humanityLotId offsetof(::er::paramdef::npc_param_st, humanityLotId)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID0 offsetof(::er::paramdef::npc_param_st, spEffectID0)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID1 offsetof(::er::paramdef::npc_param_st, spEffectID1)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID2 offsetof(::er::paramdef::npc_param_st, spEffectID2)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID3 offsetof(::er::paramdef::npc_param_st, spEffectID3)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID4 offsetof(::er::paramdef::npc_param_st, spEffectID4)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID5 offsetof(::er::paramdef::npc_param_st, spEffectID5)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID6 offsetof(::er::paramdef::npc_param_st, spEffectID6)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID7 offsetof(::er::paramdef::npc_param_st, spEffectID7)
+#define ERD_OFFSET_NPC_PARAM_ST_GameClearSpEffectID offsetof(::er::paramdef::npc_param_st, GameClearSpEffectID)
+#define ERD_OFFSET_NPC_PARAM_ST_physGuardCutRate offsetof(::er::paramdef::npc_param_st, physGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_magGuardCutRate offsetof(::er::paramdef::npc_param_st, magGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_fireGuardCutRate offsetof(::er::paramdef::npc_param_st, fireGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_thunGuardCutRate offsetof(::er::paramdef::npc_param_st, thunGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_animIdOffset offsetof(::er::paramdef::npc_param_st, animIdOffset)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint0 offsetof(::er::paramdef::npc_param_st, lockGazePoint0)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint1 offsetof(::er::paramdef::npc_param_st, lockGazePoint1)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint2 offsetof(::er::paramdef::npc_param_st, lockGazePoint2)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint3 offsetof(::er::paramdef::npc_param_st, lockGazePoint3)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint4 offsetof(::er::paramdef::npc_param_st, lockGazePoint4)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint5 offsetof(::er::paramdef::npc_param_st, lockGazePoint5)
+#define ERD_OFFSET_NPC_PARAM_ST_networkWarpDist offsetof(::er::paramdef::npc_param_st, networkWarpDist)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorR1 offsetof(::er::paramdef::npc_param_st, dbgBehaviorR1)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorL1 offsetof(::er::paramdef::npc_param_st, dbgBehaviorL1)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorR2 offsetof(::er::paramdef::npc_param_st, dbgBehaviorR2)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorL2 offsetof(::er::paramdef::npc_param_st, dbgBehaviorL2)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorRL offsetof(::er::paramdef::npc_param_st, dbgBehaviorRL)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorRR offsetof(::er::paramdef::npc_param_st, dbgBehaviorRR)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorRD offsetof(::er::paramdef::npc_param_st, dbgBehaviorRD)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorRU offsetof(::er::paramdef::npc_param_st, dbgBehaviorRU)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorLL offsetof(::er::paramdef::npc_param_st, dbgBehaviorLL)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorLR offsetof(::er::paramdef::npc_param_st, dbgBehaviorLR)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorLD offsetof(::er::paramdef::npc_param_st, dbgBehaviorLD)
+#define ERD_OFFSET_NPC_PARAM_ST_dbgBehaviorLU offsetof(::er::paramdef::npc_param_st, dbgBehaviorLU)
+#define ERD_OFFSET_NPC_PARAM_ST_animIdOffset2 offsetof(::er::paramdef::npc_param_st, animIdOffset2)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate1 offsetof(::er::paramdef::npc_param_st, partsDamageRate1)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate2 offsetof(::er::paramdef::npc_param_st, partsDamageRate2)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate3 offsetof(::er::paramdef::npc_param_st, partsDamageRate3)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate4 offsetof(::er::paramdef::npc_param_st, partsDamageRate4)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate5 offsetof(::er::paramdef::npc_param_st, partsDamageRate5)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate6 offsetof(::er::paramdef::npc_param_st, partsDamageRate6)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate7 offsetof(::er::paramdef::npc_param_st, partsDamageRate7)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageRate8 offsetof(::er::paramdef::npc_param_st, partsDamageRate8)
+#define ERD_OFFSET_NPC_PARAM_ST_weakPartsDamageRate offsetof(::er::paramdef::npc_param_st, weakPartsDamageRate)
+#define ERD_OFFSET_NPC_PARAM_ST_superArmorRecoverCorrection offsetof(::er::paramdef::npc_param_st, superArmorRecoverCorrection)
+#define ERD_OFFSET_NPC_PARAM_ST_superArmorBrakeKnockbackDist offsetof(::er::paramdef::npc_param_st, superArmorBrakeKnockbackDist)
+#define ERD_OFFSET_NPC_PARAM_ST_stamina offsetof(::er::paramdef::npc_param_st, stamina)
+#define ERD_OFFSET_NPC_PARAM_ST_staminaRecoverBaseVel offsetof(::er::paramdef::npc_param_st, staminaRecoverBaseVel)
+#define ERD_OFFSET_NPC_PARAM_ST_def_phys offsetof(::er::paramdef::npc_param_st, def_phys)
+#define ERD_OFFSET_NPC_PARAM_ST_def_slash offsetof(::er::paramdef::npc_param_st, def_slash)
+#define ERD_OFFSET_NPC_PARAM_ST_def_blow offsetof(::er::paramdef::npc_param_st, def_blow)
+#define ERD_OFFSET_NPC_PARAM_ST_def_thrust offsetof(::er::paramdef::npc_param_st, def_thrust)
+#define ERD_OFFSET_NPC_PARAM_ST_def_mag offsetof(::er::paramdef::npc_param_st, def_mag)
+#define ERD_OFFSET_NPC_PARAM_ST_def_fire offsetof(::er::paramdef::npc_param_st, def_fire)
+#define ERD_OFFSET_NPC_PARAM_ST_def_thunder offsetof(::er::paramdef::npc_param_st, def_thunder)
+#define ERD_OFFSET_NPC_PARAM_ST_defFlickPower offsetof(::er::paramdef::npc_param_st, defFlickPower)
+#define ERD_OFFSET_NPC_PARAM_ST_resist_poison offsetof(::er::paramdef::npc_param_st, resist_poison)
+#define ERD_OFFSET_NPC_PARAM_ST_resist_desease offsetof(::er::paramdef::npc_param_st, resist_desease)
+#define ERD_OFFSET_NPC_PARAM_ST_resist_blood offsetof(::er::paramdef::npc_param_st, resist_blood)
+#define ERD_OFFSET_NPC_PARAM_ST_resist_curse offsetof(::er::paramdef::npc_param_st, resist_curse)
+#define ERD_OFFSET_NPC_PARAM_ST_ghostModelId offsetof(::er::paramdef::npc_param_st, ghostModelId)
+#define ERD_OFFSET_NPC_PARAM_ST_normalChangeResouceId offsetof(::er::paramdef::npc_param_st, normalChangeResouceId)
+#define ERD_OFFSET_NPC_PARAM_ST_guardAngle offsetof(::er::paramdef::npc_param_st, guardAngle)
+#define ERD_OFFSET_NPC_PARAM_ST_slashGuardCutRate offsetof(::er::paramdef::npc_param_st, slashGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_blowGuardCutRate offsetof(::er::paramdef::npc_param_st, blowGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_thrustGuardCutRate offsetof(::er::paramdef::npc_param_st, thrustGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint6 offsetof(::er::paramdef::npc_param_st, lockGazePoint6)
+#define ERD_OFFSET_NPC_PARAM_ST_normalChangeTexChrId offsetof(::er::paramdef::npc_param_st, normalChangeTexChrId)
+#define ERD_OFFSET_NPC_PARAM_ST_dropType offsetof(::er::paramdef::npc_param_st, dropType)
+#define ERD_OFFSET_NPC_PARAM_ST_knockbackRate offsetof(::er::paramdef::npc_param_st, knockbackRate)
+#define ERD_OFFSET_NPC_PARAM_ST_knockbackParamId offsetof(::er::paramdef::npc_param_st, knockbackParamId)
+#define ERD_OFFSET_NPC_PARAM_ST_fallDamageDump offsetof(::er::paramdef::npc_param_st, fallDamageDump)
+#define ERD_OFFSET_NPC_PARAM_ST_staminaGuardDef offsetof(::er::paramdef::npc_param_st, staminaGuardDef)
+#define ERD_OFFSET_NPC_PARAM_ST_resist_sleep offsetof(::er::paramdef::npc_param_st, resist_sleep)
+#define ERD_OFFSET_NPC_PARAM_ST_resist_madness offsetof(::er::paramdef::npc_param_st, resist_madness)
+#define ERD_OFFSET_NPC_PARAM_ST_sleepGuardResist offsetof(::er::paramdef::npc_param_st, sleepGuardResist)
+#define ERD_OFFSET_NPC_PARAM_ST_madnessGuardResist offsetof(::er::paramdef::npc_param_st, madnessGuardResist)
+#define ERD_OFFSET_NPC_PARAM_ST_lockGazePoint7 offsetof(::er::paramdef::npc_param_st, lockGazePoint7)
+#define ERD_OFFSET_NPC_PARAM_ST_mpRecoverBaseVel offsetof(::er::paramdef::npc_param_st, mpRecoverBaseVel)
+#define ERD_OFFSET_NPC_PARAM_ST_flickDamageCutRate offsetof(::er::paramdef::npc_param_st, flickDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_defaultLodParamId offsetof(::er::paramdef::npc_param_st, defaultLodParamId)
+#define ERD_OFFSET_NPC_PARAM_ST_drawType offsetof(::er::paramdef::npc_param_st, drawType)
+#define ERD_OFFSET_NPC_PARAM_ST_npcType offsetof(::er::paramdef::npc_param_st, npcType)
+#define ERD_OFFSET_NPC_PARAM_ST_teamType offsetof(::er::paramdef::npc_param_st, teamType)
+#define ERD_OFFSET_NPC_PARAM_ST_moveType offsetof(::er::paramdef::npc_param_st, moveType)
+#define ERD_OFFSET_NPC_PARAM_ST_lockDist offsetof(::er::paramdef::npc_param_st, lockDist)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSe_Weak1 offsetof(::er::paramdef::npc_param_st, materialSe_Weak1)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSfx_Weak1 offsetof(::er::paramdef::npc_param_st, materialSfx_Weak1)
+#define ERD_OFFSET_NPC_PARAM_ST_partsDamageType offsetof(::er::paramdef::npc_param_st, partsDamageType)
+#define ERD_OFFSET_NPC_PARAM_ST_vowType offsetof(::er::paramdef::npc_param_st, vowType)
+#define ERD_OFFSET_NPC_PARAM_ST_guardLevel offsetof(::er::paramdef::npc_param_st, guardLevel)
+#define ERD_OFFSET_NPC_PARAM_ST_burnSfxType offsetof(::er::paramdef::npc_param_st, burnSfxType)
+#define ERD_OFFSET_NPC_PARAM_ST_poisonGuardResist offsetof(::er::paramdef::npc_param_st, poisonGuardResist)
+#define ERD_OFFSET_NPC_PARAM_ST_diseaseGuardResist offsetof(::er::paramdef::npc_param_st, diseaseGuardResist)
+#define ERD_OFFSET_NPC_PARAM_ST_bloodGuardResist offsetof(::er::paramdef::npc_param_st, bloodGuardResist)
+#define ERD_OFFSET_NPC_PARAM_ST_curseGuardResist offsetof(::er::paramdef::npc_param_st, curseGuardResist)
+#define ERD_OFFSET_NPC_PARAM_ST_parryAttack offsetof(::er::paramdef::npc_param_st, parryAttack)
+#define ERD_OFFSET_NPC_PARAM_ST_parryDefence offsetof(::er::paramdef::npc_param_st, parryDefence)
+#define ERD_OFFSET_NPC_PARAM_ST_sfxSize offsetof(::er::paramdef::npc_param_st, sfxSize)
+#define ERD_OFFSET_NPC_PARAM_ST_pushOutCamRegionRadius offsetof(::er::paramdef::npc_param_st, pushOutCamRegionRadius)
+#define ERD_OFFSET_NPC_PARAM_ST_hitStopType offsetof(::er::paramdef::npc_param_st, hitStopType)
+#define ERD_OFFSET_NPC_PARAM_ST_ladderEndChkOffsetTop offsetof(::er::paramdef::npc_param_st, ladderEndChkOffsetTop)
+#define ERD_OFFSET_NPC_PARAM_ST_ladderEndChkOffsetLow offsetof(::er::paramdef::npc_param_st, ladderEndChkOffsetLow)
+#define ERD_OFFSET_NPC_PARAM_ST_itemSearchRadius offsetof(::er::paramdef::npc_param_st, itemSearchRadius)
+#define ERD_OFFSET_NPC_PARAM_ST_chrHitHeight offsetof(::er::paramdef::npc_param_st, chrHitHeight)
+#define ERD_OFFSET_NPC_PARAM_ST_chrHitRadius offsetof(::er::paramdef::npc_param_st, chrHitRadius)
+#define ERD_OFFSET_NPC_PARAM_ST_specialTurnType offsetof(::er::paramdef::npc_param_st, specialTurnType)
+#define ERD_OFFSET_NPC_PARAM_ST_def_dark offsetof(::er::paramdef::npc_param_st, def_dark)
+#define ERD_OFFSET_NPC_PARAM_ST_threatLv offsetof(::er::paramdef::npc_param_st, threatLv)
+#define ERD_OFFSET_NPC_PARAM_ST_specialTurnDistanceThreshold offsetof(::er::paramdef::npc_param_st, specialTurnDistanceThreshold)
+#define ERD_OFFSET_NPC_PARAM_ST_autoFootEffectSfxId offsetof(::er::paramdef::npc_param_st, autoFootEffectSfxId)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSe1 offsetof(::er::paramdef::npc_param_st, materialSe1)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSfx1 offsetof(::er::paramdef::npc_param_st, materialSfx1)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSe_Weak2 offsetof(::er::paramdef::npc_param_st, materialSe_Weak2)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSfx_Weak2 offsetof(::er::paramdef::npc_param_st, materialSfx_Weak2)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSe2 offsetof(::er::paramdef::npc_param_st, materialSe2)
+#define ERD_OFFSET_NPC_PARAM_ST_materialSfx2 offsetof(::er::paramdef::npc_param_st, materialSfx2)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID8 offsetof(::er::paramdef::npc_param_st, spEffectID8)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID9 offsetof(::er::paramdef::npc_param_st, spEffectID9)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID10 offsetof(::er::paramdef::npc_param_st, spEffectID10)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID11 offsetof(::er::paramdef::npc_param_st, spEffectID11)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID12 offsetof(::er::paramdef::npc_param_st, spEffectID12)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID13 offsetof(::er::paramdef::npc_param_st, spEffectID13)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID14 offsetof(::er::paramdef::npc_param_st, spEffectID14)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID15 offsetof(::er::paramdef::npc_param_st, spEffectID15)
+#define ERD_OFFSET_NPC_PARAM_ST_autoFootEffectDecalBaseId1 offsetof(::er::paramdef::npc_param_st, autoFootEffectDecalBaseId1)
+#define ERD_OFFSET_NPC_PARAM_ST_toughness offsetof(::er::paramdef::npc_param_st, toughness)
+#define ERD_OFFSET_NPC_PARAM_ST_toughnessRecoverCorrection offsetof(::er::paramdef::npc_param_st, toughnessRecoverCorrection)
+#define ERD_OFFSET_NPC_PARAM_ST_neutralDamageCutRate offsetof(::er::paramdef::npc_param_st, neutralDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_slashDamageCutRate offsetof(::er::paramdef::npc_param_st, slashDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_blowDamageCutRate offsetof(::er::paramdef::npc_param_st, blowDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_thrustDamageCutRate offsetof(::er::paramdef::npc_param_st, thrustDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_magicDamageCutRate offsetof(::er::paramdef::npc_param_st, magicDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_fireDamageCutRate offsetof(::er::paramdef::npc_param_st, fireDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_thunderDamageCutRate offsetof(::er::paramdef::npc_param_st, thunderDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_darkDamageCutRate offsetof(::er::paramdef::npc_param_st, darkDamageCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_darkGuardCutRate offsetof(::er::paramdef::npc_param_st, darkGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_clothUpdateOffset offsetof(::er::paramdef::npc_param_st, clothUpdateOffset)
+#define ERD_OFFSET_NPC_PARAM_ST_npcPlayerWeightType offsetof(::er::paramdef::npc_param_st, npcPlayerWeightType)
+#define ERD_OFFSET_NPC_PARAM_ST_normalChangeModelId offsetof(::er::paramdef::npc_param_st, normalChangeModelId)
+#define ERD_OFFSET_NPC_PARAM_ST_normalChangeAnimChrId offsetof(::er::paramdef::npc_param_st, normalChangeAnimChrId)
+#define ERD_OFFSET_NPC_PARAM_ST_paintRenderTargetSize offsetof(::er::paramdef::npc_param_st, paintRenderTargetSize)
+#define ERD_OFFSET_NPC_PARAM_ST_resistCorrectId_disease offsetof(::er::paramdef::npc_param_st, resistCorrectId_disease)
+#define ERD_OFFSET_NPC_PARAM_ST_phantomShaderId offsetof(::er::paramdef::npc_param_st, phantomShaderId)
+#define ERD_OFFSET_NPC_PARAM_ST_multiPlayCorrectionParamId offsetof(::er::paramdef::npc_param_st, multiPlayCorrectionParamId)
+#define ERD_OFFSET_NPC_PARAM_ST_maxAnklePitchAngle offsetof(::er::paramdef::npc_param_st, maxAnklePitchAngle)
+#define ERD_OFFSET_NPC_PARAM_ST_resist_freeze offsetof(::er::paramdef::npc_param_st, resist_freeze)
+#define ERD_OFFSET_NPC_PARAM_ST_freezeGuardResist offsetof(::er::paramdef::npc_param_st, freezeGuardResist)
+#define ERD_OFFSET_NPC_PARAM_ST_unknown_0x1e3 offsetof(::er::paramdef::npc_param_st, unknown_0x1e3)
+#define ERD_OFFSET_NPC_PARAM_ST_lockCameraParamId offsetof(::er::paramdef::npc_param_st, lockCameraParamId)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID16 offsetof(::er::paramdef::npc_param_st, spEffectID16)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID17 offsetof(::er::paramdef::npc_param_st, spEffectID17)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID18 offsetof(::er::paramdef::npc_param_st, spEffectID18)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID19 offsetof(::er::paramdef::npc_param_st, spEffectID19)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID20 offsetof(::er::paramdef::npc_param_st, spEffectID20)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID21 offsetof(::er::paramdef::npc_param_st, spEffectID21)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID22 offsetof(::er::paramdef::npc_param_st, spEffectID22)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID23 offsetof(::er::paramdef::npc_param_st, spEffectID23)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID24 offsetof(::er::paramdef::npc_param_st, spEffectID24)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID25 offsetof(::er::paramdef::npc_param_st, spEffectID25)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID26 offsetof(::er::paramdef::npc_param_st, spEffectID26)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID27 offsetof(::er::paramdef::npc_param_st, spEffectID27)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID28 offsetof(::er::paramdef::npc_param_st, spEffectID28)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID29 offsetof(::er::paramdef::npc_param_st, spEffectID29)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID30 offsetof(::er::paramdef::npc_param_st, spEffectID30)
+#define ERD_OFFSET_NPC_PARAM_ST_spEffectID31 offsetof(::er::paramdef::npc_param_st, spEffectID31)
+#define ERD_OFFSET_NPC_PARAM_ST_disableLockOnAng offsetof(::er::paramdef::npc_param_st, disableLockOnAng)
+#define ERD_OFFSET_NPC_PARAM_ST_clothOffLodLevel offsetof(::er::paramdef::npc_param_st, clothOffLodLevel)
+#define ERD_OFFSET_NPC_PARAM_ST_estusFlaskRecoveryParamId offsetof(::er::paramdef::npc_param_st, estusFlaskRecoveryParamId)
+#define ERD_OFFSET_NPC_PARAM_ST_roleNameId offsetof(::er::paramdef::npc_param_st, roleNameId)
+#define ERD_OFFSET_NPC_PARAM_ST_estusFlaskLotPoint offsetof(::er::paramdef::npc_param_st, estusFlaskLotPoint)
+#define ERD_OFFSET_NPC_PARAM_ST_hpEstusFlaskLotPoint offsetof(::er::paramdef::npc_param_st, hpEstusFlaskLotPoint)
+#define ERD_OFFSET_NPC_PARAM_ST_mpEstusFlaskLotPoint offsetof(::er::paramdef::npc_param_st, mpEstusFlaskLotPoint)
+#define ERD_OFFSET_NPC_PARAM_ST_estusFlaskRecovery_failedLotPointAdd offsetof(::er::paramdef::npc_param_st, estusFlaskRecovery_failedLotPointAdd)
+#define ERD_OFFSET_NPC_PARAM_ST_hpEstusFlaskRecovery_failedLotPointAdd offsetof(::er::paramdef::npc_param_st, hpEstusFlaskRecovery_failedLotPointAdd)
+#define ERD_OFFSET_NPC_PARAM_ST_mpEstusFlaskRecovery_failedLotPointAdd offsetof(::er::paramdef::npc_param_st, mpEstusFlaskRecovery_failedLotPointAdd)
+#define ERD_OFFSET_NPC_PARAM_ST_WanderGhostPhantomId offsetof(::er::paramdef::npc_param_st, WanderGhostPhantomId)
+#define ERD_OFFSET_NPC_PARAM_ST_hearingHeadSize offsetof(::er::paramdef::npc_param_st, hearingHeadSize)
+#define ERD_OFFSET_NPC_PARAM_ST_SoundBankId offsetof(::er::paramdef::npc_param_st, SoundBankId)
+#define ERD_OFFSET_NPC_PARAM_ST_forwardUndulationLimit offsetof(::er::paramdef::npc_param_st, forwardUndulationLimit)
+#define ERD_OFFSET_NPC_PARAM_ST_sideUndulationLimit offsetof(::er::paramdef::npc_param_st, sideUndulationLimit)
+#define ERD_OFFSET_NPC_PARAM_ST_deactiveMoveSpeed offsetof(::er::paramdef::npc_param_st, deactiveMoveSpeed)
+#define ERD_OFFSET_NPC_PARAM_ST_deactiveMoveDist offsetof(::er::paramdef::npc_param_st, deactiveMoveDist)
+#define ERD_OFFSET_NPC_PARAM_ST_enableSoundObjDist offsetof(::er::paramdef::npc_param_st, enableSoundObjDist)
+#define ERD_OFFSET_NPC_PARAM_ST_undulationCorrectGain offsetof(::er::paramdef::npc_param_st, undulationCorrectGain)
+#define ERD_OFFSET_NPC_PARAM_ST_autoFootEffectDecalBaseId2 offsetof(::er::paramdef::npc_param_st, autoFootEffectDecalBaseId2)
+#define ERD_OFFSET_NPC_PARAM_ST_autoFootEffectDecalBaseId3 offsetof(::er::paramdef::npc_param_st, autoFootEffectDecalBaseId3)
+#define ERD_OFFSET_NPC_PARAM_ST_RetargetReferenceChrId offsetof(::er::paramdef::npc_param_st, RetargetReferenceChrId)
+#define ERD_OFFSET_NPC_PARAM_ST_SfxResBankId offsetof(::er::paramdef::npc_param_st, SfxResBankId)
+#define ERD_OFFSET_NPC_PARAM_ST_updateActivatePriolity offsetof(::er::paramdef::npc_param_st, updateActivatePriolity)
+#define ERD_OFFSET_NPC_PARAM_ST_chrNavimeshFlag_Alive offsetof(::er::paramdef::npc_param_st, chrNavimeshFlag_Alive)
+#define ERD_OFFSET_NPC_PARAM_ST_chrNavimeshFlag_Dead offsetof(::er::paramdef::npc_param_st, chrNavimeshFlag_Dead)
+#define ERD_OFFSET_NPC_PARAM_ST_isConsideredUndead offsetof(::er::paramdef::npc_param_st, isConsideredUndead)
+#define ERD_OFFSET_NPC_PARAM_ST_wheelRotType offsetof(::er::paramdef::npc_param_st, wheelRotType)
+#define ERD_OFFSET_NPC_PARAM_ST_wheelRotRadius offsetof(::er::paramdef::npc_param_st, wheelRotRadius)
+#define ERD_OFFSET_NPC_PARAM_ST_retargetMoveRate offsetof(::er::paramdef::npc_param_st, retargetMoveRate)
+#define ERD_OFFSET_NPC_PARAM_ST_ladderWarpOffset offsetof(::er::paramdef::npc_param_st, ladderWarpOffset)
+#define ERD_OFFSET_NPC_PARAM_ST_loadAssetId offsetof(::er::paramdef::npc_param_st, loadAssetId)
+#define ERD_OFFSET_NPC_PARAM_ST_overlapCameraDmypolyId offsetof(::er::paramdef::npc_param_st, overlapCameraDmypolyId)
+#define ERD_OFFSET_NPC_PARAM_ST_residentMaterialExParamId00 offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId00)
+#define ERD_OFFSET_NPC_PARAM_ST_residentMaterialExParamId01 offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId01)
+#define ERD_OFFSET_NPC_PARAM_ST_residentMaterialExParamId02 offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId02)
+#define ERD_OFFSET_NPC_PARAM_ST_residentMaterialExParamId03 offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId03)
+#define ERD_OFFSET_NPC_PARAM_ST_residentMaterialExParamId04 offsetof(::er::paramdef::npc_param_st, residentMaterialExParamId04)
+#define ERD_OFFSET_NPC_PARAM_ST_sleepCollectorItemLotId_enemy offsetof(::er::paramdef::npc_param_st, sleepCollectorItemLotId_enemy)
+#define ERD_OFFSET_NPC_PARAM_ST_sleepCollectorItemLotId_map offsetof(::er::paramdef::npc_param_st, sleepCollectorItemLotId_map)
+#define ERD_OFFSET_NPC_PARAM_ST_footIkErrorOnGain offsetof(::er::paramdef::npc_param_st, footIkErrorOnGain)
+#define ERD_OFFSET_NPC_PARAM_ST_footIkErrorOffGain offsetof(::er::paramdef::npc_param_st, footIkErrorOffGain)
+#define ERD_OFFSET_NPC_PARAM_ST_SoundAddBankId offsetof(::er::paramdef::npc_param_st, SoundAddBankId)
+#define ERD_OFFSET_NPC_PARAM_ST_materialVariationValue offsetof(::er::paramdef::npc_param_st, materialVariationValue)
+#define ERD_OFFSET_NPC_PARAM_ST_materialVariationValue_Weak offsetof(::er::paramdef::npc_param_st, materialVariationValue_Weak)
+#define ERD_OFFSET_NPC_PARAM_ST_superArmorDurability offsetof(::er::paramdef::npc_param_st, superArmorDurability)
+#define ERD_OFFSET_NPC_PARAM_ST_saRecoveryRate offsetof(::er::paramdef::npc_param_st, saRecoveryRate)
+#define ERD_OFFSET_NPC_PARAM_ST_saGuardCutRate offsetof(::er::paramdef::npc_param_st, saGuardCutRate)
+#define ERD_OFFSET_NPC_PARAM_ST_resistCorrectId_blood offsetof(::er::paramdef::npc_param_st, resistCorrectId_blood)
+#define ERD_OFFSET_NPC_PARAM_ST_resistCorrectId_curse offsetof(::er::paramdef::npc_param_st, resistCorrectId_curse)
+#define ERD_OFFSET_NPC_PARAM_ST_resistCorrectId_freeze offsetof(::er::paramdef::npc_param_st, resistCorrectId_freeze)
+#define ERD_OFFSET_NPC_PARAM_ST_resistCorrectId_sleep offsetof(::er::paramdef::npc_param_st, resistCorrectId_sleep)
+#define ERD_OFFSET_NPC_PARAM_ST_resistCorrectId_madness offsetof(::er::paramdef::npc_param_st, resistCorrectId_madness)
+#define ERD_OFFSET_NPC_PARAM_ST_chrDeadTutorialFlagId offsetof(::er::paramdef::npc_param_st, chrDeadTutorialFlagId)
+#define ERD_OFFSET_NPC_PARAM_ST_stepDispInterpolateTime offsetof(::er::paramdef::npc_param_st, stepDispInterpolateTime)
+#define ERD_OFFSET_NPC_PARAM_ST_stepDispInterpolateTriggerValue offsetof(::er::paramdef::npc_param_st, stepDispInterpolateTriggerValue)
+#define ERD_OFFSET_NPC_PARAM_ST_lockScoreOffset offsetof(::er::paramdef::npc_param_st, lockScoreOffset)
+#define ERD_OFFSET_NPC_PARAM_ST_dlcGameClearSpEffectID offsetof(::er::paramdef::npc_param_st, dlcGameClearSpEffectID)
+#define ERD_OFFSET_NPC_PARAM_ST_pad12 offsetof(::er::paramdef::npc_param_st, pad12)

@@ -1,0 +1,132 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/WEP_ABSORP_POS_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_WEP_ABSORP_POS_PARAM_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::wep_absorp_pos_param_st, disableParamReserve2)) \\
+    X(hangPosType, offsetof(::er::paramdef::wep_absorp_pos_param_st, hangPosType)) \\
+    X(isSkeletonBind, offsetof(::er::paramdef::wep_absorp_pos_param_st, isSkeletonBind)) \\
+    X(pad0, offsetof(::er::paramdef::wep_absorp_pos_param_st, pad0)) \\
+    X(right_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, right_0)) \\
+    X(left_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, left_0)) \\
+    X(both_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, both_0)) \\
+    X(leftHang_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_0)) \\
+    X(rightHang_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_0)) \\
+    X(right_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, right_1)) \\
+    X(left_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, left_1)) \\
+    X(both_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, both_1)) \\
+    X(leftHang_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_1)) \\
+    X(rightHang_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_1)) \\
+    X(right_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, right_2)) \\
+    X(left_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, left_2)) \\
+    X(both_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, both_2)) \\
+    X(leftHang_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_2)) \\
+    X(rightHang_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_2)) \\
+    X(right_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, right_3)) \\
+    X(left_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, left_3)) \\
+    X(both_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, both_3)) \\
+    X(leftHang_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_3)) \\
+    X(rightHang_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_3)) \\
+    X(wepInvisibleType_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_0)) \\
+    X(wepInvisibleType_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_1)) \\
+    X(wepInvisibleType_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_2)) \\
+    X(wepInvisibleType_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_3)) \\
+    X(leftBoth_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_0)) \\
+    X(leftBoth_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_1)) \\
+    X(leftBoth_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_2)) \\
+    X(leftBoth_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_3)) \\
+    X(dispPosType_right_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_0)) \\
+    X(dispPosType_left_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_0)) \\
+    X(dispPosType_rightBoth_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_0)) \\
+    X(dispPosType_leftBoth_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_0)) \\
+    X(dispPosType_rightHang_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_0)) \\
+    X(dispPosType_leftHang_0, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_0)) \\
+    X(dispPosType_right_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_1)) \\
+    X(dispPosType_left_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_1)) \\
+    X(dispPosType_rightBoth_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_1)) \\
+    X(dispPosType_leftBoth_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_1)) \\
+    X(dispPosType_rightHang_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_1)) \\
+    X(dispPosType_leftHang_1, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_1)) \\
+    X(dispPosType_right_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_2)) \\
+    X(dispPosType_left_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_2)) \\
+    X(dispPosType_rightBoth_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_2)) \\
+    X(dispPosType_leftBoth_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_2)) \\
+    X(dispPosType_rightHang_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_2)) \\
+    X(dispPosType_leftHang_2, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_2)) \\
+    X(dispPosType_right_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_3)) \\
+    X(dispPosType_left_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_3)) \\
+    X(dispPosType_rightBoth_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_3)) \\
+    X(dispPosType_leftBoth_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_3)) \\
+    X(dispPosType_rightHang_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_3)) \\
+    X(dispPosType_leftHang_3, offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_3)) \\
+    X(unknown_0x54, offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x54)) \\
+    X(unknown_0x55, offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x55)) \\
+    X(unknown_0x56, offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x56)) \\
+    X(unknown_0x57, offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x57)) \\
+    X(reserve, offsetof(::er::paramdef::wep_absorp_pos_param_st, reserve))
+
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_disableParamReserve2 offsetof(::er::paramdef::wep_absorp_pos_param_st, disableParamReserve2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_hangPosType offsetof(::er::paramdef::wep_absorp_pos_param_st, hangPosType)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_isSkeletonBind offsetof(::er::paramdef::wep_absorp_pos_param_st, isSkeletonBind)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_pad0 offsetof(::er::paramdef::wep_absorp_pos_param_st, pad0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_right_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, right_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_left_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, left_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_both_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, both_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftHang_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_rightHang_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_right_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, right_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_left_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, left_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_both_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, both_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftHang_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_rightHang_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_right_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, right_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_left_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, left_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_both_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, both_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftHang_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_rightHang_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_right_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, right_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_left_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, left_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_both_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, both_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftHang_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftHang_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_rightHang_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, rightHang_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_wepInvisibleType_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_wepInvisibleType_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_wepInvisibleType_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_wepInvisibleType_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, wepInvisibleType_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftBoth_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftBoth_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftBoth_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_leftBoth_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, leftBoth_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_right_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_left_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightBoth_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftBoth_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightHang_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftHang_0 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_0)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_right_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_left_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightBoth_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftBoth_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightHang_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftHang_1 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_1)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_right_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_left_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightBoth_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftBoth_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightHang_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftHang_2 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_2)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_right_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_right_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_left_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_left_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightBoth_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightBoth_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftBoth_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftBoth_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_rightHang_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_rightHang_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_dispPosType_leftHang_3 offsetof(::er::paramdef::wep_absorp_pos_param_st, dispPosType_leftHang_3)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_unknown_0x54 offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x54)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_unknown_0x55 offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x55)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_unknown_0x56 offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x56)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_unknown_0x57 offsetof(::er::paramdef::wep_absorp_pos_param_st, unknown_0x57)
+#define ERD_OFFSET_WEP_ABSORP_POS_PARAM_ST_reserve offsetof(::er::paramdef::wep_absorp_pos_param_st, reserve)

@@ -1,0 +1,410 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/FOOT_SFX_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_FOOT_SFX_PARAM_ST_FIELDS(X) \\
+    X(sfxId_00, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_00)) \\
+    X(sfxId_01, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_01)) \\
+    X(sfxId_02, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_02)) \\
+    X(sfxId_03, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_03)) \\
+    X(sfxId_04, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_04)) \\
+    X(sfxId_05, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_05)) \\
+    X(sfxId_06, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_06)) \\
+    X(sfxId_07, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_07)) \\
+    X(sfxId_08, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_08)) \\
+    X(sfxId_09, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_09)) \\
+    X(sfxId_10, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_10)) \\
+    X(sfxId_11, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_11)) \\
+    X(sfxId_12, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_12)) \\
+    X(sfxId_13, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_13)) \\
+    X(sfxId_14, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_14)) \\
+    X(sfxId_15, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_15)) \\
+    X(sfxId_16, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_16)) \\
+    X(sfxId_17, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_17)) \\
+    X(sfxId_18, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_18)) \\
+    X(sfxId_19, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_19)) \\
+    X(sfxId_20, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_20)) \\
+    X(sfxId_21, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_21)) \\
+    X(sfxId_22, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_22)) \\
+    X(sfxId_23, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_23)) \\
+    X(sfxId_24, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_24)) \\
+    X(sfxId_25, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_25)) \\
+    X(sfxId_26, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_26)) \\
+    X(sfxId_27, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_27)) \\
+    X(sfxId_28, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_28)) \\
+    X(sfxId_29, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_29)) \\
+    X(sfxId_30, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_30)) \\
+    X(sfxId_31, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_31)) \\
+    X(sfxId_32, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_32)) \\
+    X(sfxId_33, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_33)) \\
+    X(sfxId_34, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_34)) \\
+    X(sfxId_35, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_35)) \\
+    X(sfxId_36, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_36)) \\
+    X(sfxId_37, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_37)) \\
+    X(sfxId_38, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_38)) \\
+    X(sfxId_39, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_39)) \\
+    X(sfxId_40, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_40)) \\
+    X(sfxId_41, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_41)) \\
+    X(sfxId_42, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_42)) \\
+    X(sfxId_43, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_43)) \\
+    X(sfxId_44, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_44)) \\
+    X(sfxId_45, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_45)) \\
+    X(sfxId_46, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_46)) \\
+    X(sfxId_47, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_47)) \\
+    X(sfxId_48, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_48)) \\
+    X(sfxId_49, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_49)) \\
+    X(sfxId_50, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_50)) \\
+    X(sfxId_51, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_51)) \\
+    X(sfxId_52, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_52)) \\
+    X(sfxId_53, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_53)) \\
+    X(sfxId_54, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_54)) \\
+    X(sfxId_55, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_55)) \\
+    X(sfxId_56, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_56)) \\
+    X(sfxId_57, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_57)) \\
+    X(sfxId_58, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_58)) \\
+    X(sfxId_59, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_59)) \\
+    X(sfxId_60, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_60)) \\
+    X(sfxId_61, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_61)) \\
+    X(sfxId_62, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_62)) \\
+    X(sfxId_63, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_63)) \\
+    X(sfxId_64, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_64)) \\
+    X(sfxId_65, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_65)) \\
+    X(sfxId_66, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_66)) \\
+    X(sfxId_67, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_67)) \\
+    X(sfxId_68, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_68)) \\
+    X(sfxId_69, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_69)) \\
+    X(sfxId_70, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_70)) \\
+    X(sfxId_71, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_71)) \\
+    X(sfxId_72, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_72)) \\
+    X(sfxId_73, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_73)) \\
+    X(sfxId_74, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_74)) \\
+    X(sfxId_75, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_75)) \\
+    X(sfxId_76, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_76)) \\
+    X(sfxId_77, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_77)) \\
+    X(sfxId_78, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_78)) \\
+    X(sfxId_79, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_79)) \\
+    X(sfxId_80, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_80)) \\
+    X(sfxId_81, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_81)) \\
+    X(sfxId_82, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_82)) \\
+    X(sfxId_83, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_83)) \\
+    X(sfxId_84, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_84)) \\
+    X(sfxId_85, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_85)) \\
+    X(sfxId_86, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_86)) \\
+    X(sfxId_87, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_87)) \\
+    X(sfxId_88, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_88)) \\
+    X(sfxId_89, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_89)) \\
+    X(sfxId_90, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_90)) \\
+    X(sfxId_91, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_91)) \\
+    X(sfxId_92, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_92)) \\
+    X(sfxId_93, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_93)) \\
+    X(sfxId_94, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_94)) \\
+    X(sfxId_95, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_95)) \\
+    X(sfxId_96, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_96)) \\
+    X(sfxId_97, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_97)) \\
+    X(sfxId_98, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_98)) \\
+    X(sfxId_99, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_99)) \\
+    X(sfxId_100, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_100)) \\
+    X(sfxId_101, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_101)) \\
+    X(sfxId_102, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_102)) \\
+    X(sfxId_103, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_103)) \\
+    X(sfxId_104, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_104)) \\
+    X(sfxId_105, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_105)) \\
+    X(sfxId_106, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_106)) \\
+    X(sfxId_107, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_107)) \\
+    X(sfxId_108, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_108)) \\
+    X(sfxId_109, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_109)) \\
+    X(sfxId_110, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_110)) \\
+    X(sfxId_111, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_111)) \\
+    X(sfxId_112, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_112)) \\
+    X(sfxId_113, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_113)) \\
+    X(sfxId_114, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_114)) \\
+    X(sfxId_115, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_115)) \\
+    X(sfxId_116, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_116)) \\
+    X(sfxId_117, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_117)) \\
+    X(sfxId_118, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_118)) \\
+    X(sfxId_119, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_119)) \\
+    X(sfxId_120, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_120)) \\
+    X(sfxId_121, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_121)) \\
+    X(sfxId_122, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_122)) \\
+    X(sfxId_123, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_123)) \\
+    X(sfxId_124, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_124)) \\
+    X(sfxId_125, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_125)) \\
+    X(sfxId_126, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_126)) \\
+    X(sfxId_127, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_127)) \\
+    X(sfxId_128, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_128)) \\
+    X(sfxId_129, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_129)) \\
+    X(sfxId_130, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_130)) \\
+    X(sfxId_131, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_131)) \\
+    X(sfxId_132, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_132)) \\
+    X(sfxId_133, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_133)) \\
+    X(sfxId_134, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_134)) \\
+    X(sfxId_135, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_135)) \\
+    X(sfxId_136, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_136)) \\
+    X(sfxId_137, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_137)) \\
+    X(sfxId_138, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_138)) \\
+    X(sfxId_139, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_139)) \\
+    X(sfxId_140, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_140)) \\
+    X(sfxId_141, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_141)) \\
+    X(sfxId_142, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_142)) \\
+    X(sfxId_143, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_143)) \\
+    X(sfxId_144, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_144)) \\
+    X(sfxId_145, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_145)) \\
+    X(sfxId_146, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_146)) \\
+    X(sfxId_147, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_147)) \\
+    X(sfxId_148, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_148)) \\
+    X(sfxId_149, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_149)) \\
+    X(sfxId_150, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_150)) \\
+    X(sfxId_151, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_151)) \\
+    X(sfxId_152, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_152)) \\
+    X(sfxId_153, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_153)) \\
+    X(sfxId_154, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_154)) \\
+    X(sfxId_155, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_155)) \\
+    X(sfxId_156, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_156)) \\
+    X(sfxId_157, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_157)) \\
+    X(sfxId_158, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_158)) \\
+    X(sfxId_159, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_159)) \\
+    X(sfxId_160, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_160)) \\
+    X(sfxId_161, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_161)) \\
+    X(sfxId_162, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_162)) \\
+    X(sfxId_163, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_163)) \\
+    X(sfxId_164, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_164)) \\
+    X(sfxId_165, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_165)) \\
+    X(sfxId_166, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_166)) \\
+    X(sfxId_167, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_167)) \\
+    X(sfxId_168, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_168)) \\
+    X(sfxId_169, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_169)) \\
+    X(sfxId_170, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_170)) \\
+    X(sfxId_171, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_171)) \\
+    X(sfxId_172, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_172)) \\
+    X(sfxId_173, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_173)) \\
+    X(sfxId_174, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_174)) \\
+    X(sfxId_175, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_175)) \\
+    X(sfxId_176, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_176)) \\
+    X(sfxId_177, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_177)) \\
+    X(sfxId_178, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_178)) \\
+    X(sfxId_179, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_179)) \\
+    X(sfxId_180, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_180)) \\
+    X(sfxId_181, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_181)) \\
+    X(sfxId_182, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_182)) \\
+    X(sfxId_183, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_183)) \\
+    X(sfxId_184, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_184)) \\
+    X(sfxId_185, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_185)) \\
+    X(sfxId_186, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_186)) \\
+    X(sfxId_187, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_187)) \\
+    X(sfxId_188, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_188)) \\
+    X(sfxId_189, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_189)) \\
+    X(sfxId_190, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_190)) \\
+    X(sfxId_191, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_191)) \\
+    X(sfxId_192, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_192)) \\
+    X(sfxId_193, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_193)) \\
+    X(sfxId_194, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_194)) \\
+    X(sfxId_195, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_195)) \\
+    X(sfxId_196, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_196)) \\
+    X(sfxId_197, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_197)) \\
+    X(sfxId_198, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_198)) \\
+    X(sfxId_199, offsetof(::er::paramdef::foot_sfx_param_st, sfxId_199))
+
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_00 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_00)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_01 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_01)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_02 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_02)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_03 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_03)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_04 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_04)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_05 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_05)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_06 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_06)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_07 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_07)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_08 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_08)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_09 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_09)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_10 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_10)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_11 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_11)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_12 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_12)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_13 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_13)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_14 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_14)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_15 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_15)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_16 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_16)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_17 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_17)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_18 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_18)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_19 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_19)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_20 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_20)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_21 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_21)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_22 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_22)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_23 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_23)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_24 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_24)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_25 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_25)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_26 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_26)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_27 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_27)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_28 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_28)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_29 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_29)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_30 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_30)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_31 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_31)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_32 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_32)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_33 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_33)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_34 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_34)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_35 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_35)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_36 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_36)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_37 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_37)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_38 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_38)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_39 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_39)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_40 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_40)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_41 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_41)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_42 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_42)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_43 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_43)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_44 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_44)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_45 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_45)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_46 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_46)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_47 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_47)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_48 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_48)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_49 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_49)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_50 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_50)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_51 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_51)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_52 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_52)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_53 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_53)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_54 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_54)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_55 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_55)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_56 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_56)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_57 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_57)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_58 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_58)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_59 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_59)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_60 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_60)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_61 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_61)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_62 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_62)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_63 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_63)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_64 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_64)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_65 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_65)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_66 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_66)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_67 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_67)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_68 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_68)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_69 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_69)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_70 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_70)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_71 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_71)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_72 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_72)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_73 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_73)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_74 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_74)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_75 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_75)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_76 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_76)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_77 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_77)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_78 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_78)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_79 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_79)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_80 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_80)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_81 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_81)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_82 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_82)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_83 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_83)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_84 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_84)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_85 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_85)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_86 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_86)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_87 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_87)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_88 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_88)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_89 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_89)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_90 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_90)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_91 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_91)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_92 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_92)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_93 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_93)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_94 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_94)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_95 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_95)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_96 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_96)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_97 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_97)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_98 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_98)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_99 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_99)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_100 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_100)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_101 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_101)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_102 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_102)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_103 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_103)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_104 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_104)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_105 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_105)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_106 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_106)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_107 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_107)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_108 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_108)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_109 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_109)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_110 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_110)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_111 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_111)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_112 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_112)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_113 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_113)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_114 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_114)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_115 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_115)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_116 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_116)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_117 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_117)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_118 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_118)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_119 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_119)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_120 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_120)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_121 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_121)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_122 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_122)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_123 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_123)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_124 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_124)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_125 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_125)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_126 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_126)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_127 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_127)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_128 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_128)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_129 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_129)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_130 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_130)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_131 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_131)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_132 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_132)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_133 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_133)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_134 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_134)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_135 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_135)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_136 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_136)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_137 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_137)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_138 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_138)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_139 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_139)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_140 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_140)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_141 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_141)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_142 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_142)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_143 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_143)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_144 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_144)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_145 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_145)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_146 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_146)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_147 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_147)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_148 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_148)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_149 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_149)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_150 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_150)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_151 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_151)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_152 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_152)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_153 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_153)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_154 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_154)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_155 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_155)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_156 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_156)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_157 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_157)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_158 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_158)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_159 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_159)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_160 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_160)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_161 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_161)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_162 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_162)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_163 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_163)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_164 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_164)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_165 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_165)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_166 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_166)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_167 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_167)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_168 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_168)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_169 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_169)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_170 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_170)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_171 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_171)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_172 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_172)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_173 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_173)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_174 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_174)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_175 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_175)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_176 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_176)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_177 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_177)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_178 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_178)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_179 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_179)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_180 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_180)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_181 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_181)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_182 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_182)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_183 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_183)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_184 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_184)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_185 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_185)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_186 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_186)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_187 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_187)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_188 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_188)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_189 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_189)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_190 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_190)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_191 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_191)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_192 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_192)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_193 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_193)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_194 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_194)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_195 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_195)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_196 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_196)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_197 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_197)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_198 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_198)
+#define ERD_OFFSET_FOOT_SFX_PARAM_ST_sfxId_199 offsetof(::er::paramdef::foot_sfx_param_st, sfxId_199)

@@ -1,0 +1,188 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/BULLET_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_BULLET_PARAM_ST_FIELDS(X) \\
+    X(atkId_Bullet, offsetof(::er::paramdef::bullet_param_st, atkId_Bullet)) \\
+    X(sfxId_Bullet, offsetof(::er::paramdef::bullet_param_st, sfxId_Bullet)) \\
+    X(sfxId_Hit, offsetof(::er::paramdef::bullet_param_st, sfxId_Hit)) \\
+    X(sfxId_Flick, offsetof(::er::paramdef::bullet_param_st, sfxId_Flick)) \\
+    X(life, offsetof(::er::paramdef::bullet_param_st, life)) \\
+    X(dist, offsetof(::er::paramdef::bullet_param_st, dist)) \\
+    X(shootInterval, offsetof(::er::paramdef::bullet_param_st, shootInterval)) \\
+    X(gravityInRange, offsetof(::er::paramdef::bullet_param_st, gravityInRange)) \\
+    X(gravityOutRange, offsetof(::er::paramdef::bullet_param_st, gravityOutRange)) \\
+    X(hormingStopRange, offsetof(::er::paramdef::bullet_param_st, hormingStopRange)) \\
+    X(initVellocity, offsetof(::er::paramdef::bullet_param_st, initVellocity)) \\
+    X(accelInRange, offsetof(::er::paramdef::bullet_param_st, accelInRange)) \\
+    X(accelOutRange, offsetof(::er::paramdef::bullet_param_st, accelOutRange)) \\
+    X(maxVellocity, offsetof(::er::paramdef::bullet_param_st, maxVellocity)) \\
+    X(minVellocity, offsetof(::er::paramdef::bullet_param_st, minVellocity)) \\
+    X(accelTime, offsetof(::er::paramdef::bullet_param_st, accelTime)) \\
+    X(homingBeginDist, offsetof(::er::paramdef::bullet_param_st, homingBeginDist)) \\
+    X(hitRadius, offsetof(::er::paramdef::bullet_param_st, hitRadius)) \\
+    X(hitRadiusMax, offsetof(::er::paramdef::bullet_param_st, hitRadiusMax)) \\
+    X(spreadTime, offsetof(::er::paramdef::bullet_param_st, spreadTime)) \\
+    X(expDelay, offsetof(::er::paramdef::bullet_param_st, expDelay)) \\
+    X(hormingOffsetRange, offsetof(::er::paramdef::bullet_param_st, hormingOffsetRange)) \\
+    X(dmgHitRecordLifeTime, offsetof(::er::paramdef::bullet_param_st, dmgHitRecordLifeTime)) \\
+    X(externalForce, offsetof(::er::paramdef::bullet_param_st, externalForce)) \\
+    X(spEffectIDForShooter, offsetof(::er::paramdef::bullet_param_st, spEffectIDForShooter)) \\
+    X(autoSearchNPCThinkID, offsetof(::er::paramdef::bullet_param_st, autoSearchNPCThinkID)) \\
+    X(HitBulletID, offsetof(::er::paramdef::bullet_param_st, HitBulletID)) \\
+    X(spEffectId0, offsetof(::er::paramdef::bullet_param_st, spEffectId0)) \\
+    X(spEffectId1, offsetof(::er::paramdef::bullet_param_st, spEffectId1)) \\
+    X(spEffectId2, offsetof(::er::paramdef::bullet_param_st, spEffectId2)) \\
+    X(spEffectId3, offsetof(::er::paramdef::bullet_param_st, spEffectId3)) \\
+    X(spEffectId4, offsetof(::er::paramdef::bullet_param_st, spEffectId4)) \\
+    X(numShoot, offsetof(::er::paramdef::bullet_param_st, numShoot)) \\
+    X(homingAngle, offsetof(::er::paramdef::bullet_param_st, homingAngle)) \\
+    X(shootAngle, offsetof(::er::paramdef::bullet_param_st, shootAngle)) \\
+    X(shootAngleInterval, offsetof(::er::paramdef::bullet_param_st, shootAngleInterval)) \\
+    X(shootAngleXInterval, offsetof(::er::paramdef::bullet_param_st, shootAngleXInterval)) \\
+    X(damageDamp, offsetof(::er::paramdef::bullet_param_st, damageDamp)) \\
+    X(spelDamageDamp, offsetof(::er::paramdef::bullet_param_st, spelDamageDamp)) \\
+    X(fireDamageDamp, offsetof(::er::paramdef::bullet_param_st, fireDamageDamp)) \\
+    X(thunderDamageDamp, offsetof(::er::paramdef::bullet_param_st, thunderDamageDamp)) \\
+    X(staminaDamp, offsetof(::er::paramdef::bullet_param_st, staminaDamp)) \\
+    X(knockbackDamp, offsetof(::er::paramdef::bullet_param_st, knockbackDamp)) \\
+    X(shootAngleXZ, offsetof(::er::paramdef::bullet_param_st, shootAngleXZ)) \\
+    X(lockShootLimitAng, offsetof(::er::paramdef::bullet_param_st, lockShootLimitAng)) \\
+    X(pad2, offsetof(::er::paramdef::bullet_param_st, pad2)) \\
+    X(prevVelocityDirRate, offsetof(::er::paramdef::bullet_param_st, prevVelocityDirRate)) \\
+    X(atkAttribute, offsetof(::er::paramdef::bullet_param_st, atkAttribute)) \\
+    X(spAttribute, offsetof(::er::paramdef::bullet_param_st, spAttribute)) \\
+    X(Material_AttackType, offsetof(::er::paramdef::bullet_param_st, Material_AttackType)) \\
+    X(Material_AttackMaterial, offsetof(::er::paramdef::bullet_param_st, Material_AttackMaterial)) \\
+    X(launchConditionType, offsetof(::er::paramdef::bullet_param_st, launchConditionType)) \\
+    X(darkDamageDamp, offsetof(::er::paramdef::bullet_param_st, darkDamageDamp)) \\
+    X(bulletSfxDeleteType_byHit, offsetof(::er::paramdef::bullet_param_st, bulletSfxDeleteType_byHit)) \\
+    X(bulletSfxDeleteType_byLifeDead, offsetof(::er::paramdef::bullet_param_st, bulletSfxDeleteType_byLifeDead)) \\
+    X(targetYOffsetRange, offsetof(::er::paramdef::bullet_param_st, targetYOffsetRange)) \\
+    X(shootAngleYMaxRandom, offsetof(::er::paramdef::bullet_param_st, shootAngleYMaxRandom)) \\
+    X(shootAngleXMaxRandom, offsetof(::er::paramdef::bullet_param_st, shootAngleXMaxRandom)) \\
+    X(intervalCreateBulletId, offsetof(::er::paramdef::bullet_param_st, intervalCreateBulletId)) \\
+    X(intervalCreateTimeMin, offsetof(::er::paramdef::bullet_param_st, intervalCreateTimeMin)) \\
+    X(intervalCreateTimeMax, offsetof(::er::paramdef::bullet_param_st, intervalCreateTimeMax)) \\
+    X(predictionShootObserveTime, offsetof(::er::paramdef::bullet_param_st, predictionShootObserveTime)) \\
+    X(intervalCreateWaitTime, offsetof(::er::paramdef::bullet_param_st, intervalCreateWaitTime)) \\
+    X(sfxPostureType, offsetof(::er::paramdef::bullet_param_st, sfxPostureType)) \\
+    X(createLimitGroupId, offsetof(::er::paramdef::bullet_param_st, createLimitGroupId)) \\
+    X(pad5, offsetof(::er::paramdef::bullet_param_st, pad5)) \\
+    X(randomCreateRadius, offsetof(::er::paramdef::bullet_param_st, randomCreateRadius)) \\
+    X(followOffset_BaseHeight, offsetof(::er::paramdef::bullet_param_st, followOffset_BaseHeight)) \\
+    X(assetNo_Hit, offsetof(::er::paramdef::bullet_param_st, assetNo_Hit)) \\
+    X(lifeRandomRange, offsetof(::er::paramdef::bullet_param_st, lifeRandomRange)) \\
+    X(homingAngleX, offsetof(::er::paramdef::bullet_param_st, homingAngleX)) \\
+    X(ballisticCalcType, offsetof(::er::paramdef::bullet_param_st, ballisticCalcType)) \\
+    X(attachEffectType, offsetof(::er::paramdef::bullet_param_st, attachEffectType)) \\
+    X(seId_Bullet1, offsetof(::er::paramdef::bullet_param_st, seId_Bullet1)) \\
+    X(seId_Bullet2, offsetof(::er::paramdef::bullet_param_st, seId_Bullet2)) \\
+    X(seId_Hit, offsetof(::er::paramdef::bullet_param_st, seId_Hit)) \\
+    X(seId_Flick, offsetof(::er::paramdef::bullet_param_st, seId_Flick)) \\
+    X(howitzerShootAngleXMin, offsetof(::er::paramdef::bullet_param_st, howitzerShootAngleXMin)) \\
+    X(howitzerShootAngleXMax, offsetof(::er::paramdef::bullet_param_st, howitzerShootAngleXMax)) \\
+    X(howitzerInitMinVelocity, offsetof(::er::paramdef::bullet_param_st, howitzerInitMinVelocity)) \\
+    X(howitzerInitMaxVelocity, offsetof(::er::paramdef::bullet_param_st, howitzerInitMaxVelocity)) \\
+    X(sfxId_ForceErase, offsetof(::er::paramdef::bullet_param_st, sfxId_ForceErase)) \\
+    X(bulletSfxDeleteType_byForceErase, offsetof(::er::paramdef::bullet_param_st, bulletSfxDeleteType_byForceErase)) \\
+    X(pad3, offsetof(::er::paramdef::bullet_param_st, pad3)) \\
+    X(followDmypoly_forSfxPose, offsetof(::er::paramdef::bullet_param_st, followDmypoly_forSfxPose)) \\
+    X(followOffset_Radius, offsetof(::er::paramdef::bullet_param_st, followOffset_Radius)) \\
+    X(spBulletDistUpRate, offsetof(::er::paramdef::bullet_param_st, spBulletDistUpRate)) \\
+    X(nolockTargetDist, offsetof(::er::paramdef::bullet_param_st, nolockTargetDist)) \\
+    X(pad4, offsetof(::er::paramdef::bullet_param_st, pad4))
+
+#define ERD_OFFSET_BULLET_PARAM_ST_atkId_Bullet offsetof(::er::paramdef::bullet_param_st, atkId_Bullet)
+#define ERD_OFFSET_BULLET_PARAM_ST_sfxId_Bullet offsetof(::er::paramdef::bullet_param_st, sfxId_Bullet)
+#define ERD_OFFSET_BULLET_PARAM_ST_sfxId_Hit offsetof(::er::paramdef::bullet_param_st, sfxId_Hit)
+#define ERD_OFFSET_BULLET_PARAM_ST_sfxId_Flick offsetof(::er::paramdef::bullet_param_st, sfxId_Flick)
+#define ERD_OFFSET_BULLET_PARAM_ST_life offsetof(::er::paramdef::bullet_param_st, life)
+#define ERD_OFFSET_BULLET_PARAM_ST_dist offsetof(::er::paramdef::bullet_param_st, dist)
+#define ERD_OFFSET_BULLET_PARAM_ST_shootInterval offsetof(::er::paramdef::bullet_param_st, shootInterval)
+#define ERD_OFFSET_BULLET_PARAM_ST_gravityInRange offsetof(::er::paramdef::bullet_param_st, gravityInRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_gravityOutRange offsetof(::er::paramdef::bullet_param_st, gravityOutRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_hormingStopRange offsetof(::er::paramdef::bullet_param_st, hormingStopRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_initVellocity offsetof(::er::paramdef::bullet_param_st, initVellocity)
+#define ERD_OFFSET_BULLET_PARAM_ST_accelInRange offsetof(::er::paramdef::bullet_param_st, accelInRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_accelOutRange offsetof(::er::paramdef::bullet_param_st, accelOutRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_maxVellocity offsetof(::er::paramdef::bullet_param_st, maxVellocity)
+#define ERD_OFFSET_BULLET_PARAM_ST_minVellocity offsetof(::er::paramdef::bullet_param_st, minVellocity)
+#define ERD_OFFSET_BULLET_PARAM_ST_accelTime offsetof(::er::paramdef::bullet_param_st, accelTime)
+#define ERD_OFFSET_BULLET_PARAM_ST_homingBeginDist offsetof(::er::paramdef::bullet_param_st, homingBeginDist)
+#define ERD_OFFSET_BULLET_PARAM_ST_hitRadius offsetof(::er::paramdef::bullet_param_st, hitRadius)
+#define ERD_OFFSET_BULLET_PARAM_ST_hitRadiusMax offsetof(::er::paramdef::bullet_param_st, hitRadiusMax)
+#define ERD_OFFSET_BULLET_PARAM_ST_spreadTime offsetof(::er::paramdef::bullet_param_st, spreadTime)
+#define ERD_OFFSET_BULLET_PARAM_ST_expDelay offsetof(::er::paramdef::bullet_param_st, expDelay)
+#define ERD_OFFSET_BULLET_PARAM_ST_hormingOffsetRange offsetof(::er::paramdef::bullet_param_st, hormingOffsetRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_dmgHitRecordLifeTime offsetof(::er::paramdef::bullet_param_st, dmgHitRecordLifeTime)
+#define ERD_OFFSET_BULLET_PARAM_ST_externalForce offsetof(::er::paramdef::bullet_param_st, externalForce)
+#define ERD_OFFSET_BULLET_PARAM_ST_spEffectIDForShooter offsetof(::er::paramdef::bullet_param_st, spEffectIDForShooter)
+#define ERD_OFFSET_BULLET_PARAM_ST_autoSearchNPCThinkID offsetof(::er::paramdef::bullet_param_st, autoSearchNPCThinkID)
+#define ERD_OFFSET_BULLET_PARAM_ST_HitBulletID offsetof(::er::paramdef::bullet_param_st, HitBulletID)
+#define ERD_OFFSET_BULLET_PARAM_ST_spEffectId0 offsetof(::er::paramdef::bullet_param_st, spEffectId0)
+#define ERD_OFFSET_BULLET_PARAM_ST_spEffectId1 offsetof(::er::paramdef::bullet_param_st, spEffectId1)
+#define ERD_OFFSET_BULLET_PARAM_ST_spEffectId2 offsetof(::er::paramdef::bullet_param_st, spEffectId2)
+#define ERD_OFFSET_BULLET_PARAM_ST_spEffectId3 offsetof(::er::paramdef::bullet_param_st, spEffectId3)
+#define ERD_OFFSET_BULLET_PARAM_ST_spEffectId4 offsetof(::er::paramdef::bullet_param_st, spEffectId4)
+#define ERD_OFFSET_BULLET_PARAM_ST_numShoot offsetof(::er::paramdef::bullet_param_st, numShoot)
+#define ERD_OFFSET_BULLET_PARAM_ST_homingAngle offsetof(::er::paramdef::bullet_param_st, homingAngle)
+#define ERD_OFFSET_BULLET_PARAM_ST_shootAngle offsetof(::er::paramdef::bullet_param_st, shootAngle)
+#define ERD_OFFSET_BULLET_PARAM_ST_shootAngleInterval offsetof(::er::paramdef::bullet_param_st, shootAngleInterval)
+#define ERD_OFFSET_BULLET_PARAM_ST_shootAngleXInterval offsetof(::er::paramdef::bullet_param_st, shootAngleXInterval)
+#define ERD_OFFSET_BULLET_PARAM_ST_damageDamp offsetof(::er::paramdef::bullet_param_st, damageDamp)
+#define ERD_OFFSET_BULLET_PARAM_ST_spelDamageDamp offsetof(::er::paramdef::bullet_param_st, spelDamageDamp)
+#define ERD_OFFSET_BULLET_PARAM_ST_fireDamageDamp offsetof(::er::paramdef::bullet_param_st, fireDamageDamp)
+#define ERD_OFFSET_BULLET_PARAM_ST_thunderDamageDamp offsetof(::er::paramdef::bullet_param_st, thunderDamageDamp)
+#define ERD_OFFSET_BULLET_PARAM_ST_staminaDamp offsetof(::er::paramdef::bullet_param_st, staminaDamp)
+#define ERD_OFFSET_BULLET_PARAM_ST_knockbackDamp offsetof(::er::paramdef::bullet_param_st, knockbackDamp)
+#define ERD_OFFSET_BULLET_PARAM_ST_shootAngleXZ offsetof(::er::paramdef::bullet_param_st, shootAngleXZ)
+#define ERD_OFFSET_BULLET_PARAM_ST_lockShootLimitAng offsetof(::er::paramdef::bullet_param_st, lockShootLimitAng)
+#define ERD_OFFSET_BULLET_PARAM_ST_pad2 offsetof(::er::paramdef::bullet_param_st, pad2)
+#define ERD_OFFSET_BULLET_PARAM_ST_prevVelocityDirRate offsetof(::er::paramdef::bullet_param_st, prevVelocityDirRate)
+#define ERD_OFFSET_BULLET_PARAM_ST_atkAttribute offsetof(::er::paramdef::bullet_param_st, atkAttribute)
+#define ERD_OFFSET_BULLET_PARAM_ST_spAttribute offsetof(::er::paramdef::bullet_param_st, spAttribute)
+#define ERD_OFFSET_BULLET_PARAM_ST_Material_AttackType offsetof(::er::paramdef::bullet_param_st, Material_AttackType)
+#define ERD_OFFSET_BULLET_PARAM_ST_Material_AttackMaterial offsetof(::er::paramdef::bullet_param_st, Material_AttackMaterial)
+#define ERD_OFFSET_BULLET_PARAM_ST_launchConditionType offsetof(::er::paramdef::bullet_param_st, launchConditionType)
+#define ERD_OFFSET_BULLET_PARAM_ST_darkDamageDamp offsetof(::er::paramdef::bullet_param_st, darkDamageDamp)
+#define ERD_OFFSET_BULLET_PARAM_ST_bulletSfxDeleteType_byHit offsetof(::er::paramdef::bullet_param_st, bulletSfxDeleteType_byHit)
+#define ERD_OFFSET_BULLET_PARAM_ST_bulletSfxDeleteType_byLifeDead offsetof(::er::paramdef::bullet_param_st, bulletSfxDeleteType_byLifeDead)
+#define ERD_OFFSET_BULLET_PARAM_ST_targetYOffsetRange offsetof(::er::paramdef::bullet_param_st, targetYOffsetRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_shootAngleYMaxRandom offsetof(::er::paramdef::bullet_param_st, shootAngleYMaxRandom)
+#define ERD_OFFSET_BULLET_PARAM_ST_shootAngleXMaxRandom offsetof(::er::paramdef::bullet_param_st, shootAngleXMaxRandom)
+#define ERD_OFFSET_BULLET_PARAM_ST_intervalCreateBulletId offsetof(::er::paramdef::bullet_param_st, intervalCreateBulletId)
+#define ERD_OFFSET_BULLET_PARAM_ST_intervalCreateTimeMin offsetof(::er::paramdef::bullet_param_st, intervalCreateTimeMin)
+#define ERD_OFFSET_BULLET_PARAM_ST_intervalCreateTimeMax offsetof(::er::paramdef::bullet_param_st, intervalCreateTimeMax)
+#define ERD_OFFSET_BULLET_PARAM_ST_predictionShootObserveTime offsetof(::er::paramdef::bullet_param_st, predictionShootObserveTime)
+#define ERD_OFFSET_BULLET_PARAM_ST_intervalCreateWaitTime offsetof(::er::paramdef::bullet_param_st, intervalCreateWaitTime)
+#define ERD_OFFSET_BULLET_PARAM_ST_sfxPostureType offsetof(::er::paramdef::bullet_param_st, sfxPostureType)
+#define ERD_OFFSET_BULLET_PARAM_ST_createLimitGroupId offsetof(::er::paramdef::bullet_param_st, createLimitGroupId)
+#define ERD_OFFSET_BULLET_PARAM_ST_pad5 offsetof(::er::paramdef::bullet_param_st, pad5)
+#define ERD_OFFSET_BULLET_PARAM_ST_randomCreateRadius offsetof(::er::paramdef::bullet_param_st, randomCreateRadius)
+#define ERD_OFFSET_BULLET_PARAM_ST_followOffset_BaseHeight offsetof(::er::paramdef::bullet_param_st, followOffset_BaseHeight)
+#define ERD_OFFSET_BULLET_PARAM_ST_assetNo_Hit offsetof(::er::paramdef::bullet_param_st, assetNo_Hit)
+#define ERD_OFFSET_BULLET_PARAM_ST_lifeRandomRange offsetof(::er::paramdef::bullet_param_st, lifeRandomRange)
+#define ERD_OFFSET_BULLET_PARAM_ST_homingAngleX offsetof(::er::paramdef::bullet_param_st, homingAngleX)
+#define ERD_OFFSET_BULLET_PARAM_ST_ballisticCalcType offsetof(::er::paramdef::bullet_param_st, ballisticCalcType)
+#define ERD_OFFSET_BULLET_PARAM_ST_attachEffectType offsetof(::er::paramdef::bullet_param_st, attachEffectType)
+#define ERD_OFFSET_BULLET_PARAM_ST_seId_Bullet1 offsetof(::er::paramdef::bullet_param_st, seId_Bullet1)
+#define ERD_OFFSET_BULLET_PARAM_ST_seId_Bullet2 offsetof(::er::paramdef::bullet_param_st, seId_Bullet2)
+#define ERD_OFFSET_BULLET_PARAM_ST_seId_Hit offsetof(::er::paramdef::bullet_param_st, seId_Hit)
+#define ERD_OFFSET_BULLET_PARAM_ST_seId_Flick offsetof(::er::paramdef::bullet_param_st, seId_Flick)
+#define ERD_OFFSET_BULLET_PARAM_ST_howitzerShootAngleXMin offsetof(::er::paramdef::bullet_param_st, howitzerShootAngleXMin)
+#define ERD_OFFSET_BULLET_PARAM_ST_howitzerShootAngleXMax offsetof(::er::paramdef::bullet_param_st, howitzerShootAngleXMax)
+#define ERD_OFFSET_BULLET_PARAM_ST_howitzerInitMinVelocity offsetof(::er::paramdef::bullet_param_st, howitzerInitMinVelocity)
+#define ERD_OFFSET_BULLET_PARAM_ST_howitzerInitMaxVelocity offsetof(::er::paramdef::bullet_param_st, howitzerInitMaxVelocity)
+#define ERD_OFFSET_BULLET_PARAM_ST_sfxId_ForceErase offsetof(::er::paramdef::bullet_param_st, sfxId_ForceErase)
+#define ERD_OFFSET_BULLET_PARAM_ST_bulletSfxDeleteType_byForceErase offsetof(::er::paramdef::bullet_param_st, bulletSfxDeleteType_byForceErase)
+#define ERD_OFFSET_BULLET_PARAM_ST_pad3 offsetof(::er::paramdef::bullet_param_st, pad3)
+#define ERD_OFFSET_BULLET_PARAM_ST_followDmypoly_forSfxPose offsetof(::er::paramdef::bullet_param_st, followDmypoly_forSfxPose)
+#define ERD_OFFSET_BULLET_PARAM_ST_followOffset_Radius offsetof(::er::paramdef::bullet_param_st, followOffset_Radius)
+#define ERD_OFFSET_BULLET_PARAM_ST_spBulletDistUpRate offsetof(::er::paramdef::bullet_param_st, spBulletDistUpRate)
+#define ERD_OFFSET_BULLET_PARAM_ST_nolockTargetDist offsetof(::er::paramdef::bullet_param_st, nolockTargetDist)
+#define ERD_OFFSET_BULLET_PARAM_ST_pad4 offsetof(::er::paramdef::bullet_param_st, pad4)

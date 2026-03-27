@@ -1,0 +1,282 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/HIT_EFFECT_SE_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_HIT_EFFECT_SE_PARAM_ST_FIELDS(X) \\
+    X(Iron_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Slash_S)) \\
+    X(Iron_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Slash_L)) \\
+    X(Iron_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Slash_LL)) \\
+    X(Iron_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Thrust_S)) \\
+    X(Iron_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Thrust_L)) \\
+    X(Iron_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Thrust_LL)) \\
+    X(Iron_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Blow_S)) \\
+    X(Iron_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Blow_L)) \\
+    X(Iron_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Blow_LL)) \\
+    X(Fire_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Slash_S)) \\
+    X(Fire_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Slash_L)) \\
+    X(Fire_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Slash_LL)) \\
+    X(Fire_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Thrust_S)) \\
+    X(Fire_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Thrust_L)) \\
+    X(Fire_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Thrust_LL)) \\
+    X(Fire_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Blow_S)) \\
+    X(Fire_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Blow_L)) \\
+    X(Fire_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Blow_LL)) \\
+    X(Wood_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Slash_S)) \\
+    X(Wood_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Slash_L)) \\
+    X(Wood_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Slash_LL)) \\
+    X(Wood_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Thrust_S)) \\
+    X(Wood_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Thrust_L)) \\
+    X(Wood_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Thrust_LL)) \\
+    X(Wood_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Blow_S)) \\
+    X(Wood_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Blow_L)) \\
+    X(Wood_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Blow_LL)) \\
+    X(Body_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Slash_S)) \\
+    X(Body_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Slash_L)) \\
+    X(Body_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Slash_LL)) \\
+    X(Body_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Thrust_S)) \\
+    X(Body_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Thrust_L)) \\
+    X(Body_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Thrust_LL)) \\
+    X(Body_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Blow_S)) \\
+    X(Body_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Blow_L)) \\
+    X(Body_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Body_Blow_LL)) \\
+    X(Eclipse_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Slash_S)) \\
+    X(Eclipse_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Slash_L)) \\
+    X(Eclipse_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Slash_LL)) \\
+    X(Eclipse_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Thrust_S)) \\
+    X(Eclipse_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Thrust_L)) \\
+    X(Eclipse_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Thrust_LL)) \\
+    X(Eclipse_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Blow_S)) \\
+    X(Eclipse_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Blow_L)) \\
+    X(Eclipse_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Blow_LL)) \\
+    X(Energy_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Slash_S)) \\
+    X(Energy_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Slash_L)) \\
+    X(Energy_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Slash_LL)) \\
+    X(Energy_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Thrust_S)) \\
+    X(Energy_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Thrust_L)) \\
+    X(Energy_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Thrust_LL)) \\
+    X(Energy_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Blow_S)) \\
+    X(Energy_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Blow_L)) \\
+    X(Energy_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Blow_LL)) \\
+    X(None_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, None_Slash_S)) \\
+    X(None_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, None_Slash_L)) \\
+    X(None_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, None_Slash_LL)) \\
+    X(None_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, None_Thrust_S)) \\
+    X(None_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, None_Thrust_L)) \\
+    X(None_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, None_Thrust_LL)) \\
+    X(None_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, None_Blow_S)) \\
+    X(None_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, None_Blow_L)) \\
+    X(None_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, None_Blow_LL)) \\
+    X(Dmy1_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Slash_S)) \\
+    X(Dmy1_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Slash_L)) \\
+    X(Dmy1_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Slash_LL)) \\
+    X(Dmy1_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Thrust_S)) \\
+    X(Dmy1_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Thrust_L)) \\
+    X(Dmy1_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Thrust_LL)) \\
+    X(Dmy1_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Blow_S)) \\
+    X(Dmy1_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Blow_L)) \\
+    X(Dmy1_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Blow_LL)) \\
+    X(Dmy2_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Slash_S)) \\
+    X(Dmy2_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Slash_L)) \\
+    X(Dmy2_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Slash_LL)) \\
+    X(Dmy2_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Thrust_S)) \\
+    X(Dmy2_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Thrust_L)) \\
+    X(Dmy2_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Thrust_LL)) \\
+    X(Dmy2_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Blow_S)) \\
+    X(Dmy2_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Blow_L)) \\
+    X(Dmy2_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Blow_LL)) \\
+    X(Dmy3_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Slash_S)) \\
+    X(Dmy3_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Slash_L)) \\
+    X(Dmy3_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Slash_LL)) \\
+    X(Dmy3_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Thrust_S)) \\
+    X(Dmy3_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Thrust_L)) \\
+    X(Dmy3_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Thrust_LL)) \\
+    X(Dmy3_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Blow_S)) \\
+    X(Dmy3_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Blow_L)) \\
+    X(Dmy3_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Blow_LL)) \\
+    X(Maggot_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Slash_S)) \\
+    X(Maggot_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Slash_L)) \\
+    X(Maggot_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Slash_LL)) \\
+    X(Maggot_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Thrust_S)) \\
+    X(Maggot_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Thrust_L)) \\
+    X(Maggot_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Thrust_LL)) \\
+    X(Maggot_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Blow_S)) \\
+    X(Maggot_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Blow_L)) \\
+    X(Maggot_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Blow_LL)) \\
+    X(Wax_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Slash_S)) \\
+    X(Wax_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Slash_L)) \\
+    X(Wax_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Slash_LL)) \\
+    X(Wax_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Thrust_S)) \\
+    X(Wax_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Thrust_L)) \\
+    X(Wax_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Thrust_LL)) \\
+    X(Wax_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Blow_S)) \\
+    X(Wax_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Blow_L)) \\
+    X(Wax_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Blow_LL)) \\
+    X(FireFlame_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Slash_S)) \\
+    X(FireFlame_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Slash_L)) \\
+    X(FireFlame_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Slash_LL)) \\
+    X(FireFlame_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Thrust_S)) \\
+    X(FireFlame_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Thrust_L)) \\
+    X(FireFlame_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Thrust_LL)) \\
+    X(FireFlame_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Blow_S)) \\
+    X(FireFlame_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Blow_L)) \\
+    X(FireFlame_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Blow_LL)) \\
+    X(EclipseGas_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Slash_S)) \\
+    X(EclipseGas_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Slash_L)) \\
+    X(EclipseGas_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Slash_LL)) \\
+    X(EclipseGas_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Thrust_S)) \\
+    X(EclipseGas_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Thrust_L)) \\
+    X(EclipseGas_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Thrust_LL)) \\
+    X(EclipseGas_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Blow_S)) \\
+    X(EclipseGas_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Blow_L)) \\
+    X(EclipseGas_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Blow_LL)) \\
+    X(EnergyStrong_Slash_S, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Slash_S)) \\
+    X(EnergyStrong_Slash_L, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Slash_L)) \\
+    X(EnergyStrong_Slash_LL, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Slash_LL)) \\
+    X(EnergyStrong_Thrust_S, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Thrust_S)) \\
+    X(EnergyStrong_Thrust_L, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Thrust_L)) \\
+    X(EnergyStrong_Thrust_LL, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Thrust_LL)) \\
+    X(EnergyStrong_Blow_S, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Blow_S)) \\
+    X(EnergyStrong_Blow_L, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Blow_L)) \\
+    X(EnergyStrong_Blow_LL, offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Blow_LL)) \\
+    X(reserve, offsetof(::er::paramdef::hit_effect_se_param_st, reserve))
+
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Iron_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Iron_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Fire_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Fire_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wood_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Wood_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Body_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Body_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Body_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Body_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Body_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Body_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Body_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Body_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Body_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Body_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Eclipse_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Eclipse_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Energy_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Energy_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, None_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, None_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, None_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, None_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, None_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, None_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, None_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, None_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_None_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, None_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy1_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy1_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy2_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy2_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Dmy3_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Dmy3_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Maggot_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Maggot_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_Wax_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, Wax_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_FireFlame_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, FireFlame_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EclipseGas_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, EclipseGas_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Slash_S offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Slash_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Slash_L offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Slash_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Slash_LL offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Slash_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Thrust_S offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Thrust_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Thrust_L offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Thrust_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Thrust_LL offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Thrust_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Blow_S offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Blow_S)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Blow_L offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Blow_L)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_EnergyStrong_Blow_LL offsetof(::er::paramdef::hit_effect_se_param_st, EnergyStrong_Blow_LL)
+#define ERD_OFFSET_HIT_EFFECT_SE_PARAM_ST_reserve offsetof(::er::paramdef::hit_effect_se_param_st, reserve)

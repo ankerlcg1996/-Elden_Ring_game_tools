@@ -1,0 +1,311 @@
+ categories in file
+ Cooldown: 
+ graces)
+ Last used: 
+ presets in file
+ Special Effect ID: 
+ warps)
+ x
+📌 Pinned
+发现附近有多个 Boss
+解锁 DLC 地图
+解锁 DLC 全部赐福
+解锁 DLC 全部地下赐福
+禁用 AI
+禁用除目标外所有 AI
+设置 FPS 上限
+设置 HP
+显示 AI 信息
+显示 Lua 计时器
+显示 Lua 数值
+选择 Boss
+隐藏 Logo
+About Special Effects
+Active SpEffects
+Add selected to excluded
+Add to Exclude
+Add To Loadout
+Add to Preset
+Additional Options
+Advance by frame by pressing triangle
+Affinity:
+AI
+AI 信息
+AI窗口
+All Enemies
+All Off
+All On
+Animation
+Apply
+Apply or remove Special effects by ID
+Arcane
+Ash of War:
+Auto set NG+7
+Automatically sets the game to New Game+7 when starting a new game
+Automatically spawns the selected loadout when starting a new game.
+Automatically spawns the selected weapon when starting a new game.
+Back
+Bleed
+Bleed 
+Boss
+Boss 传送后休息
+Boss Revives
+Character List
+Clear all excluded IDs
+Clear Log
+Clear unique IDs
+Confirm
+Cool Times
+Cooldown Times
+Cooldown: 
+CoolTimesOverlayWindow
+Create
+Current Animation: 
+Current Loadout Items
+Current Value
+Custom Loadouts
+Cycle field name display mode
+Deactivate Snowfield Mausoleum
+Deathblight
+Deathblight 
+Delete
+Dexterity
+Die
+Disable Events
+Disables game actions from happening when you press a hotkey that you've bound to something in here.&#x0A;This may cause some lag depending on your setup
+Distance
+DLC Clear Flag
+Draw Events
+Draw Navigation Route
+Dusk
+Effect ID: 
+Elden Beast
+Enable Target Options
+End with % for setting percentage
+Endurance
+Enter a sequence of acts separated by spaces, max 10 acts&#x0A;Not entirely consistent but should work most of the time if you&#x0A;use a keybind and try to time the attack as the enemy is is finishing another move
+Enter Row Name:
+Equip ID:
+Event Flags
+Event ID:
+Event Logger
+Excluded Event IDs
+exists
+Exit Overlay Mode
+Export
+Export CSV
+Export Excluded IDs
+Faith
+Faster Death
+Fight Elden Beast
+Fight Fortissax
+Filters out target views that are not within a certain&#x0A;distance from the player to improve performance
+Fire:
+Force Act:
+Force Act:&#x0A;• Enter 0 for normal behavior&#x0A;• Enter a number to repeat a specific action&#x0A;• Numbers exceeding available acts will be ignored
+Force Combo
+Force Elden Stars followed up by the selected attack&#x0A;Not entirely consistent but should work most of the time if you&#x0A;use a keybind and try to time the attack as EB is finishing another move
+Force Phase
+Forward
+Found 
+FP Regen
+Freeze Health
+Frost
+Frost 
+Game Progression
+General
+Get Event
+Get or set event by Event ID
+Give Runes
+Give starting flasks
+Goals
+GoalsOverlayWindow
+Grace Presets
+Health:
+Health: 
+Height
+Hidden
+Hide Duplicate IDs
+Holy:
+HP Regen
+HP：
+ID:
+ID: 
+IMMUNE
+Import
+Import (
+Import Excluded IDs
+Include State
+Infinite Arrows
+Infinite Consumables
+Infinite FP
+Infinite Poise
+Infinite Stamina
+Initialize Param Patcher
+Inject AI Script
+Input
+Input event to exclude
+Intelligence
+Interrupts
+InterruptsOverlayWindow
+Last Act
+Last Act:
+Last used: 
+life:
+Lightning
+Lightning:
+Lion Main Boss
+Lion Mini Boss
+Loadout:
+Loadouts
+Lock Current HP, Functions similar to ERTool's Max/1HP Toggles
+Lock his hp if you don't want snake attacks in p2 when he gets past 50%
+Lock HP
+Lock Phase
+Log Limit
+Log Options
+Lua Numbers
+Lua Timers
+LuaNumbersOverlayWindow
+LuaTimersOverlayWindow
+Madness
+Madness 
+Magic:
+Mass Spawn
+Max Hp
+Message
+Mind
+Modify the game params temporarily, effects last until you restart the game or revert all values to default.
+Morning
+Must be in general area
+Name
+Need to be somewhere in Deeproot Depths
+New
+New Game
+Night
+No
+No Death
+No Hit
+No Rune Arc Loss on Death
+No Rune Loss on Death
+No Runes from Enemies
+No Time Pass on Death
+Noon
+OFF
+OK
+ON
+One Shot
+Only works with controller for now
+Opacity
+Open
+Option to disable CTRL and space for vertical movement on keyboard
+Param Patcher
+Params
+Pin
+Player Location
+Player Speed
+Player's Special Effects
+Poise
+Poise 
+Poison
+Poison 
+Pop out Resistances
+Preset Graces
+Preset:
+Quantity:
+Reduced Targeting View
+Regenerate 3.3% of max FP per tick
+Regenerate 3.3% of max HP per tick
+Remember toggled speed across app restarts
+Remembers HP/Stamina when saving position
+Remove
+Remove ID from exclude
+Rename
+Rename Row
+Reset Enemies with Rest
+Rest Character
+Rest on Revive
+Restore All Params
+Restore Pos 1
+Restore Pos 2
+Restore vanilla values
+Revive All Bosses
+Revive All Bosses as First Encounter
+Revive Boss
+Revive Boss as First Encounter
+RFBS
+Rot
+Rot 
+Rune Arc
+Rykard
+Rykard no Mega Attack
+s
+Save &amp; Close
+Save Pos 1
+Save Pos 2
+Scadutree
+Search All Params
+Search fields...
+Search graces...
+Search items...
+Search params...
+Search:
+Set Custom Hp
+Set Event
+Set hp
+Set Max Level
+Set RFBS on load in
+Set Rune Level 1
+Set Time
+Shops
+ShopSelectorWindow
+Show a popup reminder when starting a new game while hotkeys are still enabled
+Show active special effects
+Show All
+Show Modified Only
+Show:
+Silent
+Slash:
+Sleep
+Sleep 
+Spawn
+Spawn loadout at start
+Spawn Selected Preset
+Spawn weapon at start
+Spawn with Equip Param ID
+Speed Modifier:
+SpEffect Observers
+SpEffectObserversOverlayWindow
+SpEffects
+SpEffectsOverlayWindow
+SpEffectsWindow
+Spirit Ash
+Standard:
+State:
+Strength
+Strike:
+Switch View
+Target Controls
+Target: 
+This is a newly introduced stat modifier that increases the HP of bosses and enemies in the DLC.&#x0a;This modifier activates after defeating Promised Consort Radahn and going to the next game cycle.&#x0a;This modifier does not go away once it's activated and is a flat value meaning if you go to the next cycle the HP boost % remains the same.&#x0a;This modifier also does NOT affect base game bosses and enemies.
+This is mostly for ease of testing custom/modded weapons, please use the normal item spawn if you are not into that
+This will finish the quest as well as skip the invader before Metyr
+Thrust:
+Toggle Distance, Last Act and Current Animation
+Toggle Flags
+Torrent Anywhere
+Torrent No Death
+TurnTime:
+Unlock All Affinities
+Unlock All Gestures
+Unlock Metyr
+Unpin
+Upgrade:
+Vanilla Value
+Vertical movement with Ctrl/Space or L2/R2 on controller
+Vigor
+WidthAndHeight
+Will only stay on top of game in windowed mode
+Will require a reload for fia's champions to update&#x0A;if you are already in the area
+Wind
+Yes

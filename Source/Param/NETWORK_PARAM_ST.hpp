@@ -1,0 +1,322 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/NETWORK_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_NETWORK_PARAM_ST_FIELDS(X) \\
+    X(signVerticalOffset, offsetof(::er::paramdef::network_param_st, signVerticalOffset)) \\
+    X(maxSignPosCorrectionRange, offsetof(::er::paramdef::network_param_st, maxSignPosCorrectionRange)) \\
+    X(summonTimeoutTime, offsetof(::er::paramdef::network_param_st, summonTimeoutTime)) \\
+    X(pad_0, offsetof(::er::paramdef::network_param_st, pad_0)) \\
+    X(signPuddleActiveMessageIntervalSec, offsetof(::er::paramdef::network_param_st, signPuddleActiveMessageIntervalSec)) \\
+    X(keyGuideHeight_0, offsetof(::er::paramdef::network_param_st, keyGuideHeight_0)) \\
+    X(reloadSignIntervalTime1, offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime1)) \\
+    X(reloadSignIntervalTime2, offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime2)) \\
+    X(reloadSignTotalCount_0, offsetof(::er::paramdef::network_param_st, reloadSignTotalCount_0)) \\
+    X(reloadSignCellCount_0, offsetof(::er::paramdef::network_param_st, reloadSignCellCount_0)) \\
+    X(updateSignIntervalTime, offsetof(::er::paramdef::network_param_st, updateSignIntervalTime)) \\
+    X(basicExclusiveRange_0, offsetof(::er::paramdef::network_param_st, basicExclusiveRange_0)) \\
+    X(basicExclusiveHeight_0, offsetof(::er::paramdef::network_param_st, basicExclusiveHeight_0)) \\
+    X(previewChrWaitingTime, offsetof(::er::paramdef::network_param_st, previewChrWaitingTime)) \\
+    X(signVisibleRange_0, offsetof(::er::paramdef::network_param_st, signVisibleRange_0)) \\
+    X(cellGroupHorizontalRange_0, offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_0)) \\
+    X(cellGroupTopRange_0, offsetof(::er::paramdef::network_param_st, cellGroupTopRange_0)) \\
+    X(cellGroupBottomRange_0, offsetof(::er::paramdef::network_param_st, cellGroupBottomRange_0)) \\
+    X(minWhitePhantomLimitTimeScale, offsetof(::er::paramdef::network_param_st, minWhitePhantomLimitTimeScale)) \\
+    X(minSmallPhantomLimitTimeScale, offsetof(::er::paramdef::network_param_st, minSmallPhantomLimitTimeScale)) \\
+    X(whiteKeywordLimitTimeScale, offsetof(::er::paramdef::network_param_st, whiteKeywordLimitTimeScale)) \\
+    X(smallKeywordLimitTimeScale, offsetof(::er::paramdef::network_param_st, smallKeywordLimitTimeScale)) \\
+    X(blackKeywordLimitTimeScale, offsetof(::er::paramdef::network_param_st, blackKeywordLimitTimeScale)) \\
+    X(dragonKeywordLimitTimeScale, offsetof(::er::paramdef::network_param_st, dragonKeywordLimitTimeScale)) \\
+    X(singGetMax, offsetof(::er::paramdef::network_param_st, singGetMax)) \\
+    X(signDownloadSpan, offsetof(::er::paramdef::network_param_st, signDownloadSpan)) \\
+    X(signUpdateSpan, offsetof(::er::paramdef::network_param_st, signUpdateSpan)) \\
+    X(signPad, offsetof(::er::paramdef::network_param_st, signPad)) \\
+    X(maxBreakInTargetListCount, offsetof(::er::paramdef::network_param_st, maxBreakInTargetListCount)) \\
+    X(breakInRequestIntervalTimeSec, offsetof(::er::paramdef::network_param_st, breakInRequestIntervalTimeSec)) \\
+    X(breakInRequestTimeOutSec, offsetof(::er::paramdef::network_param_st, breakInRequestTimeOutSec)) \\
+    X(unknown_0x7c, offsetof(::er::paramdef::network_param_st, unknown_0x7c)) \\
+    X(pad_1, offsetof(::er::paramdef::network_param_st, pad_1)) \\
+    X(keyGuideRange, offsetof(::er::paramdef::network_param_st, keyGuideRange)) \\
+    X(keyGuideHeight_1, offsetof(::er::paramdef::network_param_st, keyGuideHeight_1)) \\
+    X(reloadSignTotalCount_1, offsetof(::er::paramdef::network_param_st, reloadSignTotalCount_1)) \\
+    X(reloadNewSignCellCount, offsetof(::er::paramdef::network_param_st, reloadNewSignCellCount)) \\
+    X(reloadRandomSignCellCount, offsetof(::er::paramdef::network_param_st, reloadRandomSignCellCount)) \\
+    X(maxSignTotalCount_0, offsetof(::er::paramdef::network_param_st, maxSignTotalCount_0)) \\
+    X(maxSignCellCount_0, offsetof(::er::paramdef::network_param_st, maxSignCellCount_0)) \\
+    X(basicExclusiveRange_1, offsetof(::er::paramdef::network_param_st, basicExclusiveRange_1)) \\
+    X(basicExclusiveHeight_1, offsetof(::er::paramdef::network_param_st, basicExclusiveHeight_1)) \\
+    X(signVisibleRange_1, offsetof(::er::paramdef::network_param_st, signVisibleRange_1)) \\
+    X(maxWriteSignCount, offsetof(::er::paramdef::network_param_st, maxWriteSignCount)) \\
+    X(maxReadSignCount, offsetof(::er::paramdef::network_param_st, maxReadSignCount)) \\
+    X(reloadSignIntervalTime_0, offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime_0)) \\
+    X(cellGroupHorizontalRange_1, offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_1)) \\
+    X(cellGroupTopRange_1, offsetof(::er::paramdef::network_param_st, cellGroupTopRange_1)) \\
+    X(cellGroupBottomRange_1, offsetof(::er::paramdef::network_param_st, cellGroupBottomRange_1)) \\
+    X(lifeTime_0, offsetof(::er::paramdef::network_param_st, lifeTime_0)) \\
+    X(downloadSpan_0, offsetof(::er::paramdef::network_param_st, downloadSpan_0)) \\
+    X(downloadEvaluationSpan, offsetof(::er::paramdef::network_param_st, downloadEvaluationSpan)) \\
+    X(pad_2, offsetof(::er::paramdef::network_param_st, pad_2)) \\
+    X(deadingGhostStartPosThreshold, offsetof(::er::paramdef::network_param_st, deadingGhostStartPosThreshold)) \\
+    X(keyGuideHeight_2, offsetof(::er::paramdef::network_param_st, keyGuideHeight_2)) \\
+    X(keyGuideRangePlayer, offsetof(::er::paramdef::network_param_st, keyGuideRangePlayer)) \\
+    X(keyGuideHeightPlayer, offsetof(::er::paramdef::network_param_st, keyGuideHeightPlayer)) \\
+    X(reloadSignTotalCount_2, offsetof(::er::paramdef::network_param_st, reloadSignTotalCount_2)) \\
+    X(reloadSignCellCount_1, offsetof(::er::paramdef::network_param_st, reloadSignCellCount_1)) \\
+    X(maxSignTotalCount_1, offsetof(::er::paramdef::network_param_st, maxSignTotalCount_1)) \\
+    X(maxSignCellCount_1, offsetof(::er::paramdef::network_param_st, maxSignCellCount_1)) \\
+    X(reloadSignIntervalTime_1, offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime_1)) \\
+    X(signVisibleRange_2, offsetof(::er::paramdef::network_param_st, signVisibleRange_2)) \\
+    X(basicExclusiveRange_2, offsetof(::er::paramdef::network_param_st, basicExclusiveRange_2)) \\
+    X(basicExclusiveHeight_2, offsetof(::er::paramdef::network_param_st, basicExclusiveHeight_2)) \\
+    X(cellGroupHorizontalRange_2, offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_2)) \\
+    X(cellGroupTopRange_2, offsetof(::er::paramdef::network_param_st, cellGroupTopRange_2)) \\
+    X(cellGroupBottomRange_2, offsetof(::er::paramdef::network_param_st, cellGroupBottomRange_2)) \\
+    X(lifeTime_1, offsetof(::er::paramdef::network_param_st, lifeTime_1)) \\
+    X(recordDeadingGhostTotalTime, offsetof(::er::paramdef::network_param_st, recordDeadingGhostTotalTime)) \\
+    X(recordDeadingGhostMinTime, offsetof(::er::paramdef::network_param_st, recordDeadingGhostMinTime)) \\
+    X(downloadSpan_1, offsetof(::er::paramdef::network_param_st, downloadSpan_1)) \\
+    X(statueCreatableDistance, offsetof(::er::paramdef::network_param_st, statueCreatableDistance)) \\
+    X(reloadGhostTotalCount, offsetof(::er::paramdef::network_param_st, reloadGhostTotalCount)) \\
+    X(reloadGhostCellCount, offsetof(::er::paramdef::network_param_st, reloadGhostCellCount)) \\
+    X(maxGhostTotalCount, offsetof(::er::paramdef::network_param_st, maxGhostTotalCount)) \\
+    X(distanceOfBeginRecordVersus, offsetof(::er::paramdef::network_param_st, distanceOfBeginRecordVersus)) \\
+    X(distanceOfEndRecordVersus, offsetof(::er::paramdef::network_param_st, distanceOfEndRecordVersus)) \\
+    X(updateWanderGhostIntervalTime, offsetof(::er::paramdef::network_param_st, updateWanderGhostIntervalTime)) \\
+    X(updateVersusGhostIntervalTime, offsetof(::er::paramdef::network_param_st, updateVersusGhostIntervalTime)) \\
+    X(recordWanderingGhostTime, offsetof(::er::paramdef::network_param_st, recordWanderingGhostTime)) \\
+    X(recordWanderingGhostMinTime, offsetof(::er::paramdef::network_param_st, recordWanderingGhostMinTime)) \\
+    X(updateBonfireGhostIntervalTime, offsetof(::er::paramdef::network_param_st, updateBonfireGhostIntervalTime)) \\
+    X(replayGhostRangeOnView, offsetof(::er::paramdef::network_param_st, replayGhostRangeOnView)) \\
+    X(replayGhostRangeOutView, offsetof(::er::paramdef::network_param_st, replayGhostRangeOutView)) \\
+    X(replayBonfireGhostTime, offsetof(::er::paramdef::network_param_st, replayBonfireGhostTime)) \\
+    X(minBonfireGhostValidRange, offsetof(::er::paramdef::network_param_st, minBonfireGhostValidRange)) \\
+    X(maxBonfireGhostValidRange, offsetof(::er::paramdef::network_param_st, maxBonfireGhostValidRange)) \\
+    X(minReplayIntervalTime, offsetof(::er::paramdef::network_param_st, minReplayIntervalTime)) \\
+    X(maxReplayIntervalTime, offsetof(::er::paramdef::network_param_st, maxReplayIntervalTime)) \\
+    X(reloadGhostIntervalTime, offsetof(::er::paramdef::network_param_st, reloadGhostIntervalTime)) \\
+    X(cellGroupHorizontalRange_3, offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_3)) \\
+    X(cellGroupTopRange_3, offsetof(::er::paramdef::network_param_st, cellGroupTopRange_3)) \\
+    X(replayBonfirePhantomParamIdForCodename, offsetof(::er::paramdef::network_param_st, replayBonfirePhantomParamIdForCodename)) \\
+    X(replayBonfireModeRange, offsetof(::er::paramdef::network_param_st, replayBonfireModeRange)) \\
+    X(replayBonfirePhantomParamId, offsetof(::er::paramdef::network_param_st, replayBonfirePhantomParamId)) \\
+    X(ghostpad, offsetof(::er::paramdef::network_param_st, ghostpad)) \\
+    X(reloadVisitListCoolTime, offsetof(::er::paramdef::network_param_st, reloadVisitListCoolTime)) \\
+    X(maxCoopBlueSummonCount, offsetof(::er::paramdef::network_param_st, maxCoopBlueSummonCount)) \\
+    X(maxBellGuardSummonCount, offsetof(::er::paramdef::network_param_st, maxBellGuardSummonCount)) \\
+    X(maxVisitListCount, offsetof(::er::paramdef::network_param_st, maxVisitListCount)) \\
+    X(reloadSearch_CoopBlue_Min, offsetof(::er::paramdef::network_param_st, reloadSearch_CoopBlue_Min)) \\
+    X(reloadSearch_CoopBlue_Max, offsetof(::er::paramdef::network_param_st, reloadSearch_CoopBlue_Max)) \\
+    X(reloadSearch_BellGuard_Min, offsetof(::er::paramdef::network_param_st, reloadSearch_BellGuard_Min)) \\
+    X(reloadSearch_BellGuard_Max, offsetof(::er::paramdef::network_param_st, reloadSearch_BellGuard_Max)) \\
+    X(reloadSearch_RatKing_Min, offsetof(::er::paramdef::network_param_st, reloadSearch_RatKing_Min)) \\
+    X(reloadSearch_RatKing_Max, offsetof(::er::paramdef::network_param_st, reloadSearch_RatKing_Max)) \\
+    X(visitpad00, offsetof(::er::paramdef::network_param_st, visitpad00)) \\
+    X(srttMaxLimit, offsetof(::er::paramdef::network_param_st, srttMaxLimit)) \\
+    X(srttMeanLimit, offsetof(::er::paramdef::network_param_st, srttMeanLimit)) \\
+    X(srttMeanDeviationLimit, offsetof(::er::paramdef::network_param_st, srttMeanDeviationLimit)) \\
+    X(darkPhantomLimitBoostTime, offsetof(::er::paramdef::network_param_st, darkPhantomLimitBoostTime)) \\
+    X(darkPhantomLimitBoostScale, offsetof(::er::paramdef::network_param_st, darkPhantomLimitBoostScale)) \\
+    X(multiplayDisableLifeTime, offsetof(::er::paramdef::network_param_st, multiplayDisableLifeTime)) \\
+    X(abyssMultiplayLimit, offsetof(::er::paramdef::network_param_st, abyssMultiplayLimit)) \\
+    X(phantomWarpMinimumTime, offsetof(::er::paramdef::network_param_st, phantomWarpMinimumTime)) \\
+    X(phantomReturnDelayTime, offsetof(::er::paramdef::network_param_st, phantomReturnDelayTime)) \\
+    X(terminateTimeoutTime, offsetof(::er::paramdef::network_param_st, terminateTimeoutTime)) \\
+    X(penaltyPointLanDisconnect, offsetof(::er::paramdef::network_param_st, penaltyPointLanDisconnect)) \\
+    X(penaltyPointSignout, offsetof(::er::paramdef::network_param_st, penaltyPointSignout)) \\
+    X(penaltyPointReboot, offsetof(::er::paramdef::network_param_st, penaltyPointReboot)) \\
+    X(penaltyPointBeginPenalize, offsetof(::er::paramdef::network_param_st, penaltyPointBeginPenalize)) \\
+    X(penaltyForgiveItemLimitTime, offsetof(::er::paramdef::network_param_st, penaltyForgiveItemLimitTime)) \\
+    X(allAreaSearchRate_CoopBlue, offsetof(::er::paramdef::network_param_st, allAreaSearchRate_CoopBlue)) \\
+    X(allAreaSearchRate_VsBlue, offsetof(::er::paramdef::network_param_st, allAreaSearchRate_VsBlue)) \\
+    X(allAreaSearchRate_BellGuard, offsetof(::er::paramdef::network_param_st, allAreaSearchRate_BellGuard)) \\
+    X(bloodMessageEvalHealRate, offsetof(::er::paramdef::network_param_st, bloodMessageEvalHealRate)) \\
+    X(smallGoldSuccessHostRewardId, offsetof(::er::paramdef::network_param_st, smallGoldSuccessHostRewardId)) \\
+    X(doorInvalidPlayAreaExtents, offsetof(::er::paramdef::network_param_st, doorInvalidPlayAreaExtents)) \\
+    X(signDisplayMax, offsetof(::er::paramdef::network_param_st, signDisplayMax)) \\
+    X(bloodStainDisplayMax, offsetof(::er::paramdef::network_param_st, bloodStainDisplayMax)) \\
+    X(bloodMessageDisplayMax, offsetof(::er::paramdef::network_param_st, bloodMessageDisplayMax)) \\
+    X(pad00, offsetof(::er::paramdef::network_param_st, pad00)) \\
+    X(pad10, offsetof(::er::paramdef::network_param_st, pad10)) \\
+    X(summonMessageInterval, offsetof(::er::paramdef::network_param_st, summonMessageInterval)) \\
+    X(hostRegisterUpdateTime, offsetof(::er::paramdef::network_param_st, hostRegisterUpdateTime)) \\
+    X(hostTimeOutTime, offsetof(::er::paramdef::network_param_st, hostTimeOutTime)) \\
+    X(guestUpdateTime, offsetof(::er::paramdef::network_param_st, guestUpdateTime)) \\
+    X(guestPlayerNoTimeOutTime, offsetof(::er::paramdef::network_param_st, guestPlayerNoTimeOutTime)) \\
+    X(hostPlayerNoTimeOutTime, offsetof(::er::paramdef::network_param_st, hostPlayerNoTimeOutTime)) \\
+    X(requestSearchQuickMatchLimit, offsetof(::er::paramdef::network_param_st, requestSearchQuickMatchLimit)) \\
+    X(AvatarMatchSearchMax, offsetof(::er::paramdef::network_param_st, AvatarMatchSearchMax)) \\
+    X(BattleRoyalMatchSearchMin, offsetof(::er::paramdef::network_param_st, BattleRoyalMatchSearchMin)) \\
+    X(BattleRoyalMatchSearchMax, offsetof(::er::paramdef::network_param_st, BattleRoyalMatchSearchMax)) \\
+    X(pad11, offsetof(::er::paramdef::network_param_st, pad11)) \\
+    X(VisitorListMax, offsetof(::er::paramdef::network_param_st, VisitorListMax)) \\
+    X(VisitorTimeOutTime, offsetof(::er::paramdef::network_param_st, VisitorTimeOutTime)) \\
+    X(DownloadSpan, offsetof(::er::paramdef::network_param_st, DownloadSpan)) \\
+    X(VisitorGuestRequestMessageIntervalSec, offsetof(::er::paramdef::network_param_st, VisitorGuestRequestMessageIntervalSec)) \\
+    X(wanderGhostIntervalLifeTime, offsetof(::er::paramdef::network_param_st, wanderGhostIntervalLifeTime)) \\
+    X(pad13, offsetof(::er::paramdef::network_param_st, pad13)) \\
+    X(YellowMonkTimeOutTime, offsetof(::er::paramdef::network_param_st, YellowMonkTimeOutTime)) \\
+    X(YellowMonkDownloadSpan, offsetof(::er::paramdef::network_param_st, YellowMonkDownloadSpan)) \\
+    X(YellowMonkOverallFlowTimeOutTime, offsetof(::er::paramdef::network_param_st, YellowMonkOverallFlowTimeOutTime)) \\
+    X(pad14_0, offsetof(::er::paramdef::network_param_st, pad14_0)) \\
+    X(pad14_1, offsetof(::er::paramdef::network_param_st, pad14_1))
+
+#define ERD_OFFSET_NETWORK_PARAM_ST_signVerticalOffset offsetof(::er::paramdef::network_param_st, signVerticalOffset)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxSignPosCorrectionRange offsetof(::er::paramdef::network_param_st, maxSignPosCorrectionRange)
+#define ERD_OFFSET_NETWORK_PARAM_ST_summonTimeoutTime offsetof(::er::paramdef::network_param_st, summonTimeoutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad_0 offsetof(::er::paramdef::network_param_st, pad_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signPuddleActiveMessageIntervalSec offsetof(::er::paramdef::network_param_st, signPuddleActiveMessageIntervalSec)
+#define ERD_OFFSET_NETWORK_PARAM_ST_keyGuideHeight_0 offsetof(::er::paramdef::network_param_st, keyGuideHeight_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignIntervalTime1 offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignIntervalTime2 offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignTotalCount_0 offsetof(::er::paramdef::network_param_st, reloadSignTotalCount_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignCellCount_0 offsetof(::er::paramdef::network_param_st, reloadSignCellCount_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_updateSignIntervalTime offsetof(::er::paramdef::network_param_st, updateSignIntervalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_basicExclusiveRange_0 offsetof(::er::paramdef::network_param_st, basicExclusiveRange_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_basicExclusiveHeight_0 offsetof(::er::paramdef::network_param_st, basicExclusiveHeight_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_previewChrWaitingTime offsetof(::er::paramdef::network_param_st, previewChrWaitingTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signVisibleRange_0 offsetof(::er::paramdef::network_param_st, signVisibleRange_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupHorizontalRange_0 offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupTopRange_0 offsetof(::er::paramdef::network_param_st, cellGroupTopRange_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupBottomRange_0 offsetof(::er::paramdef::network_param_st, cellGroupBottomRange_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_minWhitePhantomLimitTimeScale offsetof(::er::paramdef::network_param_st, minWhitePhantomLimitTimeScale)
+#define ERD_OFFSET_NETWORK_PARAM_ST_minSmallPhantomLimitTimeScale offsetof(::er::paramdef::network_param_st, minSmallPhantomLimitTimeScale)
+#define ERD_OFFSET_NETWORK_PARAM_ST_whiteKeywordLimitTimeScale offsetof(::er::paramdef::network_param_st, whiteKeywordLimitTimeScale)
+#define ERD_OFFSET_NETWORK_PARAM_ST_smallKeywordLimitTimeScale offsetof(::er::paramdef::network_param_st, smallKeywordLimitTimeScale)
+#define ERD_OFFSET_NETWORK_PARAM_ST_blackKeywordLimitTimeScale offsetof(::er::paramdef::network_param_st, blackKeywordLimitTimeScale)
+#define ERD_OFFSET_NETWORK_PARAM_ST_dragonKeywordLimitTimeScale offsetof(::er::paramdef::network_param_st, dragonKeywordLimitTimeScale)
+#define ERD_OFFSET_NETWORK_PARAM_ST_singGetMax offsetof(::er::paramdef::network_param_st, singGetMax)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signDownloadSpan offsetof(::er::paramdef::network_param_st, signDownloadSpan)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signUpdateSpan offsetof(::er::paramdef::network_param_st, signUpdateSpan)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signPad offsetof(::er::paramdef::network_param_st, signPad)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxBreakInTargetListCount offsetof(::er::paramdef::network_param_st, maxBreakInTargetListCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_breakInRequestIntervalTimeSec offsetof(::er::paramdef::network_param_st, breakInRequestIntervalTimeSec)
+#define ERD_OFFSET_NETWORK_PARAM_ST_breakInRequestTimeOutSec offsetof(::er::paramdef::network_param_st, breakInRequestTimeOutSec)
+#define ERD_OFFSET_NETWORK_PARAM_ST_unknown_0x7c offsetof(::er::paramdef::network_param_st, unknown_0x7c)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad_1 offsetof(::er::paramdef::network_param_st, pad_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_keyGuideRange offsetof(::er::paramdef::network_param_st, keyGuideRange)
+#define ERD_OFFSET_NETWORK_PARAM_ST_keyGuideHeight_1 offsetof(::er::paramdef::network_param_st, keyGuideHeight_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignTotalCount_1 offsetof(::er::paramdef::network_param_st, reloadSignTotalCount_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadNewSignCellCount offsetof(::er::paramdef::network_param_st, reloadNewSignCellCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadRandomSignCellCount offsetof(::er::paramdef::network_param_st, reloadRandomSignCellCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxSignTotalCount_0 offsetof(::er::paramdef::network_param_st, maxSignTotalCount_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxSignCellCount_0 offsetof(::er::paramdef::network_param_st, maxSignCellCount_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_basicExclusiveRange_1 offsetof(::er::paramdef::network_param_st, basicExclusiveRange_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_basicExclusiveHeight_1 offsetof(::er::paramdef::network_param_st, basicExclusiveHeight_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signVisibleRange_1 offsetof(::er::paramdef::network_param_st, signVisibleRange_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxWriteSignCount offsetof(::er::paramdef::network_param_st, maxWriteSignCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxReadSignCount offsetof(::er::paramdef::network_param_st, maxReadSignCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignIntervalTime_0 offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupHorizontalRange_1 offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupTopRange_1 offsetof(::er::paramdef::network_param_st, cellGroupTopRange_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupBottomRange_1 offsetof(::er::paramdef::network_param_st, cellGroupBottomRange_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_lifeTime_0 offsetof(::er::paramdef::network_param_st, lifeTime_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_downloadSpan_0 offsetof(::er::paramdef::network_param_st, downloadSpan_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_downloadEvaluationSpan offsetof(::er::paramdef::network_param_st, downloadEvaluationSpan)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad_2 offsetof(::er::paramdef::network_param_st, pad_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_deadingGhostStartPosThreshold offsetof(::er::paramdef::network_param_st, deadingGhostStartPosThreshold)
+#define ERD_OFFSET_NETWORK_PARAM_ST_keyGuideHeight_2 offsetof(::er::paramdef::network_param_st, keyGuideHeight_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_keyGuideRangePlayer offsetof(::er::paramdef::network_param_st, keyGuideRangePlayer)
+#define ERD_OFFSET_NETWORK_PARAM_ST_keyGuideHeightPlayer offsetof(::er::paramdef::network_param_st, keyGuideHeightPlayer)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignTotalCount_2 offsetof(::er::paramdef::network_param_st, reloadSignTotalCount_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignCellCount_1 offsetof(::er::paramdef::network_param_st, reloadSignCellCount_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxSignTotalCount_1 offsetof(::er::paramdef::network_param_st, maxSignTotalCount_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxSignCellCount_1 offsetof(::er::paramdef::network_param_st, maxSignCellCount_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSignIntervalTime_1 offsetof(::er::paramdef::network_param_st, reloadSignIntervalTime_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signVisibleRange_2 offsetof(::er::paramdef::network_param_st, signVisibleRange_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_basicExclusiveRange_2 offsetof(::er::paramdef::network_param_st, basicExclusiveRange_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_basicExclusiveHeight_2 offsetof(::er::paramdef::network_param_st, basicExclusiveHeight_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupHorizontalRange_2 offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupTopRange_2 offsetof(::er::paramdef::network_param_st, cellGroupTopRange_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupBottomRange_2 offsetof(::er::paramdef::network_param_st, cellGroupBottomRange_2)
+#define ERD_OFFSET_NETWORK_PARAM_ST_lifeTime_1 offsetof(::er::paramdef::network_param_st, lifeTime_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_recordDeadingGhostTotalTime offsetof(::er::paramdef::network_param_st, recordDeadingGhostTotalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_recordDeadingGhostMinTime offsetof(::er::paramdef::network_param_st, recordDeadingGhostMinTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_downloadSpan_1 offsetof(::er::paramdef::network_param_st, downloadSpan_1)
+#define ERD_OFFSET_NETWORK_PARAM_ST_statueCreatableDistance offsetof(::er::paramdef::network_param_st, statueCreatableDistance)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadGhostTotalCount offsetof(::er::paramdef::network_param_st, reloadGhostTotalCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadGhostCellCount offsetof(::er::paramdef::network_param_st, reloadGhostCellCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxGhostTotalCount offsetof(::er::paramdef::network_param_st, maxGhostTotalCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_distanceOfBeginRecordVersus offsetof(::er::paramdef::network_param_st, distanceOfBeginRecordVersus)
+#define ERD_OFFSET_NETWORK_PARAM_ST_distanceOfEndRecordVersus offsetof(::er::paramdef::network_param_st, distanceOfEndRecordVersus)
+#define ERD_OFFSET_NETWORK_PARAM_ST_updateWanderGhostIntervalTime offsetof(::er::paramdef::network_param_st, updateWanderGhostIntervalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_updateVersusGhostIntervalTime offsetof(::er::paramdef::network_param_st, updateVersusGhostIntervalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_recordWanderingGhostTime offsetof(::er::paramdef::network_param_st, recordWanderingGhostTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_recordWanderingGhostMinTime offsetof(::er::paramdef::network_param_st, recordWanderingGhostMinTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_updateBonfireGhostIntervalTime offsetof(::er::paramdef::network_param_st, updateBonfireGhostIntervalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_replayGhostRangeOnView offsetof(::er::paramdef::network_param_st, replayGhostRangeOnView)
+#define ERD_OFFSET_NETWORK_PARAM_ST_replayGhostRangeOutView offsetof(::er::paramdef::network_param_st, replayGhostRangeOutView)
+#define ERD_OFFSET_NETWORK_PARAM_ST_replayBonfireGhostTime offsetof(::er::paramdef::network_param_st, replayBonfireGhostTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_minBonfireGhostValidRange offsetof(::er::paramdef::network_param_st, minBonfireGhostValidRange)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxBonfireGhostValidRange offsetof(::er::paramdef::network_param_st, maxBonfireGhostValidRange)
+#define ERD_OFFSET_NETWORK_PARAM_ST_minReplayIntervalTime offsetof(::er::paramdef::network_param_st, minReplayIntervalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxReplayIntervalTime offsetof(::er::paramdef::network_param_st, maxReplayIntervalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadGhostIntervalTime offsetof(::er::paramdef::network_param_st, reloadGhostIntervalTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupHorizontalRange_3 offsetof(::er::paramdef::network_param_st, cellGroupHorizontalRange_3)
+#define ERD_OFFSET_NETWORK_PARAM_ST_cellGroupTopRange_3 offsetof(::er::paramdef::network_param_st, cellGroupTopRange_3)
+#define ERD_OFFSET_NETWORK_PARAM_ST_replayBonfirePhantomParamIdForCodename offsetof(::er::paramdef::network_param_st, replayBonfirePhantomParamIdForCodename)
+#define ERD_OFFSET_NETWORK_PARAM_ST_replayBonfireModeRange offsetof(::er::paramdef::network_param_st, replayBonfireModeRange)
+#define ERD_OFFSET_NETWORK_PARAM_ST_replayBonfirePhantomParamId offsetof(::er::paramdef::network_param_st, replayBonfirePhantomParamId)
+#define ERD_OFFSET_NETWORK_PARAM_ST_ghostpad offsetof(::er::paramdef::network_param_st, ghostpad)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadVisitListCoolTime offsetof(::er::paramdef::network_param_st, reloadVisitListCoolTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxCoopBlueSummonCount offsetof(::er::paramdef::network_param_st, maxCoopBlueSummonCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxBellGuardSummonCount offsetof(::er::paramdef::network_param_st, maxBellGuardSummonCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_maxVisitListCount offsetof(::er::paramdef::network_param_st, maxVisitListCount)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSearch_CoopBlue_Min offsetof(::er::paramdef::network_param_st, reloadSearch_CoopBlue_Min)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSearch_CoopBlue_Max offsetof(::er::paramdef::network_param_st, reloadSearch_CoopBlue_Max)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSearch_BellGuard_Min offsetof(::er::paramdef::network_param_st, reloadSearch_BellGuard_Min)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSearch_BellGuard_Max offsetof(::er::paramdef::network_param_st, reloadSearch_BellGuard_Max)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSearch_RatKing_Min offsetof(::er::paramdef::network_param_st, reloadSearch_RatKing_Min)
+#define ERD_OFFSET_NETWORK_PARAM_ST_reloadSearch_RatKing_Max offsetof(::er::paramdef::network_param_st, reloadSearch_RatKing_Max)
+#define ERD_OFFSET_NETWORK_PARAM_ST_visitpad00 offsetof(::er::paramdef::network_param_st, visitpad00)
+#define ERD_OFFSET_NETWORK_PARAM_ST_srttMaxLimit offsetof(::er::paramdef::network_param_st, srttMaxLimit)
+#define ERD_OFFSET_NETWORK_PARAM_ST_srttMeanLimit offsetof(::er::paramdef::network_param_st, srttMeanLimit)
+#define ERD_OFFSET_NETWORK_PARAM_ST_srttMeanDeviationLimit offsetof(::er::paramdef::network_param_st, srttMeanDeviationLimit)
+#define ERD_OFFSET_NETWORK_PARAM_ST_darkPhantomLimitBoostTime offsetof(::er::paramdef::network_param_st, darkPhantomLimitBoostTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_darkPhantomLimitBoostScale offsetof(::er::paramdef::network_param_st, darkPhantomLimitBoostScale)
+#define ERD_OFFSET_NETWORK_PARAM_ST_multiplayDisableLifeTime offsetof(::er::paramdef::network_param_st, multiplayDisableLifeTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_abyssMultiplayLimit offsetof(::er::paramdef::network_param_st, abyssMultiplayLimit)
+#define ERD_OFFSET_NETWORK_PARAM_ST_phantomWarpMinimumTime offsetof(::er::paramdef::network_param_st, phantomWarpMinimumTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_phantomReturnDelayTime offsetof(::er::paramdef::network_param_st, phantomReturnDelayTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_terminateTimeoutTime offsetof(::er::paramdef::network_param_st, terminateTimeoutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_penaltyPointLanDisconnect offsetof(::er::paramdef::network_param_st, penaltyPointLanDisconnect)
+#define ERD_OFFSET_NETWORK_PARAM_ST_penaltyPointSignout offsetof(::er::paramdef::network_param_st, penaltyPointSignout)
+#define ERD_OFFSET_NETWORK_PARAM_ST_penaltyPointReboot offsetof(::er::paramdef::network_param_st, penaltyPointReboot)
+#define ERD_OFFSET_NETWORK_PARAM_ST_penaltyPointBeginPenalize offsetof(::er::paramdef::network_param_st, penaltyPointBeginPenalize)
+#define ERD_OFFSET_NETWORK_PARAM_ST_penaltyForgiveItemLimitTime offsetof(::er::paramdef::network_param_st, penaltyForgiveItemLimitTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_allAreaSearchRate_CoopBlue offsetof(::er::paramdef::network_param_st, allAreaSearchRate_CoopBlue)
+#define ERD_OFFSET_NETWORK_PARAM_ST_allAreaSearchRate_VsBlue offsetof(::er::paramdef::network_param_st, allAreaSearchRate_VsBlue)
+#define ERD_OFFSET_NETWORK_PARAM_ST_allAreaSearchRate_BellGuard offsetof(::er::paramdef::network_param_st, allAreaSearchRate_BellGuard)
+#define ERD_OFFSET_NETWORK_PARAM_ST_bloodMessageEvalHealRate offsetof(::er::paramdef::network_param_st, bloodMessageEvalHealRate)
+#define ERD_OFFSET_NETWORK_PARAM_ST_smallGoldSuccessHostRewardId offsetof(::er::paramdef::network_param_st, smallGoldSuccessHostRewardId)
+#define ERD_OFFSET_NETWORK_PARAM_ST_doorInvalidPlayAreaExtents offsetof(::er::paramdef::network_param_st, doorInvalidPlayAreaExtents)
+#define ERD_OFFSET_NETWORK_PARAM_ST_signDisplayMax offsetof(::er::paramdef::network_param_st, signDisplayMax)
+#define ERD_OFFSET_NETWORK_PARAM_ST_bloodStainDisplayMax offsetof(::er::paramdef::network_param_st, bloodStainDisplayMax)
+#define ERD_OFFSET_NETWORK_PARAM_ST_bloodMessageDisplayMax offsetof(::er::paramdef::network_param_st, bloodMessageDisplayMax)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad00 offsetof(::er::paramdef::network_param_st, pad00)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad10 offsetof(::er::paramdef::network_param_st, pad10)
+#define ERD_OFFSET_NETWORK_PARAM_ST_summonMessageInterval offsetof(::er::paramdef::network_param_st, summonMessageInterval)
+#define ERD_OFFSET_NETWORK_PARAM_ST_hostRegisterUpdateTime offsetof(::er::paramdef::network_param_st, hostRegisterUpdateTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_hostTimeOutTime offsetof(::er::paramdef::network_param_st, hostTimeOutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_guestUpdateTime offsetof(::er::paramdef::network_param_st, guestUpdateTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_guestPlayerNoTimeOutTime offsetof(::er::paramdef::network_param_st, guestPlayerNoTimeOutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_hostPlayerNoTimeOutTime offsetof(::er::paramdef::network_param_st, hostPlayerNoTimeOutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_requestSearchQuickMatchLimit offsetof(::er::paramdef::network_param_st, requestSearchQuickMatchLimit)
+#define ERD_OFFSET_NETWORK_PARAM_ST_AvatarMatchSearchMax offsetof(::er::paramdef::network_param_st, AvatarMatchSearchMax)
+#define ERD_OFFSET_NETWORK_PARAM_ST_BattleRoyalMatchSearchMin offsetof(::er::paramdef::network_param_st, BattleRoyalMatchSearchMin)
+#define ERD_OFFSET_NETWORK_PARAM_ST_BattleRoyalMatchSearchMax offsetof(::er::paramdef::network_param_st, BattleRoyalMatchSearchMax)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad11 offsetof(::er::paramdef::network_param_st, pad11)
+#define ERD_OFFSET_NETWORK_PARAM_ST_VisitorListMax offsetof(::er::paramdef::network_param_st, VisitorListMax)
+#define ERD_OFFSET_NETWORK_PARAM_ST_VisitorTimeOutTime offsetof(::er::paramdef::network_param_st, VisitorTimeOutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_DownloadSpan offsetof(::er::paramdef::network_param_st, DownloadSpan)
+#define ERD_OFFSET_NETWORK_PARAM_ST_VisitorGuestRequestMessageIntervalSec offsetof(::er::paramdef::network_param_st, VisitorGuestRequestMessageIntervalSec)
+#define ERD_OFFSET_NETWORK_PARAM_ST_wanderGhostIntervalLifeTime offsetof(::er::paramdef::network_param_st, wanderGhostIntervalLifeTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad13 offsetof(::er::paramdef::network_param_st, pad13)
+#define ERD_OFFSET_NETWORK_PARAM_ST_YellowMonkTimeOutTime offsetof(::er::paramdef::network_param_st, YellowMonkTimeOutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_YellowMonkDownloadSpan offsetof(::er::paramdef::network_param_st, YellowMonkDownloadSpan)
+#define ERD_OFFSET_NETWORK_PARAM_ST_YellowMonkOverallFlowTimeOutTime offsetof(::er::paramdef::network_param_st, YellowMonkOverallFlowTimeOutTime)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad14_0 offsetof(::er::paramdef::network_param_st, pad14_0)
+#define ERD_OFFSET_NETWORK_PARAM_ST_pad14_1 offsetof(::er::paramdef::network_param_st, pad14_1)

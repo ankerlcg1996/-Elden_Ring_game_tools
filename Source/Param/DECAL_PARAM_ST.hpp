@@ -1,0 +1,148 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/DECAL_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_DECAL_PARAM_ST_FIELDS(X) \\
+    X(textureId, offsetof(::er::paramdef::decal_param_st, textureId)) \\
+    X(dmypolyId, offsetof(::er::paramdef::decal_param_st, dmypolyId)) \\
+    X(pitchAngle, offsetof(::er::paramdef::decal_param_st, pitchAngle)) \\
+    X(yawAngle, offsetof(::er::paramdef::decal_param_st, yawAngle)) \\
+    X(nearDistance, offsetof(::er::paramdef::decal_param_st, nearDistance)) \\
+    X(farDistance, offsetof(::er::paramdef::decal_param_st, farDistance)) \\
+    X(nearSize, offsetof(::er::paramdef::decal_param_st, nearSize)) \\
+    X(farSize, offsetof(::er::paramdef::decal_param_st, farSize)) \\
+    X(maskSpeffectId, offsetof(::er::paramdef::decal_param_st, maskSpeffectId)) \\
+    X(randomSizeMin, offsetof(::er::paramdef::decal_param_st, randomSizeMin)) \\
+    X(randomSizeMax, offsetof(::er::paramdef::decal_param_st, randomSizeMax)) \\
+    X(randomRollMin, offsetof(::er::paramdef::decal_param_st, randomRollMin)) \\
+    X(randomRollMax, offsetof(::er::paramdef::decal_param_st, randomRollMax)) \\
+    X(randomPitchMin, offsetof(::er::paramdef::decal_param_st, randomPitchMin)) \\
+    X(randomPitchMax, offsetof(::er::paramdef::decal_param_st, randomPitchMax)) \\
+    X(randomYawMin, offsetof(::er::paramdef::decal_param_st, randomYawMin)) \\
+    X(randomYawMax, offsetof(::er::paramdef::decal_param_st, randomYawMax)) \\
+    X(pomHightScale, offsetof(::er::paramdef::decal_param_st, pomHightScale)) \\
+    X(pomSampleMin, offsetof(::er::paramdef::decal_param_st, pomSampleMin)) \\
+    X(pomSampleMax, offsetof(::er::paramdef::decal_param_st, pomSampleMax)) \\
+    X(blendMode, offsetof(::er::paramdef::decal_param_st, blendMode)) \\
+    X(appearDirType, offsetof(::er::paramdef::decal_param_st, appearDirType)) \\
+    X(emissiveValueBegin, offsetof(::er::paramdef::decal_param_st, emissiveValueBegin)) \\
+    X(emissiveValueEnd, offsetof(::er::paramdef::decal_param_st, emissiveValueEnd)) \\
+    X(emissiveTime, offsetof(::er::paramdef::decal_param_st, emissiveTime)) \\
+    X(bIntpEnable, offsetof(::er::paramdef::decal_param_st, bIntpEnable)) \\
+    X(pad_01, offsetof(::er::paramdef::decal_param_st, pad_01)) \\
+    X(intpIntervalDist, offsetof(::er::paramdef::decal_param_st, intpIntervalDist)) \\
+    X(beginIntpTextureId, offsetof(::er::paramdef::decal_param_st, beginIntpTextureId)) \\
+    X(endIntpTextureId, offsetof(::er::paramdef::decal_param_st, endIntpTextureId)) \\
+    X(appearSfxId, offsetof(::er::paramdef::decal_param_st, appearSfxId)) \\
+    X(appearSfxOffsetPos, offsetof(::er::paramdef::decal_param_st, appearSfxOffsetPos)) \\
+    X(maskTextureId, offsetof(::er::paramdef::decal_param_st, maskTextureId)) \\
+    X(diffuseTextureId, offsetof(::er::paramdef::decal_param_st, diffuseTextureId)) \\
+    X(reflecTextureId, offsetof(::er::paramdef::decal_param_st, reflecTextureId)) \\
+    X(maskScale, offsetof(::er::paramdef::decal_param_st, maskScale)) \\
+    X(normalTextureId, offsetof(::er::paramdef::decal_param_st, normalTextureId)) \\
+    X(heightTextureId, offsetof(::er::paramdef::decal_param_st, heightTextureId)) \\
+    X(emissiveTextureId, offsetof(::er::paramdef::decal_param_st, emissiveTextureId)) \\
+    X(diffuseColorR, offsetof(::er::paramdef::decal_param_st, diffuseColorR)) \\
+    X(diffuseColorG, offsetof(::er::paramdef::decal_param_st, diffuseColorG)) \\
+    X(diffuseColorB, offsetof(::er::paramdef::decal_param_st, diffuseColorB)) \\
+    X(pad_03, offsetof(::er::paramdef::decal_param_st, pad_03)) \\
+    X(reflecColorR, offsetof(::er::paramdef::decal_param_st, reflecColorR)) \\
+    X(reflecColorG, offsetof(::er::paramdef::decal_param_st, reflecColorG)) \\
+    X(reflecColorB, offsetof(::er::paramdef::decal_param_st, reflecColorB)) \\
+    X(bLifeEnable, offsetof(::er::paramdef::decal_param_st, bLifeEnable)) \\
+    X(siniScale, offsetof(::er::paramdef::decal_param_st, siniScale)) \\
+    X(lifeTimeSec, offsetof(::er::paramdef::decal_param_st, lifeTimeSec)) \\
+    X(fadeOutTimeSec, offsetof(::er::paramdef::decal_param_st, fadeOutTimeSec)) \\
+    X(priority, offsetof(::er::paramdef::decal_param_st, priority)) \\
+    X(bDistThinOutEnable, offsetof(::er::paramdef::decal_param_st, bDistThinOutEnable)) \\
+    X(bAlignedTexRandomVariationEnable, offsetof(::er::paramdef::decal_param_st, bAlignedTexRandomVariationEnable)) \\
+    X(distThinOutCheckDist, offsetof(::er::paramdef::decal_param_st, distThinOutCheckDist)) \\
+    X(distThinOutCheckAngleDeg, offsetof(::er::paramdef::decal_param_st, distThinOutCheckAngleDeg)) \\
+    X(distThinOutMaxNum, offsetof(::er::paramdef::decal_param_st, distThinOutMaxNum)) \\
+    X(distThinOutCheckNum, offsetof(::er::paramdef::decal_param_st, distThinOutCheckNum)) \\
+    X(delayAppearFrame, offsetof(::er::paramdef::decal_param_st, delayAppearFrame)) \\
+    X(fadeInTimeSec, offsetof(::er::paramdef::decal_param_st, fadeInTimeSec)) \\
+    X(thinOutOverlapMultiRadius, offsetof(::er::paramdef::decal_param_st, thinOutOverlapMultiRadius)) \\
+    X(thinOutNeighborAddRadius, offsetof(::er::paramdef::decal_param_st, thinOutNeighborAddRadius)) \\
+    X(thinOutOverlapLimitNum, offsetof(::er::paramdef::decal_param_st, thinOutOverlapLimitNum)) \\
+    X(thinOutNeighborLimitNum, offsetof(::er::paramdef::decal_param_st, thinOutNeighborLimitNum)) \\
+    X(thinOutMode, offsetof(::er::paramdef::decal_param_st, thinOutMode)) \\
+    X(emissiveColorR, offsetof(::er::paramdef::decal_param_st, emissiveColorR)) \\
+    X(emissiveColorG, offsetof(::er::paramdef::decal_param_st, emissiveColorG)) \\
+    X(emissiveColorB, offsetof(::er::paramdef::decal_param_st, emissiveColorB)) \\
+    X(maxDecalSfxCreatableSlopeAngleDeg, offsetof(::er::paramdef::decal_param_st, maxDecalSfxCreatableSlopeAngleDeg)) \\
+    X(pad_02, offsetof(::er::paramdef::decal_param_st, pad_02))
+
+#define ERD_OFFSET_DECAL_PARAM_ST_textureId offsetof(::er::paramdef::decal_param_st, textureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_dmypolyId offsetof(::er::paramdef::decal_param_st, dmypolyId)
+#define ERD_OFFSET_DECAL_PARAM_ST_pitchAngle offsetof(::er::paramdef::decal_param_st, pitchAngle)
+#define ERD_OFFSET_DECAL_PARAM_ST_yawAngle offsetof(::er::paramdef::decal_param_st, yawAngle)
+#define ERD_OFFSET_DECAL_PARAM_ST_nearDistance offsetof(::er::paramdef::decal_param_st, nearDistance)
+#define ERD_OFFSET_DECAL_PARAM_ST_farDistance offsetof(::er::paramdef::decal_param_st, farDistance)
+#define ERD_OFFSET_DECAL_PARAM_ST_nearSize offsetof(::er::paramdef::decal_param_st, nearSize)
+#define ERD_OFFSET_DECAL_PARAM_ST_farSize offsetof(::er::paramdef::decal_param_st, farSize)
+#define ERD_OFFSET_DECAL_PARAM_ST_maskSpeffectId offsetof(::er::paramdef::decal_param_st, maskSpeffectId)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomSizeMin offsetof(::er::paramdef::decal_param_st, randomSizeMin)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomSizeMax offsetof(::er::paramdef::decal_param_st, randomSizeMax)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomRollMin offsetof(::er::paramdef::decal_param_st, randomRollMin)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomRollMax offsetof(::er::paramdef::decal_param_st, randomRollMax)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomPitchMin offsetof(::er::paramdef::decal_param_st, randomPitchMin)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomPitchMax offsetof(::er::paramdef::decal_param_st, randomPitchMax)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomYawMin offsetof(::er::paramdef::decal_param_st, randomYawMin)
+#define ERD_OFFSET_DECAL_PARAM_ST_randomYawMax offsetof(::er::paramdef::decal_param_st, randomYawMax)
+#define ERD_OFFSET_DECAL_PARAM_ST_pomHightScale offsetof(::er::paramdef::decal_param_st, pomHightScale)
+#define ERD_OFFSET_DECAL_PARAM_ST_pomSampleMin offsetof(::er::paramdef::decal_param_st, pomSampleMin)
+#define ERD_OFFSET_DECAL_PARAM_ST_pomSampleMax offsetof(::er::paramdef::decal_param_st, pomSampleMax)
+#define ERD_OFFSET_DECAL_PARAM_ST_blendMode offsetof(::er::paramdef::decal_param_st, blendMode)
+#define ERD_OFFSET_DECAL_PARAM_ST_appearDirType offsetof(::er::paramdef::decal_param_st, appearDirType)
+#define ERD_OFFSET_DECAL_PARAM_ST_emissiveValueBegin offsetof(::er::paramdef::decal_param_st, emissiveValueBegin)
+#define ERD_OFFSET_DECAL_PARAM_ST_emissiveValueEnd offsetof(::er::paramdef::decal_param_st, emissiveValueEnd)
+#define ERD_OFFSET_DECAL_PARAM_ST_emissiveTime offsetof(::er::paramdef::decal_param_st, emissiveTime)
+#define ERD_OFFSET_DECAL_PARAM_ST_bIntpEnable offsetof(::er::paramdef::decal_param_st, bIntpEnable)
+#define ERD_OFFSET_DECAL_PARAM_ST_pad_01 offsetof(::er::paramdef::decal_param_st, pad_01)
+#define ERD_OFFSET_DECAL_PARAM_ST_intpIntervalDist offsetof(::er::paramdef::decal_param_st, intpIntervalDist)
+#define ERD_OFFSET_DECAL_PARAM_ST_beginIntpTextureId offsetof(::er::paramdef::decal_param_st, beginIntpTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_endIntpTextureId offsetof(::er::paramdef::decal_param_st, endIntpTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_appearSfxId offsetof(::er::paramdef::decal_param_st, appearSfxId)
+#define ERD_OFFSET_DECAL_PARAM_ST_appearSfxOffsetPos offsetof(::er::paramdef::decal_param_st, appearSfxOffsetPos)
+#define ERD_OFFSET_DECAL_PARAM_ST_maskTextureId offsetof(::er::paramdef::decal_param_st, maskTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_diffuseTextureId offsetof(::er::paramdef::decal_param_st, diffuseTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_reflecTextureId offsetof(::er::paramdef::decal_param_st, reflecTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_maskScale offsetof(::er::paramdef::decal_param_st, maskScale)
+#define ERD_OFFSET_DECAL_PARAM_ST_normalTextureId offsetof(::er::paramdef::decal_param_st, normalTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_heightTextureId offsetof(::er::paramdef::decal_param_st, heightTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_emissiveTextureId offsetof(::er::paramdef::decal_param_st, emissiveTextureId)
+#define ERD_OFFSET_DECAL_PARAM_ST_diffuseColorR offsetof(::er::paramdef::decal_param_st, diffuseColorR)
+#define ERD_OFFSET_DECAL_PARAM_ST_diffuseColorG offsetof(::er::paramdef::decal_param_st, diffuseColorG)
+#define ERD_OFFSET_DECAL_PARAM_ST_diffuseColorB offsetof(::er::paramdef::decal_param_st, diffuseColorB)
+#define ERD_OFFSET_DECAL_PARAM_ST_pad_03 offsetof(::er::paramdef::decal_param_st, pad_03)
+#define ERD_OFFSET_DECAL_PARAM_ST_reflecColorR offsetof(::er::paramdef::decal_param_st, reflecColorR)
+#define ERD_OFFSET_DECAL_PARAM_ST_reflecColorG offsetof(::er::paramdef::decal_param_st, reflecColorG)
+#define ERD_OFFSET_DECAL_PARAM_ST_reflecColorB offsetof(::er::paramdef::decal_param_st, reflecColorB)
+#define ERD_OFFSET_DECAL_PARAM_ST_bLifeEnable offsetof(::er::paramdef::decal_param_st, bLifeEnable)
+#define ERD_OFFSET_DECAL_PARAM_ST_siniScale offsetof(::er::paramdef::decal_param_st, siniScale)
+#define ERD_OFFSET_DECAL_PARAM_ST_lifeTimeSec offsetof(::er::paramdef::decal_param_st, lifeTimeSec)
+#define ERD_OFFSET_DECAL_PARAM_ST_fadeOutTimeSec offsetof(::er::paramdef::decal_param_st, fadeOutTimeSec)
+#define ERD_OFFSET_DECAL_PARAM_ST_priority offsetof(::er::paramdef::decal_param_st, priority)
+#define ERD_OFFSET_DECAL_PARAM_ST_bDistThinOutEnable offsetof(::er::paramdef::decal_param_st, bDistThinOutEnable)
+#define ERD_OFFSET_DECAL_PARAM_ST_bAlignedTexRandomVariationEnable offsetof(::er::paramdef::decal_param_st, bAlignedTexRandomVariationEnable)
+#define ERD_OFFSET_DECAL_PARAM_ST_distThinOutCheckDist offsetof(::er::paramdef::decal_param_st, distThinOutCheckDist)
+#define ERD_OFFSET_DECAL_PARAM_ST_distThinOutCheckAngleDeg offsetof(::er::paramdef::decal_param_st, distThinOutCheckAngleDeg)
+#define ERD_OFFSET_DECAL_PARAM_ST_distThinOutMaxNum offsetof(::er::paramdef::decal_param_st, distThinOutMaxNum)
+#define ERD_OFFSET_DECAL_PARAM_ST_distThinOutCheckNum offsetof(::er::paramdef::decal_param_st, distThinOutCheckNum)
+#define ERD_OFFSET_DECAL_PARAM_ST_delayAppearFrame offsetof(::er::paramdef::decal_param_st, delayAppearFrame)
+#define ERD_OFFSET_DECAL_PARAM_ST_fadeInTimeSec offsetof(::er::paramdef::decal_param_st, fadeInTimeSec)
+#define ERD_OFFSET_DECAL_PARAM_ST_thinOutOverlapMultiRadius offsetof(::er::paramdef::decal_param_st, thinOutOverlapMultiRadius)
+#define ERD_OFFSET_DECAL_PARAM_ST_thinOutNeighborAddRadius offsetof(::er::paramdef::decal_param_st, thinOutNeighborAddRadius)
+#define ERD_OFFSET_DECAL_PARAM_ST_thinOutOverlapLimitNum offsetof(::er::paramdef::decal_param_st, thinOutOverlapLimitNum)
+#define ERD_OFFSET_DECAL_PARAM_ST_thinOutNeighborLimitNum offsetof(::er::paramdef::decal_param_st, thinOutNeighborLimitNum)
+#define ERD_OFFSET_DECAL_PARAM_ST_thinOutMode offsetof(::er::paramdef::decal_param_st, thinOutMode)
+#define ERD_OFFSET_DECAL_PARAM_ST_emissiveColorR offsetof(::er::paramdef::decal_param_st, emissiveColorR)
+#define ERD_OFFSET_DECAL_PARAM_ST_emissiveColorG offsetof(::er::paramdef::decal_param_st, emissiveColorG)
+#define ERD_OFFSET_DECAL_PARAM_ST_emissiveColorB offsetof(::er::paramdef::decal_param_st, emissiveColorB)
+#define ERD_OFFSET_DECAL_PARAM_ST_maxDecalSfxCreatableSlopeAngleDeg offsetof(::er::paramdef::decal_param_st, maxDecalSfxCreatableSlopeAngleDeg)
+#define ERD_OFFSET_DECAL_PARAM_ST_pad_02 offsetof(::er::paramdef::decal_param_st, pad_02)

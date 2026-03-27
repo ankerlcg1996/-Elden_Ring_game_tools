@@ -1,0 +1,140 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/PLAY_REGION_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_PLAY_REGION_PARAM_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::play_region_param_st, disableParamReserve2)) \\
+    X(matchAreaId, offsetof(::er::paramdef::play_region_param_st, matchAreaId)) \\
+    X(multiPlayStartLimitEventFlagId, offsetof(::er::paramdef::play_region_param_st, multiPlayStartLimitEventFlagId)) \\
+    X(otherDisableDistance, offsetof(::er::paramdef::play_region_param_st, otherDisableDistance)) \\
+    X(pcPositionSaveLimitEventFlagId, offsetof(::er::paramdef::play_region_param_st, pcPositionSaveLimitEventFlagId)) \\
+    X(bossAreaId, offsetof(::er::paramdef::play_region_param_st, bossAreaId)) \\
+    X(cultNpcWhiteGhostEntityId_byFree, offsetof(::er::paramdef::play_region_param_st, cultNpcWhiteGhostEntityId_byFree)) \\
+    X(bMapGuradianRegion, offsetof(::er::paramdef::play_region_param_st, bMapGuradianRegion)) \\
+    X(warpItemUsePermitBonfireId_1, offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_1)) \\
+    X(warpItemUsePermitBonfireId_2, offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_2)) \\
+    X(warpItemUsePermitBonfireId_3, offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_3)) \\
+    X(warpItemUsePermitBonfireId_4, offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_4)) \\
+    X(warpItemUsePermitBonfireId_5, offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_5)) \\
+    X(warpItemProhibitionEventFlagId_1, offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_1)) \\
+    X(warpItemProhibitionEventFlagId_2, offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_2)) \\
+    X(warpItemProhibitionEventFlagId_3, offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_3)) \\
+    X(warpItemProhibitionEventFlagId_4, offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_4)) \\
+    X(warpItemProhibitionEventFlagId_5, offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_5)) \\
+    X(pad2, offsetof(::er::paramdef::play_region_param_st, pad2)) \\
+    X(multiPlayHASHostLimitEventFlagId, offsetof(::er::paramdef::play_region_param_st, multiPlayHASHostLimitEventFlagId)) \\
+    X(otherMaxDistance, offsetof(::er::paramdef::play_region_param_st, otherMaxDistance)) \\
+    X(signPuddleOpenEventFlagId, offsetof(::er::paramdef::play_region_param_st, signPuddleOpenEventFlagId)) \\
+    X(areaNo, offsetof(::er::paramdef::play_region_param_st, areaNo)) \\
+    X(gridXNo, offsetof(::er::paramdef::play_region_param_st, gridXNo)) \\
+    X(gridZNo, offsetof(::er::paramdef::play_region_param_st, gridZNo)) \\
+    X(pad4, offsetof(::er::paramdef::play_region_param_st, pad4)) \\
+    X(posX, offsetof(::er::paramdef::play_region_param_st, posX)) \\
+    X(posY, offsetof(::er::paramdef::play_region_param_st, posY)) \\
+    X(posZ, offsetof(::er::paramdef::play_region_param_st, posZ)) \\
+    X(breakInLimitEventFlagId_1, offsetof(::er::paramdef::play_region_param_st, breakInLimitEventFlagId_1)) \\
+    X(whiteSignLimitEventFlagId_1, offsetof(::er::paramdef::play_region_param_st, whiteSignLimitEventFlagId_1)) \\
+    X(matchAreaSignCreateLimitEventFlagId, offsetof(::er::paramdef::play_region_param_st, matchAreaSignCreateLimitEventFlagId)) \\
+    X(signAimId_1, offsetof(::er::paramdef::play_region_param_st, signAimId_1)) \\
+    X(signAimId_2, offsetof(::er::paramdef::play_region_param_st, signAimId_2)) \\
+    X(signAimId_3, offsetof(::er::paramdef::play_region_param_st, signAimId_3)) \\
+    X(signAimId_4, offsetof(::er::paramdef::play_region_param_st, signAimId_4)) \\
+    X(signAimId_5, offsetof(::er::paramdef::play_region_param_st, signAimId_5)) \\
+    X(signAimId_6, offsetof(::er::paramdef::play_region_param_st, signAimId_6)) \\
+    X(signAimId_7, offsetof(::er::paramdef::play_region_param_st, signAimId_7)) \\
+    X(signAimId_8, offsetof(::er::paramdef::play_region_param_st, signAimId_8)) \\
+    X(redSignLimitEventFlagId_1, offsetof(::er::paramdef::play_region_param_st, redSignLimitEventFlagId_1)) \\
+    X(breakInLimitEventFlagId_2, offsetof(::er::paramdef::play_region_param_st, breakInLimitEventFlagId_2)) \\
+    X(breakInLimitEventFlagId_3, offsetof(::er::paramdef::play_region_param_st, breakInLimitEventFlagId_3)) \\
+    X(whiteSignLimitEventFlagId_2, offsetof(::er::paramdef::play_region_param_st, whiteSignLimitEventFlagId_2)) \\
+    X(whiteSignLimitEventFlagId_3, offsetof(::er::paramdef::play_region_param_st, whiteSignLimitEventFlagId_3)) \\
+    X(redSignLimitEventFlagId_2, offsetof(::er::paramdef::play_region_param_st, redSignLimitEventFlagId_2)) \\
+    X(redSignLimitEventFlagId_3, offsetof(::er::paramdef::play_region_param_st, redSignLimitEventFlagId_3)) \\
+    X(bossId_1, offsetof(::er::paramdef::play_region_param_st, bossId_1)) \\
+    X(bossId_2, offsetof(::er::paramdef::play_region_param_st, bossId_2)) \\
+    X(bossId_3, offsetof(::er::paramdef::play_region_param_st, bossId_3)) \\
+    X(bossId_4, offsetof(::er::paramdef::play_region_param_st, bossId_4)) \\
+    X(bossId_5, offsetof(::er::paramdef::play_region_param_st, bossId_5)) \\
+    X(bossId_6, offsetof(::er::paramdef::play_region_param_st, bossId_6)) \\
+    X(bossId_7, offsetof(::er::paramdef::play_region_param_st, bossId_7)) \\
+    X(bossId_8, offsetof(::er::paramdef::play_region_param_st, bossId_8)) \\
+    X(bossId_9, offsetof(::er::paramdef::play_region_param_st, bossId_9)) \\
+    X(bossId_10, offsetof(::er::paramdef::play_region_param_st, bossId_10)) \\
+    X(bossId_11, offsetof(::er::paramdef::play_region_param_st, bossId_11)) \\
+    X(bossId_12, offsetof(::er::paramdef::play_region_param_st, bossId_12)) \\
+    X(bossId_13, offsetof(::er::paramdef::play_region_param_st, bossId_13)) \\
+    X(bossId_14, offsetof(::er::paramdef::play_region_param_st, bossId_14)) \\
+    X(bossId_15, offsetof(::er::paramdef::play_region_param_st, bossId_15)) \\
+    X(bossId_16, offsetof(::er::paramdef::play_region_param_st, bossId_16)) \\
+    X(mapMenuUnlockEventId, offsetof(::er::paramdef::play_region_param_st, mapMenuUnlockEventId)) \\
+    X(pad5, offsetof(::er::paramdef::play_region_param_st, pad5))
+
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_disableParamReserve2 offsetof(::er::paramdef::play_region_param_st, disableParamReserve2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_matchAreaId offsetof(::er::paramdef::play_region_param_st, matchAreaId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_multiPlayStartLimitEventFlagId offsetof(::er::paramdef::play_region_param_st, multiPlayStartLimitEventFlagId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_otherDisableDistance offsetof(::er::paramdef::play_region_param_st, otherDisableDistance)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_pcPositionSaveLimitEventFlagId offsetof(::er::paramdef::play_region_param_st, pcPositionSaveLimitEventFlagId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossAreaId offsetof(::er::paramdef::play_region_param_st, bossAreaId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_cultNpcWhiteGhostEntityId_byFree offsetof(::er::paramdef::play_region_param_st, cultNpcWhiteGhostEntityId_byFree)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bMapGuradianRegion offsetof(::er::paramdef::play_region_param_st, bMapGuradianRegion)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemUsePermitBonfireId_1 offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_1)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemUsePermitBonfireId_2 offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemUsePermitBonfireId_3 offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_3)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemUsePermitBonfireId_4 offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_4)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemUsePermitBonfireId_5 offsetof(::er::paramdef::play_region_param_st, warpItemUsePermitBonfireId_5)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemProhibitionEventFlagId_1 offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_1)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemProhibitionEventFlagId_2 offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemProhibitionEventFlagId_3 offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_3)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemProhibitionEventFlagId_4 offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_4)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_warpItemProhibitionEventFlagId_5 offsetof(::er::paramdef::play_region_param_st, warpItemProhibitionEventFlagId_5)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_pad2 offsetof(::er::paramdef::play_region_param_st, pad2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_multiPlayHASHostLimitEventFlagId offsetof(::er::paramdef::play_region_param_st, multiPlayHASHostLimitEventFlagId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_otherMaxDistance offsetof(::er::paramdef::play_region_param_st, otherMaxDistance)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signPuddleOpenEventFlagId offsetof(::er::paramdef::play_region_param_st, signPuddleOpenEventFlagId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_areaNo offsetof(::er::paramdef::play_region_param_st, areaNo)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_gridXNo offsetof(::er::paramdef::play_region_param_st, gridXNo)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_gridZNo offsetof(::er::paramdef::play_region_param_st, gridZNo)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_pad4 offsetof(::er::paramdef::play_region_param_st, pad4)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_posX offsetof(::er::paramdef::play_region_param_st, posX)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_posY offsetof(::er::paramdef::play_region_param_st, posY)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_posZ offsetof(::er::paramdef::play_region_param_st, posZ)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_breakInLimitEventFlagId_1 offsetof(::er::paramdef::play_region_param_st, breakInLimitEventFlagId_1)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_whiteSignLimitEventFlagId_1 offsetof(::er::paramdef::play_region_param_st, whiteSignLimitEventFlagId_1)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_matchAreaSignCreateLimitEventFlagId offsetof(::er::paramdef::play_region_param_st, matchAreaSignCreateLimitEventFlagId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_1 offsetof(::er::paramdef::play_region_param_st, signAimId_1)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_2 offsetof(::er::paramdef::play_region_param_st, signAimId_2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_3 offsetof(::er::paramdef::play_region_param_st, signAimId_3)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_4 offsetof(::er::paramdef::play_region_param_st, signAimId_4)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_5 offsetof(::er::paramdef::play_region_param_st, signAimId_5)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_6 offsetof(::er::paramdef::play_region_param_st, signAimId_6)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_7 offsetof(::er::paramdef::play_region_param_st, signAimId_7)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_signAimId_8 offsetof(::er::paramdef::play_region_param_st, signAimId_8)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_redSignLimitEventFlagId_1 offsetof(::er::paramdef::play_region_param_st, redSignLimitEventFlagId_1)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_breakInLimitEventFlagId_2 offsetof(::er::paramdef::play_region_param_st, breakInLimitEventFlagId_2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_breakInLimitEventFlagId_3 offsetof(::er::paramdef::play_region_param_st, breakInLimitEventFlagId_3)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_whiteSignLimitEventFlagId_2 offsetof(::er::paramdef::play_region_param_st, whiteSignLimitEventFlagId_2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_whiteSignLimitEventFlagId_3 offsetof(::er::paramdef::play_region_param_st, whiteSignLimitEventFlagId_3)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_redSignLimitEventFlagId_2 offsetof(::er::paramdef::play_region_param_st, redSignLimitEventFlagId_2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_redSignLimitEventFlagId_3 offsetof(::er::paramdef::play_region_param_st, redSignLimitEventFlagId_3)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_1 offsetof(::er::paramdef::play_region_param_st, bossId_1)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_2 offsetof(::er::paramdef::play_region_param_st, bossId_2)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_3 offsetof(::er::paramdef::play_region_param_st, bossId_3)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_4 offsetof(::er::paramdef::play_region_param_st, bossId_4)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_5 offsetof(::er::paramdef::play_region_param_st, bossId_5)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_6 offsetof(::er::paramdef::play_region_param_st, bossId_6)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_7 offsetof(::er::paramdef::play_region_param_st, bossId_7)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_8 offsetof(::er::paramdef::play_region_param_st, bossId_8)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_9 offsetof(::er::paramdef::play_region_param_st, bossId_9)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_10 offsetof(::er::paramdef::play_region_param_st, bossId_10)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_11 offsetof(::er::paramdef::play_region_param_st, bossId_11)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_12 offsetof(::er::paramdef::play_region_param_st, bossId_12)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_13 offsetof(::er::paramdef::play_region_param_st, bossId_13)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_14 offsetof(::er::paramdef::play_region_param_st, bossId_14)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_15 offsetof(::er::paramdef::play_region_param_st, bossId_15)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_bossId_16 offsetof(::er::paramdef::play_region_param_st, bossId_16)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_mapMenuUnlockEventId offsetof(::er::paramdef::play_region_param_st, mapMenuUnlockEventId)
+#define ERD_OFFSET_PLAY_REGION_PARAM_ST_pad5 offsetof(::er::paramdef::play_region_param_st, pad5)

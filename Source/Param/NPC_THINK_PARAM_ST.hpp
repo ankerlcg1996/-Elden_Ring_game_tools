@@ -1,0 +1,190 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/NPC_THINK_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_NPC_THINK_PARAM_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::npc_think_param_st, disableParamReserve2)) \\
+    X(logicId, offsetof(::er::paramdef::npc_think_param_st, logicId)) \\
+    X(battleGoalID, offsetof(::er::paramdef::npc_think_param_st, battleGoalID)) \\
+    X(searchEye_dist, offsetof(::er::paramdef::npc_think_param_st, searchEye_dist)) \\
+    X(searchEye_angY, offsetof(::er::paramdef::npc_think_param_st, searchEye_angY)) \\
+    X(spEffectId_RangedAttack, offsetof(::er::paramdef::npc_think_param_st, spEffectId_RangedAttack)) \\
+    X(searchTargetLv1ForgetTime, offsetof(::er::paramdef::npc_think_param_st, searchTargetLv1ForgetTime)) \\
+    X(searchTargetLv2ForgetTime, offsetof(::er::paramdef::npc_think_param_st, searchTargetLv2ForgetTime)) \\
+    X(BackHomeLife_OnHitEneWal, offsetof(::er::paramdef::npc_think_param_st, BackHomeLife_OnHitEneWal)) \\
+    X(SightTargetForgetTime, offsetof(::er::paramdef::npc_think_param_st, SightTargetForgetTime)) \\
+    X(idAttackCannotMove, offsetof(::er::paramdef::npc_think_param_st, idAttackCannotMove)) \\
+    X(ear_dist, offsetof(::er::paramdef::npc_think_param_st, ear_dist)) \\
+    X(callHelp_ActionAnimId, offsetof(::er::paramdef::npc_think_param_st, callHelp_ActionAnimId)) \\
+    X(callHelp_CallActionId, offsetof(::er::paramdef::npc_think_param_st, callHelp_CallActionId)) \\
+    X(eye_dist, offsetof(::er::paramdef::npc_think_param_st, eye_dist)) \\
+    X(isGuard_Act, offsetof(::er::paramdef::npc_think_param_st, isGuard_Act)) \\
+    X(pad6, offsetof(::er::paramdef::npc_think_param_st, pad6)) \\
+    X(ear_soundcut_dist, offsetof(::er::paramdef::npc_think_param_st, ear_soundcut_dist)) \\
+    X(nose_dist, offsetof(::er::paramdef::npc_think_param_st, nose_dist)) \\
+    X(maxBackhomeDist, offsetof(::er::paramdef::npc_think_param_st, maxBackhomeDist)) \\
+    X(backhomeDist, offsetof(::er::paramdef::npc_think_param_st, backhomeDist)) \\
+    X(backhomeBattleDist, offsetof(::er::paramdef::npc_think_param_st, backhomeBattleDist)) \\
+    X(nonBattleActLife, offsetof(::er::paramdef::npc_think_param_st, nonBattleActLife)) \\
+    X(BackHome_LookTargetTime, offsetof(::er::paramdef::npc_think_param_st, BackHome_LookTargetTime)) \\
+    X(BackHome_LookTargetDist, offsetof(::er::paramdef::npc_think_param_st, BackHome_LookTargetDist)) \\
+    X(SoundTargetForgetTime, offsetof(::er::paramdef::npc_think_param_st, SoundTargetForgetTime)) \\
+    X(BattleStartDist, offsetof(::er::paramdef::npc_think_param_st, BattleStartDist)) \\
+    X(callHelp_MyPeerId, offsetof(::er::paramdef::npc_think_param_st, callHelp_MyPeerId)) \\
+    X(callHelp_CallPeerId, offsetof(::er::paramdef::npc_think_param_st, callHelp_CallPeerId)) \\
+    X(targetSys_DmgEffectRate, offsetof(::er::paramdef::npc_think_param_st, targetSys_DmgEffectRate)) \\
+    X(TeamAttackEffectivity, offsetof(::er::paramdef::npc_think_param_st, TeamAttackEffectivity)) \\
+    X(eye_angX, offsetof(::er::paramdef::npc_think_param_st, eye_angX)) \\
+    X(eye_angY, offsetof(::er::paramdef::npc_think_param_st, eye_angY)) \\
+    X(disableDark, offsetof(::er::paramdef::npc_think_param_st, disableDark)) \\
+    X(caravanRole, offsetof(::er::paramdef::npc_think_param_st, caravanRole)) \\
+    X(callHelp_CallValidMinDistTarget, offsetof(::er::paramdef::npc_think_param_st, callHelp_CallValidMinDistTarget)) \\
+    X(callHelp_CallValidRange, offsetof(::er::paramdef::npc_think_param_st, callHelp_CallValidRange)) \\
+    X(callHelp_ForgetTimeByArrival, offsetof(::er::paramdef::npc_think_param_st, callHelp_ForgetTimeByArrival)) \\
+    X(callHelp_MinWaitTime, offsetof(::er::paramdef::npc_think_param_st, callHelp_MinWaitTime)) \\
+    X(callHelp_MaxWaitTime, offsetof(::er::paramdef::npc_think_param_st, callHelp_MaxWaitTime)) \\
+    X(goalAction_ToCaution, offsetof(::er::paramdef::npc_think_param_st, goalAction_ToCaution)) \\
+    X(ear_listenLevel, offsetof(::er::paramdef::npc_think_param_st, ear_listenLevel)) \\
+    X(callHelp_ReplyBehaviorType, offsetof(::er::paramdef::npc_think_param_st, callHelp_ReplyBehaviorType)) \\
+    X(disablePathMove, offsetof(::er::paramdef::npc_think_param_st, disablePathMove)) \\
+    X(skipArrivalVisibleCheck, offsetof(::er::paramdef::npc_think_param_st, skipArrivalVisibleCheck)) \\
+    X(thinkAttr_doAdmirer, offsetof(::er::paramdef::npc_think_param_st, thinkAttr_doAdmirer)) \\
+    X(enableNaviFlg_reserve1, offsetof(::er::paramdef::npc_think_param_st, enableNaviFlg_reserve1)) \\
+    X(searchThreshold_Lv0toLv1, offsetof(::er::paramdef::npc_think_param_st, searchThreshold_Lv0toLv1)) \\
+    X(searchThreshold_Lv1toLv2, offsetof(::er::paramdef::npc_think_param_st, searchThreshold_Lv1toLv2)) \\
+    X(platoonReplyTime, offsetof(::er::paramdef::npc_think_param_st, platoonReplyTime)) \\
+    X(platoonReplyAddRandomTime, offsetof(::er::paramdef::npc_think_param_st, platoonReplyAddRandomTime)) \\
+    X(searchEye_angX, offsetof(::er::paramdef::npc_think_param_st, searchEye_angX)) \\
+    X(isUpdateBattleSight, offsetof(::er::paramdef::npc_think_param_st, isUpdateBattleSight)) \\
+    X(battleEye_updateDist, offsetof(::er::paramdef::npc_think_param_st, battleEye_updateDist)) \\
+    X(battleEye_updateAngX, offsetof(::er::paramdef::npc_think_param_st, battleEye_updateAngX)) \\
+    X(battleEye_updateAngY, offsetof(::er::paramdef::npc_think_param_st, battleEye_updateAngY)) \\
+    X(pad4, offsetof(::er::paramdef::npc_think_param_st, pad4)) \\
+    X(eye_BackOffsetDist, offsetof(::er::paramdef::npc_think_param_st, eye_BackOffsetDist)) \\
+    X(eye_BeginDist, offsetof(::er::paramdef::npc_think_param_st, eye_BeginDist)) \\
+    X(actTypeOnFailedPath, offsetof(::er::paramdef::npc_think_param_st, actTypeOnFailedPath)) \\
+    X(goalAction_ToCautionImportant, offsetof(::er::paramdef::npc_think_param_st, goalAction_ToCautionImportant)) \\
+    X(shiftAnimeId_RangedAttack, offsetof(::er::paramdef::npc_think_param_st, shiftAnimeId_RangedAttack)) \\
+    X(actTypeOnNonBtlFailedPath, offsetof(::er::paramdef::npc_think_param_st, actTypeOnNonBtlFailedPath)) \\
+    X(isBuddyAI, offsetof(::er::paramdef::npc_think_param_st, isBuddyAI)) \\
+    X(goalAction_ToSearchLv1, offsetof(::er::paramdef::npc_think_param_st, goalAction_ToSearchLv1)) \\
+    X(goalAction_ToSearchLv2, offsetof(::er::paramdef::npc_think_param_st, goalAction_ToSearchLv2)) \\
+    X(enableJumpMove, offsetof(::er::paramdef::npc_think_param_st, enableJumpMove)) \\
+    X(disableLocalSteering, offsetof(::er::paramdef::npc_think_param_st, disableLocalSteering)) \\
+    X(goalAction_ToDisappear, offsetof(::er::paramdef::npc_think_param_st, goalAction_ToDisappear)) \\
+    X(changeStateAction_ToNormal, offsetof(::er::paramdef::npc_think_param_st, changeStateAction_ToNormal)) \\
+    X(MemoryTargetForgetTime, offsetof(::er::paramdef::npc_think_param_st, MemoryTargetForgetTime)) \\
+    X(rangedAttackId, offsetof(::er::paramdef::npc_think_param_st, rangedAttackId)) \\
+    X(useFall_onNormalCaution, offsetof(::er::paramdef::npc_think_param_st, useFall_onNormalCaution)) \\
+    X(useFall_onSearchBattle, offsetof(::er::paramdef::npc_think_param_st, useFall_onSearchBattle)) \\
+    X(enableJumpMove_onBattle, offsetof(::er::paramdef::npc_think_param_st, enableJumpMove_onBattle)) \\
+    X(backToHomeStuckAct, offsetof(::er::paramdef::npc_think_param_st, backToHomeStuckAct)) \\
+    X(pad3, offsetof(::er::paramdef::npc_think_param_st, pad3)) \\
+    X(soundBehaviorId01, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId01)) \\
+    X(soundBehaviorId02, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId02)) \\
+    X(soundBehaviorId03, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId03)) \\
+    X(soundBehaviorId04, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId04)) \\
+    X(soundBehaviorId05, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId05)) \\
+    X(soundBehaviorId06, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId06)) \\
+    X(soundBehaviorId07, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId07)) \\
+    X(soundBehaviorId08, offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId08)) \\
+    X(weaponOffSpecialEffectId, offsetof(::er::paramdef::npc_think_param_st, weaponOffSpecialEffectId)) \\
+    X(weaponOnSpecialEffectId, offsetof(::er::paramdef::npc_think_param_st, weaponOnSpecialEffectId)) \\
+    X(weaponOffAnimId, offsetof(::er::paramdef::npc_think_param_st, weaponOffAnimId)) \\
+    X(weaponOnAnimId, offsetof(::er::paramdef::npc_think_param_st, weaponOnAnimId)) \\
+    X(surpriseAnimId, offsetof(::er::paramdef::npc_think_param_st, surpriseAnimId))
+
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_disableParamReserve2 offsetof(::er::paramdef::npc_think_param_st, disableParamReserve2)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_logicId offsetof(::er::paramdef::npc_think_param_st, logicId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_battleGoalID offsetof(::er::paramdef::npc_think_param_st, battleGoalID)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_searchEye_dist offsetof(::er::paramdef::npc_think_param_st, searchEye_dist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_searchEye_angY offsetof(::er::paramdef::npc_think_param_st, searchEye_angY)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_spEffectId_RangedAttack offsetof(::er::paramdef::npc_think_param_st, spEffectId_RangedAttack)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_searchTargetLv1ForgetTime offsetof(::er::paramdef::npc_think_param_st, searchTargetLv1ForgetTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_searchTargetLv2ForgetTime offsetof(::er::paramdef::npc_think_param_st, searchTargetLv2ForgetTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_BackHomeLife_OnHitEneWal offsetof(::er::paramdef::npc_think_param_st, BackHomeLife_OnHitEneWal)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_SightTargetForgetTime offsetof(::er::paramdef::npc_think_param_st, SightTargetForgetTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_idAttackCannotMove offsetof(::er::paramdef::npc_think_param_st, idAttackCannotMove)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_ear_dist offsetof(::er::paramdef::npc_think_param_st, ear_dist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_ActionAnimId offsetof(::er::paramdef::npc_think_param_st, callHelp_ActionAnimId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_CallActionId offsetof(::er::paramdef::npc_think_param_st, callHelp_CallActionId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_eye_dist offsetof(::er::paramdef::npc_think_param_st, eye_dist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_isGuard_Act offsetof(::er::paramdef::npc_think_param_st, isGuard_Act)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_pad6 offsetof(::er::paramdef::npc_think_param_st, pad6)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_ear_soundcut_dist offsetof(::er::paramdef::npc_think_param_st, ear_soundcut_dist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_nose_dist offsetof(::er::paramdef::npc_think_param_st, nose_dist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_maxBackhomeDist offsetof(::er::paramdef::npc_think_param_st, maxBackhomeDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_backhomeDist offsetof(::er::paramdef::npc_think_param_st, backhomeDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_backhomeBattleDist offsetof(::er::paramdef::npc_think_param_st, backhomeBattleDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_nonBattleActLife offsetof(::er::paramdef::npc_think_param_st, nonBattleActLife)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_BackHome_LookTargetTime offsetof(::er::paramdef::npc_think_param_st, BackHome_LookTargetTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_BackHome_LookTargetDist offsetof(::er::paramdef::npc_think_param_st, BackHome_LookTargetDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_SoundTargetForgetTime offsetof(::er::paramdef::npc_think_param_st, SoundTargetForgetTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_BattleStartDist offsetof(::er::paramdef::npc_think_param_st, BattleStartDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_MyPeerId offsetof(::er::paramdef::npc_think_param_st, callHelp_MyPeerId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_CallPeerId offsetof(::er::paramdef::npc_think_param_st, callHelp_CallPeerId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_targetSys_DmgEffectRate offsetof(::er::paramdef::npc_think_param_st, targetSys_DmgEffectRate)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_TeamAttackEffectivity offsetof(::er::paramdef::npc_think_param_st, TeamAttackEffectivity)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_eye_angX offsetof(::er::paramdef::npc_think_param_st, eye_angX)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_eye_angY offsetof(::er::paramdef::npc_think_param_st, eye_angY)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_disableDark offsetof(::er::paramdef::npc_think_param_st, disableDark)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_caravanRole offsetof(::er::paramdef::npc_think_param_st, caravanRole)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_CallValidMinDistTarget offsetof(::er::paramdef::npc_think_param_st, callHelp_CallValidMinDistTarget)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_CallValidRange offsetof(::er::paramdef::npc_think_param_st, callHelp_CallValidRange)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_ForgetTimeByArrival offsetof(::er::paramdef::npc_think_param_st, callHelp_ForgetTimeByArrival)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_MinWaitTime offsetof(::er::paramdef::npc_think_param_st, callHelp_MinWaitTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_MaxWaitTime offsetof(::er::paramdef::npc_think_param_st, callHelp_MaxWaitTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_goalAction_ToCaution offsetof(::er::paramdef::npc_think_param_st, goalAction_ToCaution)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_ear_listenLevel offsetof(::er::paramdef::npc_think_param_st, ear_listenLevel)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_callHelp_ReplyBehaviorType offsetof(::er::paramdef::npc_think_param_st, callHelp_ReplyBehaviorType)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_disablePathMove offsetof(::er::paramdef::npc_think_param_st, disablePathMove)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_skipArrivalVisibleCheck offsetof(::er::paramdef::npc_think_param_st, skipArrivalVisibleCheck)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_thinkAttr_doAdmirer offsetof(::er::paramdef::npc_think_param_st, thinkAttr_doAdmirer)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_enableNaviFlg_reserve1 offsetof(::er::paramdef::npc_think_param_st, enableNaviFlg_reserve1)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_searchThreshold_Lv0toLv1 offsetof(::er::paramdef::npc_think_param_st, searchThreshold_Lv0toLv1)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_searchThreshold_Lv1toLv2 offsetof(::er::paramdef::npc_think_param_st, searchThreshold_Lv1toLv2)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_platoonReplyTime offsetof(::er::paramdef::npc_think_param_st, platoonReplyTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_platoonReplyAddRandomTime offsetof(::er::paramdef::npc_think_param_st, platoonReplyAddRandomTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_searchEye_angX offsetof(::er::paramdef::npc_think_param_st, searchEye_angX)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_isUpdateBattleSight offsetof(::er::paramdef::npc_think_param_st, isUpdateBattleSight)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_battleEye_updateDist offsetof(::er::paramdef::npc_think_param_st, battleEye_updateDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_battleEye_updateAngX offsetof(::er::paramdef::npc_think_param_st, battleEye_updateAngX)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_battleEye_updateAngY offsetof(::er::paramdef::npc_think_param_st, battleEye_updateAngY)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_pad4 offsetof(::er::paramdef::npc_think_param_st, pad4)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_eye_BackOffsetDist offsetof(::er::paramdef::npc_think_param_st, eye_BackOffsetDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_eye_BeginDist offsetof(::er::paramdef::npc_think_param_st, eye_BeginDist)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_actTypeOnFailedPath offsetof(::er::paramdef::npc_think_param_st, actTypeOnFailedPath)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_goalAction_ToCautionImportant offsetof(::er::paramdef::npc_think_param_st, goalAction_ToCautionImportant)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_shiftAnimeId_RangedAttack offsetof(::er::paramdef::npc_think_param_st, shiftAnimeId_RangedAttack)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_actTypeOnNonBtlFailedPath offsetof(::er::paramdef::npc_think_param_st, actTypeOnNonBtlFailedPath)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_isBuddyAI offsetof(::er::paramdef::npc_think_param_st, isBuddyAI)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_goalAction_ToSearchLv1 offsetof(::er::paramdef::npc_think_param_st, goalAction_ToSearchLv1)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_goalAction_ToSearchLv2 offsetof(::er::paramdef::npc_think_param_st, goalAction_ToSearchLv2)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_enableJumpMove offsetof(::er::paramdef::npc_think_param_st, enableJumpMove)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_disableLocalSteering offsetof(::er::paramdef::npc_think_param_st, disableLocalSteering)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_goalAction_ToDisappear offsetof(::er::paramdef::npc_think_param_st, goalAction_ToDisappear)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_changeStateAction_ToNormal offsetof(::er::paramdef::npc_think_param_st, changeStateAction_ToNormal)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_MemoryTargetForgetTime offsetof(::er::paramdef::npc_think_param_st, MemoryTargetForgetTime)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_rangedAttackId offsetof(::er::paramdef::npc_think_param_st, rangedAttackId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_useFall_onNormalCaution offsetof(::er::paramdef::npc_think_param_st, useFall_onNormalCaution)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_useFall_onSearchBattle offsetof(::er::paramdef::npc_think_param_st, useFall_onSearchBattle)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_enableJumpMove_onBattle offsetof(::er::paramdef::npc_think_param_st, enableJumpMove_onBattle)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_backToHomeStuckAct offsetof(::er::paramdef::npc_think_param_st, backToHomeStuckAct)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_pad3 offsetof(::er::paramdef::npc_think_param_st, pad3)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId01 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId01)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId02 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId02)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId03 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId03)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId04 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId04)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId05 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId05)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId06 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId06)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId07 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId07)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_soundBehaviorId08 offsetof(::er::paramdef::npc_think_param_st, soundBehaviorId08)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_weaponOffSpecialEffectId offsetof(::er::paramdef::npc_think_param_st, weaponOffSpecialEffectId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_weaponOnSpecialEffectId offsetof(::er::paramdef::npc_think_param_st, weaponOnSpecialEffectId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_weaponOffAnimId offsetof(::er::paramdef::npc_think_param_st, weaponOffAnimId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_weaponOnAnimId offsetof(::er::paramdef::npc_think_param_st, weaponOnAnimId)
+#define ERD_OFFSET_NPC_THINK_PARAM_ST_surpriseAnimId offsetof(::er::paramdef::npc_think_param_st, surpriseAnimId)

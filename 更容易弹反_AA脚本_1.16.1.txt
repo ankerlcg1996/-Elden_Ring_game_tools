@@ -1,0 +1,49 @@
+[ENABLE]
+
+aobscanmodule(tanfanpanding,eldenring.exe,4c 89 61 ? c1 e0 ? 09 81 ? ? ? ? 0f 10 05)
+alloc(newmem,$1000,tanfanpanding)
+
+label(code)
+label(return)
+label(tanfanpandingread)
+registersymbol(tanfanpandingread)
+
+newmem:
+  or r12d,200
+
+code:
+  readmem(tanfanpanding,7)
+  jmp return
+
+tanfanpandingread:
+  readmem(tanfanpanding,7)
+
+tanfanpanding:
+  jmp newmem
+  nop 2
+return:
+registersymbol(tanfanpanding)
+
+
+aobscanmodule(tanfan,eldenring.exe,49 8b 8e ? ? ? ? 48 8b 41 ? f6 40)
+tanfan+f:
+db eb 04
+
+tanfan+47:
+db eb 04
+
+registersymbol(tanfan)
+
+[DISABLE]
+
+tanfanpanding:
+  readmem(tanfanpandingread,7)
+
+tanfan+f:
+db 0f 85
+
+tanfan+47:
+db 0f 84
+
+unregistersymbol(*)
+dealloc(*)

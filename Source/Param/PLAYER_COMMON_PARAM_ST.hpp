@@ -1,0 +1,152 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/PLAYER_COMMON_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_PLAYER_COMMON_PARAM_ST_FIELDS(X) \\
+    X(playerFootEffect_bySFX, offsetof(::er::paramdef::player_common_param_st, playerFootEffect_bySFX)) \\
+    X(snipeModeDrawAlpha_FadeTime, offsetof(::er::paramdef::player_common_param_st, snipeModeDrawAlpha_FadeTime)) \\
+    X(toughnessRecoverCorrection, offsetof(::er::paramdef::player_common_param_st, toughnessRecoverCorrection)) \\
+    X(baseMagicSlotSize, offsetof(::er::paramdef::player_common_param_st, baseMagicSlotSize)) \\
+    X(baseAccSlotNum, offsetof(::er::paramdef::player_common_param_st, baseAccSlotNum)) \\
+    X(reserved02, offsetof(::er::paramdef::player_common_param_st, reserved02)) \\
+    X(animeID_DropItemPick, offsetof(::er::paramdef::player_common_param_st, animeID_DropItemPick)) \\
+    X(resistRecoverPoint_Sleep_Player, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Sleep_Player)) \\
+    X(flareOverrideHomingAngle, offsetof(::er::paramdef::player_common_param_st, flareOverrideHomingAngle)) \\
+    X(flareOverrideHomingStopRange, offsetof(::er::paramdef::player_common_param_st, flareOverrideHomingStopRange)) \\
+    X(animeID_SleepCollectorItemPick, offsetof(::er::paramdef::player_common_param_st, animeID_SleepCollectorItemPick)) \\
+    X(unlockEventFlagBaseId_forWepAttr, offsetof(::er::paramdef::player_common_param_st, unlockEventFlagBaseId_forWepAttr)) \\
+    X(systemEnchant_BigRune, offsetof(::er::paramdef::player_common_param_st, systemEnchant_BigRune)) \\
+    X(lowStatus_AtkPowDown, offsetof(::er::paramdef::player_common_param_st, lowStatus_AtkPowDown)) \\
+    X(lowStatus_ConsumeStaminaRate, offsetof(::er::paramdef::player_common_param_st, lowStatus_ConsumeStaminaRate)) \\
+    X(lowStatus_AtkGuardBreak, offsetof(::er::paramdef::player_common_param_st, lowStatus_AtkGuardBreak)) \\
+    X(guardStatusCorrect_MaxStatusVal, offsetof(::er::paramdef::player_common_param_st, guardStatusCorrect_MaxStatusVal)) \\
+    X(unlockEventFlagStepNum_forWepAttr, offsetof(::er::paramdef::player_common_param_st, unlockEventFlagStepNum_forWepAttr)) \\
+    X(retributionMagic_damageCountNum, offsetof(::er::paramdef::player_common_param_st, retributionMagic_damageCountNum)) \\
+    X(retributionMagic_damageCountRemainTime, offsetof(::er::paramdef::player_common_param_st, retributionMagic_damageCountRemainTime)) \\
+    X(retributionMagic_burstDmypolyId, offsetof(::er::paramdef::player_common_param_st, retributionMagic_burstDmypolyId)) \\
+    X(retributionMagic_burstMagicParamId, offsetof(::er::paramdef::player_common_param_st, retributionMagic_burstMagicParamId)) \\
+    X(chrAimCam_rideOffsetHeight, offsetof(::er::paramdef::player_common_param_st, chrAimCam_rideOffsetHeight)) \\
+    X(reserved23, offsetof(::er::paramdef::player_common_param_st, reserved23)) \\
+    X(arrowCaseWepBindDmypolyId, offsetof(::er::paramdef::player_common_param_st, arrowCaseWepBindDmypolyId)) \\
+    X(boltPouchWepBindDmypolyId, offsetof(::er::paramdef::player_common_param_st, boltPouchWepBindDmypolyId)) \\
+    X(estusFlaskAllocateRate, offsetof(::er::paramdef::player_common_param_st, estusFlaskAllocateRate)) \\
+    X(reserved38, offsetof(::er::paramdef::player_common_param_st, reserved38)) \\
+    X(kickAcceptanceDeg, offsetof(::er::paramdef::player_common_param_st, kickAcceptanceDeg)) \\
+    X(npcPlayerAnalogWeightRate_Light, offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_Light)) \\
+    X(npcPlayerAnalogWeightRate_Normal, offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_Normal)) \\
+    X(npcPlayerAnalogWeightRate_Heavy, offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_Heavy)) \\
+    X(npcPlayerAnalogWeightRate_WeightOver, offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_WeightOver)) \\
+    X(npcPlayerAnalogWeightRate_SuperLight, offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_SuperLight)) \\
+    X(reserved45, offsetof(::er::paramdef::player_common_param_st, reserved45)) \\
+    X(clearCountCorrectBaseSpEffectId, offsetof(::er::paramdef::player_common_param_st, clearCountCorrectBaseSpEffectId)) \\
+    X(arrowBoltModelIdOffset, offsetof(::er::paramdef::player_common_param_st, arrowBoltModelIdOffset)) \\
+    X(arrowBoltRemainingNumModelMaskThreshold1, offsetof(::er::paramdef::player_common_param_st, arrowBoltRemainingNumModelMaskThreshold1)) \\
+    X(arrowBoltRemainingNumModelMaskThreshold2, offsetof(::er::paramdef::player_common_param_st, arrowBoltRemainingNumModelMaskThreshold2)) \\
+    X(reserved27, offsetof(::er::paramdef::player_common_param_st, reserved27)) \\
+    X(resistRecoverPoint_Poision_Player, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Poision_Player)) \\
+    X(resistRecoverPoint_Desease_Player, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Desease_Player)) \\
+    X(resistRecoverPoint_Blood_Player, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Blood_Player)) \\
+    X(resistRecoverPoint_Curse_Player, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Curse_Player)) \\
+    X(resistRecoverPoint_Freeze_Player, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Freeze_Player)) \\
+    X(resistRecoverPoint_Poision_Enemy, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Poision_Enemy)) \\
+    X(resistRecoverPoint_Desease_Enemy, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Desease_Enemy)) \\
+    X(resistRecoverPoint_Blood_Enemy, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Blood_Enemy)) \\
+    X(resistRecoverPoint_Curse_Enemy, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Curse_Enemy)) \\
+    X(resistRecoverPoint_Freeze_Enemy, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Freeze_Enemy)) \\
+    X(requestTimeLeftBothHand, offsetof(::er::paramdef::player_common_param_st, requestTimeLeftBothHand)) \\
+    X(resistRecoverPoint_Madness_Player, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Madness_Player)) \\
+    X(animeID_MaterialItemPick, offsetof(::er::paramdef::player_common_param_st, animeID_MaterialItemPick)) \\
+    X(hpEstusFlaskAllocateRateForYellowMonk, offsetof(::er::paramdef::player_common_param_st, hpEstusFlaskAllocateRateForYellowMonk)) \\
+    X(hpEstusFlaskAllocateOffsetForYellowMonk, offsetof(::er::paramdef::player_common_param_st, hpEstusFlaskAllocateOffsetForYellowMonk)) \\
+    X(mpEstusFlaskAllocateRateForYellowMonk, offsetof(::er::paramdef::player_common_param_st, mpEstusFlaskAllocateRateForYellowMonk)) \\
+    X(mpEstusFlaskAllocateOffsetForYellowMonk, offsetof(::er::paramdef::player_common_param_st, mpEstusFlaskAllocateOffsetForYellowMonk)) \\
+    X(resistRecoverPoint_Sleep_Enemy, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Sleep_Enemy)) \\
+    X(resistRecoverPoint_Madness_Enemy, offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Madness_Enemy)) \\
+    X(resistCurseItemId, offsetof(::er::paramdef::player_common_param_st, resistCurseItemId)) \\
+    X(resistCurseItemMaxNum, offsetof(::er::paramdef::player_common_param_st, resistCurseItemMaxNum)) \\
+    X(reserved_123, offsetof(::er::paramdef::player_common_param_st, reserved_123)) \\
+    X(resistCurseItemSpEffectBaseId, offsetof(::er::paramdef::player_common_param_st, resistCurseItemSpEffectBaseId)) \\
+    X(resistCurseItemLotParamId_map, offsetof(::er::paramdef::player_common_param_st, resistCurseItemLotParamId_map)) \\
+    X(unknown_0xcc, offsetof(::er::paramdef::player_common_param_st, unknown_0xcc)) \\
+    X(unknown_0xd0, offsetof(::er::paramdef::player_common_param_st, unknown_0xd0)) \\
+    X(unknown_0xd4, offsetof(::er::paramdef::player_common_param_st, unknown_0xd4)) \\
+    X(unknown_0xd8, offsetof(::er::paramdef::player_common_param_st, unknown_0xd8)) \\
+    X(unknown_0xdc, offsetof(::er::paramdef::player_common_param_st, unknown_0xdc)) \\
+    X(unknown_0xe0, offsetof(::er::paramdef::player_common_param_st, unknown_0xe0)) \\
+    X(reserved41, offsetof(::er::paramdef::player_common_param_st, reserved41))
+
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_playerFootEffect_bySFX offsetof(::er::paramdef::player_common_param_st, playerFootEffect_bySFX)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_snipeModeDrawAlpha_FadeTime offsetof(::er::paramdef::player_common_param_st, snipeModeDrawAlpha_FadeTime)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_toughnessRecoverCorrection offsetof(::er::paramdef::player_common_param_st, toughnessRecoverCorrection)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_baseMagicSlotSize offsetof(::er::paramdef::player_common_param_st, baseMagicSlotSize)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_baseAccSlotNum offsetof(::er::paramdef::player_common_param_st, baseAccSlotNum)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_reserved02 offsetof(::er::paramdef::player_common_param_st, reserved02)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_animeID_DropItemPick offsetof(::er::paramdef::player_common_param_st, animeID_DropItemPick)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Sleep_Player offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Sleep_Player)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_flareOverrideHomingAngle offsetof(::er::paramdef::player_common_param_st, flareOverrideHomingAngle)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_flareOverrideHomingStopRange offsetof(::er::paramdef::player_common_param_st, flareOverrideHomingStopRange)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_animeID_SleepCollectorItemPick offsetof(::er::paramdef::player_common_param_st, animeID_SleepCollectorItemPick)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unlockEventFlagBaseId_forWepAttr offsetof(::er::paramdef::player_common_param_st, unlockEventFlagBaseId_forWepAttr)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_systemEnchant_BigRune offsetof(::er::paramdef::player_common_param_st, systemEnchant_BigRune)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_lowStatus_AtkPowDown offsetof(::er::paramdef::player_common_param_st, lowStatus_AtkPowDown)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_lowStatus_ConsumeStaminaRate offsetof(::er::paramdef::player_common_param_st, lowStatus_ConsumeStaminaRate)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_lowStatus_AtkGuardBreak offsetof(::er::paramdef::player_common_param_st, lowStatus_AtkGuardBreak)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_guardStatusCorrect_MaxStatusVal offsetof(::er::paramdef::player_common_param_st, guardStatusCorrect_MaxStatusVal)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unlockEventFlagStepNum_forWepAttr offsetof(::er::paramdef::player_common_param_st, unlockEventFlagStepNum_forWepAttr)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_retributionMagic_damageCountNum offsetof(::er::paramdef::player_common_param_st, retributionMagic_damageCountNum)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_retributionMagic_damageCountRemainTime offsetof(::er::paramdef::player_common_param_st, retributionMagic_damageCountRemainTime)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_retributionMagic_burstDmypolyId offsetof(::er::paramdef::player_common_param_st, retributionMagic_burstDmypolyId)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_retributionMagic_burstMagicParamId offsetof(::er::paramdef::player_common_param_st, retributionMagic_burstMagicParamId)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_chrAimCam_rideOffsetHeight offsetof(::er::paramdef::player_common_param_st, chrAimCam_rideOffsetHeight)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_reserved23 offsetof(::er::paramdef::player_common_param_st, reserved23)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_arrowCaseWepBindDmypolyId offsetof(::er::paramdef::player_common_param_st, arrowCaseWepBindDmypolyId)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_boltPouchWepBindDmypolyId offsetof(::er::paramdef::player_common_param_st, boltPouchWepBindDmypolyId)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_estusFlaskAllocateRate offsetof(::er::paramdef::player_common_param_st, estusFlaskAllocateRate)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_reserved38 offsetof(::er::paramdef::player_common_param_st, reserved38)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_kickAcceptanceDeg offsetof(::er::paramdef::player_common_param_st, kickAcceptanceDeg)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_npcPlayerAnalogWeightRate_Light offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_Light)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_npcPlayerAnalogWeightRate_Normal offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_Normal)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_npcPlayerAnalogWeightRate_Heavy offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_Heavy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_npcPlayerAnalogWeightRate_WeightOver offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_WeightOver)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_npcPlayerAnalogWeightRate_SuperLight offsetof(::er::paramdef::player_common_param_st, npcPlayerAnalogWeightRate_SuperLight)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_reserved45 offsetof(::er::paramdef::player_common_param_st, reserved45)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_clearCountCorrectBaseSpEffectId offsetof(::er::paramdef::player_common_param_st, clearCountCorrectBaseSpEffectId)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_arrowBoltModelIdOffset offsetof(::er::paramdef::player_common_param_st, arrowBoltModelIdOffset)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_arrowBoltRemainingNumModelMaskThreshold1 offsetof(::er::paramdef::player_common_param_st, arrowBoltRemainingNumModelMaskThreshold1)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_arrowBoltRemainingNumModelMaskThreshold2 offsetof(::er::paramdef::player_common_param_st, arrowBoltRemainingNumModelMaskThreshold2)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_reserved27 offsetof(::er::paramdef::player_common_param_st, reserved27)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Poision_Player offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Poision_Player)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Desease_Player offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Desease_Player)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Blood_Player offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Blood_Player)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Curse_Player offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Curse_Player)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Freeze_Player offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Freeze_Player)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Poision_Enemy offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Poision_Enemy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Desease_Enemy offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Desease_Enemy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Blood_Enemy offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Blood_Enemy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Curse_Enemy offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Curse_Enemy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Freeze_Enemy offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Freeze_Enemy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_requestTimeLeftBothHand offsetof(::er::paramdef::player_common_param_st, requestTimeLeftBothHand)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Madness_Player offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Madness_Player)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_animeID_MaterialItemPick offsetof(::er::paramdef::player_common_param_st, animeID_MaterialItemPick)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_hpEstusFlaskAllocateRateForYellowMonk offsetof(::er::paramdef::player_common_param_st, hpEstusFlaskAllocateRateForYellowMonk)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_hpEstusFlaskAllocateOffsetForYellowMonk offsetof(::er::paramdef::player_common_param_st, hpEstusFlaskAllocateOffsetForYellowMonk)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_mpEstusFlaskAllocateRateForYellowMonk offsetof(::er::paramdef::player_common_param_st, mpEstusFlaskAllocateRateForYellowMonk)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_mpEstusFlaskAllocateOffsetForYellowMonk offsetof(::er::paramdef::player_common_param_st, mpEstusFlaskAllocateOffsetForYellowMonk)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Sleep_Enemy offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Sleep_Enemy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistRecoverPoint_Madness_Enemy offsetof(::er::paramdef::player_common_param_st, resistRecoverPoint_Madness_Enemy)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistCurseItemId offsetof(::er::paramdef::player_common_param_st, resistCurseItemId)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistCurseItemMaxNum offsetof(::er::paramdef::player_common_param_st, resistCurseItemMaxNum)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_reserved_123 offsetof(::er::paramdef::player_common_param_st, reserved_123)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistCurseItemSpEffectBaseId offsetof(::er::paramdef::player_common_param_st, resistCurseItemSpEffectBaseId)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_resistCurseItemLotParamId_map offsetof(::er::paramdef::player_common_param_st, resistCurseItemLotParamId_map)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unknown_0xcc offsetof(::er::paramdef::player_common_param_st, unknown_0xcc)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unknown_0xd0 offsetof(::er::paramdef::player_common_param_st, unknown_0xd0)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unknown_0xd4 offsetof(::er::paramdef::player_common_param_st, unknown_0xd4)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unknown_0xd8 offsetof(::er::paramdef::player_common_param_st, unknown_0xd8)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unknown_0xdc offsetof(::er::paramdef::player_common_param_st, unknown_0xdc)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_unknown_0xe0 offsetof(::er::paramdef::player_common_param_st, unknown_0xe0)
+#define ERD_OFFSET_PLAYER_COMMON_PARAM_ST_reserved41 offsetof(::er::paramdef::player_common_param_st, reserved41)

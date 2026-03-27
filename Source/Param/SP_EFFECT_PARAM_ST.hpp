@@ -1,0 +1,562 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/SP_EFFECT_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_SP_EFFECT_PARAM_ST_FIELDS(X) \\
+    X(iconId, offsetof(::er::paramdef::sp_effect_param_st, iconId)) \\
+    X(conditionHp, offsetof(::er::paramdef::sp_effect_param_st, conditionHp)) \\
+    X(effectEndurance, offsetof(::er::paramdef::sp_effect_param_st, effectEndurance)) \\
+    X(motionInterval, offsetof(::er::paramdef::sp_effect_param_st, motionInterval)) \\
+    X(maxHpRate, offsetof(::er::paramdef::sp_effect_param_st, maxHpRate)) \\
+    X(maxMpRate, offsetof(::er::paramdef::sp_effect_param_st, maxMpRate)) \\
+    X(maxStaminaRate, offsetof(::er::paramdef::sp_effect_param_st, maxStaminaRate)) \\
+    X(slashDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, slashDamageCutRate)) \\
+    X(blowDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, blowDamageCutRate)) \\
+    X(thrustDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, thrustDamageCutRate)) \\
+    X(neutralDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, neutralDamageCutRate)) \\
+    X(magicDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, magicDamageCutRate)) \\
+    X(fireDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, fireDamageCutRate)) \\
+    X(thunderDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, thunderDamageCutRate)) \\
+    X(physicsAttackRate, offsetof(::er::paramdef::sp_effect_param_st, physicsAttackRate)) \\
+    X(magicAttackRate, offsetof(::er::paramdef::sp_effect_param_st, magicAttackRate)) \\
+    X(fireAttackRate, offsetof(::er::paramdef::sp_effect_param_st, fireAttackRate)) \\
+    X(thunderAttackRate, offsetof(::er::paramdef::sp_effect_param_st, thunderAttackRate)) \\
+    X(physicsAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, physicsAttackPowerRate)) \\
+    X(magicAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, magicAttackPowerRate)) \\
+    X(fireAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, fireAttackPowerRate)) \\
+    X(thunderAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, thunderAttackPowerRate)) \\
+    X(physicsAttackPower, offsetof(::er::paramdef::sp_effect_param_st, physicsAttackPower)) \\
+    X(magicAttackPower, offsetof(::er::paramdef::sp_effect_param_st, magicAttackPower)) \\
+    X(fireAttackPower, offsetof(::er::paramdef::sp_effect_param_st, fireAttackPower)) \\
+    X(thunderAttackPower, offsetof(::er::paramdef::sp_effect_param_st, thunderAttackPower)) \\
+    X(physicsDiffenceRate, offsetof(::er::paramdef::sp_effect_param_st, physicsDiffenceRate)) \\
+    X(magicDiffenceRate, offsetof(::er::paramdef::sp_effect_param_st, magicDiffenceRate)) \\
+    X(fireDiffenceRate, offsetof(::er::paramdef::sp_effect_param_st, fireDiffenceRate)) \\
+    X(thunderDiffenceRate, offsetof(::er::paramdef::sp_effect_param_st, thunderDiffenceRate)) \\
+    X(physicsDiffence, offsetof(::er::paramdef::sp_effect_param_st, physicsDiffence)) \\
+    X(magicDiffence, offsetof(::er::paramdef::sp_effect_param_st, magicDiffence)) \\
+    X(fireDiffence, offsetof(::er::paramdef::sp_effect_param_st, fireDiffence)) \\
+    X(thunderDiffence, offsetof(::er::paramdef::sp_effect_param_st, thunderDiffence)) \\
+    X(NoGuardDamageRate, offsetof(::er::paramdef::sp_effect_param_st, NoGuardDamageRate)) \\
+    X(vitalSpotChangeRate, offsetof(::er::paramdef::sp_effect_param_st, vitalSpotChangeRate)) \\
+    X(normalSpotChangeRate, offsetof(::er::paramdef::sp_effect_param_st, normalSpotChangeRate)) \\
+    X(lookAtTargetPosOffset, offsetof(::er::paramdef::sp_effect_param_st, lookAtTargetPosOffset)) \\
+    X(behaviorId, offsetof(::er::paramdef::sp_effect_param_st, behaviorId)) \\
+    X(changeHpRate, offsetof(::er::paramdef::sp_effect_param_st, changeHpRate)) \\
+    X(changeHpPoint, offsetof(::er::paramdef::sp_effect_param_st, changeHpPoint)) \\
+    X(changeMpRate, offsetof(::er::paramdef::sp_effect_param_st, changeMpRate)) \\
+    X(changeMpPoint, offsetof(::er::paramdef::sp_effect_param_st, changeMpPoint)) \\
+    X(mpRecoverChangeSpeed, offsetof(::er::paramdef::sp_effect_param_st, mpRecoverChangeSpeed)) \\
+    X(changeStaminaRate, offsetof(::er::paramdef::sp_effect_param_st, changeStaminaRate)) \\
+    X(changeStaminaPoint, offsetof(::er::paramdef::sp_effect_param_st, changeStaminaPoint)) \\
+    X(staminaRecoverChangeSpeed, offsetof(::er::paramdef::sp_effect_param_st, staminaRecoverChangeSpeed)) \\
+    X(magicEffectTimeChange, offsetof(::er::paramdef::sp_effect_param_st, magicEffectTimeChange)) \\
+    X(insideDurability, offsetof(::er::paramdef::sp_effect_param_st, insideDurability)) \\
+    X(maxDurability, offsetof(::er::paramdef::sp_effect_param_st, maxDurability)) \\
+    X(staminaAttackRate, offsetof(::er::paramdef::sp_effect_param_st, staminaAttackRate)) \\
+    X(poizonAttackPower, offsetof(::er::paramdef::sp_effect_param_st, poizonAttackPower)) \\
+    X(diseaseAttackPower, offsetof(::er::paramdef::sp_effect_param_st, diseaseAttackPower)) \\
+    X(bloodAttackPower, offsetof(::er::paramdef::sp_effect_param_st, bloodAttackPower)) \\
+    X(curseAttackPower, offsetof(::er::paramdef::sp_effect_param_st, curseAttackPower)) \\
+    X(fallDamageRate, offsetof(::er::paramdef::sp_effect_param_st, fallDamageRate)) \\
+    X(soulRate, offsetof(::er::paramdef::sp_effect_param_st, soulRate)) \\
+    X(equipWeightChangeRate, offsetof(::er::paramdef::sp_effect_param_st, equipWeightChangeRate)) \\
+    X(allItemWeightChangeRate, offsetof(::er::paramdef::sp_effect_param_st, allItemWeightChangeRate)) \\
+    X(soul, offsetof(::er::paramdef::sp_effect_param_st, soul)) \\
+    X(animIdOffset, offsetof(::er::paramdef::sp_effect_param_st, animIdOffset)) \\
+    X(haveSoulRate, offsetof(::er::paramdef::sp_effect_param_st, haveSoulRate)) \\
+    X(targetPriority, offsetof(::er::paramdef::sp_effect_param_st, targetPriority)) \\
+    X(sightSearchEnemyRate, offsetof(::er::paramdef::sp_effect_param_st, sightSearchEnemyRate)) \\
+    X(hearingSearchEnemyRate, offsetof(::er::paramdef::sp_effect_param_st, hearingSearchEnemyRate)) \\
+    X(grabityRate, offsetof(::er::paramdef::sp_effect_param_st, grabityRate)) \\
+    X(registPoizonChangeRate, offsetof(::er::paramdef::sp_effect_param_st, registPoizonChangeRate)) \\
+    X(registDiseaseChangeRate, offsetof(::er::paramdef::sp_effect_param_st, registDiseaseChangeRate)) \\
+    X(registBloodChangeRate, offsetof(::er::paramdef::sp_effect_param_st, registBloodChangeRate)) \\
+    X(registCurseChangeRate, offsetof(::er::paramdef::sp_effect_param_st, registCurseChangeRate)) \\
+    X(soulStealRate, offsetof(::er::paramdef::sp_effect_param_st, soulStealRate)) \\
+    X(lifeReductionRate, offsetof(::er::paramdef::sp_effect_param_st, lifeReductionRate)) \\
+    X(hpRecoverRate, offsetof(::er::paramdef::sp_effect_param_st, hpRecoverRate)) \\
+    X(replaceSpEffectId, offsetof(::er::paramdef::sp_effect_param_st, replaceSpEffectId)) \\
+    X(cycleOccurrenceSpEffectId, offsetof(::er::paramdef::sp_effect_param_st, cycleOccurrenceSpEffectId)) \\
+    X(atkOccurrenceSpEffectId, offsetof(::er::paramdef::sp_effect_param_st, atkOccurrenceSpEffectId)) \\
+    X(guardDefFlickPowerRate, offsetof(::er::paramdef::sp_effect_param_st, guardDefFlickPowerRate)) \\
+    X(guardStaminaCutRate, offsetof(::er::paramdef::sp_effect_param_st, guardStaminaCutRate)) \\
+    X(rayCastPassedTime, offsetof(::er::paramdef::sp_effect_param_st, rayCastPassedTime)) \\
+    X(magicSubCategoryChange1, offsetof(::er::paramdef::sp_effect_param_st, magicSubCategoryChange1)) \\
+    X(magicSubCategoryChange2, offsetof(::er::paramdef::sp_effect_param_st, magicSubCategoryChange2)) \\
+    X(bowDistRate, offsetof(::er::paramdef::sp_effect_param_st, bowDistRate)) \\
+    X(spCategory, offsetof(::er::paramdef::sp_effect_param_st, spCategory)) \\
+    X(categoryPriority, offsetof(::er::paramdef::sp_effect_param_st, categoryPriority)) \\
+    X(saveCategory, offsetof(::er::paramdef::sp_effect_param_st, saveCategory)) \\
+    X(changeMagicSlot, offsetof(::er::paramdef::sp_effect_param_st, changeMagicSlot)) \\
+    X(changeMiracleSlot, offsetof(::er::paramdef::sp_effect_param_st, changeMiracleSlot)) \\
+    X(heroPointDamage, offsetof(::er::paramdef::sp_effect_param_st, heroPointDamage)) \\
+    X(defFlickPower, offsetof(::er::paramdef::sp_effect_param_st, defFlickPower)) \\
+    X(flickDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, flickDamageCutRate)) \\
+    X(bloodDamageRate, offsetof(::er::paramdef::sp_effect_param_st, bloodDamageRate)) \\
+    X(dmgLv_None, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_None)) \\
+    X(dmgLv_S, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_S)) \\
+    X(dmgLv_M, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_M)) \\
+    X(dmgLv_L, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_L)) \\
+    X(dmgLv_BlowM, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_BlowM)) \\
+    X(dmgLv_Push, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Push)) \\
+    X(dmgLv_Strike, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Strike)) \\
+    X(dmgLv_BlowS, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_BlowS)) \\
+    X(dmgLv_Min, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Min)) \\
+    X(dmgLv_Uppercut, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Uppercut)) \\
+    X(dmgLv_BlowLL, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_BlowLL)) \\
+    X(dmgLv_Breath, offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Breath)) \\
+    X(atkAttribute, offsetof(::er::paramdef::sp_effect_param_st, atkAttribute)) \\
+    X(spAttribute, offsetof(::er::paramdef::sp_effect_param_st, spAttribute)) \\
+    X(stateInfo, offsetof(::er::paramdef::sp_effect_param_st, stateInfo)) \\
+    X(wepParamChange, offsetof(::er::paramdef::sp_effect_param_st, wepParamChange)) \\
+    X(moveType, offsetof(::er::paramdef::sp_effect_param_st, moveType)) \\
+    X(lifeReductionType, offsetof(::er::paramdef::sp_effect_param_st, lifeReductionType)) \\
+    X(throwCondition, offsetof(::er::paramdef::sp_effect_param_st, throwCondition)) \\
+    X(addBehaviorJudgeId_condition, offsetof(::er::paramdef::sp_effect_param_st, addBehaviorJudgeId_condition)) \\
+    X(freezeDamageRate, offsetof(::er::paramdef::sp_effect_param_st, freezeDamageRate)) \\
+    X(repAtkDmgLv, offsetof(::er::paramdef::sp_effect_param_st, repAtkDmgLv)) \\
+    X(sightSearchRate, offsetof(::er::paramdef::sp_effect_param_st, sightSearchRate)) \\
+    X(changeTeamType, offsetof(::er::paramdef::sp_effect_param_st, changeTeamType)) \\
+    X(dmypolyId, offsetof(::er::paramdef::sp_effect_param_st, dmypolyId)) \\
+    X(vfxId, offsetof(::er::paramdef::sp_effect_param_st, vfxId)) \\
+    X(accumuOverFireId, offsetof(::er::paramdef::sp_effect_param_st, accumuOverFireId)) \\
+    X(accumuOverVal, offsetof(::er::paramdef::sp_effect_param_st, accumuOverVal)) \\
+    X(accumuUnderFireId, offsetof(::er::paramdef::sp_effect_param_st, accumuUnderFireId)) \\
+    X(accumuUnderVal, offsetof(::er::paramdef::sp_effect_param_st, accumuUnderVal)) \\
+    X(accumuVal, offsetof(::er::paramdef::sp_effect_param_st, accumuVal)) \\
+    X(eye_angX, offsetof(::er::paramdef::sp_effect_param_st, eye_angX)) \\
+    X(eye_angY, offsetof(::er::paramdef::sp_effect_param_st, eye_angY)) \\
+    X(addDeceasedLv, offsetof(::er::paramdef::sp_effect_param_st, addDeceasedLv)) \\
+    X(vfxId1, offsetof(::er::paramdef::sp_effect_param_st, vfxId1)) \\
+    X(vfxId2, offsetof(::er::paramdef::sp_effect_param_st, vfxId2)) \\
+    X(vfxId3, offsetof(::er::paramdef::sp_effect_param_st, vfxId3)) \\
+    X(vfxId4, offsetof(::er::paramdef::sp_effect_param_st, vfxId4)) \\
+    X(vfxId5, offsetof(::er::paramdef::sp_effect_param_st, vfxId5)) \\
+    X(vfxId6, offsetof(::er::paramdef::sp_effect_param_st, vfxId6)) \\
+    X(vfxId7, offsetof(::er::paramdef::sp_effect_param_st, vfxId7)) \\
+    X(freezeAttackPower, offsetof(::er::paramdef::sp_effect_param_st, freezeAttackPower)) \\
+    X(AppearAiSoundId, offsetof(::er::paramdef::sp_effect_param_st, AppearAiSoundId)) \\
+    X(addFootEffectSfxId, offsetof(::er::paramdef::sp_effect_param_st, addFootEffectSfxId)) \\
+    X(dexterityCancelSystemOnlyAddDexterity, offsetof(::er::paramdef::sp_effect_param_st, dexterityCancelSystemOnlyAddDexterity)) \\
+    X(teamOffenseEffectivity, offsetof(::er::paramdef::sp_effect_param_st, teamOffenseEffectivity)) \\
+    X(toughnessDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, toughnessDamageCutRate)) \\
+    X(weakDmgRateA, offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateA)) \\
+    X(weakDmgRateB, offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateB)) \\
+    X(weakDmgRateC, offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateC)) \\
+    X(weakDmgRateD, offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateD)) \\
+    X(weakDmgRateE, offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateE)) \\
+    X(weakDmgRateF, offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateF)) \\
+    X(darkDamageCutRate, offsetof(::er::paramdef::sp_effect_param_st, darkDamageCutRate)) \\
+    X(darkDiffenceRate, offsetof(::er::paramdef::sp_effect_param_st, darkDiffenceRate)) \\
+    X(darkDiffence, offsetof(::er::paramdef::sp_effect_param_st, darkDiffence)) \\
+    X(darkAttackRate, offsetof(::er::paramdef::sp_effect_param_st, darkAttackRate)) \\
+    X(darkAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, darkAttackPowerRate)) \\
+    X(darkAttackPower, offsetof(::er::paramdef::sp_effect_param_st, darkAttackPower)) \\
+    X(antiDarkSightRadius, offsetof(::er::paramdef::sp_effect_param_st, antiDarkSightRadius)) \\
+    X(antiDarkSightDmypolyId, offsetof(::er::paramdef::sp_effect_param_st, antiDarkSightDmypolyId)) \\
+    X(conditionHpRate, offsetof(::er::paramdef::sp_effect_param_st, conditionHpRate)) \\
+    X(consumeStaminaRate, offsetof(::er::paramdef::sp_effect_param_st, consumeStaminaRate)) \\
+    X(itemDropRate, offsetof(::er::paramdef::sp_effect_param_st, itemDropRate)) \\
+    X(changePoisonResistPoint, offsetof(::er::paramdef::sp_effect_param_st, changePoisonResistPoint)) \\
+    X(changeDiseaseResistPoint, offsetof(::er::paramdef::sp_effect_param_st, changeDiseaseResistPoint)) \\
+    X(changeBloodResistPoint, offsetof(::er::paramdef::sp_effect_param_st, changeBloodResistPoint)) \\
+    X(changeCurseResistPoint, offsetof(::er::paramdef::sp_effect_param_st, changeCurseResistPoint)) \\
+    X(changeFreezeResistPoint, offsetof(::er::paramdef::sp_effect_param_st, changeFreezeResistPoint)) \\
+    X(slashAttackRate, offsetof(::er::paramdef::sp_effect_param_st, slashAttackRate)) \\
+    X(blowAttackRate, offsetof(::er::paramdef::sp_effect_param_st, blowAttackRate)) \\
+    X(thrustAttackRate, offsetof(::er::paramdef::sp_effect_param_st, thrustAttackRate)) \\
+    X(neutralAttackRate, offsetof(::er::paramdef::sp_effect_param_st, neutralAttackRate)) \\
+    X(slashAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, slashAttackPowerRate)) \\
+    X(blowAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, blowAttackPowerRate)) \\
+    X(thrustAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, thrustAttackPowerRate)) \\
+    X(neutralAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, neutralAttackPowerRate)) \\
+    X(slashAttackPower, offsetof(::er::paramdef::sp_effect_param_st, slashAttackPower)) \\
+    X(blowAttackPower, offsetof(::er::paramdef::sp_effect_param_st, blowAttackPower)) \\
+    X(thrustAttackPower, offsetof(::er::paramdef::sp_effect_param_st, thrustAttackPower)) \\
+    X(neutralAttackPower, offsetof(::er::paramdef::sp_effect_param_st, neutralAttackPower)) \\
+    X(changeStrengthPoint, offsetof(::er::paramdef::sp_effect_param_st, changeStrengthPoint)) \\
+    X(changeAgilityPoint, offsetof(::er::paramdef::sp_effect_param_st, changeAgilityPoint)) \\
+    X(changeMagicPoint, offsetof(::er::paramdef::sp_effect_param_st, changeMagicPoint)) \\
+    X(changeFaithPoint, offsetof(::er::paramdef::sp_effect_param_st, changeFaithPoint)) \\
+    X(changeLuckPoint, offsetof(::er::paramdef::sp_effect_param_st, changeLuckPoint)) \\
+    X(recoverArtsPoint_Str, offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Str)) \\
+    X(recoverArtsPoint_Dex, offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Dex)) \\
+    X(recoverArtsPoint_Magic, offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Magic)) \\
+    X(recoverArtsPoint_Miracle, offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Miracle)) \\
+    X(madnessDamageRate, offsetof(::er::paramdef::sp_effect_param_st, madnessDamageRate)) \\
+    X(addBehaviorJudgeId_add, offsetof(::er::paramdef::sp_effect_param_st, addBehaviorJudgeId_add)) \\
+    X(saReceiveDamageRate, offsetof(::er::paramdef::sp_effect_param_st, saReceiveDamageRate)) \\
+    X(defPlayerDmgCorrectRate_Physics, offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Physics)) \\
+    X(defPlayerDmgCorrectRate_Magic, offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Magic)) \\
+    X(defPlayerDmgCorrectRate_Fire, offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Fire)) \\
+    X(defPlayerDmgCorrectRate_Thunder, offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Thunder)) \\
+    X(defPlayerDmgCorrectRate_Dark, offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Dark)) \\
+    X(defEnemyDmgCorrectRate_Physics, offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Physics)) \\
+    X(defEnemyDmgCorrectRate_Magic, offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Magic)) \\
+    X(defEnemyDmgCorrectRate_Fire, offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Fire)) \\
+    X(defEnemyDmgCorrectRate_Thunder, offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Thunder)) \\
+    X(defEnemyDmgCorrectRate_Dark, offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Dark)) \\
+    X(defObjDmgCorrectRate, offsetof(::er::paramdef::sp_effect_param_st, defObjDmgCorrectRate)) \\
+    X(atkPlayerDmgCorrectRate_Physics, offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Physics)) \\
+    X(atkPlayerDmgCorrectRate_Magic, offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Magic)) \\
+    X(atkPlayerDmgCorrectRate_Fire, offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Fire)) \\
+    X(atkPlayerDmgCorrectRate_Thunder, offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Thunder)) \\
+    X(atkPlayerDmgCorrectRate_Dark, offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Dark)) \\
+    X(atkEnemyDmgCorrectRate_Physics, offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Physics)) \\
+    X(atkEnemyDmgCorrectRate_Magic, offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Magic)) \\
+    X(atkEnemyDmgCorrectRate_Fire, offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Fire)) \\
+    X(atkEnemyDmgCorrectRate_Thunder, offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Thunder)) \\
+    X(atkEnemyDmgCorrectRate_Dark, offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Dark)) \\
+    X(registFreezeChangeRate, offsetof(::er::paramdef::sp_effect_param_st, registFreezeChangeRate)) \\
+    X(invocationConditionsStateChange1, offsetof(::er::paramdef::sp_effect_param_st, invocationConditionsStateChange1)) \\
+    X(invocationConditionsStateChange2, offsetof(::er::paramdef::sp_effect_param_st, invocationConditionsStateChange2)) \\
+    X(invocationConditionsStateChange3, offsetof(::er::paramdef::sp_effect_param_st, invocationConditionsStateChange3)) \\
+    X(hearingAiSoundLevel, offsetof(::er::paramdef::sp_effect_param_st, hearingAiSoundLevel)) \\
+    X(chrProxyHeightRate, offsetof(::er::paramdef::sp_effect_param_st, chrProxyHeightRate)) \\
+    X(addAwarePointCorrectValue_forMe, offsetof(::er::paramdef::sp_effect_param_st, addAwarePointCorrectValue_forMe)) \\
+    X(addAwarePointCorrectValue_forTarget, offsetof(::er::paramdef::sp_effect_param_st, addAwarePointCorrectValue_forTarget)) \\
+    X(sightSearchEnemyAdd, offsetof(::er::paramdef::sp_effect_param_st, sightSearchEnemyAdd)) \\
+    X(sightSearchAdd, offsetof(::er::paramdef::sp_effect_param_st, sightSearchAdd)) \\
+    X(hearingSearchAdd, offsetof(::er::paramdef::sp_effect_param_st, hearingSearchAdd)) \\
+    X(hearingSearchRate, offsetof(::er::paramdef::sp_effect_param_st, hearingSearchRate)) \\
+    X(hearingSearchEnemyAdd, offsetof(::er::paramdef::sp_effect_param_st, hearingSearchEnemyAdd)) \\
+    X(value_Magnification, offsetof(::er::paramdef::sp_effect_param_st, value_Magnification)) \\
+    X(artsConsumptionRate, offsetof(::er::paramdef::sp_effect_param_st, artsConsumptionRate)) \\
+    X(magicConsumptionRate, offsetof(::er::paramdef::sp_effect_param_st, magicConsumptionRate)) \\
+    X(shamanConsumptionRate, offsetof(::er::paramdef::sp_effect_param_st, shamanConsumptionRate)) \\
+    X(miracleConsumptionRate, offsetof(::er::paramdef::sp_effect_param_st, miracleConsumptionRate)) \\
+    X(changeHpEstusFlaskRate, offsetof(::er::paramdef::sp_effect_param_st, changeHpEstusFlaskRate)) \\
+    X(changeHpEstusFlaskPoint, offsetof(::er::paramdef::sp_effect_param_st, changeHpEstusFlaskPoint)) \\
+    X(changeMpEstusFlaskRate, offsetof(::er::paramdef::sp_effect_param_st, changeMpEstusFlaskRate)) \\
+    X(changeMpEstusFlaskPoint, offsetof(::er::paramdef::sp_effect_param_st, changeMpEstusFlaskPoint)) \\
+    X(changeHpEstusFlaskCorrectRate, offsetof(::er::paramdef::sp_effect_param_st, changeHpEstusFlaskCorrectRate)) \\
+    X(changeMpEstusFlaskCorrectRate, offsetof(::er::paramdef::sp_effect_param_st, changeMpEstusFlaskCorrectRate)) \\
+    X(applyIdOnGetSoul, offsetof(::er::paramdef::sp_effect_param_st, applyIdOnGetSoul)) \\
+    X(extendLifeRate, offsetof(::er::paramdef::sp_effect_param_st, extendLifeRate)) \\
+    X(contractLifeRate, offsetof(::er::paramdef::sp_effect_param_st, contractLifeRate)) \\
+    X(defObjectAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, defObjectAttackPowerRate)) \\
+    X(effectEndDeleteDecalGroupId, offsetof(::er::paramdef::sp_effect_param_st, effectEndDeleteDecalGroupId)) \\
+    X(addLifeForceStatus, offsetof(::er::paramdef::sp_effect_param_st, addLifeForceStatus)) \\
+    X(addWillpowerStatus, offsetof(::er::paramdef::sp_effect_param_st, addWillpowerStatus)) \\
+    X(addEndureStatus, offsetof(::er::paramdef::sp_effect_param_st, addEndureStatus)) \\
+    X(addVitalityStatus, offsetof(::er::paramdef::sp_effect_param_st, addVitalityStatus)) \\
+    X(addStrengthStatus, offsetof(::er::paramdef::sp_effect_param_st, addStrengthStatus)) \\
+    X(addDexterityStatus, offsetof(::er::paramdef::sp_effect_param_st, addDexterityStatus)) \\
+    X(addMagicStatus, offsetof(::er::paramdef::sp_effect_param_st, addMagicStatus)) \\
+    X(addFaithStatus, offsetof(::er::paramdef::sp_effect_param_st, addFaithStatus)) \\
+    X(addLuckStatus, offsetof(::er::paramdef::sp_effect_param_st, addLuckStatus)) \\
+    X(deleteCriteriaDamage, offsetof(::er::paramdef::sp_effect_param_st, deleteCriteriaDamage)) \\
+    X(magicSubCategoryChange3, offsetof(::er::paramdef::sp_effect_param_st, magicSubCategoryChange3)) \\
+    X(spAttributeVariationValue, offsetof(::er::paramdef::sp_effect_param_st, spAttributeVariationValue)) \\
+    X(atkFlickPower, offsetof(::er::paramdef::sp_effect_param_st, atkFlickPower)) \\
+    X(wetConditionDepth, offsetof(::er::paramdef::sp_effect_param_st, wetConditionDepth)) \\
+    X(changeSaRecoveryVelocity, offsetof(::er::paramdef::sp_effect_param_st, changeSaRecoveryVelocity)) \\
+    X(regainRate, offsetof(::er::paramdef::sp_effect_param_st, regainRate)) \\
+    X(saAttackPowerRate, offsetof(::er::paramdef::sp_effect_param_st, saAttackPowerRate)) \\
+    X(sleepAttackPower, offsetof(::er::paramdef::sp_effect_param_st, sleepAttackPower)) \\
+    X(madnessAttackPower, offsetof(::er::paramdef::sp_effect_param_st, madnessAttackPower)) \\
+    X(registSleepChangeRate, offsetof(::er::paramdef::sp_effect_param_st, registSleepChangeRate)) \\
+    X(registMadnessChangeRate, offsetof(::er::paramdef::sp_effect_param_st, registMadnessChangeRate)) \\
+    X(changeSleepResistPoint, offsetof(::er::paramdef::sp_effect_param_st, changeSleepResistPoint)) \\
+    X(changeMadnessResistPoint, offsetof(::er::paramdef::sp_effect_param_st, changeMadnessResistPoint)) \\
+    X(sleepDamageRate, offsetof(::er::paramdef::sp_effect_param_st, sleepDamageRate)) \\
+    X(applyPartsGroup, offsetof(::er::paramdef::sp_effect_param_st, applyPartsGroup)) \\
+    X(changeSuperArmorPoint, offsetof(::er::paramdef::sp_effect_param_st, changeSuperArmorPoint)) \\
+    X(changeSaPoint, offsetof(::er::paramdef::sp_effect_param_st, changeSaPoint)) \\
+    X(hugeEnemyPickupHeightOverwrite, offsetof(::er::paramdef::sp_effect_param_st, hugeEnemyPickupHeightOverwrite)) \\
+    X(poisonDefDamageRate, offsetof(::er::paramdef::sp_effect_param_st, poisonDefDamageRate)) \\
+    X(diseaseDefDamageRate, offsetof(::er::paramdef::sp_effect_param_st, diseaseDefDamageRate)) \\
+    X(bloodDefDamageRate, offsetof(::er::paramdef::sp_effect_param_st, bloodDefDamageRate)) \\
+    X(curseDefDamageRate, offsetof(::er::paramdef::sp_effect_param_st, curseDefDamageRate)) \\
+    X(freezeDefDamageRate, offsetof(::er::paramdef::sp_effect_param_st, freezeDefDamageRate)) \\
+    X(sleepDefDamageRate, offsetof(::er::paramdef::sp_effect_param_st, sleepDefDamageRate)) \\
+    X(madnessDefDamageRate, offsetof(::er::paramdef::sp_effect_param_st, madnessDefDamageRate)) \\
+    X(overwrite_maxBackhomeDist, offsetof(::er::paramdef::sp_effect_param_st, overwrite_maxBackhomeDist)) \\
+    X(overwrite_backhomeDist, offsetof(::er::paramdef::sp_effect_param_st, overwrite_backhomeDist)) \\
+    X(overwrite_backhomeBattleDist, offsetof(::er::paramdef::sp_effect_param_st, overwrite_backhomeBattleDist)) \\
+    X(overwrite_BackHome_LookTargetDist, offsetof(::er::paramdef::sp_effect_param_st, overwrite_BackHome_LookTargetDist)) \\
+    X(goodsConsumptionRate, offsetof(::er::paramdef::sp_effect_param_st, goodsConsumptionRate)) \\
+    X(guardStaminaMult, offsetof(::er::paramdef::sp_effect_param_st, guardStaminaMult)) \\
+    X(spiritDeathSpEffectId, offsetof(::er::paramdef::sp_effect_param_st, spiritDeathSpEffectId))
+
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_iconId offsetof(::er::paramdef::sp_effect_param_st, iconId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_conditionHp offsetof(::er::paramdef::sp_effect_param_st, conditionHp)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_effectEndurance offsetof(::er::paramdef::sp_effect_param_st, effectEndurance)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_motionInterval offsetof(::er::paramdef::sp_effect_param_st, motionInterval)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_maxHpRate offsetof(::er::paramdef::sp_effect_param_st, maxHpRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_maxMpRate offsetof(::er::paramdef::sp_effect_param_st, maxMpRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_maxStaminaRate offsetof(::er::paramdef::sp_effect_param_st, maxStaminaRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_slashDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, slashDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_blowDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, blowDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thrustDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, thrustDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_neutralDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, neutralDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, magicDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_fireDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, fireDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, thunderDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_physicsAttackRate offsetof(::er::paramdef::sp_effect_param_st, physicsAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicAttackRate offsetof(::er::paramdef::sp_effect_param_st, magicAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_fireAttackRate offsetof(::er::paramdef::sp_effect_param_st, fireAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderAttackRate offsetof(::er::paramdef::sp_effect_param_st, thunderAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_physicsAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, physicsAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, magicAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_fireAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, fireAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, thunderAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_physicsAttackPower offsetof(::er::paramdef::sp_effect_param_st, physicsAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicAttackPower offsetof(::er::paramdef::sp_effect_param_st, magicAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_fireAttackPower offsetof(::er::paramdef::sp_effect_param_st, fireAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderAttackPower offsetof(::er::paramdef::sp_effect_param_st, thunderAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_physicsDiffenceRate offsetof(::er::paramdef::sp_effect_param_st, physicsDiffenceRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicDiffenceRate offsetof(::er::paramdef::sp_effect_param_st, magicDiffenceRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_fireDiffenceRate offsetof(::er::paramdef::sp_effect_param_st, fireDiffenceRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderDiffenceRate offsetof(::er::paramdef::sp_effect_param_st, thunderDiffenceRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_physicsDiffence offsetof(::er::paramdef::sp_effect_param_st, physicsDiffence)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicDiffence offsetof(::er::paramdef::sp_effect_param_st, magicDiffence)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_fireDiffence offsetof(::er::paramdef::sp_effect_param_st, fireDiffence)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderDiffence offsetof(::er::paramdef::sp_effect_param_st, thunderDiffence)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_NoGuardDamageRate offsetof(::er::paramdef::sp_effect_param_st, NoGuardDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vitalSpotChangeRate offsetof(::er::paramdef::sp_effect_param_st, vitalSpotChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_normalSpotChangeRate offsetof(::er::paramdef::sp_effect_param_st, normalSpotChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_lookAtTargetPosOffset offsetof(::er::paramdef::sp_effect_param_st, lookAtTargetPosOffset)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_behaviorId offsetof(::er::paramdef::sp_effect_param_st, behaviorId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeHpRate offsetof(::er::paramdef::sp_effect_param_st, changeHpRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeHpPoint offsetof(::er::paramdef::sp_effect_param_st, changeHpPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMpRate offsetof(::er::paramdef::sp_effect_param_st, changeMpRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMpPoint offsetof(::er::paramdef::sp_effect_param_st, changeMpPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_mpRecoverChangeSpeed offsetof(::er::paramdef::sp_effect_param_st, mpRecoverChangeSpeed)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeStaminaRate offsetof(::er::paramdef::sp_effect_param_st, changeStaminaRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeStaminaPoint offsetof(::er::paramdef::sp_effect_param_st, changeStaminaPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_staminaRecoverChangeSpeed offsetof(::er::paramdef::sp_effect_param_st, staminaRecoverChangeSpeed)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicEffectTimeChange offsetof(::er::paramdef::sp_effect_param_st, magicEffectTimeChange)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_insideDurability offsetof(::er::paramdef::sp_effect_param_st, insideDurability)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_maxDurability offsetof(::er::paramdef::sp_effect_param_st, maxDurability)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_staminaAttackRate offsetof(::er::paramdef::sp_effect_param_st, staminaAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_poizonAttackPower offsetof(::er::paramdef::sp_effect_param_st, poizonAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_diseaseAttackPower offsetof(::er::paramdef::sp_effect_param_st, diseaseAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_bloodAttackPower offsetof(::er::paramdef::sp_effect_param_st, bloodAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_curseAttackPower offsetof(::er::paramdef::sp_effect_param_st, curseAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_fallDamageRate offsetof(::er::paramdef::sp_effect_param_st, fallDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_soulRate offsetof(::er::paramdef::sp_effect_param_st, soulRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_equipWeightChangeRate offsetof(::er::paramdef::sp_effect_param_st, equipWeightChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_allItemWeightChangeRate offsetof(::er::paramdef::sp_effect_param_st, allItemWeightChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_soul offsetof(::er::paramdef::sp_effect_param_st, soul)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_animIdOffset offsetof(::er::paramdef::sp_effect_param_st, animIdOffset)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_haveSoulRate offsetof(::er::paramdef::sp_effect_param_st, haveSoulRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_targetPriority offsetof(::er::paramdef::sp_effect_param_st, targetPriority)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_sightSearchEnemyRate offsetof(::er::paramdef::sp_effect_param_st, sightSearchEnemyRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_hearingSearchEnemyRate offsetof(::er::paramdef::sp_effect_param_st, hearingSearchEnemyRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_grabityRate offsetof(::er::paramdef::sp_effect_param_st, grabityRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_registPoizonChangeRate offsetof(::er::paramdef::sp_effect_param_st, registPoizonChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_registDiseaseChangeRate offsetof(::er::paramdef::sp_effect_param_st, registDiseaseChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_registBloodChangeRate offsetof(::er::paramdef::sp_effect_param_st, registBloodChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_registCurseChangeRate offsetof(::er::paramdef::sp_effect_param_st, registCurseChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_soulStealRate offsetof(::er::paramdef::sp_effect_param_st, soulStealRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_lifeReductionRate offsetof(::er::paramdef::sp_effect_param_st, lifeReductionRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_hpRecoverRate offsetof(::er::paramdef::sp_effect_param_st, hpRecoverRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_replaceSpEffectId offsetof(::er::paramdef::sp_effect_param_st, replaceSpEffectId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_cycleOccurrenceSpEffectId offsetof(::er::paramdef::sp_effect_param_st, cycleOccurrenceSpEffectId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkOccurrenceSpEffectId offsetof(::er::paramdef::sp_effect_param_st, atkOccurrenceSpEffectId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_guardDefFlickPowerRate offsetof(::er::paramdef::sp_effect_param_st, guardDefFlickPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_guardStaminaCutRate offsetof(::er::paramdef::sp_effect_param_st, guardStaminaCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_rayCastPassedTime offsetof(::er::paramdef::sp_effect_param_st, rayCastPassedTime)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicSubCategoryChange1 offsetof(::er::paramdef::sp_effect_param_st, magicSubCategoryChange1)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicSubCategoryChange2 offsetof(::er::paramdef::sp_effect_param_st, magicSubCategoryChange2)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_bowDistRate offsetof(::er::paramdef::sp_effect_param_st, bowDistRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_spCategory offsetof(::er::paramdef::sp_effect_param_st, spCategory)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_categoryPriority offsetof(::er::paramdef::sp_effect_param_st, categoryPriority)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_saveCategory offsetof(::er::paramdef::sp_effect_param_st, saveCategory)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMagicSlot offsetof(::er::paramdef::sp_effect_param_st, changeMagicSlot)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMiracleSlot offsetof(::er::paramdef::sp_effect_param_st, changeMiracleSlot)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_heroPointDamage offsetof(::er::paramdef::sp_effect_param_st, heroPointDamage)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defFlickPower offsetof(::er::paramdef::sp_effect_param_st, defFlickPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_flickDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, flickDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_bloodDamageRate offsetof(::er::paramdef::sp_effect_param_st, bloodDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_None offsetof(::er::paramdef::sp_effect_param_st, dmgLv_None)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_S offsetof(::er::paramdef::sp_effect_param_st, dmgLv_S)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_M offsetof(::er::paramdef::sp_effect_param_st, dmgLv_M)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_L offsetof(::er::paramdef::sp_effect_param_st, dmgLv_L)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_BlowM offsetof(::er::paramdef::sp_effect_param_st, dmgLv_BlowM)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_Push offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Push)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_Strike offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Strike)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_BlowS offsetof(::er::paramdef::sp_effect_param_st, dmgLv_BlowS)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_Min offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Min)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_Uppercut offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Uppercut)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_BlowLL offsetof(::er::paramdef::sp_effect_param_st, dmgLv_BlowLL)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmgLv_Breath offsetof(::er::paramdef::sp_effect_param_st, dmgLv_Breath)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkAttribute offsetof(::er::paramdef::sp_effect_param_st, atkAttribute)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_spAttribute offsetof(::er::paramdef::sp_effect_param_st, spAttribute)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_stateInfo offsetof(::er::paramdef::sp_effect_param_st, stateInfo)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_wepParamChange offsetof(::er::paramdef::sp_effect_param_st, wepParamChange)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_moveType offsetof(::er::paramdef::sp_effect_param_st, moveType)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_lifeReductionType offsetof(::er::paramdef::sp_effect_param_st, lifeReductionType)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_throwCondition offsetof(::er::paramdef::sp_effect_param_st, throwCondition)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addBehaviorJudgeId_condition offsetof(::er::paramdef::sp_effect_param_st, addBehaviorJudgeId_condition)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_freezeDamageRate offsetof(::er::paramdef::sp_effect_param_st, freezeDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_repAtkDmgLv offsetof(::er::paramdef::sp_effect_param_st, repAtkDmgLv)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_sightSearchRate offsetof(::er::paramdef::sp_effect_param_st, sightSearchRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeTeamType offsetof(::er::paramdef::sp_effect_param_st, changeTeamType)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dmypolyId offsetof(::er::paramdef::sp_effect_param_st, dmypolyId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId offsetof(::er::paramdef::sp_effect_param_st, vfxId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_accumuOverFireId offsetof(::er::paramdef::sp_effect_param_st, accumuOverFireId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_accumuOverVal offsetof(::er::paramdef::sp_effect_param_st, accumuOverVal)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_accumuUnderFireId offsetof(::er::paramdef::sp_effect_param_st, accumuUnderFireId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_accumuUnderVal offsetof(::er::paramdef::sp_effect_param_st, accumuUnderVal)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_accumuVal offsetof(::er::paramdef::sp_effect_param_st, accumuVal)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_eye_angX offsetof(::er::paramdef::sp_effect_param_st, eye_angX)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_eye_angY offsetof(::er::paramdef::sp_effect_param_st, eye_angY)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addDeceasedLv offsetof(::er::paramdef::sp_effect_param_st, addDeceasedLv)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId1 offsetof(::er::paramdef::sp_effect_param_st, vfxId1)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId2 offsetof(::er::paramdef::sp_effect_param_st, vfxId2)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId3 offsetof(::er::paramdef::sp_effect_param_st, vfxId3)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId4 offsetof(::er::paramdef::sp_effect_param_st, vfxId4)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId5 offsetof(::er::paramdef::sp_effect_param_st, vfxId5)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId6 offsetof(::er::paramdef::sp_effect_param_st, vfxId6)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_vfxId7 offsetof(::er::paramdef::sp_effect_param_st, vfxId7)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_freezeAttackPower offsetof(::er::paramdef::sp_effect_param_st, freezeAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_AppearAiSoundId offsetof(::er::paramdef::sp_effect_param_st, AppearAiSoundId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addFootEffectSfxId offsetof(::er::paramdef::sp_effect_param_st, addFootEffectSfxId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_dexterityCancelSystemOnlyAddDexterity offsetof(::er::paramdef::sp_effect_param_st, dexterityCancelSystemOnlyAddDexterity)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_teamOffenseEffectivity offsetof(::er::paramdef::sp_effect_param_st, teamOffenseEffectivity)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_toughnessDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, toughnessDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_weakDmgRateA offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateA)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_weakDmgRateB offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateB)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_weakDmgRateC offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateC)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_weakDmgRateD offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateD)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_weakDmgRateE offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateE)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_weakDmgRateF offsetof(::er::paramdef::sp_effect_param_st, weakDmgRateF)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_darkDamageCutRate offsetof(::er::paramdef::sp_effect_param_st, darkDamageCutRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_darkDiffenceRate offsetof(::er::paramdef::sp_effect_param_st, darkDiffenceRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_darkDiffence offsetof(::er::paramdef::sp_effect_param_st, darkDiffence)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_darkAttackRate offsetof(::er::paramdef::sp_effect_param_st, darkAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_darkAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, darkAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_darkAttackPower offsetof(::er::paramdef::sp_effect_param_st, darkAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_antiDarkSightRadius offsetof(::er::paramdef::sp_effect_param_st, antiDarkSightRadius)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_antiDarkSightDmypolyId offsetof(::er::paramdef::sp_effect_param_st, antiDarkSightDmypolyId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_conditionHpRate offsetof(::er::paramdef::sp_effect_param_st, conditionHpRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_consumeStaminaRate offsetof(::er::paramdef::sp_effect_param_st, consumeStaminaRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_itemDropRate offsetof(::er::paramdef::sp_effect_param_st, itemDropRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changePoisonResistPoint offsetof(::er::paramdef::sp_effect_param_st, changePoisonResistPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeDiseaseResistPoint offsetof(::er::paramdef::sp_effect_param_st, changeDiseaseResistPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeBloodResistPoint offsetof(::er::paramdef::sp_effect_param_st, changeBloodResistPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeCurseResistPoint offsetof(::er::paramdef::sp_effect_param_st, changeCurseResistPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeFreezeResistPoint offsetof(::er::paramdef::sp_effect_param_st, changeFreezeResistPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_slashAttackRate offsetof(::er::paramdef::sp_effect_param_st, slashAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_blowAttackRate offsetof(::er::paramdef::sp_effect_param_st, blowAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thrustAttackRate offsetof(::er::paramdef::sp_effect_param_st, thrustAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_neutralAttackRate offsetof(::er::paramdef::sp_effect_param_st, neutralAttackRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_slashAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, slashAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_blowAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, blowAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thrustAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, thrustAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_neutralAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, neutralAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_slashAttackPower offsetof(::er::paramdef::sp_effect_param_st, slashAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_blowAttackPower offsetof(::er::paramdef::sp_effect_param_st, blowAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_thrustAttackPower offsetof(::er::paramdef::sp_effect_param_st, thrustAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_neutralAttackPower offsetof(::er::paramdef::sp_effect_param_st, neutralAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeStrengthPoint offsetof(::er::paramdef::sp_effect_param_st, changeStrengthPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeAgilityPoint offsetof(::er::paramdef::sp_effect_param_st, changeAgilityPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMagicPoint offsetof(::er::paramdef::sp_effect_param_st, changeMagicPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeFaithPoint offsetof(::er::paramdef::sp_effect_param_st, changeFaithPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeLuckPoint offsetof(::er::paramdef::sp_effect_param_st, changeLuckPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_recoverArtsPoint_Str offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Str)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_recoverArtsPoint_Dex offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Dex)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_recoverArtsPoint_Magic offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Magic)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_recoverArtsPoint_Miracle offsetof(::er::paramdef::sp_effect_param_st, recoverArtsPoint_Miracle)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_madnessDamageRate offsetof(::er::paramdef::sp_effect_param_st, madnessDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addBehaviorJudgeId_add offsetof(::er::paramdef::sp_effect_param_st, addBehaviorJudgeId_add)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_saReceiveDamageRate offsetof(::er::paramdef::sp_effect_param_st, saReceiveDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defPlayerDmgCorrectRate_Physics offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Physics)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defPlayerDmgCorrectRate_Magic offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Magic)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defPlayerDmgCorrectRate_Fire offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Fire)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defPlayerDmgCorrectRate_Thunder offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Thunder)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defPlayerDmgCorrectRate_Dark offsetof(::er::paramdef::sp_effect_param_st, defPlayerDmgCorrectRate_Dark)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defEnemyDmgCorrectRate_Physics offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Physics)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defEnemyDmgCorrectRate_Magic offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Magic)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defEnemyDmgCorrectRate_Fire offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Fire)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defEnemyDmgCorrectRate_Thunder offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Thunder)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defEnemyDmgCorrectRate_Dark offsetof(::er::paramdef::sp_effect_param_st, defEnemyDmgCorrectRate_Dark)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defObjDmgCorrectRate offsetof(::er::paramdef::sp_effect_param_st, defObjDmgCorrectRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkPlayerDmgCorrectRate_Physics offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Physics)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkPlayerDmgCorrectRate_Magic offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Magic)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkPlayerDmgCorrectRate_Fire offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Fire)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkPlayerDmgCorrectRate_Thunder offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Thunder)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkPlayerDmgCorrectRate_Dark offsetof(::er::paramdef::sp_effect_param_st, atkPlayerDmgCorrectRate_Dark)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkEnemyDmgCorrectRate_Physics offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Physics)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkEnemyDmgCorrectRate_Magic offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Magic)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkEnemyDmgCorrectRate_Fire offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Fire)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkEnemyDmgCorrectRate_Thunder offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Thunder)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkEnemyDmgCorrectRate_Dark offsetof(::er::paramdef::sp_effect_param_st, atkEnemyDmgCorrectRate_Dark)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_registFreezeChangeRate offsetof(::er::paramdef::sp_effect_param_st, registFreezeChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_invocationConditionsStateChange1 offsetof(::er::paramdef::sp_effect_param_st, invocationConditionsStateChange1)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_invocationConditionsStateChange2 offsetof(::er::paramdef::sp_effect_param_st, invocationConditionsStateChange2)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_invocationConditionsStateChange3 offsetof(::er::paramdef::sp_effect_param_st, invocationConditionsStateChange3)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_hearingAiSoundLevel offsetof(::er::paramdef::sp_effect_param_st, hearingAiSoundLevel)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_chrProxyHeightRate offsetof(::er::paramdef::sp_effect_param_st, chrProxyHeightRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addAwarePointCorrectValue_forMe offsetof(::er::paramdef::sp_effect_param_st, addAwarePointCorrectValue_forMe)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addAwarePointCorrectValue_forTarget offsetof(::er::paramdef::sp_effect_param_st, addAwarePointCorrectValue_forTarget)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_sightSearchEnemyAdd offsetof(::er::paramdef::sp_effect_param_st, sightSearchEnemyAdd)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_sightSearchAdd offsetof(::er::paramdef::sp_effect_param_st, sightSearchAdd)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_hearingSearchAdd offsetof(::er::paramdef::sp_effect_param_st, hearingSearchAdd)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_hearingSearchRate offsetof(::er::paramdef::sp_effect_param_st, hearingSearchRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_hearingSearchEnemyAdd offsetof(::er::paramdef::sp_effect_param_st, hearingSearchEnemyAdd)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_value_Magnification offsetof(::er::paramdef::sp_effect_param_st, value_Magnification)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_artsConsumptionRate offsetof(::er::paramdef::sp_effect_param_st, artsConsumptionRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicConsumptionRate offsetof(::er::paramdef::sp_effect_param_st, magicConsumptionRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_shamanConsumptionRate offsetof(::er::paramdef::sp_effect_param_st, shamanConsumptionRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_miracleConsumptionRate offsetof(::er::paramdef::sp_effect_param_st, miracleConsumptionRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeHpEstusFlaskRate offsetof(::er::paramdef::sp_effect_param_st, changeHpEstusFlaskRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeHpEstusFlaskPoint offsetof(::er::paramdef::sp_effect_param_st, changeHpEstusFlaskPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMpEstusFlaskRate offsetof(::er::paramdef::sp_effect_param_st, changeMpEstusFlaskRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMpEstusFlaskPoint offsetof(::er::paramdef::sp_effect_param_st, changeMpEstusFlaskPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeHpEstusFlaskCorrectRate offsetof(::er::paramdef::sp_effect_param_st, changeHpEstusFlaskCorrectRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMpEstusFlaskCorrectRate offsetof(::er::paramdef::sp_effect_param_st, changeMpEstusFlaskCorrectRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_applyIdOnGetSoul offsetof(::er::paramdef::sp_effect_param_st, applyIdOnGetSoul)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_extendLifeRate offsetof(::er::paramdef::sp_effect_param_st, extendLifeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_contractLifeRate offsetof(::er::paramdef::sp_effect_param_st, contractLifeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_defObjectAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, defObjectAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_effectEndDeleteDecalGroupId offsetof(::er::paramdef::sp_effect_param_st, effectEndDeleteDecalGroupId)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addLifeForceStatus offsetof(::er::paramdef::sp_effect_param_st, addLifeForceStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addWillpowerStatus offsetof(::er::paramdef::sp_effect_param_st, addWillpowerStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addEndureStatus offsetof(::er::paramdef::sp_effect_param_st, addEndureStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addVitalityStatus offsetof(::er::paramdef::sp_effect_param_st, addVitalityStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addStrengthStatus offsetof(::er::paramdef::sp_effect_param_st, addStrengthStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addDexterityStatus offsetof(::er::paramdef::sp_effect_param_st, addDexterityStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addMagicStatus offsetof(::er::paramdef::sp_effect_param_st, addMagicStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addFaithStatus offsetof(::er::paramdef::sp_effect_param_st, addFaithStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_addLuckStatus offsetof(::er::paramdef::sp_effect_param_st, addLuckStatus)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_deleteCriteriaDamage offsetof(::er::paramdef::sp_effect_param_st, deleteCriteriaDamage)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_magicSubCategoryChange3 offsetof(::er::paramdef::sp_effect_param_st, magicSubCategoryChange3)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_spAttributeVariationValue offsetof(::er::paramdef::sp_effect_param_st, spAttributeVariationValue)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_atkFlickPower offsetof(::er::paramdef::sp_effect_param_st, atkFlickPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_wetConditionDepth offsetof(::er::paramdef::sp_effect_param_st, wetConditionDepth)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeSaRecoveryVelocity offsetof(::er::paramdef::sp_effect_param_st, changeSaRecoveryVelocity)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_regainRate offsetof(::er::paramdef::sp_effect_param_st, regainRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_saAttackPowerRate offsetof(::er::paramdef::sp_effect_param_st, saAttackPowerRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_sleepAttackPower offsetof(::er::paramdef::sp_effect_param_st, sleepAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_madnessAttackPower offsetof(::er::paramdef::sp_effect_param_st, madnessAttackPower)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_registSleepChangeRate offsetof(::er::paramdef::sp_effect_param_st, registSleepChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_registMadnessChangeRate offsetof(::er::paramdef::sp_effect_param_st, registMadnessChangeRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeSleepResistPoint offsetof(::er::paramdef::sp_effect_param_st, changeSleepResistPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeMadnessResistPoint offsetof(::er::paramdef::sp_effect_param_st, changeMadnessResistPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_sleepDamageRate offsetof(::er::paramdef::sp_effect_param_st, sleepDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_applyPartsGroup offsetof(::er::paramdef::sp_effect_param_st, applyPartsGroup)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeSuperArmorPoint offsetof(::er::paramdef::sp_effect_param_st, changeSuperArmorPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_changeSaPoint offsetof(::er::paramdef::sp_effect_param_st, changeSaPoint)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_hugeEnemyPickupHeightOverwrite offsetof(::er::paramdef::sp_effect_param_st, hugeEnemyPickupHeightOverwrite)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_poisonDefDamageRate offsetof(::er::paramdef::sp_effect_param_st, poisonDefDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_diseaseDefDamageRate offsetof(::er::paramdef::sp_effect_param_st, diseaseDefDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_bloodDefDamageRate offsetof(::er::paramdef::sp_effect_param_st, bloodDefDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_curseDefDamageRate offsetof(::er::paramdef::sp_effect_param_st, curseDefDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_freezeDefDamageRate offsetof(::er::paramdef::sp_effect_param_st, freezeDefDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_sleepDefDamageRate offsetof(::er::paramdef::sp_effect_param_st, sleepDefDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_madnessDefDamageRate offsetof(::er::paramdef::sp_effect_param_st, madnessDefDamageRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_overwrite_maxBackhomeDist offsetof(::er::paramdef::sp_effect_param_st, overwrite_maxBackhomeDist)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_overwrite_backhomeDist offsetof(::er::paramdef::sp_effect_param_st, overwrite_backhomeDist)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_overwrite_backhomeBattleDist offsetof(::er::paramdef::sp_effect_param_st, overwrite_backhomeBattleDist)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_overwrite_BackHome_LookTargetDist offsetof(::er::paramdef::sp_effect_param_st, overwrite_BackHome_LookTargetDist)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_goodsConsumptionRate offsetof(::er::paramdef::sp_effect_param_st, goodsConsumptionRate)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_guardStaminaMult offsetof(::er::paramdef::sp_effect_param_st, guardStaminaMult)
+#define ERD_OFFSET_SP_EFFECT_PARAM_ST_spiritDeathSpEffectId offsetof(::er::paramdef::sp_effect_param_st, spiritDeathSpEffectId)

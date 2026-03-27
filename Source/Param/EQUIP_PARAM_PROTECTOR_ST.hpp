@@ -1,0 +1,408 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/EQUIP_PARAM_PROTECTOR_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_EQUIP_PARAM_PROTECTOR_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::equip_param_protector_st, disableParamReserve2)) \\
+    X(sortId, offsetof(::er::paramdef::equip_param_protector_st, sortId)) \\
+    X(wanderingEquipId, offsetof(::er::paramdef::equip_param_protector_st, wanderingEquipId)) \\
+    X(resistSleep, offsetof(::er::paramdef::equip_param_protector_st, resistSleep)) \\
+    X(resistMadness, offsetof(::er::paramdef::equip_param_protector_st, resistMadness)) \\
+    X(saDurability, offsetof(::er::paramdef::equip_param_protector_st, saDurability)) \\
+    X(toughnessCorrectRate, offsetof(::er::paramdef::equip_param_protector_st, toughnessCorrectRate)) \\
+    X(fixPrice, offsetof(::er::paramdef::equip_param_protector_st, fixPrice)) \\
+    X(basicPrice, offsetof(::er::paramdef::equip_param_protector_st, basicPrice)) \\
+    X(sellValue, offsetof(::er::paramdef::equip_param_protector_st, sellValue)) \\
+    X(weight, offsetof(::er::paramdef::equip_param_protector_st, weight)) \\
+    X(residentSpEffectId, offsetof(::er::paramdef::equip_param_protector_st, residentSpEffectId)) \\
+    X(residentSpEffectId2, offsetof(::er::paramdef::equip_param_protector_st, residentSpEffectId2)) \\
+    X(residentSpEffectId3, offsetof(::er::paramdef::equip_param_protector_st, residentSpEffectId3)) \\
+    X(materialSetId, offsetof(::er::paramdef::equip_param_protector_st, materialSetId)) \\
+    X(partsDamageRate, offsetof(::er::paramdef::equip_param_protector_st, partsDamageRate)) \\
+    X(corectSARecover, offsetof(::er::paramdef::equip_param_protector_st, corectSARecover)) \\
+    X(originEquipPro, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro)) \\
+    X(originEquipPro1, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro1)) \\
+    X(originEquipPro2, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro2)) \\
+    X(originEquipPro3, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro3)) \\
+    X(originEquipPro4, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro4)) \\
+    X(originEquipPro5, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro5)) \\
+    X(originEquipPro6, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro6)) \\
+    X(originEquipPro7, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro7)) \\
+    X(originEquipPro8, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro8)) \\
+    X(originEquipPro9, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro9)) \\
+    X(originEquipPro10, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro10)) \\
+    X(originEquipPro11, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro11)) \\
+    X(originEquipPro12, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro12)) \\
+    X(originEquipPro13, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro13)) \\
+    X(originEquipPro14, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro14)) \\
+    X(originEquipPro15, offsetof(::er::paramdef::equip_param_protector_st, originEquipPro15)) \\
+    X(faceScaleM_ScaleX, offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_ScaleX)) \\
+    X(faceScaleM_ScaleZ, offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_ScaleZ)) \\
+    X(faceScaleM_MaxX, offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_MaxX)) \\
+    X(faceScaleM_MaxZ, offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_MaxZ)) \\
+    X(faceScaleF_ScaleX, offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_ScaleX)) \\
+    X(faceScaleF_ScaleZ, offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_ScaleZ)) \\
+    X(faceScaleF_MaxX, offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_MaxX)) \\
+    X(faceScaleF_MaxZ, offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_MaxZ)) \\
+    X(qwcId, offsetof(::er::paramdef::equip_param_protector_st, qwcId)) \\
+    X(equipModelId, offsetof(::er::paramdef::equip_param_protector_st, equipModelId)) \\
+    X(iconIdM, offsetof(::er::paramdef::equip_param_protector_st, iconIdM)) \\
+    X(iconIdF, offsetof(::er::paramdef::equip_param_protector_st, iconIdF)) \\
+    X(knockBack, offsetof(::er::paramdef::equip_param_protector_st, knockBack)) \\
+    X(knockbackBounceRate, offsetof(::er::paramdef::equip_param_protector_st, knockbackBounceRate)) \\
+    X(durability, offsetof(::er::paramdef::equip_param_protector_st, durability)) \\
+    X(durabilityMax, offsetof(::er::paramdef::equip_param_protector_st, durabilityMax)) \\
+    X(pad03, offsetof(::er::paramdef::equip_param_protector_st, pad03)) \\
+    X(defFlickPower, offsetof(::er::paramdef::equip_param_protector_st, defFlickPower)) \\
+    X(defensePhysics, offsetof(::er::paramdef::equip_param_protector_st, defensePhysics)) \\
+    X(defenseMagic, offsetof(::er::paramdef::equip_param_protector_st, defenseMagic)) \\
+    X(defenseFire, offsetof(::er::paramdef::equip_param_protector_st, defenseFire)) \\
+    X(defenseThunder, offsetof(::er::paramdef::equip_param_protector_st, defenseThunder)) \\
+    X(defenseSlash, offsetof(::er::paramdef::equip_param_protector_st, defenseSlash)) \\
+    X(defenseBlow, offsetof(::er::paramdef::equip_param_protector_st, defenseBlow)) \\
+    X(defenseThrust, offsetof(::er::paramdef::equip_param_protector_st, defenseThrust)) \\
+    X(resistPoison, offsetof(::er::paramdef::equip_param_protector_st, resistPoison)) \\
+    X(resistDisease, offsetof(::er::paramdef::equip_param_protector_st, resistDisease)) \\
+    X(resistBlood, offsetof(::er::paramdef::equip_param_protector_st, resistBlood)) \\
+    X(resistCurse, offsetof(::er::paramdef::equip_param_protector_st, resistCurse)) \\
+    X(reinforceTypeId, offsetof(::er::paramdef::equip_param_protector_st, reinforceTypeId)) \\
+    X(trophySGradeId, offsetof(::er::paramdef::equip_param_protector_st, trophySGradeId)) \\
+    X(shopLv, offsetof(::er::paramdef::equip_param_protector_st, shopLv)) \\
+    X(knockbackParamId, offsetof(::er::paramdef::equip_param_protector_st, knockbackParamId)) \\
+    X(flickDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, flickDamageCutRate)) \\
+    X(equipModelCategory, offsetof(::er::paramdef::equip_param_protector_st, equipModelCategory)) \\
+    X(equipModelGender, offsetof(::er::paramdef::equip_param_protector_st, equipModelGender)) \\
+    X(protectorCategory, offsetof(::er::paramdef::equip_param_protector_st, protectorCategory)) \\
+    X(rarity, offsetof(::er::paramdef::equip_param_protector_st, rarity)) \\
+    X(sortGroupId, offsetof(::er::paramdef::equip_param_protector_st, sortGroupId)) \\
+    X(partsDmgType, offsetof(::er::paramdef::equip_param_protector_st, partsDmgType)) \\
+    X(pad04, offsetof(::er::paramdef::equip_param_protector_st, pad04)) \\
+    X(defenseMaterialVariationValue_Weak, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialVariationValue_Weak)) \\
+    X(autoFootEffectDecalBaseId2, offsetof(::er::paramdef::equip_param_protector_st, autoFootEffectDecalBaseId2)) \\
+    X(autoFootEffectDecalBaseId3, offsetof(::er::paramdef::equip_param_protector_st, autoFootEffectDecalBaseId3)) \\
+    X(defenseMaterialVariationValue, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialVariationValue)) \\
+    X(neutralDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, neutralDamageCutRate)) \\
+    X(slashDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, slashDamageCutRate)) \\
+    X(blowDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, blowDamageCutRate)) \\
+    X(thrustDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, thrustDamageCutRate)) \\
+    X(magicDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, magicDamageCutRate)) \\
+    X(fireDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, fireDamageCutRate)) \\
+    X(thunderDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, thunderDamageCutRate)) \\
+    X(defenseMaterialSfx1, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx1)) \\
+    X(defenseMaterialSfx_Weak1, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx_Weak1)) \\
+    X(defenseMaterial1, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterial1)) \\
+    X(defenseMaterial_Weak1, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterial_Weak1)) \\
+    X(defenseMaterialSfx2, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx2)) \\
+    X(defenseMaterialSfx_Weak2, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx_Weak2)) \\
+    X(footMaterialSe, offsetof(::er::paramdef::equip_param_protector_st, footMaterialSe)) \\
+    X(defenseMaterial_Weak2, offsetof(::er::paramdef::equip_param_protector_st, defenseMaterial_Weak2)) \\
+    X(autoFootEffectDecalBaseId1, offsetof(::er::paramdef::equip_param_protector_st, autoFootEffectDecalBaseId1)) \\
+    X(toughnessDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, toughnessDamageCutRate)) \\
+    X(toughnessRecoverCorrection, offsetof(::er::paramdef::equip_param_protector_st, toughnessRecoverCorrection)) \\
+    X(darkDamageCutRate, offsetof(::er::paramdef::equip_param_protector_st, darkDamageCutRate)) \\
+    X(defenseDark, offsetof(::er::paramdef::equip_param_protector_st, defenseDark)) \\
+    X(postureControlId, offsetof(::er::paramdef::equip_param_protector_st, postureControlId)) \\
+    X(pad2, offsetof(::er::paramdef::equip_param_protector_st, pad2)) \\
+    X(saleValue, offsetof(::er::paramdef::equip_param_protector_st, saleValue)) \\
+    X(resistFreeze, offsetof(::er::paramdef::equip_param_protector_st, resistFreeze)) \\
+    X(invisibleFlag_SexVer00, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer00)) \\
+    X(invisibleFlag_SexVer01, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer01)) \\
+    X(invisibleFlag_SexVer02, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer02)) \\
+    X(invisibleFlag_SexVer03, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer03)) \\
+    X(invisibleFlag_SexVer04, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer04)) \\
+    X(invisibleFlag_SexVer05, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer05)) \\
+    X(invisibleFlag_SexVer06, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer06)) \\
+    X(invisibleFlag_SexVer07, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer07)) \\
+    X(invisibleFlag_SexVer08, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer08)) \\
+    X(invisibleFlag_SexVer09, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer09)) \\
+    X(invisibleFlag_SexVer10, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer10)) \\
+    X(invisibleFlag_SexVer11, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer11)) \\
+    X(invisibleFlag_SexVer12, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer12)) \\
+    X(invisibleFlag_SexVer13, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer13)) \\
+    X(invisibleFlag_SexVer14, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer14)) \\
+    X(invisibleFlag_SexVer15, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer15)) \\
+    X(invisibleFlag_SexVer16, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer16)) \\
+    X(invisibleFlag_SexVer17, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer17)) \\
+    X(invisibleFlag_SexVer18, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer18)) \\
+    X(invisibleFlag_SexVer19, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer19)) \\
+    X(invisibleFlag_SexVer20, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer20)) \\
+    X(invisibleFlag_SexVer21, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer21)) \\
+    X(invisibleFlag_SexVer22, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer22)) \\
+    X(invisibleFlag_SexVer23, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer23)) \\
+    X(invisibleFlag_SexVer24, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer24)) \\
+    X(invisibleFlag_SexVer25, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer25)) \\
+    X(invisibleFlag_SexVer26, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer26)) \\
+    X(invisibleFlag_SexVer27, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer27)) \\
+    X(invisibleFlag_SexVer28, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer28)) \\
+    X(invisibleFlag_SexVer29, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer29)) \\
+    X(invisibleFlag_SexVer30, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer30)) \\
+    X(invisibleFlag_SexVer31, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer31)) \\
+    X(invisibleFlag_SexVer32, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer32)) \\
+    X(invisibleFlag_SexVer33, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer33)) \\
+    X(invisibleFlag_SexVer34, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer34)) \\
+    X(invisibleFlag_SexVer35, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer35)) \\
+    X(invisibleFlag_SexVer36, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer36)) \\
+    X(invisibleFlag_SexVer37, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer37)) \\
+    X(invisibleFlag_SexVer38, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer38)) \\
+    X(invisibleFlag_SexVer39, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer39)) \\
+    X(invisibleFlag_SexVer40, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer40)) \\
+    X(invisibleFlag_SexVer41, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer41)) \\
+    X(invisibleFlag_SexVer42, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer42)) \\
+    X(invisibleFlag_SexVer43, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer43)) \\
+    X(invisibleFlag_SexVer44, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer44)) \\
+    X(invisibleFlag_SexVer45, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer45)) \\
+    X(invisibleFlag_SexVer46, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer46)) \\
+    X(invisibleFlag_SexVer47, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer47)) \\
+    X(invisibleFlag_SexVer48, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer48)) \\
+    X(invisibleFlag_SexVer49, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer49)) \\
+    X(invisibleFlag_SexVer50, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer50)) \\
+    X(invisibleFlag_SexVer51, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer51)) \\
+    X(invisibleFlag_SexVer52, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer52)) \\
+    X(invisibleFlag_SexVer53, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer53)) \\
+    X(invisibleFlag_SexVer54, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer54)) \\
+    X(invisibleFlag_SexVer55, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer55)) \\
+    X(invisibleFlag_SexVer56, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer56)) \\
+    X(invisibleFlag_SexVer57, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer57)) \\
+    X(invisibleFlag_SexVer58, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer58)) \\
+    X(invisibleFlag_SexVer59, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer59)) \\
+    X(invisibleFlag_SexVer60, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer60)) \\
+    X(invisibleFlag_SexVer61, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer61)) \\
+    X(invisibleFlag_SexVer62, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer62)) \\
+    X(invisibleFlag_SexVer63, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer63)) \\
+    X(invisibleFlag_SexVer64, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer64)) \\
+    X(invisibleFlag_SexVer65, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer65)) \\
+    X(invisibleFlag_SexVer66, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer66)) \\
+    X(invisibleFlag_SexVer67, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer67)) \\
+    X(invisibleFlag_SexVer68, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer68)) \\
+    X(invisibleFlag_SexVer69, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer69)) \\
+    X(invisibleFlag_SexVer70, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer70)) \\
+    X(invisibleFlag_SexVer71, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer71)) \\
+    X(invisibleFlag_SexVer72, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer72)) \\
+    X(invisibleFlag_SexVer73, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer73)) \\
+    X(invisibleFlag_SexVer74, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer74)) \\
+    X(invisibleFlag_SexVer75, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer75)) \\
+    X(invisibleFlag_SexVer76, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer76)) \\
+    X(invisibleFlag_SexVer77, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer77)) \\
+    X(invisibleFlag_SexVer78, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer78)) \\
+    X(invisibleFlag_SexVer79, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer79)) \\
+    X(invisibleFlag_SexVer80, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer80)) \\
+    X(invisibleFlag_SexVer81, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer81)) \\
+    X(invisibleFlag_SexVer82, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer82)) \\
+    X(invisibleFlag_SexVer83, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer83)) \\
+    X(invisibleFlag_SexVer84, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer84)) \\
+    X(invisibleFlag_SexVer85, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer85)) \\
+    X(invisibleFlag_SexVer86, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer86)) \\
+    X(invisibleFlag_SexVer87, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer87)) \\
+    X(invisibleFlag_SexVer88, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer88)) \\
+    X(invisibleFlag_SexVer89, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer89)) \\
+    X(invisibleFlag_SexVer90, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer90)) \\
+    X(invisibleFlag_SexVer91, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer91)) \\
+    X(invisibleFlag_SexVer92, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer92)) \\
+    X(invisibleFlag_SexVer93, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer93)) \\
+    X(invisibleFlag_SexVer94, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer94)) \\
+    X(invisibleFlag_SexVer95, offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer95)) \\
+    X(pad404, offsetof(::er::paramdef::equip_param_protector_st, pad404))
+
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_disableParamReserve2 offsetof(::er::paramdef::equip_param_protector_st, disableParamReserve2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_sortId offsetof(::er::paramdef::equip_param_protector_st, sortId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_wanderingEquipId offsetof(::er::paramdef::equip_param_protector_st, wanderingEquipId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_resistSleep offsetof(::er::paramdef::equip_param_protector_st, resistSleep)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_resistMadness offsetof(::er::paramdef::equip_param_protector_st, resistMadness)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_saDurability offsetof(::er::paramdef::equip_param_protector_st, saDurability)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_toughnessCorrectRate offsetof(::er::paramdef::equip_param_protector_st, toughnessCorrectRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_fixPrice offsetof(::er::paramdef::equip_param_protector_st, fixPrice)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_basicPrice offsetof(::er::paramdef::equip_param_protector_st, basicPrice)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_sellValue offsetof(::er::paramdef::equip_param_protector_st, sellValue)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_weight offsetof(::er::paramdef::equip_param_protector_st, weight)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_residentSpEffectId offsetof(::er::paramdef::equip_param_protector_st, residentSpEffectId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_residentSpEffectId2 offsetof(::er::paramdef::equip_param_protector_st, residentSpEffectId2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_residentSpEffectId3 offsetof(::er::paramdef::equip_param_protector_st, residentSpEffectId3)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_materialSetId offsetof(::er::paramdef::equip_param_protector_st, materialSetId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_partsDamageRate offsetof(::er::paramdef::equip_param_protector_st, partsDamageRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_corectSARecover offsetof(::er::paramdef::equip_param_protector_st, corectSARecover)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro offsetof(::er::paramdef::equip_param_protector_st, originEquipPro)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro1 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro1)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro2 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro3 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro3)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro4 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro4)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro5 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro5)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro6 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro6)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro7 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro7)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro8 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro8)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro9 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro9)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro10 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro10)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro11 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro11)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro12 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro12)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro13 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro13)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro14 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro14)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_originEquipPro15 offsetof(::er::paramdef::equip_param_protector_st, originEquipPro15)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleM_ScaleX offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_ScaleX)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleM_ScaleZ offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_ScaleZ)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleM_MaxX offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_MaxX)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleM_MaxZ offsetof(::er::paramdef::equip_param_protector_st, faceScaleM_MaxZ)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleF_ScaleX offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_ScaleX)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleF_ScaleZ offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_ScaleZ)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleF_MaxX offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_MaxX)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_faceScaleF_MaxZ offsetof(::er::paramdef::equip_param_protector_st, faceScaleF_MaxZ)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_qwcId offsetof(::er::paramdef::equip_param_protector_st, qwcId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_equipModelId offsetof(::er::paramdef::equip_param_protector_st, equipModelId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_iconIdM offsetof(::er::paramdef::equip_param_protector_st, iconIdM)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_iconIdF offsetof(::er::paramdef::equip_param_protector_st, iconIdF)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_knockBack offsetof(::er::paramdef::equip_param_protector_st, knockBack)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_knockbackBounceRate offsetof(::er::paramdef::equip_param_protector_st, knockbackBounceRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_durability offsetof(::er::paramdef::equip_param_protector_st, durability)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_durabilityMax offsetof(::er::paramdef::equip_param_protector_st, durabilityMax)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_pad03 offsetof(::er::paramdef::equip_param_protector_st, pad03)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defFlickPower offsetof(::er::paramdef::equip_param_protector_st, defFlickPower)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defensePhysics offsetof(::er::paramdef::equip_param_protector_st, defensePhysics)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMagic offsetof(::er::paramdef::equip_param_protector_st, defenseMagic)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseFire offsetof(::er::paramdef::equip_param_protector_st, defenseFire)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseThunder offsetof(::er::paramdef::equip_param_protector_st, defenseThunder)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseSlash offsetof(::er::paramdef::equip_param_protector_st, defenseSlash)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseBlow offsetof(::er::paramdef::equip_param_protector_st, defenseBlow)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseThrust offsetof(::er::paramdef::equip_param_protector_st, defenseThrust)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_resistPoison offsetof(::er::paramdef::equip_param_protector_st, resistPoison)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_resistDisease offsetof(::er::paramdef::equip_param_protector_st, resistDisease)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_resistBlood offsetof(::er::paramdef::equip_param_protector_st, resistBlood)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_resistCurse offsetof(::er::paramdef::equip_param_protector_st, resistCurse)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_reinforceTypeId offsetof(::er::paramdef::equip_param_protector_st, reinforceTypeId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_trophySGradeId offsetof(::er::paramdef::equip_param_protector_st, trophySGradeId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_shopLv offsetof(::er::paramdef::equip_param_protector_st, shopLv)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_knockbackParamId offsetof(::er::paramdef::equip_param_protector_st, knockbackParamId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_flickDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, flickDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_equipModelCategory offsetof(::er::paramdef::equip_param_protector_st, equipModelCategory)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_equipModelGender offsetof(::er::paramdef::equip_param_protector_st, equipModelGender)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_protectorCategory offsetof(::er::paramdef::equip_param_protector_st, protectorCategory)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_rarity offsetof(::er::paramdef::equip_param_protector_st, rarity)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_sortGroupId offsetof(::er::paramdef::equip_param_protector_st, sortGroupId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_partsDmgType offsetof(::er::paramdef::equip_param_protector_st, partsDmgType)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_pad04 offsetof(::er::paramdef::equip_param_protector_st, pad04)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterialVariationValue_Weak offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialVariationValue_Weak)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_autoFootEffectDecalBaseId2 offsetof(::er::paramdef::equip_param_protector_st, autoFootEffectDecalBaseId2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_autoFootEffectDecalBaseId3 offsetof(::er::paramdef::equip_param_protector_st, autoFootEffectDecalBaseId3)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterialVariationValue offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialVariationValue)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_neutralDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, neutralDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_slashDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, slashDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_blowDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, blowDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_thrustDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, thrustDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_magicDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, magicDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_fireDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, fireDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_thunderDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, thunderDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterialSfx1 offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx1)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterialSfx_Weak1 offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx_Weak1)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterial1 offsetof(::er::paramdef::equip_param_protector_st, defenseMaterial1)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterial_Weak1 offsetof(::er::paramdef::equip_param_protector_st, defenseMaterial_Weak1)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterialSfx2 offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterialSfx_Weak2 offsetof(::er::paramdef::equip_param_protector_st, defenseMaterialSfx_Weak2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_footMaterialSe offsetof(::er::paramdef::equip_param_protector_st, footMaterialSe)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseMaterial_Weak2 offsetof(::er::paramdef::equip_param_protector_st, defenseMaterial_Weak2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_autoFootEffectDecalBaseId1 offsetof(::er::paramdef::equip_param_protector_st, autoFootEffectDecalBaseId1)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_toughnessDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, toughnessDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_toughnessRecoverCorrection offsetof(::er::paramdef::equip_param_protector_st, toughnessRecoverCorrection)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_darkDamageCutRate offsetof(::er::paramdef::equip_param_protector_st, darkDamageCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_defenseDark offsetof(::er::paramdef::equip_param_protector_st, defenseDark)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_postureControlId offsetof(::er::paramdef::equip_param_protector_st, postureControlId)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_pad2 offsetof(::er::paramdef::equip_param_protector_st, pad2)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_saleValue offsetof(::er::paramdef::equip_param_protector_st, saleValue)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_resistFreeze offsetof(::er::paramdef::equip_param_protector_st, resistFreeze)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer00 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer00)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer01 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer01)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer02 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer02)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer03 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer03)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer04 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer04)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer05 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer05)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer06 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer06)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer07 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer07)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer08 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer08)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer09 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer09)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer10 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer10)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer11 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer11)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer12 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer12)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer13 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer13)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer14 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer14)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer15 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer15)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer16 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer16)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer17 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer17)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer18 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer18)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer19 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer19)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer20 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer20)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer21 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer21)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer22 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer22)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer23 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer23)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer24 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer24)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer25 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer25)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer26 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer26)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer27 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer27)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer28 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer28)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer29 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer29)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer30 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer30)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer31 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer31)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer32 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer32)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer33 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer33)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer34 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer34)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer35 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer35)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer36 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer36)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer37 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer37)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer38 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer38)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer39 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer39)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer40 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer40)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer41 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer41)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer42 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer42)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer43 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer43)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer44 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer44)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer45 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer45)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer46 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer46)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer47 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer47)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer48 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer48)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer49 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer49)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer50 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer50)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer51 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer51)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer52 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer52)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer53 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer53)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer54 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer54)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer55 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer55)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer56 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer56)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer57 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer57)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer58 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer58)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer59 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer59)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer60 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer60)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer61 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer61)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer62 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer62)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer63 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer63)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer64 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer64)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer65 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer65)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer66 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer66)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer67 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer67)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer68 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer68)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer69 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer69)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer70 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer70)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer71 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer71)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer72 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer72)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer73 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer73)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer74 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer74)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer75 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer75)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer76 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer76)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer77 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer77)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer78 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer78)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer79 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer79)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer80 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer80)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer81 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer81)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer82 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer82)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer83 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer83)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer84 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer84)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer85 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer85)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer86 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer86)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer87 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer87)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer88 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer88)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer89 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer89)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer90 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer90)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer91 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer91)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer92 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer92)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer93 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer93)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer94 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer94)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_invisibleFlag_SexVer95 offsetof(::er::paramdef::equip_param_protector_st, invisibleFlag_SexVer95)
+#define ERD_OFFSET_EQUIP_PARAM_PROTECTOR_ST_pad404 offsetof(::er::paramdef::equip_param_protector_st, pad404)

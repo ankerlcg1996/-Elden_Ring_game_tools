@@ -1,0 +1,84 @@
+28	i
+3	ID
+3	禁用 AI
+3	Height
+3	WidthAndHeight
+2	ID: 
+2	Lua 计时器
+2	设置 HP
+2	Lua 数值
+2	事件 ID：
+2	ID：
+1	DLC 通关标记
+1	将 Boss 作为首遇复活
+1	注入 AI 脚本
+1	将全部 Boss 作为首遇复活
+1	按下此处绑定热键时阻止游戏原动作。&#x0A;根据配置可能有少量延迟
+1	这是新引入的数值修正，会提高 DLC 中 Boss 和敌人的 HP。&#x0A;击败约定之王拉塔恩并进入下一周目后生效。&#x0A;该修正生效后不会消失，且为固定值，即后续周目加成百分比不变。&#x0A;该修正不影响本体 Boss 与敌人。
+1	隐藏 Logo
+1	{Binding MapCoords,
+                          Converter={StaticResource Vector3ToStringConverter},
+                          StringFormat=地图坐标: {0}}
+1	从排除中移除 ID
+1	FP 回复
+1	垂直移动：键盘 Ctrl/Space 或手柄 L2/R2
+1	强制动作：&#x0A;• 输入 0 为正常行为&#x0A;• 输入数字可重复指定动作&#x0A;• 超出可用动作范围会被忽略
+1	Boss 复活
+1	导出排除 ID
+1	{Binding AbsoluteCoords,
+                          Converter={StaticResource Vector3ToStringConverter},
+                          StringFormat=全局坐标: {0}}
+1	解锁 DLC 地图
+1	AI窗口
+1	导入排除 ID
+1	排除的事件 ID
+1	设置自定义 HP
+1	自动设为 NG+7
+1	锁定 HP
+1	复活 Boss
+1	{Binding LocalCoords,
+                          Converter={StaticResource Vector3ToStringConverter},
+                          StringFormat=本地坐标: {0}}
+1	每 tick 回复 3.3% 最大 FP
+1	锁定当前 HP，类似 ERTool 的满血/1血切换
+1	 特殊效果 ID：
+1	{Binding FormattedId,
+                          StringFormat=地图 ID: {0}}
+1	隐藏重复 ID
+1	解锁 DLC 全部赐福
+1	导出 CSV
+1	狮舞主 Boss
+1	最大 HP
+1	每 tick 回复 3.3% 最大 HP
+1	Lua 计时器覆盖层
+1	Lua 数值覆盖层
+1	效果 ID：
+1	装备 ID：
+1	通过 ID 添加或移除特殊效果
+1	禁用除目标外所有 AI
+1	若不希望二阶段 50% 后触发蛇形攻击，请锁定其 HP
+1	 x
+1	显示 Lua 计时器
+1	选择 Boss
+1	清空唯一 ID
+1	复活全部 Boss
+1	保存位置时记忆 HP/耐力
+1	可禁用键盘 CTRL/Space 的垂直移动
+1	RFBS
+1	Boss 传送后休息
+1	加载时设置 RFBS
+1	清空全部排除 ID
+1	发现附近有多个 Boss
+1	FP 无限
+1	显示 AI 信息
+1	AI 信息
+1	显示 Lua 数值
+1	通过事件 ID 读取或设置事件
+1	强制释放艾尔登流星并接后续选定攻击&#x0A;并非完全稳定，但多数情况下可用&#x0A;建议绑定热键并在 Boss 动作收尾时触发
+1	输入以空格分隔的动作序列，最多 10 个。&#x0A;并非完全稳定，但多数情况下可用。&#x0A;建议绑定热键并在敌人动作收尾时触发
+1	按装备参数 ID 生成
+1	设置 FPS 上限
+1	狮舞小 Boss
+1	HP：
+1	解锁 DLC 全部地下赐福
+1	AI

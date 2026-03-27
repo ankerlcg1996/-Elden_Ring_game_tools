@@ -1,0 +1,192 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/AI_ANIM_TBL_PARAM.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_AI_ANIM_TBL_PARAM_FIELDS(X) \\
+    X(atk0_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk0_EzStateId)) \\
+    X(atk1_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk1_EzStateId)) \\
+    X(atk2_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk2_EzStateId)) \\
+    X(atk3_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk3_EzStateId)) \\
+    X(atk4_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk4_EzStateId)) \\
+    X(atk5_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk5_EzStateId)) \\
+    X(atk6_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk6_EzStateId)) \\
+    X(atk7_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk7_EzStateId)) \\
+    X(atk8_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk8_EzStateId)) \\
+    X(atk9_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk9_EzStateId)) \\
+    X(atk10_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk10_EzStateId)) \\
+    X(atk11_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk11_EzStateId)) \\
+    X(atk12_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk12_EzStateId)) \\
+    X(atk13_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk13_EzStateId)) \\
+    X(atk14_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk14_EzStateId)) \\
+    X(atk15_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk15_EzStateId)) \\
+    X(atk16_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk16_EzStateId)) \\
+    X(atk17_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk17_EzStateId)) \\
+    X(atk18_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk18_EzStateId)) \\
+    X(atk19_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk19_EzStateId)) \\
+    X(atk20_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk20_EzStateId)) \\
+    X(atk21_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk21_EzStateId)) \\
+    X(atk22_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk22_EzStateId)) \\
+    X(atk23_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk23_EzStateId)) \\
+    X(atk24_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk24_EzStateId)) \\
+    X(atk25_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk25_EzStateId)) \\
+    X(atk26_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk26_EzStateId)) \\
+    X(atk27_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk27_EzStateId)) \\
+    X(atk28_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk28_EzStateId)) \\
+    X(atk29_EzStateId, offsetof(::er::paramdef::ai_anim_tbl_param, atk29_EzStateId)) \\
+    X(atk0_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk0_MinDist)) \\
+    X(atk1_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk1_MinDist)) \\
+    X(atk2_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk2_MinDist)) \\
+    X(atk3_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk3_MinDist)) \\
+    X(atk4_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk4_MinDist)) \\
+    X(atk5_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk5_MinDist)) \\
+    X(atk6_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk6_MinDist)) \\
+    X(atk7_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk7_MinDist)) \\
+    X(atk8_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk8_MinDist)) \\
+    X(atk9_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk9_MinDist)) \\
+    X(atk10_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk10_MinDist)) \\
+    X(atk11_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk11_MinDist)) \\
+    X(atk12_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk12_MinDist)) \\
+    X(atk13_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk13_MinDist)) \\
+    X(atk14_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk14_MinDist)) \\
+    X(atk15_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk15_MinDist)) \\
+    X(atk16_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk16_MinDist)) \\
+    X(atk17_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk17_MinDist)) \\
+    X(atk18_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk18_MinDist)) \\
+    X(atk19_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk19_MinDist)) \\
+    X(atk20_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk20_MinDist)) \\
+    X(atk21_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk21_MinDist)) \\
+    X(atk22_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk22_MinDist)) \\
+    X(atk23_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk23_MinDist)) \\
+    X(atk24_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk24_MinDist)) \\
+    X(atk25_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk25_MinDist)) \\
+    X(atk26_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk26_MinDist)) \\
+    X(atk27_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk27_MinDist)) \\
+    X(atk28_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk28_MinDist)) \\
+    X(atk29_MinDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk29_MinDist)) \\
+    X(atk0_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk0_MaxDist)) \\
+    X(atk1_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk1_MaxDist)) \\
+    X(atk2_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk2_MaxDist)) \\
+    X(atk3_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk3_MaxDist)) \\
+    X(atk4_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk4_MaxDist)) \\
+    X(atk5_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk5_MaxDist)) \\
+    X(atk6_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk6_MaxDist)) \\
+    X(atk7_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk7_MaxDist)) \\
+    X(atk8_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk8_MaxDist)) \\
+    X(atk9_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk9_MaxDist)) \\
+    X(atk10_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk10_MaxDist)) \\
+    X(atk11_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk11_MaxDist)) \\
+    X(atk12_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk12_MaxDist)) \\
+    X(atk13_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk13_MaxDist)) \\
+    X(atk14_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk14_MaxDist)) \\
+    X(atk15_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk15_MaxDist)) \\
+    X(atk16_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk16_MaxDist)) \\
+    X(atk17_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk17_MaxDist)) \\
+    X(atk18_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk18_MaxDist)) \\
+    X(atk19_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk19_MaxDist)) \\
+    X(atk20_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk20_MaxDist)) \\
+    X(atk21_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk21_MaxDist)) \\
+    X(atk22_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk22_MaxDist)) \\
+    X(atk23_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk23_MaxDist)) \\
+    X(atk24_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk24_MaxDist)) \\
+    X(atk25_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk25_MaxDist)) \\
+    X(atk26_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk26_MaxDist)) \\
+    X(atk27_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk27_MaxDist)) \\
+    X(atk28_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk28_MaxDist)) \\
+    X(atk29_MaxDist, offsetof(::er::paramdef::ai_anim_tbl_param, atk29_MaxDist)) \\
+    X(pad0, offsetof(::er::paramdef::ai_anim_tbl_param, pad0))
+
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk0_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk0_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk1_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk1_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk2_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk2_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk3_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk3_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk4_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk4_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk5_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk5_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk6_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk6_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk7_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk7_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk8_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk8_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk9_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk9_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk10_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk10_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk11_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk11_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk12_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk12_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk13_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk13_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk14_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk14_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk15_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk15_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk16_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk16_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk17_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk17_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk18_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk18_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk19_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk19_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk20_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk20_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk21_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk21_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk22_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk22_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk23_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk23_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk24_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk24_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk25_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk25_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk26_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk26_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk27_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk27_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk28_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk28_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk29_EzStateId offsetof(::er::paramdef::ai_anim_tbl_param, atk29_EzStateId)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk0_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk0_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk1_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk1_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk2_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk2_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk3_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk3_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk4_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk4_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk5_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk5_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk6_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk6_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk7_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk7_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk8_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk8_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk9_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk9_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk10_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk10_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk11_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk11_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk12_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk12_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk13_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk13_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk14_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk14_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk15_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk15_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk16_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk16_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk17_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk17_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk18_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk18_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk19_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk19_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk20_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk20_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk21_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk21_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk22_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk22_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk23_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk23_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk24_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk24_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk25_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk25_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk26_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk26_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk27_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk27_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk28_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk28_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk29_MinDist offsetof(::er::paramdef::ai_anim_tbl_param, atk29_MinDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk0_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk0_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk1_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk1_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk2_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk2_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk3_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk3_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk4_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk4_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk5_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk5_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk6_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk6_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk7_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk7_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk8_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk8_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk9_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk9_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk10_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk10_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk11_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk11_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk12_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk12_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk13_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk13_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk14_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk14_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk15_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk15_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk16_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk16_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk17_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk17_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk18_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk18_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk19_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk19_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk20_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk20_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk21_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk21_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk22_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk22_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk23_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk23_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk24_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk24_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk25_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk25_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk26_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk26_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk27_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk27_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk28_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk28_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_atk29_MaxDist offsetof(::er::paramdef::ai_anim_tbl_param, atk29_MaxDist)
+#define ERD_OFFSET_AI_ANIM_TBL_PARAM_pad0 offsetof(::er::paramdef::ai_anim_tbl_param, pad0)

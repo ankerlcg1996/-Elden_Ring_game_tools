@@ -1,0 +1,212 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/AI_ODDS_PARAM.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_AI_ODDS_PARAM_FIELDS(X) \\
+    X(act0, offsetof(::er::paramdef::ai_odds_param, act0)) \\
+    X(act1, offsetof(::er::paramdef::ai_odds_param, act1)) \\
+    X(act2, offsetof(::er::paramdef::ai_odds_param, act2)) \\
+    X(act3, offsetof(::er::paramdef::ai_odds_param, act3)) \\
+    X(act4, offsetof(::er::paramdef::ai_odds_param, act4)) \\
+    X(act5, offsetof(::er::paramdef::ai_odds_param, act5)) \\
+    X(act6, offsetof(::er::paramdef::ai_odds_param, act6)) \\
+    X(act7, offsetof(::er::paramdef::ai_odds_param, act7)) \\
+    X(act8, offsetof(::er::paramdef::ai_odds_param, act8)) \\
+    X(act9, offsetof(::er::paramdef::ai_odds_param, act9)) \\
+    X(act10, offsetof(::er::paramdef::ai_odds_param, act10)) \\
+    X(act11, offsetof(::er::paramdef::ai_odds_param, act11)) \\
+    X(act12, offsetof(::er::paramdef::ai_odds_param, act12)) \\
+    X(act13, offsetof(::er::paramdef::ai_odds_param, act13)) \\
+    X(act14, offsetof(::er::paramdef::ai_odds_param, act14)) \\
+    X(act15, offsetof(::er::paramdef::ai_odds_param, act15)) \\
+    X(act16, offsetof(::er::paramdef::ai_odds_param, act16)) \\
+    X(act17, offsetof(::er::paramdef::ai_odds_param, act17)) \\
+    X(act18, offsetof(::er::paramdef::ai_odds_param, act18)) \\
+    X(act19, offsetof(::er::paramdef::ai_odds_param, act19)) \\
+    X(act20, offsetof(::er::paramdef::ai_odds_param, act20)) \\
+    X(act21, offsetof(::er::paramdef::ai_odds_param, act21)) \\
+    X(act22, offsetof(::er::paramdef::ai_odds_param, act22)) \\
+    X(act23, offsetof(::er::paramdef::ai_odds_param, act23)) \\
+    X(act24, offsetof(::er::paramdef::ai_odds_param, act24)) \\
+    X(act25, offsetof(::er::paramdef::ai_odds_param, act25)) \\
+    X(act26, offsetof(::er::paramdef::ai_odds_param, act26)) \\
+    X(act27, offsetof(::er::paramdef::ai_odds_param, act27)) \\
+    X(act28, offsetof(::er::paramdef::ai_odds_param, act28)) \\
+    X(act29, offsetof(::er::paramdef::ai_odds_param, act29)) \\
+    X(act30, offsetof(::er::paramdef::ai_odds_param, act30)) \\
+    X(act31, offsetof(::er::paramdef::ai_odds_param, act31)) \\
+    X(act32, offsetof(::er::paramdef::ai_odds_param, act32)) \\
+    X(act33, offsetof(::er::paramdef::ai_odds_param, act33)) \\
+    X(act34, offsetof(::er::paramdef::ai_odds_param, act34)) \\
+    X(act35, offsetof(::er::paramdef::ai_odds_param, act35)) \\
+    X(act36, offsetof(::er::paramdef::ai_odds_param, act36)) \\
+    X(act37, offsetof(::er::paramdef::ai_odds_param, act37)) \\
+    X(act38, offsetof(::er::paramdef::ai_odds_param, act38)) \\
+    X(act39, offsetof(::er::paramdef::ai_odds_param, act39)) \\
+    X(act40, offsetof(::er::paramdef::ai_odds_param, act40)) \\
+    X(act41, offsetof(::er::paramdef::ai_odds_param, act41)) \\
+    X(act42, offsetof(::er::paramdef::ai_odds_param, act42)) \\
+    X(act43, offsetof(::er::paramdef::ai_odds_param, act43)) \\
+    X(act44, offsetof(::er::paramdef::ai_odds_param, act44)) \\
+    X(act45, offsetof(::er::paramdef::ai_odds_param, act45)) \\
+    X(act46, offsetof(::er::paramdef::ai_odds_param, act46)) \\
+    X(act47, offsetof(::er::paramdef::ai_odds_param, act47)) \\
+    X(act48, offsetof(::er::paramdef::ai_odds_param, act48)) \\
+    X(act49, offsetof(::er::paramdef::ai_odds_param, act49)) \\
+    X(act50, offsetof(::er::paramdef::ai_odds_param, act50)) \\
+    X(act51, offsetof(::er::paramdef::ai_odds_param, act51)) \\
+    X(act52, offsetof(::er::paramdef::ai_odds_param, act52)) \\
+    X(act53, offsetof(::er::paramdef::ai_odds_param, act53)) \\
+    X(act54, offsetof(::er::paramdef::ai_odds_param, act54)) \\
+    X(act55, offsetof(::er::paramdef::ai_odds_param, act55)) \\
+    X(act56, offsetof(::er::paramdef::ai_odds_param, act56)) \\
+    X(act57, offsetof(::er::paramdef::ai_odds_param, act57)) \\
+    X(act58, offsetof(::er::paramdef::ai_odds_param, act58)) \\
+    X(act59, offsetof(::er::paramdef::ai_odds_param, act59)) \\
+    X(act60, offsetof(::er::paramdef::ai_odds_param, act60)) \\
+    X(act61, offsetof(::er::paramdef::ai_odds_param, act61)) \\
+    X(act62, offsetof(::er::paramdef::ai_odds_param, act62)) \\
+    X(act63, offsetof(::er::paramdef::ai_odds_param, act63)) \\
+    X(act64, offsetof(::er::paramdef::ai_odds_param, act64)) \\
+    X(act65, offsetof(::er::paramdef::ai_odds_param, act65)) \\
+    X(act66, offsetof(::er::paramdef::ai_odds_param, act66)) \\
+    X(act67, offsetof(::er::paramdef::ai_odds_param, act67)) \\
+    X(act68, offsetof(::er::paramdef::ai_odds_param, act68)) \\
+    X(act69, offsetof(::er::paramdef::ai_odds_param, act69)) \\
+    X(act70, offsetof(::er::paramdef::ai_odds_param, act70)) \\
+    X(act71, offsetof(::er::paramdef::ai_odds_param, act71)) \\
+    X(act72, offsetof(::er::paramdef::ai_odds_param, act72)) \\
+    X(act73, offsetof(::er::paramdef::ai_odds_param, act73)) \\
+    X(act74, offsetof(::er::paramdef::ai_odds_param, act74)) \\
+    X(act75, offsetof(::er::paramdef::ai_odds_param, act75)) \\
+    X(act76, offsetof(::er::paramdef::ai_odds_param, act76)) \\
+    X(act77, offsetof(::er::paramdef::ai_odds_param, act77)) \\
+    X(act78, offsetof(::er::paramdef::ai_odds_param, act78)) \\
+    X(act79, offsetof(::er::paramdef::ai_odds_param, act79)) \\
+    X(act80, offsetof(::er::paramdef::ai_odds_param, act80)) \\
+    X(act81, offsetof(::er::paramdef::ai_odds_param, act81)) \\
+    X(act82, offsetof(::er::paramdef::ai_odds_param, act82)) \\
+    X(act83, offsetof(::er::paramdef::ai_odds_param, act83)) \\
+    X(act84, offsetof(::er::paramdef::ai_odds_param, act84)) \\
+    X(act85, offsetof(::er::paramdef::ai_odds_param, act85)) \\
+    X(act86, offsetof(::er::paramdef::ai_odds_param, act86)) \\
+    X(act87, offsetof(::er::paramdef::ai_odds_param, act87)) \\
+    X(act88, offsetof(::er::paramdef::ai_odds_param, act88)) \\
+    X(act89, offsetof(::er::paramdef::ai_odds_param, act89)) \\
+    X(act90, offsetof(::er::paramdef::ai_odds_param, act90)) \\
+    X(act91, offsetof(::er::paramdef::ai_odds_param, act91)) \\
+    X(act92, offsetof(::er::paramdef::ai_odds_param, act92)) \\
+    X(act93, offsetof(::er::paramdef::ai_odds_param, act93)) \\
+    X(act94, offsetof(::er::paramdef::ai_odds_param, act94)) \\
+    X(act95, offsetof(::er::paramdef::ai_odds_param, act95)) \\
+    X(act96, offsetof(::er::paramdef::ai_odds_param, act96)) \\
+    X(act97, offsetof(::er::paramdef::ai_odds_param, act97)) \\
+    X(act98, offsetof(::er::paramdef::ai_odds_param, act98)) \\
+    X(act99, offsetof(::er::paramdef::ai_odds_param, act99)) \\
+    X(pad0, offsetof(::er::paramdef::ai_odds_param, pad0))
+
+#define ERD_OFFSET_AI_ODDS_PARAM_act0 offsetof(::er::paramdef::ai_odds_param, act0)
+#define ERD_OFFSET_AI_ODDS_PARAM_act1 offsetof(::er::paramdef::ai_odds_param, act1)
+#define ERD_OFFSET_AI_ODDS_PARAM_act2 offsetof(::er::paramdef::ai_odds_param, act2)
+#define ERD_OFFSET_AI_ODDS_PARAM_act3 offsetof(::er::paramdef::ai_odds_param, act3)
+#define ERD_OFFSET_AI_ODDS_PARAM_act4 offsetof(::er::paramdef::ai_odds_param, act4)
+#define ERD_OFFSET_AI_ODDS_PARAM_act5 offsetof(::er::paramdef::ai_odds_param, act5)
+#define ERD_OFFSET_AI_ODDS_PARAM_act6 offsetof(::er::paramdef::ai_odds_param, act6)
+#define ERD_OFFSET_AI_ODDS_PARAM_act7 offsetof(::er::paramdef::ai_odds_param, act7)
+#define ERD_OFFSET_AI_ODDS_PARAM_act8 offsetof(::er::paramdef::ai_odds_param, act8)
+#define ERD_OFFSET_AI_ODDS_PARAM_act9 offsetof(::er::paramdef::ai_odds_param, act9)
+#define ERD_OFFSET_AI_ODDS_PARAM_act10 offsetof(::er::paramdef::ai_odds_param, act10)
+#define ERD_OFFSET_AI_ODDS_PARAM_act11 offsetof(::er::paramdef::ai_odds_param, act11)
+#define ERD_OFFSET_AI_ODDS_PARAM_act12 offsetof(::er::paramdef::ai_odds_param, act12)
+#define ERD_OFFSET_AI_ODDS_PARAM_act13 offsetof(::er::paramdef::ai_odds_param, act13)
+#define ERD_OFFSET_AI_ODDS_PARAM_act14 offsetof(::er::paramdef::ai_odds_param, act14)
+#define ERD_OFFSET_AI_ODDS_PARAM_act15 offsetof(::er::paramdef::ai_odds_param, act15)
+#define ERD_OFFSET_AI_ODDS_PARAM_act16 offsetof(::er::paramdef::ai_odds_param, act16)
+#define ERD_OFFSET_AI_ODDS_PARAM_act17 offsetof(::er::paramdef::ai_odds_param, act17)
+#define ERD_OFFSET_AI_ODDS_PARAM_act18 offsetof(::er::paramdef::ai_odds_param, act18)
+#define ERD_OFFSET_AI_ODDS_PARAM_act19 offsetof(::er::paramdef::ai_odds_param, act19)
+#define ERD_OFFSET_AI_ODDS_PARAM_act20 offsetof(::er::paramdef::ai_odds_param, act20)
+#define ERD_OFFSET_AI_ODDS_PARAM_act21 offsetof(::er::paramdef::ai_odds_param, act21)
+#define ERD_OFFSET_AI_ODDS_PARAM_act22 offsetof(::er::paramdef::ai_odds_param, act22)
+#define ERD_OFFSET_AI_ODDS_PARAM_act23 offsetof(::er::paramdef::ai_odds_param, act23)
+#define ERD_OFFSET_AI_ODDS_PARAM_act24 offsetof(::er::paramdef::ai_odds_param, act24)
+#define ERD_OFFSET_AI_ODDS_PARAM_act25 offsetof(::er::paramdef::ai_odds_param, act25)
+#define ERD_OFFSET_AI_ODDS_PARAM_act26 offsetof(::er::paramdef::ai_odds_param, act26)
+#define ERD_OFFSET_AI_ODDS_PARAM_act27 offsetof(::er::paramdef::ai_odds_param, act27)
+#define ERD_OFFSET_AI_ODDS_PARAM_act28 offsetof(::er::paramdef::ai_odds_param, act28)
+#define ERD_OFFSET_AI_ODDS_PARAM_act29 offsetof(::er::paramdef::ai_odds_param, act29)
+#define ERD_OFFSET_AI_ODDS_PARAM_act30 offsetof(::er::paramdef::ai_odds_param, act30)
+#define ERD_OFFSET_AI_ODDS_PARAM_act31 offsetof(::er::paramdef::ai_odds_param, act31)
+#define ERD_OFFSET_AI_ODDS_PARAM_act32 offsetof(::er::paramdef::ai_odds_param, act32)
+#define ERD_OFFSET_AI_ODDS_PARAM_act33 offsetof(::er::paramdef::ai_odds_param, act33)
+#define ERD_OFFSET_AI_ODDS_PARAM_act34 offsetof(::er::paramdef::ai_odds_param, act34)
+#define ERD_OFFSET_AI_ODDS_PARAM_act35 offsetof(::er::paramdef::ai_odds_param, act35)
+#define ERD_OFFSET_AI_ODDS_PARAM_act36 offsetof(::er::paramdef::ai_odds_param, act36)
+#define ERD_OFFSET_AI_ODDS_PARAM_act37 offsetof(::er::paramdef::ai_odds_param, act37)
+#define ERD_OFFSET_AI_ODDS_PARAM_act38 offsetof(::er::paramdef::ai_odds_param, act38)
+#define ERD_OFFSET_AI_ODDS_PARAM_act39 offsetof(::er::paramdef::ai_odds_param, act39)
+#define ERD_OFFSET_AI_ODDS_PARAM_act40 offsetof(::er::paramdef::ai_odds_param, act40)
+#define ERD_OFFSET_AI_ODDS_PARAM_act41 offsetof(::er::paramdef::ai_odds_param, act41)
+#define ERD_OFFSET_AI_ODDS_PARAM_act42 offsetof(::er::paramdef::ai_odds_param, act42)
+#define ERD_OFFSET_AI_ODDS_PARAM_act43 offsetof(::er::paramdef::ai_odds_param, act43)
+#define ERD_OFFSET_AI_ODDS_PARAM_act44 offsetof(::er::paramdef::ai_odds_param, act44)
+#define ERD_OFFSET_AI_ODDS_PARAM_act45 offsetof(::er::paramdef::ai_odds_param, act45)
+#define ERD_OFFSET_AI_ODDS_PARAM_act46 offsetof(::er::paramdef::ai_odds_param, act46)
+#define ERD_OFFSET_AI_ODDS_PARAM_act47 offsetof(::er::paramdef::ai_odds_param, act47)
+#define ERD_OFFSET_AI_ODDS_PARAM_act48 offsetof(::er::paramdef::ai_odds_param, act48)
+#define ERD_OFFSET_AI_ODDS_PARAM_act49 offsetof(::er::paramdef::ai_odds_param, act49)
+#define ERD_OFFSET_AI_ODDS_PARAM_act50 offsetof(::er::paramdef::ai_odds_param, act50)
+#define ERD_OFFSET_AI_ODDS_PARAM_act51 offsetof(::er::paramdef::ai_odds_param, act51)
+#define ERD_OFFSET_AI_ODDS_PARAM_act52 offsetof(::er::paramdef::ai_odds_param, act52)
+#define ERD_OFFSET_AI_ODDS_PARAM_act53 offsetof(::er::paramdef::ai_odds_param, act53)
+#define ERD_OFFSET_AI_ODDS_PARAM_act54 offsetof(::er::paramdef::ai_odds_param, act54)
+#define ERD_OFFSET_AI_ODDS_PARAM_act55 offsetof(::er::paramdef::ai_odds_param, act55)
+#define ERD_OFFSET_AI_ODDS_PARAM_act56 offsetof(::er::paramdef::ai_odds_param, act56)
+#define ERD_OFFSET_AI_ODDS_PARAM_act57 offsetof(::er::paramdef::ai_odds_param, act57)
+#define ERD_OFFSET_AI_ODDS_PARAM_act58 offsetof(::er::paramdef::ai_odds_param, act58)
+#define ERD_OFFSET_AI_ODDS_PARAM_act59 offsetof(::er::paramdef::ai_odds_param, act59)
+#define ERD_OFFSET_AI_ODDS_PARAM_act60 offsetof(::er::paramdef::ai_odds_param, act60)
+#define ERD_OFFSET_AI_ODDS_PARAM_act61 offsetof(::er::paramdef::ai_odds_param, act61)
+#define ERD_OFFSET_AI_ODDS_PARAM_act62 offsetof(::er::paramdef::ai_odds_param, act62)
+#define ERD_OFFSET_AI_ODDS_PARAM_act63 offsetof(::er::paramdef::ai_odds_param, act63)
+#define ERD_OFFSET_AI_ODDS_PARAM_act64 offsetof(::er::paramdef::ai_odds_param, act64)
+#define ERD_OFFSET_AI_ODDS_PARAM_act65 offsetof(::er::paramdef::ai_odds_param, act65)
+#define ERD_OFFSET_AI_ODDS_PARAM_act66 offsetof(::er::paramdef::ai_odds_param, act66)
+#define ERD_OFFSET_AI_ODDS_PARAM_act67 offsetof(::er::paramdef::ai_odds_param, act67)
+#define ERD_OFFSET_AI_ODDS_PARAM_act68 offsetof(::er::paramdef::ai_odds_param, act68)
+#define ERD_OFFSET_AI_ODDS_PARAM_act69 offsetof(::er::paramdef::ai_odds_param, act69)
+#define ERD_OFFSET_AI_ODDS_PARAM_act70 offsetof(::er::paramdef::ai_odds_param, act70)
+#define ERD_OFFSET_AI_ODDS_PARAM_act71 offsetof(::er::paramdef::ai_odds_param, act71)
+#define ERD_OFFSET_AI_ODDS_PARAM_act72 offsetof(::er::paramdef::ai_odds_param, act72)
+#define ERD_OFFSET_AI_ODDS_PARAM_act73 offsetof(::er::paramdef::ai_odds_param, act73)
+#define ERD_OFFSET_AI_ODDS_PARAM_act74 offsetof(::er::paramdef::ai_odds_param, act74)
+#define ERD_OFFSET_AI_ODDS_PARAM_act75 offsetof(::er::paramdef::ai_odds_param, act75)
+#define ERD_OFFSET_AI_ODDS_PARAM_act76 offsetof(::er::paramdef::ai_odds_param, act76)
+#define ERD_OFFSET_AI_ODDS_PARAM_act77 offsetof(::er::paramdef::ai_odds_param, act77)
+#define ERD_OFFSET_AI_ODDS_PARAM_act78 offsetof(::er::paramdef::ai_odds_param, act78)
+#define ERD_OFFSET_AI_ODDS_PARAM_act79 offsetof(::er::paramdef::ai_odds_param, act79)
+#define ERD_OFFSET_AI_ODDS_PARAM_act80 offsetof(::er::paramdef::ai_odds_param, act80)
+#define ERD_OFFSET_AI_ODDS_PARAM_act81 offsetof(::er::paramdef::ai_odds_param, act81)
+#define ERD_OFFSET_AI_ODDS_PARAM_act82 offsetof(::er::paramdef::ai_odds_param, act82)
+#define ERD_OFFSET_AI_ODDS_PARAM_act83 offsetof(::er::paramdef::ai_odds_param, act83)
+#define ERD_OFFSET_AI_ODDS_PARAM_act84 offsetof(::er::paramdef::ai_odds_param, act84)
+#define ERD_OFFSET_AI_ODDS_PARAM_act85 offsetof(::er::paramdef::ai_odds_param, act85)
+#define ERD_OFFSET_AI_ODDS_PARAM_act86 offsetof(::er::paramdef::ai_odds_param, act86)
+#define ERD_OFFSET_AI_ODDS_PARAM_act87 offsetof(::er::paramdef::ai_odds_param, act87)
+#define ERD_OFFSET_AI_ODDS_PARAM_act88 offsetof(::er::paramdef::ai_odds_param, act88)
+#define ERD_OFFSET_AI_ODDS_PARAM_act89 offsetof(::er::paramdef::ai_odds_param, act89)
+#define ERD_OFFSET_AI_ODDS_PARAM_act90 offsetof(::er::paramdef::ai_odds_param, act90)
+#define ERD_OFFSET_AI_ODDS_PARAM_act91 offsetof(::er::paramdef::ai_odds_param, act91)
+#define ERD_OFFSET_AI_ODDS_PARAM_act92 offsetof(::er::paramdef::ai_odds_param, act92)
+#define ERD_OFFSET_AI_ODDS_PARAM_act93 offsetof(::er::paramdef::ai_odds_param, act93)
+#define ERD_OFFSET_AI_ODDS_PARAM_act94 offsetof(::er::paramdef::ai_odds_param, act94)
+#define ERD_OFFSET_AI_ODDS_PARAM_act95 offsetof(::er::paramdef::ai_odds_param, act95)
+#define ERD_OFFSET_AI_ODDS_PARAM_act96 offsetof(::er::paramdef::ai_odds_param, act96)
+#define ERD_OFFSET_AI_ODDS_PARAM_act97 offsetof(::er::paramdef::ai_odds_param, act97)
+#define ERD_OFFSET_AI_ODDS_PARAM_act98 offsetof(::er::paramdef::ai_odds_param, act98)
+#define ERD_OFFSET_AI_ODDS_PARAM_act99 offsetof(::er::paramdef::ai_odds_param, act99)
+#define ERD_OFFSET_AI_ODDS_PARAM_pad0 offsetof(::er::paramdef::ai_odds_param, pad0)

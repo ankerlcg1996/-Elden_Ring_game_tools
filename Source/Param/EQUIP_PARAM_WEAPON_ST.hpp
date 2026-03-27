@@ -1,0 +1,452 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/EQUIP_PARAM_WEAPON_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_EQUIP_PARAM_WEAPON_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::equip_param_weapon_st, disableParamReserve2)) \\
+    X(behaviorVariationId, offsetof(::er::paramdef::equip_param_weapon_st, behaviorVariationId)) \\
+    X(sortId, offsetof(::er::paramdef::equip_param_weapon_st, sortId)) \\
+    X(wanderingEquipId, offsetof(::er::paramdef::equip_param_weapon_st, wanderingEquipId)) \\
+    X(weight, offsetof(::er::paramdef::equip_param_weapon_st, weight)) \\
+    X(weaponWeightRate, offsetof(::er::paramdef::equip_param_weapon_st, weaponWeightRate)) \\
+    X(fixPrice, offsetof(::er::paramdef::equip_param_weapon_st, fixPrice)) \\
+    X(reinforcePrice, offsetof(::er::paramdef::equip_param_weapon_st, reinforcePrice)) \\
+    X(sellValue, offsetof(::er::paramdef::equip_param_weapon_st, sellValue)) \\
+    X(correctStrength, offsetof(::er::paramdef::equip_param_weapon_st, correctStrength)) \\
+    X(correctAgility, offsetof(::er::paramdef::equip_param_weapon_st, correctAgility)) \\
+    X(correctMagic, offsetof(::er::paramdef::equip_param_weapon_st, correctMagic)) \\
+    X(correctFaith, offsetof(::er::paramdef::equip_param_weapon_st, correctFaith)) \\
+    X(physGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, physGuardCutRate)) \\
+    X(magGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, magGuardCutRate)) \\
+    X(fireGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, fireGuardCutRate)) \\
+    X(thunGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, thunGuardCutRate)) \\
+    X(spEffectBehaviorId0, offsetof(::er::paramdef::equip_param_weapon_st, spEffectBehaviorId0)) \\
+    X(spEffectBehaviorId1, offsetof(::er::paramdef::equip_param_weapon_st, spEffectBehaviorId1)) \\
+    X(spEffectBehaviorId2, offsetof(::er::paramdef::equip_param_weapon_st, spEffectBehaviorId2)) \\
+    X(residentSpEffectId, offsetof(::er::paramdef::equip_param_weapon_st, residentSpEffectId)) \\
+    X(residentSpEffectId1, offsetof(::er::paramdef::equip_param_weapon_st, residentSpEffectId1)) \\
+    X(residentSpEffectId2, offsetof(::er::paramdef::equip_param_weapon_st, residentSpEffectId2)) \\
+    X(materialSetId, offsetof(::er::paramdef::equip_param_weapon_st, materialSetId)) \\
+    X(originEquipWep, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep)) \\
+    X(originEquipWep1, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep1)) \\
+    X(originEquipWep2, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep2)) \\
+    X(originEquipWep3, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep3)) \\
+    X(originEquipWep4, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep4)) \\
+    X(originEquipWep5, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep5)) \\
+    X(originEquipWep6, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep6)) \\
+    X(originEquipWep7, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep7)) \\
+    X(originEquipWep8, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep8)) \\
+    X(originEquipWep9, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep9)) \\
+    X(originEquipWep10, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep10)) \\
+    X(originEquipWep11, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep11)) \\
+    X(originEquipWep12, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep12)) \\
+    X(originEquipWep13, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep13)) \\
+    X(originEquipWep14, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep14)) \\
+    X(originEquipWep15, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep15)) \\
+    X(weakA_DamageRate, offsetof(::er::paramdef::equip_param_weapon_st, weakA_DamageRate)) \\
+    X(weakB_DamageRate, offsetof(::er::paramdef::equip_param_weapon_st, weakB_DamageRate)) \\
+    X(weakC_DamageRate, offsetof(::er::paramdef::equip_param_weapon_st, weakC_DamageRate)) \\
+    X(weakD_DamageRate, offsetof(::er::paramdef::equip_param_weapon_st, weakD_DamageRate)) \\
+    X(sleepGuardResist_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, sleepGuardResist_MaxCorrect)) \\
+    X(madnessGuardResist_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, madnessGuardResist_MaxCorrect)) \\
+    X(saWeaponDamage, offsetof(::er::paramdef::equip_param_weapon_st, saWeaponDamage)) \\
+    X(equipModelId, offsetof(::er::paramdef::equip_param_weapon_st, equipModelId)) \\
+    X(iconId, offsetof(::er::paramdef::equip_param_weapon_st, iconId)) \\
+    X(durability, offsetof(::er::paramdef::equip_param_weapon_st, durability)) \\
+    X(durabilityMax, offsetof(::er::paramdef::equip_param_weapon_st, durabilityMax)) \\
+    X(attackThrowEscape, offsetof(::er::paramdef::equip_param_weapon_st, attackThrowEscape)) \\
+    X(parryDamageLife, offsetof(::er::paramdef::equip_param_weapon_st, parryDamageLife)) \\
+    X(attackBasePhysics, offsetof(::er::paramdef::equip_param_weapon_st, attackBasePhysics)) \\
+    X(attackBaseMagic, offsetof(::er::paramdef::equip_param_weapon_st, attackBaseMagic)) \\
+    X(attackBaseFire, offsetof(::er::paramdef::equip_param_weapon_st, attackBaseFire)) \\
+    X(attackBaseThunder, offsetof(::er::paramdef::equip_param_weapon_st, attackBaseThunder)) \\
+    X(attackBaseStamina, offsetof(::er::paramdef::equip_param_weapon_st, attackBaseStamina)) \\
+    X(guardAngle, offsetof(::er::paramdef::equip_param_weapon_st, guardAngle)) \\
+    X(saDurability, offsetof(::er::paramdef::equip_param_weapon_st, saDurability)) \\
+    X(staminaGuardDef, offsetof(::er::paramdef::equip_param_weapon_st, staminaGuardDef)) \\
+    X(reinforceTypeId, offsetof(::er::paramdef::equip_param_weapon_st, reinforceTypeId)) \\
+    X(trophySGradeId, offsetof(::er::paramdef::equip_param_weapon_st, trophySGradeId)) \\
+    X(trophySeqId, offsetof(::er::paramdef::equip_param_weapon_st, trophySeqId)) \\
+    X(throwAtkRate, offsetof(::er::paramdef::equip_param_weapon_st, throwAtkRate)) \\
+    X(bowDistRate, offsetof(::er::paramdef::equip_param_weapon_st, bowDistRate)) \\
+    X(equipModelCategory, offsetof(::er::paramdef::equip_param_weapon_st, equipModelCategory)) \\
+    X(equipModelGender, offsetof(::er::paramdef::equip_param_weapon_st, equipModelGender)) \\
+    X(weaponCategory, offsetof(::er::paramdef::equip_param_weapon_st, weaponCategory)) \\
+    X(wepmotionCategory, offsetof(::er::paramdef::equip_param_weapon_st, wepmotionCategory)) \\
+    X(guardmotionCategory, offsetof(::er::paramdef::equip_param_weapon_st, guardmotionCategory)) \\
+    X(atkMaterial, offsetof(::er::paramdef::equip_param_weapon_st, atkMaterial)) \\
+    X(defSeMaterial1, offsetof(::er::paramdef::equip_param_weapon_st, defSeMaterial1)) \\
+    X(correctType_Physics, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Physics)) \\
+    X(spAttribute, offsetof(::er::paramdef::equip_param_weapon_st, spAttribute)) \\
+    X(spAtkcategory, offsetof(::er::paramdef::equip_param_weapon_st, spAtkcategory)) \\
+    X(wepmotionOneHandId, offsetof(::er::paramdef::equip_param_weapon_st, wepmotionOneHandId)) \\
+    X(wepmotionBothHandId, offsetof(::er::paramdef::equip_param_weapon_st, wepmotionBothHandId)) \\
+    X(properStrength, offsetof(::er::paramdef::equip_param_weapon_st, properStrength)) \\
+    X(properAgility, offsetof(::er::paramdef::equip_param_weapon_st, properAgility)) \\
+    X(properMagic, offsetof(::er::paramdef::equip_param_weapon_st, properMagic)) \\
+    X(properFaith, offsetof(::er::paramdef::equip_param_weapon_st, properFaith)) \\
+    X(overStrength, offsetof(::er::paramdef::equip_param_weapon_st, overStrength)) \\
+    X(attackBaseParry, offsetof(::er::paramdef::equip_param_weapon_st, attackBaseParry)) \\
+    X(defenseBaseParry, offsetof(::er::paramdef::equip_param_weapon_st, defenseBaseParry)) \\
+    X(guardBaseRepel, offsetof(::er::paramdef::equip_param_weapon_st, guardBaseRepel)) \\
+    X(attackBaseRepel, offsetof(::er::paramdef::equip_param_weapon_st, attackBaseRepel)) \\
+    X(guardCutCancelRate, offsetof(::er::paramdef::equip_param_weapon_st, guardCutCancelRate)) \\
+    X(guardLevel, offsetof(::er::paramdef::equip_param_weapon_st, guardLevel)) \\
+    X(slashGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, slashGuardCutRate)) \\
+    X(blowGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, blowGuardCutRate)) \\
+    X(thrustGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, thrustGuardCutRate)) \\
+    X(poisonGuardResist, offsetof(::er::paramdef::equip_param_weapon_st, poisonGuardResist)) \\
+    X(diseaseGuardResist, offsetof(::er::paramdef::equip_param_weapon_st, diseaseGuardResist)) \\
+    X(bloodGuardResist, offsetof(::er::paramdef::equip_param_weapon_st, bloodGuardResist)) \\
+    X(curseGuardResist, offsetof(::er::paramdef::equip_param_weapon_st, curseGuardResist)) \\
+    X(atkAttribute, offsetof(::er::paramdef::equip_param_weapon_st, atkAttribute)) \\
+    X(defSfxMaterial1, offsetof(::er::paramdef::equip_param_weapon_st, defSfxMaterial1)) \\
+    X(wepCollidableType0, offsetof(::er::paramdef::equip_param_weapon_st, wepCollidableType0)) \\
+    X(wepCollidableType1, offsetof(::er::paramdef::equip_param_weapon_st, wepCollidableType1)) \\
+    X(postureControlId_Right, offsetof(::er::paramdef::equip_param_weapon_st, postureControlId_Right)) \\
+    X(postureControlId_Left, offsetof(::er::paramdef::equip_param_weapon_st, postureControlId_Left)) \\
+    X(traceSfxId0, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId0)) \\
+    X(traceDmyIdHead0, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead0)) \\
+    X(traceDmyIdTail0, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail0)) \\
+    X(traceSfxId1, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId1)) \\
+    X(traceDmyIdHead1, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead1)) \\
+    X(traceDmyIdTail1, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail1)) \\
+    X(traceSfxId2, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId2)) \\
+    X(traceDmyIdHead2, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead2)) \\
+    X(traceDmyIdTail2, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail2)) \\
+    X(traceSfxId3, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId3)) \\
+    X(traceDmyIdHead3, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead3)) \\
+    X(traceDmyIdTail3, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail3)) \\
+    X(traceSfxId4, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId4)) \\
+    X(traceDmyIdHead4, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead4)) \\
+    X(traceDmyIdTail4, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail4)) \\
+    X(traceSfxId5, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId5)) \\
+    X(traceDmyIdHead5, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead5)) \\
+    X(traceDmyIdTail5, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail5)) \\
+    X(traceSfxId6, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId6)) \\
+    X(traceDmyIdHead6, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead6)) \\
+    X(traceDmyIdTail6, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail6)) \\
+    X(traceSfxId7, offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId7)) \\
+    X(traceDmyIdHead7, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead7)) \\
+    X(traceDmyIdTail7, offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail7)) \\
+    X(defSfxMaterial2, offsetof(::er::paramdef::equip_param_weapon_st, defSfxMaterial2)) \\
+    X(defSeMaterial2, offsetof(::er::paramdef::equip_param_weapon_st, defSeMaterial2)) \\
+    X(absorpParamId, offsetof(::er::paramdef::equip_param_weapon_st, absorpParamId)) \\
+    X(toughnessCorrectRate, offsetof(::er::paramdef::equip_param_weapon_st, toughnessCorrectRate)) \\
+    X(correctType_Magic, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Magic)) \\
+    X(correctType_Fire, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Fire)) \\
+    X(correctType_Thunder, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Thunder)) \\
+    X(weakE_DamageRate, offsetof(::er::paramdef::equip_param_weapon_st, weakE_DamageRate)) \\
+    X(weakF_DamageRate, offsetof(::er::paramdef::equip_param_weapon_st, weakF_DamageRate)) \\
+    X(darkGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, darkGuardCutRate)) \\
+    X(attackBaseDark, offsetof(::er::paramdef::equip_param_weapon_st, attackBaseDark)) \\
+    X(correctType_Dark, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Dark)) \\
+    X(correctType_Poison, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Poison)) \\
+    X(sortGroupId, offsetof(::er::paramdef::equip_param_weapon_st, sortGroupId)) \\
+    X(atkAttribute2, offsetof(::er::paramdef::equip_param_weapon_st, atkAttribute2)) \\
+    X(sleepGuardResist, offsetof(::er::paramdef::equip_param_weapon_st, sleepGuardResist)) \\
+    X(madnessGuardResist, offsetof(::er::paramdef::equip_param_weapon_st, madnessGuardResist)) \\
+    X(correctType_Blood, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Blood)) \\
+    X(properLuck, offsetof(::er::paramdef::equip_param_weapon_st, properLuck)) \\
+    X(freezeGuardResist, offsetof(::er::paramdef::equip_param_weapon_st, freezeGuardResist)) \\
+    X(autoReplenishType, offsetof(::er::paramdef::equip_param_weapon_st, autoReplenishType)) \\
+    X(swordArtsParamId, offsetof(::er::paramdef::equip_param_weapon_st, swordArtsParamId)) \\
+    X(correctLuck, offsetof(::er::paramdef::equip_param_weapon_st, correctLuck)) \\
+    X(arrowBoltEquipId, offsetof(::er::paramdef::equip_param_weapon_st, arrowBoltEquipId)) \\
+    X(DerivationLevelType, offsetof(::er::paramdef::equip_param_weapon_st, DerivationLevelType)) \\
+    X(enchantSfxSize, offsetof(::er::paramdef::equip_param_weapon_st, enchantSfxSize)) \\
+    X(wepType, offsetof(::er::paramdef::equip_param_weapon_st, wepType)) \\
+    X(physGuardCutRate_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, physGuardCutRate_MaxCorrect)) \\
+    X(magGuardCutRate_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, magGuardCutRate_MaxCorrect)) \\
+    X(fireGuardCutRate_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, fireGuardCutRate_MaxCorrect)) \\
+    X(thunGuardCutRate_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, thunGuardCutRate_MaxCorrect)) \\
+    X(darkGuardCutRate_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, darkGuardCutRate_MaxCorrect)) \\
+    X(poisonGuardResist_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, poisonGuardResist_MaxCorrect)) \\
+    X(diseaseGuardResist_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, diseaseGuardResist_MaxCorrect)) \\
+    X(bloodGuardResist_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, bloodGuardResist_MaxCorrect)) \\
+    X(curseGuardResist_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, curseGuardResist_MaxCorrect)) \\
+    X(freezeGuardResist_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, freezeGuardResist_MaxCorrect)) \\
+    X(staminaGuardDef_MaxCorrect, offsetof(::er::paramdef::equip_param_weapon_st, staminaGuardDef_MaxCorrect)) \\
+    X(residentSfxId_1, offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_1)) \\
+    X(residentSfxId_2, offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_2)) \\
+    X(residentSfxId_3, offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_3)) \\
+    X(residentSfxId_4, offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_4)) \\
+    X(residentSfx_DmyId_1, offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_1)) \\
+    X(residentSfx_DmyId_2, offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_2)) \\
+    X(residentSfx_DmyId_3, offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_3)) \\
+    X(residentSfx_DmyId_4, offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_4)) \\
+    X(staminaConsumptionRate, offsetof(::er::paramdef::equip_param_weapon_st, staminaConsumptionRate)) \\
+    X(vsPlayerDmgCorrectRate_Physics, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Physics)) \\
+    X(vsPlayerDmgCorrectRate_Magic, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Magic)) \\
+    X(vsPlayerDmgCorrectRate_Fire, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Fire)) \\
+    X(vsPlayerDmgCorrectRate_Thunder, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Thunder)) \\
+    X(vsPlayerDmgCorrectRate_Dark, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Dark)) \\
+    X(vsPlayerDmgCorrectRate_Poison, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Poison)) \\
+    X(vsPlayerDmgCorrectRate_Blood, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Blood)) \\
+    X(vsPlayerDmgCorrectRate_Freeze, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Freeze)) \\
+    X(attainmentWepStatusStr, offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusStr)) \\
+    X(attainmentWepStatusDex, offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusDex)) \\
+    X(attainmentWepStatusMag, offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusMag)) \\
+    X(attainmentWepStatusFai, offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusFai)) \\
+    X(attainmentWepStatusLuc, offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusLuc)) \\
+    X(attackElementCorrectId, offsetof(::er::paramdef::equip_param_weapon_st, attackElementCorrectId)) \\
+    X(saleValue, offsetof(::er::paramdef::equip_param_weapon_st, saleValue)) \\
+    X(reinforceShopCategory, offsetof(::er::paramdef::equip_param_weapon_st, reinforceShopCategory)) \\
+    X(maxArrowQuantity, offsetof(::er::paramdef::equip_param_weapon_st, maxArrowQuantity)) \\
+    X(wepSeIdOffset, offsetof(::er::paramdef::equip_param_weapon_st, wepSeIdOffset)) \\
+    X(baseChangePrice, offsetof(::er::paramdef::equip_param_weapon_st, baseChangePrice)) \\
+    X(levelSyncCorrectId, offsetof(::er::paramdef::equip_param_weapon_st, levelSyncCorrectId)) \\
+    X(correctType_Sleep, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Sleep)) \\
+    X(correctType_Madness, offsetof(::er::paramdef::equip_param_weapon_st, correctType_Madness)) \\
+    X(rarity, offsetof(::er::paramdef::equip_param_weapon_st, rarity)) \\
+    X(gemMountType, offsetof(::er::paramdef::equip_param_weapon_st, gemMountType)) \\
+    X(wepRegainHp, offsetof(::er::paramdef::equip_param_weapon_st, wepRegainHp)) \\
+    X(spEffectMsgId0, offsetof(::er::paramdef::equip_param_weapon_st, spEffectMsgId0)) \\
+    X(spEffectMsgId1, offsetof(::er::paramdef::equip_param_weapon_st, spEffectMsgId1)) \\
+    X(spEffectMsgId2, offsetof(::er::paramdef::equip_param_weapon_st, spEffectMsgId2)) \\
+    X(originEquipWep16, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep16)) \\
+    X(originEquipWep17, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep17)) \\
+    X(originEquipWep18, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep18)) \\
+    X(originEquipWep19, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep19)) \\
+    X(originEquipWep20, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep20)) \\
+    X(originEquipWep21, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep21)) \\
+    X(originEquipWep22, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep22)) \\
+    X(originEquipWep23, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep23)) \\
+    X(originEquipWep24, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep24)) \\
+    X(originEquipWep25, offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep25)) \\
+    X(vsPlayerDmgCorrectRate_Sleep, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Sleep)) \\
+    X(vsPlayerDmgCorrectRate_Madness, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Madness)) \\
+    X(saGuardCutRate, offsetof(::er::paramdef::equip_param_weapon_st, saGuardCutRate)) \\
+    X(defMaterialVariationValue, offsetof(::er::paramdef::equip_param_weapon_st, defMaterialVariationValue)) \\
+    X(spAttributeVariationValue, offsetof(::er::paramdef::equip_param_weapon_st, spAttributeVariationValue)) \\
+    X(stealthAtkRate, offsetof(::er::paramdef::equip_param_weapon_st, stealthAtkRate)) \\
+    X(vsPlayerDmgCorrectRate_Disease, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Disease)) \\
+    X(vsPlayerDmgCorrectRate_Curse, offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Curse)) \\
+    X(restrictSpecialSwordArt, offsetof(::er::paramdef::equip_param_weapon_st, restrictSpecialSwordArt)) \\
+    X(pad, offsetof(::er::paramdef::equip_param_weapon_st, pad))
+
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_disableParamReserve2 offsetof(::er::paramdef::equip_param_weapon_st, disableParamReserve2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_behaviorVariationId offsetof(::er::paramdef::equip_param_weapon_st, behaviorVariationId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_sortId offsetof(::er::paramdef::equip_param_weapon_st, sortId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wanderingEquipId offsetof(::er::paramdef::equip_param_weapon_st, wanderingEquipId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weight offsetof(::er::paramdef::equip_param_weapon_st, weight)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weaponWeightRate offsetof(::er::paramdef::equip_param_weapon_st, weaponWeightRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_fixPrice offsetof(::er::paramdef::equip_param_weapon_st, fixPrice)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_reinforcePrice offsetof(::er::paramdef::equip_param_weapon_st, reinforcePrice)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_sellValue offsetof(::er::paramdef::equip_param_weapon_st, sellValue)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctStrength offsetof(::er::paramdef::equip_param_weapon_st, correctStrength)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctAgility offsetof(::er::paramdef::equip_param_weapon_st, correctAgility)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctMagic offsetof(::er::paramdef::equip_param_weapon_st, correctMagic)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctFaith offsetof(::er::paramdef::equip_param_weapon_st, correctFaith)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_physGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, physGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_magGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, magGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_fireGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, fireGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_thunGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, thunGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spEffectBehaviorId0 offsetof(::er::paramdef::equip_param_weapon_st, spEffectBehaviorId0)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spEffectBehaviorId1 offsetof(::er::paramdef::equip_param_weapon_st, spEffectBehaviorId1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spEffectBehaviorId2 offsetof(::er::paramdef::equip_param_weapon_st, spEffectBehaviorId2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSpEffectId offsetof(::er::paramdef::equip_param_weapon_st, residentSpEffectId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSpEffectId1 offsetof(::er::paramdef::equip_param_weapon_st, residentSpEffectId1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSpEffectId2 offsetof(::er::paramdef::equip_param_weapon_st, residentSpEffectId2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_materialSetId offsetof(::er::paramdef::equip_param_weapon_st, materialSetId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep1 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep2 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep3 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep3)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep4 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep4)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep5 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep5)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep6 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep6)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep7 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep7)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep8 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep8)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep9 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep9)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep10 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep10)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep11 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep11)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep12 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep12)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep13 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep13)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep14 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep14)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep15 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep15)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weakA_DamageRate offsetof(::er::paramdef::equip_param_weapon_st, weakA_DamageRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weakB_DamageRate offsetof(::er::paramdef::equip_param_weapon_st, weakB_DamageRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weakC_DamageRate offsetof(::er::paramdef::equip_param_weapon_st, weakC_DamageRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weakD_DamageRate offsetof(::er::paramdef::equip_param_weapon_st, weakD_DamageRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_sleepGuardResist_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, sleepGuardResist_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_madnessGuardResist_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, madnessGuardResist_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_saWeaponDamage offsetof(::er::paramdef::equip_param_weapon_st, saWeaponDamage)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_equipModelId offsetof(::er::paramdef::equip_param_weapon_st, equipModelId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_iconId offsetof(::er::paramdef::equip_param_weapon_st, iconId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_durability offsetof(::er::paramdef::equip_param_weapon_st, durability)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_durabilityMax offsetof(::er::paramdef::equip_param_weapon_st, durabilityMax)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackThrowEscape offsetof(::er::paramdef::equip_param_weapon_st, attackThrowEscape)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_parryDamageLife offsetof(::er::paramdef::equip_param_weapon_st, parryDamageLife)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBasePhysics offsetof(::er::paramdef::equip_param_weapon_st, attackBasePhysics)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBaseMagic offsetof(::er::paramdef::equip_param_weapon_st, attackBaseMagic)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBaseFire offsetof(::er::paramdef::equip_param_weapon_st, attackBaseFire)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBaseThunder offsetof(::er::paramdef::equip_param_weapon_st, attackBaseThunder)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBaseStamina offsetof(::er::paramdef::equip_param_weapon_st, attackBaseStamina)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_guardAngle offsetof(::er::paramdef::equip_param_weapon_st, guardAngle)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_saDurability offsetof(::er::paramdef::equip_param_weapon_st, saDurability)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_staminaGuardDef offsetof(::er::paramdef::equip_param_weapon_st, staminaGuardDef)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_reinforceTypeId offsetof(::er::paramdef::equip_param_weapon_st, reinforceTypeId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_trophySGradeId offsetof(::er::paramdef::equip_param_weapon_st, trophySGradeId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_trophySeqId offsetof(::er::paramdef::equip_param_weapon_st, trophySeqId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_throwAtkRate offsetof(::er::paramdef::equip_param_weapon_st, throwAtkRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_bowDistRate offsetof(::er::paramdef::equip_param_weapon_st, bowDistRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_equipModelCategory offsetof(::er::paramdef::equip_param_weapon_st, equipModelCategory)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_equipModelGender offsetof(::er::paramdef::equip_param_weapon_st, equipModelGender)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weaponCategory offsetof(::er::paramdef::equip_param_weapon_st, weaponCategory)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepmotionCategory offsetof(::er::paramdef::equip_param_weapon_st, wepmotionCategory)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_guardmotionCategory offsetof(::er::paramdef::equip_param_weapon_st, guardmotionCategory)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_atkMaterial offsetof(::er::paramdef::equip_param_weapon_st, atkMaterial)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_defSeMaterial1 offsetof(::er::paramdef::equip_param_weapon_st, defSeMaterial1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Physics offsetof(::er::paramdef::equip_param_weapon_st, correctType_Physics)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spAttribute offsetof(::er::paramdef::equip_param_weapon_st, spAttribute)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spAtkcategory offsetof(::er::paramdef::equip_param_weapon_st, spAtkcategory)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepmotionOneHandId offsetof(::er::paramdef::equip_param_weapon_st, wepmotionOneHandId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepmotionBothHandId offsetof(::er::paramdef::equip_param_weapon_st, wepmotionBothHandId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_properStrength offsetof(::er::paramdef::equip_param_weapon_st, properStrength)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_properAgility offsetof(::er::paramdef::equip_param_weapon_st, properAgility)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_properMagic offsetof(::er::paramdef::equip_param_weapon_st, properMagic)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_properFaith offsetof(::er::paramdef::equip_param_weapon_st, properFaith)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_overStrength offsetof(::er::paramdef::equip_param_weapon_st, overStrength)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBaseParry offsetof(::er::paramdef::equip_param_weapon_st, attackBaseParry)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_defenseBaseParry offsetof(::er::paramdef::equip_param_weapon_st, defenseBaseParry)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_guardBaseRepel offsetof(::er::paramdef::equip_param_weapon_st, guardBaseRepel)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBaseRepel offsetof(::er::paramdef::equip_param_weapon_st, attackBaseRepel)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_guardCutCancelRate offsetof(::er::paramdef::equip_param_weapon_st, guardCutCancelRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_guardLevel offsetof(::er::paramdef::equip_param_weapon_st, guardLevel)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_slashGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, slashGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_blowGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, blowGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_thrustGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, thrustGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_poisonGuardResist offsetof(::er::paramdef::equip_param_weapon_st, poisonGuardResist)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_diseaseGuardResist offsetof(::er::paramdef::equip_param_weapon_st, diseaseGuardResist)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_bloodGuardResist offsetof(::er::paramdef::equip_param_weapon_st, bloodGuardResist)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_curseGuardResist offsetof(::er::paramdef::equip_param_weapon_st, curseGuardResist)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_atkAttribute offsetof(::er::paramdef::equip_param_weapon_st, atkAttribute)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_defSfxMaterial1 offsetof(::er::paramdef::equip_param_weapon_st, defSfxMaterial1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepCollidableType0 offsetof(::er::paramdef::equip_param_weapon_st, wepCollidableType0)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepCollidableType1 offsetof(::er::paramdef::equip_param_weapon_st, wepCollidableType1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_postureControlId_Right offsetof(::er::paramdef::equip_param_weapon_st, postureControlId_Right)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_postureControlId_Left offsetof(::er::paramdef::equip_param_weapon_st, postureControlId_Left)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId0 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId0)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead0 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead0)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail0 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail0)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId1 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead1 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail1 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId2 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead2 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail2 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId3 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId3)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead3 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead3)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail3 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail3)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId4 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId4)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead4 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead4)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail4 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail4)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId5 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId5)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead5 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead5)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail5 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail5)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId6 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId6)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead6 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead6)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail6 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail6)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceSfxId7 offsetof(::er::paramdef::equip_param_weapon_st, traceSfxId7)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdHead7 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdHead7)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_traceDmyIdTail7 offsetof(::er::paramdef::equip_param_weapon_st, traceDmyIdTail7)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_defSfxMaterial2 offsetof(::er::paramdef::equip_param_weapon_st, defSfxMaterial2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_defSeMaterial2 offsetof(::er::paramdef::equip_param_weapon_st, defSeMaterial2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_absorpParamId offsetof(::er::paramdef::equip_param_weapon_st, absorpParamId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_toughnessCorrectRate offsetof(::er::paramdef::equip_param_weapon_st, toughnessCorrectRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Magic offsetof(::er::paramdef::equip_param_weapon_st, correctType_Magic)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Fire offsetof(::er::paramdef::equip_param_weapon_st, correctType_Fire)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Thunder offsetof(::er::paramdef::equip_param_weapon_st, correctType_Thunder)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weakE_DamageRate offsetof(::er::paramdef::equip_param_weapon_st, weakE_DamageRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_weakF_DamageRate offsetof(::er::paramdef::equip_param_weapon_st, weakF_DamageRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_darkGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, darkGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackBaseDark offsetof(::er::paramdef::equip_param_weapon_st, attackBaseDark)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Dark offsetof(::er::paramdef::equip_param_weapon_st, correctType_Dark)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Poison offsetof(::er::paramdef::equip_param_weapon_st, correctType_Poison)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_sortGroupId offsetof(::er::paramdef::equip_param_weapon_st, sortGroupId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_atkAttribute2 offsetof(::er::paramdef::equip_param_weapon_st, atkAttribute2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_sleepGuardResist offsetof(::er::paramdef::equip_param_weapon_st, sleepGuardResist)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_madnessGuardResist offsetof(::er::paramdef::equip_param_weapon_st, madnessGuardResist)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Blood offsetof(::er::paramdef::equip_param_weapon_st, correctType_Blood)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_properLuck offsetof(::er::paramdef::equip_param_weapon_st, properLuck)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_freezeGuardResist offsetof(::er::paramdef::equip_param_weapon_st, freezeGuardResist)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_autoReplenishType offsetof(::er::paramdef::equip_param_weapon_st, autoReplenishType)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_swordArtsParamId offsetof(::er::paramdef::equip_param_weapon_st, swordArtsParamId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctLuck offsetof(::er::paramdef::equip_param_weapon_st, correctLuck)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_arrowBoltEquipId offsetof(::er::paramdef::equip_param_weapon_st, arrowBoltEquipId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_DerivationLevelType offsetof(::er::paramdef::equip_param_weapon_st, DerivationLevelType)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_enchantSfxSize offsetof(::er::paramdef::equip_param_weapon_st, enchantSfxSize)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepType offsetof(::er::paramdef::equip_param_weapon_st, wepType)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_physGuardCutRate_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, physGuardCutRate_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_magGuardCutRate_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, magGuardCutRate_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_fireGuardCutRate_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, fireGuardCutRate_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_thunGuardCutRate_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, thunGuardCutRate_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_darkGuardCutRate_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, darkGuardCutRate_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_poisonGuardResist_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, poisonGuardResist_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_diseaseGuardResist_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, diseaseGuardResist_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_bloodGuardResist_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, bloodGuardResist_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_curseGuardResist_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, curseGuardResist_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_freezeGuardResist_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, freezeGuardResist_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_staminaGuardDef_MaxCorrect offsetof(::er::paramdef::equip_param_weapon_st, staminaGuardDef_MaxCorrect)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfxId_1 offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfxId_2 offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfxId_3 offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_3)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfxId_4 offsetof(::er::paramdef::equip_param_weapon_st, residentSfxId_4)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfx_DmyId_1 offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfx_DmyId_2 offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfx_DmyId_3 offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_3)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_residentSfx_DmyId_4 offsetof(::er::paramdef::equip_param_weapon_st, residentSfx_DmyId_4)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_staminaConsumptionRate offsetof(::er::paramdef::equip_param_weapon_st, staminaConsumptionRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Physics offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Physics)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Magic offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Magic)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Fire offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Fire)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Thunder offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Thunder)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Dark offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Dark)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Poison offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Poison)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Blood offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Blood)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Freeze offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Freeze)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attainmentWepStatusStr offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusStr)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attainmentWepStatusDex offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusDex)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attainmentWepStatusMag offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusMag)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attainmentWepStatusFai offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusFai)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attainmentWepStatusLuc offsetof(::er::paramdef::equip_param_weapon_st, attainmentWepStatusLuc)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attackElementCorrectId offsetof(::er::paramdef::equip_param_weapon_st, attackElementCorrectId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_saleValue offsetof(::er::paramdef::equip_param_weapon_st, saleValue)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_reinforceShopCategory offsetof(::er::paramdef::equip_param_weapon_st, reinforceShopCategory)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_maxArrowQuantity offsetof(::er::paramdef::equip_param_weapon_st, maxArrowQuantity)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepSeIdOffset offsetof(::er::paramdef::equip_param_weapon_st, wepSeIdOffset)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_baseChangePrice offsetof(::er::paramdef::equip_param_weapon_st, baseChangePrice)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_levelSyncCorrectId offsetof(::er::paramdef::equip_param_weapon_st, levelSyncCorrectId)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Sleep offsetof(::er::paramdef::equip_param_weapon_st, correctType_Sleep)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_correctType_Madness offsetof(::er::paramdef::equip_param_weapon_st, correctType_Madness)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_rarity offsetof(::er::paramdef::equip_param_weapon_st, rarity)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_gemMountType offsetof(::er::paramdef::equip_param_weapon_st, gemMountType)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_wepRegainHp offsetof(::er::paramdef::equip_param_weapon_st, wepRegainHp)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spEffectMsgId0 offsetof(::er::paramdef::equip_param_weapon_st, spEffectMsgId0)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spEffectMsgId1 offsetof(::er::paramdef::equip_param_weapon_st, spEffectMsgId1)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spEffectMsgId2 offsetof(::er::paramdef::equip_param_weapon_st, spEffectMsgId2)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep16 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep16)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep17 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep17)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep18 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep18)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep19 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep19)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep20 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep20)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep21 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep21)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep22 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep22)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep23 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep23)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep24 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep24)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_originEquipWep25 offsetof(::er::paramdef::equip_param_weapon_st, originEquipWep25)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Sleep offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Sleep)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Madness offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Madness)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_saGuardCutRate offsetof(::er::paramdef::equip_param_weapon_st, saGuardCutRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_defMaterialVariationValue offsetof(::er::paramdef::equip_param_weapon_st, defMaterialVariationValue)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_spAttributeVariationValue offsetof(::er::paramdef::equip_param_weapon_st, spAttributeVariationValue)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_stealthAtkRate offsetof(::er::paramdef::equip_param_weapon_st, stealthAtkRate)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Disease offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Disease)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_vsPlayerDmgCorrectRate_Curse offsetof(::er::paramdef::equip_param_weapon_st, vsPlayerDmgCorrectRate_Curse)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_restrictSpecialSwordArt offsetof(::er::paramdef::equip_param_weapon_st, restrictSpecialSwordArt)
+#define ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_pad offsetof(::er::paramdef::equip_param_weapon_st, pad)

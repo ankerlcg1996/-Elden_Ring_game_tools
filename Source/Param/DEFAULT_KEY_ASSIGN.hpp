@@ -1,0 +1,124 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/DEFAULT_KEY_ASSIGN.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_DEFAULT_KEY_ASSIGN_FIELDS(X) \\
+    X(dummy, offsetof(::er::paramdef::default_key_assign, dummy)) \\
+    X(phyisicalKey_0, offsetof(::er::paramdef::default_key_assign, phyisicalKey_0)) \\
+    X(traitsType_0, offsetof(::er::paramdef::default_key_assign, traitsType_0)) \\
+    X(a2dOperator_0, offsetof(::er::paramdef::default_key_assign, a2dOperator_0)) \\
+    X(applyTarget_0, offsetof(::er::paramdef::default_key_assign, applyTarget_0)) \\
+    X(time1_0, offsetof(::er::paramdef::default_key_assign, time1_0)) \\
+    X(time2_0, offsetof(::er::paramdef::default_key_assign, time2_0)) \\
+    X(a2dThreshold_0, offsetof(::er::paramdef::default_key_assign, a2dThreshold_0)) \\
+    X(phyisicalKey_1, offsetof(::er::paramdef::default_key_assign, phyisicalKey_1)) \\
+    X(traitsType_1, offsetof(::er::paramdef::default_key_assign, traitsType_1)) \\
+    X(a2dOperator_1, offsetof(::er::paramdef::default_key_assign, a2dOperator_1)) \\
+    X(applyTarget_1, offsetof(::er::paramdef::default_key_assign, applyTarget_1)) \\
+    X(time1_1, offsetof(::er::paramdef::default_key_assign, time1_1)) \\
+    X(time2_1, offsetof(::er::paramdef::default_key_assign, time2_1)) \\
+    X(a2dThreshold_1, offsetof(::er::paramdef::default_key_assign, a2dThreshold_1)) \\
+    X(phyisicalKey_2, offsetof(::er::paramdef::default_key_assign, phyisicalKey_2)) \\
+    X(traitsType_2, offsetof(::er::paramdef::default_key_assign, traitsType_2)) \\
+    X(a2dOperator_2, offsetof(::er::paramdef::default_key_assign, a2dOperator_2)) \\
+    X(applyTarget_2, offsetof(::er::paramdef::default_key_assign, applyTarget_2)) \\
+    X(time1_2, offsetof(::er::paramdef::default_key_assign, time1_2)) \\
+    X(time2_2, offsetof(::er::paramdef::default_key_assign, time2_2)) \\
+    X(a2dThreshold_2, offsetof(::er::paramdef::default_key_assign, a2dThreshold_2)) \\
+    X(phyisicalKey_3, offsetof(::er::paramdef::default_key_assign, phyisicalKey_3)) \\
+    X(traitsType_3, offsetof(::er::paramdef::default_key_assign, traitsType_3)) \\
+    X(a2dOperator_3, offsetof(::er::paramdef::default_key_assign, a2dOperator_3)) \\
+    X(applyTarget_3, offsetof(::er::paramdef::default_key_assign, applyTarget_3)) \\
+    X(time1_3, offsetof(::er::paramdef::default_key_assign, time1_3)) \\
+    X(time2_3, offsetof(::er::paramdef::default_key_assign, time2_3)) \\
+    X(a2dThreshold_3, offsetof(::er::paramdef::default_key_assign, a2dThreshold_3)) \\
+    X(phyisicalKey_4, offsetof(::er::paramdef::default_key_assign, phyisicalKey_4)) \\
+    X(traitsType_4, offsetof(::er::paramdef::default_key_assign, traitsType_4)) \\
+    X(a2dOperator_4, offsetof(::er::paramdef::default_key_assign, a2dOperator_4)) \\
+    X(applyTarget_4, offsetof(::er::paramdef::default_key_assign, applyTarget_4)) \\
+    X(time1_4, offsetof(::er::paramdef::default_key_assign, time1_4)) \\
+    X(time2_4, offsetof(::er::paramdef::default_key_assign, time2_4)) \\
+    X(a2dThreshold_4, offsetof(::er::paramdef::default_key_assign, a2dThreshold_4)) \\
+    X(phyisicalKey_5, offsetof(::er::paramdef::default_key_assign, phyisicalKey_5)) \\
+    X(traitsType_5, offsetof(::er::paramdef::default_key_assign, traitsType_5)) \\
+    X(a2dOperator_5, offsetof(::er::paramdef::default_key_assign, a2dOperator_5)) \\
+    X(applyTarget_5, offsetof(::er::paramdef::default_key_assign, applyTarget_5)) \\
+    X(time1_5, offsetof(::er::paramdef::default_key_assign, time1_5)) \\
+    X(time2_5, offsetof(::er::paramdef::default_key_assign, time2_5)) \\
+    X(a2dThreshold_5, offsetof(::er::paramdef::default_key_assign, a2dThreshold_5)) \\
+    X(phyisicalKey_6, offsetof(::er::paramdef::default_key_assign, phyisicalKey_6)) \\
+    X(traitsType_6, offsetof(::er::paramdef::default_key_assign, traitsType_6)) \\
+    X(a2dOperator_6, offsetof(::er::paramdef::default_key_assign, a2dOperator_6)) \\
+    X(applyTarget_6, offsetof(::er::paramdef::default_key_assign, applyTarget_6)) \\
+    X(time1_6, offsetof(::er::paramdef::default_key_assign, time1_6)) \\
+    X(time2_6, offsetof(::er::paramdef::default_key_assign, time2_6)) \\
+    X(a2dThreshold_6, offsetof(::er::paramdef::default_key_assign, a2dThreshold_6)) \\
+    X(phyisicalKey_7, offsetof(::er::paramdef::default_key_assign, phyisicalKey_7)) \\
+    X(traitsType_7, offsetof(::er::paramdef::default_key_assign, traitsType_7)) \\
+    X(a2dOperator_7, offsetof(::er::paramdef::default_key_assign, a2dOperator_7)) \\
+    X(applyTarget_7, offsetof(::er::paramdef::default_key_assign, applyTarget_7)) \\
+    X(time1_7, offsetof(::er::paramdef::default_key_assign, time1_7)) \\
+    X(time2_7, offsetof(::er::paramdef::default_key_assign, time2_7)) \\
+    X(a2dThreshold_7, offsetof(::er::paramdef::default_key_assign, a2dThreshold_7))
+
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_dummy offsetof(::er::paramdef::default_key_assign, dummy)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_0 offsetof(::er::paramdef::default_key_assign, phyisicalKey_0)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_0 offsetof(::er::paramdef::default_key_assign, traitsType_0)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_0 offsetof(::er::paramdef::default_key_assign, a2dOperator_0)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_0 offsetof(::er::paramdef::default_key_assign, applyTarget_0)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_0 offsetof(::er::paramdef::default_key_assign, time1_0)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_0 offsetof(::er::paramdef::default_key_assign, time2_0)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_0 offsetof(::er::paramdef::default_key_assign, a2dThreshold_0)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_1 offsetof(::er::paramdef::default_key_assign, phyisicalKey_1)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_1 offsetof(::er::paramdef::default_key_assign, traitsType_1)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_1 offsetof(::er::paramdef::default_key_assign, a2dOperator_1)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_1 offsetof(::er::paramdef::default_key_assign, applyTarget_1)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_1 offsetof(::er::paramdef::default_key_assign, time1_1)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_1 offsetof(::er::paramdef::default_key_assign, time2_1)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_1 offsetof(::er::paramdef::default_key_assign, a2dThreshold_1)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_2 offsetof(::er::paramdef::default_key_assign, phyisicalKey_2)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_2 offsetof(::er::paramdef::default_key_assign, traitsType_2)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_2 offsetof(::er::paramdef::default_key_assign, a2dOperator_2)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_2 offsetof(::er::paramdef::default_key_assign, applyTarget_2)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_2 offsetof(::er::paramdef::default_key_assign, time1_2)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_2 offsetof(::er::paramdef::default_key_assign, time2_2)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_2 offsetof(::er::paramdef::default_key_assign, a2dThreshold_2)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_3 offsetof(::er::paramdef::default_key_assign, phyisicalKey_3)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_3 offsetof(::er::paramdef::default_key_assign, traitsType_3)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_3 offsetof(::er::paramdef::default_key_assign, a2dOperator_3)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_3 offsetof(::er::paramdef::default_key_assign, applyTarget_3)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_3 offsetof(::er::paramdef::default_key_assign, time1_3)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_3 offsetof(::er::paramdef::default_key_assign, time2_3)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_3 offsetof(::er::paramdef::default_key_assign, a2dThreshold_3)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_4 offsetof(::er::paramdef::default_key_assign, phyisicalKey_4)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_4 offsetof(::er::paramdef::default_key_assign, traitsType_4)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_4 offsetof(::er::paramdef::default_key_assign, a2dOperator_4)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_4 offsetof(::er::paramdef::default_key_assign, applyTarget_4)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_4 offsetof(::er::paramdef::default_key_assign, time1_4)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_4 offsetof(::er::paramdef::default_key_assign, time2_4)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_4 offsetof(::er::paramdef::default_key_assign, a2dThreshold_4)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_5 offsetof(::er::paramdef::default_key_assign, phyisicalKey_5)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_5 offsetof(::er::paramdef::default_key_assign, traitsType_5)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_5 offsetof(::er::paramdef::default_key_assign, a2dOperator_5)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_5 offsetof(::er::paramdef::default_key_assign, applyTarget_5)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_5 offsetof(::er::paramdef::default_key_assign, time1_5)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_5 offsetof(::er::paramdef::default_key_assign, time2_5)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_5 offsetof(::er::paramdef::default_key_assign, a2dThreshold_5)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_6 offsetof(::er::paramdef::default_key_assign, phyisicalKey_6)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_6 offsetof(::er::paramdef::default_key_assign, traitsType_6)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_6 offsetof(::er::paramdef::default_key_assign, a2dOperator_6)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_6 offsetof(::er::paramdef::default_key_assign, applyTarget_6)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_6 offsetof(::er::paramdef::default_key_assign, time1_6)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_6 offsetof(::er::paramdef::default_key_assign, time2_6)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_6 offsetof(::er::paramdef::default_key_assign, a2dThreshold_6)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_phyisicalKey_7 offsetof(::er::paramdef::default_key_assign, phyisicalKey_7)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_traitsType_7 offsetof(::er::paramdef::default_key_assign, traitsType_7)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dOperator_7 offsetof(::er::paramdef::default_key_assign, a2dOperator_7)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_applyTarget_7 offsetof(::er::paramdef::default_key_assign, applyTarget_7)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time1_7 offsetof(::er::paramdef::default_key_assign, time1_7)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_time2_7 offsetof(::er::paramdef::default_key_assign, time2_7)
+#define ERD_OFFSET_DEFAULT_KEY_ASSIGN_a2dThreshold_7 offsetof(::er::paramdef::default_key_assign, a2dThreshold_7)

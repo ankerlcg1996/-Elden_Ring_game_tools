@@ -1,0 +1,136 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/POSTURE_CONTROL_PARAM_WEP_RIGHT_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_FIELDS(X) \\
+    X(a000_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_rightArmFB)) \\
+    X(a000_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_rightWristFB)) \\
+    X(a000_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_rightWristIO)) \\
+    X(a000_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_leftArmFB)) \\
+    X(a000_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_leftWristFB)) \\
+    X(a000_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_leftWristIO)) \\
+    X(a002_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_rightArmFB)) \\
+    X(a002_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_rightWristFB)) \\
+    X(a002_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_rightWristIO)) \\
+    X(a002_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_leftArmFB)) \\
+    X(a002_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_leftWristFB)) \\
+    X(a002_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_leftWristIO)) \\
+    X(a003_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_rightArmFB)) \\
+    X(a003_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_rightWristFB)) \\
+    X(a003_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_rightWristIO)) \\
+    X(a003_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_leftArmFB)) \\
+    X(a003_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_leftWristFB)) \\
+    X(a003_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_leftWristIO)) \\
+    X(a010_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_rightArmFB)) \\
+    X(a010_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_rightWristFB)) \\
+    X(a010_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_rightWristIO)) \\
+    X(a010_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_leftArmFB)) \\
+    X(a010_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_leftWristFB)) \\
+    X(a010_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_leftWristIO)) \\
+    X(a012_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_rightArmFB)) \\
+    X(a012_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_rightWristFB)) \\
+    X(a012_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_rightWristIO)) \\
+    X(a012_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_leftArmFB)) \\
+    X(a012_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_leftWristFB)) \\
+    X(a012_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_leftWristIO)) \\
+    X(a013_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_rightArmFB)) \\
+    X(a013_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_rightWristFB)) \\
+    X(a013_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_rightWristIO)) \\
+    X(a013_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_leftArmFB)) \\
+    X(a013_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_leftWristFB)) \\
+    X(a013_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_leftWristIO)) \\
+    X(a014_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_rightArmFB)) \\
+    X(a014_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_rightWristFB)) \\
+    X(a014_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_rightWristIO)) \\
+    X(a014_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_leftArmFB)) \\
+    X(a014_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_leftWristFB)) \\
+    X(a014_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_leftWristIO)) \\
+    X(a015_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_rightArmFB)) \\
+    X(a015_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_rightWristFB)) \\
+    X(a015_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_rightWristIO)) \\
+    X(a015_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_leftArmFB)) \\
+    X(a015_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_leftWristFB)) \\
+    X(a015_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_leftWristIO)) \\
+    X(a016_rightArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_rightArmFB)) \\
+    X(a016_rightWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_rightWristFB)) \\
+    X(a016_rightWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_rightWristIO)) \\
+    X(a016_leftArmFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_leftArmFB)) \\
+    X(a016_leftWristFB, offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_leftWristFB)) \\
+    X(a016_leftWristIO, offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_leftWristIO)) \\
+    X(unknown_0x6c, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x6c)) \\
+    X(unknown_0x70, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x70)) \\
+    X(unknown_0x74, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x74)) \\
+    X(unknown_0x78, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x78)) \\
+    X(unknown_0x7c, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x7c)) \\
+    X(unknown_0x80, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x80)) \\
+    X(unknown_0x84, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x84)) \\
+    X(unknown_0x88, offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x88)) \\
+    X(endPad, offsetof(::er::paramdef::posture_control_param_wep_right_st, endPad))
+
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a000_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a000_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a000_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a000_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a000_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a000_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a000_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a002_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a002_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a002_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a002_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a002_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a002_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a002_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a003_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a003_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a003_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a003_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a003_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a003_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a003_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a010_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a010_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a010_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a010_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a010_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a010_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a010_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a012_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a012_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a012_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a012_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a012_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a012_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a012_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a013_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a013_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a013_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a013_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a013_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a013_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a013_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a014_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a014_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a014_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a014_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a014_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a014_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a014_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a015_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a015_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a015_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a015_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a015_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a015_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a015_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a016_rightArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_rightArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a016_rightWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_rightWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a016_rightWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_rightWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a016_leftArmFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_leftArmFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a016_leftWristFB offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_leftWristFB)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_a016_leftWristIO offsetof(::er::paramdef::posture_control_param_wep_right_st, a016_leftWristIO)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x6c offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x6c)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x70 offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x70)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x74 offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x74)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x78 offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x78)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x7c offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x7c)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x80 offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x80)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x84 offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x84)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_unknown_0x88 offsetof(::er::paramdef::posture_control_param_wep_right_st, unknown_0x88)
+#define ERD_OFFSET_POSTURE_CONTROL_PARAM_WEP_RIGHT_ST_endPad offsetof(::er::paramdef::posture_control_param_wep_right_st, endPad)

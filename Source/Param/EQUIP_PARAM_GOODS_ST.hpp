@@ -1,0 +1,158 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/EQUIP_PARAM_GOODS_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_EQUIP_PARAM_GOODS_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::equip_param_goods_st, disableParamReserve2)) \\
+    X(refId_default, offsetof(::er::paramdef::equip_param_goods_st, refId_default)) \\
+    X(sfxVariationId, offsetof(::er::paramdef::equip_param_goods_st, sfxVariationId)) \\
+    X(weight, offsetof(::er::paramdef::equip_param_goods_st, weight)) \\
+    X(basicPrice, offsetof(::er::paramdef::equip_param_goods_st, basicPrice)) \\
+    X(sellValue, offsetof(::er::paramdef::equip_param_goods_st, sellValue)) \\
+    X(behaviorId, offsetof(::er::paramdef::equip_param_goods_st, behaviorId)) \\
+    X(replaceItemId, offsetof(::er::paramdef::equip_param_goods_st, replaceItemId)) \\
+    X(sortId, offsetof(::er::paramdef::equip_param_goods_st, sortId)) \\
+    X(appearanceReplaceItemId, offsetof(::er::paramdef::equip_param_goods_st, appearanceReplaceItemId)) \\
+    X(yesNoDialogMessageId, offsetof(::er::paramdef::equip_param_goods_st, yesNoDialogMessageId)) \\
+    X(useEnableSpEffectType, offsetof(::er::paramdef::equip_param_goods_st, useEnableSpEffectType)) \\
+    X(potGroupId, offsetof(::er::paramdef::equip_param_goods_st, potGroupId)) \\
+    X(pad, offsetof(::er::paramdef::equip_param_goods_st, pad)) \\
+    X(iconId, offsetof(::er::paramdef::equip_param_goods_st, iconId)) \\
+    X(modelId, offsetof(::er::paramdef::equip_param_goods_st, modelId)) \\
+    X(shopLv, offsetof(::er::paramdef::equip_param_goods_st, shopLv)) \\
+    X(compTrophySedId, offsetof(::er::paramdef::equip_param_goods_st, compTrophySedId)) \\
+    X(trophySeqId, offsetof(::er::paramdef::equip_param_goods_st, trophySeqId)) \\
+    X(maxNum, offsetof(::er::paramdef::equip_param_goods_st, maxNum)) \\
+    X(consumeHeroPoint, offsetof(::er::paramdef::equip_param_goods_st, consumeHeroPoint)) \\
+    X(overDexterity, offsetof(::er::paramdef::equip_param_goods_st, overDexterity)) \\
+    X(goodsType, offsetof(::er::paramdef::equip_param_goods_st, goodsType)) \\
+    X(refCategory, offsetof(::er::paramdef::equip_param_goods_st, refCategory)) \\
+    X(spEffectCategory, offsetof(::er::paramdef::equip_param_goods_st, spEffectCategory)) \\
+    X(unknown_0x40, offsetof(::er::paramdef::equip_param_goods_st, unknown_0x40)) \\
+    X(goodsUseAnim, offsetof(::er::paramdef::equip_param_goods_st, goodsUseAnim)) \\
+    X(opmeMenuType, offsetof(::er::paramdef::equip_param_goods_st, opmeMenuType)) \\
+    X(useLimitCategory, offsetof(::er::paramdef::equip_param_goods_st, useLimitCategory)) \\
+    X(replaceCategory, offsetof(::er::paramdef::equip_param_goods_st, replaceCategory)) \\
+    X(reserve4, offsetof(::er::paramdef::equip_param_goods_st, reserve4)) \\
+    X(syncNumVaryId, offsetof(::er::paramdef::equip_param_goods_st, syncNumVaryId)) \\
+    X(refId_1, offsetof(::er::paramdef::equip_param_goods_st, refId_1)) \\
+    X(refVirtualWepId, offsetof(::er::paramdef::equip_param_goods_st, refVirtualWepId)) \\
+    X(vagrantItemLotId, offsetof(::er::paramdef::equip_param_goods_st, vagrantItemLotId)) \\
+    X(vagrantBonusEneDropItemLotId, offsetof(::er::paramdef::equip_param_goods_st, vagrantBonusEneDropItemLotId)) \\
+    X(vagrantItemEneDropItemLotId, offsetof(::er::paramdef::equip_param_goods_st, vagrantItemEneDropItemLotId)) \\
+    X(castSfxId, offsetof(::er::paramdef::equip_param_goods_st, castSfxId)) \\
+    X(fireSfxId, offsetof(::er::paramdef::equip_param_goods_st, fireSfxId)) \\
+    X(effectSfxId, offsetof(::er::paramdef::equip_param_goods_st, effectSfxId)) \\
+    X(suppleType, offsetof(::er::paramdef::equip_param_goods_st, suppleType)) \\
+    X(autoReplenishType, offsetof(::er::paramdef::equip_param_goods_st, autoReplenishType)) \\
+    X(maxRepositoryNum, offsetof(::er::paramdef::equip_param_goods_st, maxRepositoryNum)) \\
+    X(sortGroupId, offsetof(::er::paramdef::equip_param_goods_st, sortGroupId)) \\
+    X(saleValue, offsetof(::er::paramdef::equip_param_goods_st, saleValue)) \\
+    X(rarity, offsetof(::er::paramdef::equip_param_goods_st, rarity)) \\
+    X(useLimitSummonBuddy, offsetof(::er::paramdef::equip_param_goods_st, useLimitSummonBuddy)) \\
+    X(useLimitSpEffectType, offsetof(::er::paramdef::equip_param_goods_st, useLimitSpEffectType)) \\
+    X(aiUseJudgeId, offsetof(::er::paramdef::equip_param_goods_st, aiUseJudgeId)) \\
+    X(consumeMP, offsetof(::er::paramdef::equip_param_goods_st, consumeMP)) \\
+    X(consumeHP, offsetof(::er::paramdef::equip_param_goods_st, consumeHP)) \\
+    X(reinforceGoodsId, offsetof(::er::paramdef::equip_param_goods_st, reinforceGoodsId)) \\
+    X(reinforceMaterialId, offsetof(::er::paramdef::equip_param_goods_st, reinforceMaterialId)) \\
+    X(reinforcePrice, offsetof(::er::paramdef::equip_param_goods_st, reinforcePrice)) \\
+    X(useLevel_vowType0, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType0)) \\
+    X(useLevel_vowType1, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType1)) \\
+    X(useLevel_vowType2, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType2)) \\
+    X(useLevel_vowType3, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType3)) \\
+    X(useLevel_vowType4, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType4)) \\
+    X(useLevel_vowType5, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType5)) \\
+    X(useLevel_vowType6, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType6)) \\
+    X(useLevel_vowType7, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType7)) \\
+    X(useLevel_vowType8, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType8)) \\
+    X(useLevel_vowType9, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType9)) \\
+    X(useLevel_vowType10, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType10)) \\
+    X(useLevel_vowType11, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType11)) \\
+    X(useLevel_vowType12, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType12)) \\
+    X(useLevel_vowType13, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType13)) \\
+    X(useLevel_vowType14, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType14)) \\
+    X(useLevel_vowType15, offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType15)) \\
+    X(useLevel, offsetof(::er::paramdef::equip_param_goods_st, useLevel)) \\
+    X(reserve5, offsetof(::er::paramdef::equip_param_goods_st, reserve5)) \\
+    X(itemGetTutorialFlagId, offsetof(::er::paramdef::equip_param_goods_st, itemGetTutorialFlagId)) \\
+    X(reserve3, offsetof(::er::paramdef::equip_param_goods_st, reserve3))
+
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_disableParamReserve2 offsetof(::er::paramdef::equip_param_goods_st, disableParamReserve2)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_refId_default offsetof(::er::paramdef::equip_param_goods_st, refId_default)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_sfxVariationId offsetof(::er::paramdef::equip_param_goods_st, sfxVariationId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_weight offsetof(::er::paramdef::equip_param_goods_st, weight)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_basicPrice offsetof(::er::paramdef::equip_param_goods_st, basicPrice)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_sellValue offsetof(::er::paramdef::equip_param_goods_st, sellValue)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_behaviorId offsetof(::er::paramdef::equip_param_goods_st, behaviorId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_replaceItemId offsetof(::er::paramdef::equip_param_goods_st, replaceItemId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_sortId offsetof(::er::paramdef::equip_param_goods_st, sortId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_appearanceReplaceItemId offsetof(::er::paramdef::equip_param_goods_st, appearanceReplaceItemId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_yesNoDialogMessageId offsetof(::er::paramdef::equip_param_goods_st, yesNoDialogMessageId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useEnableSpEffectType offsetof(::er::paramdef::equip_param_goods_st, useEnableSpEffectType)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_potGroupId offsetof(::er::paramdef::equip_param_goods_st, potGroupId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_pad offsetof(::er::paramdef::equip_param_goods_st, pad)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_iconId offsetof(::er::paramdef::equip_param_goods_st, iconId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_modelId offsetof(::er::paramdef::equip_param_goods_st, modelId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_shopLv offsetof(::er::paramdef::equip_param_goods_st, shopLv)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_compTrophySedId offsetof(::er::paramdef::equip_param_goods_st, compTrophySedId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_trophySeqId offsetof(::er::paramdef::equip_param_goods_st, trophySeqId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_maxNum offsetof(::er::paramdef::equip_param_goods_st, maxNum)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_consumeHeroPoint offsetof(::er::paramdef::equip_param_goods_st, consumeHeroPoint)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_overDexterity offsetof(::er::paramdef::equip_param_goods_st, overDexterity)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_goodsType offsetof(::er::paramdef::equip_param_goods_st, goodsType)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_refCategory offsetof(::er::paramdef::equip_param_goods_st, refCategory)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_spEffectCategory offsetof(::er::paramdef::equip_param_goods_st, spEffectCategory)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_unknown_0x40 offsetof(::er::paramdef::equip_param_goods_st, unknown_0x40)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_goodsUseAnim offsetof(::er::paramdef::equip_param_goods_st, goodsUseAnim)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_opmeMenuType offsetof(::er::paramdef::equip_param_goods_st, opmeMenuType)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLimitCategory offsetof(::er::paramdef::equip_param_goods_st, useLimitCategory)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_replaceCategory offsetof(::er::paramdef::equip_param_goods_st, replaceCategory)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_reserve4 offsetof(::er::paramdef::equip_param_goods_st, reserve4)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_syncNumVaryId offsetof(::er::paramdef::equip_param_goods_st, syncNumVaryId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_refId_1 offsetof(::er::paramdef::equip_param_goods_st, refId_1)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_refVirtualWepId offsetof(::er::paramdef::equip_param_goods_st, refVirtualWepId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_vagrantItemLotId offsetof(::er::paramdef::equip_param_goods_st, vagrantItemLotId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_vagrantBonusEneDropItemLotId offsetof(::er::paramdef::equip_param_goods_st, vagrantBonusEneDropItemLotId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_vagrantItemEneDropItemLotId offsetof(::er::paramdef::equip_param_goods_st, vagrantItemEneDropItemLotId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_castSfxId offsetof(::er::paramdef::equip_param_goods_st, castSfxId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_fireSfxId offsetof(::er::paramdef::equip_param_goods_st, fireSfxId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_effectSfxId offsetof(::er::paramdef::equip_param_goods_st, effectSfxId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_suppleType offsetof(::er::paramdef::equip_param_goods_st, suppleType)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_autoReplenishType offsetof(::er::paramdef::equip_param_goods_st, autoReplenishType)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_maxRepositoryNum offsetof(::er::paramdef::equip_param_goods_st, maxRepositoryNum)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_sortGroupId offsetof(::er::paramdef::equip_param_goods_st, sortGroupId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_saleValue offsetof(::er::paramdef::equip_param_goods_st, saleValue)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_rarity offsetof(::er::paramdef::equip_param_goods_st, rarity)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLimitSummonBuddy offsetof(::er::paramdef::equip_param_goods_st, useLimitSummonBuddy)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLimitSpEffectType offsetof(::er::paramdef::equip_param_goods_st, useLimitSpEffectType)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_aiUseJudgeId offsetof(::er::paramdef::equip_param_goods_st, aiUseJudgeId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_consumeMP offsetof(::er::paramdef::equip_param_goods_st, consumeMP)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_consumeHP offsetof(::er::paramdef::equip_param_goods_st, consumeHP)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_reinforceGoodsId offsetof(::er::paramdef::equip_param_goods_st, reinforceGoodsId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_reinforceMaterialId offsetof(::er::paramdef::equip_param_goods_st, reinforceMaterialId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_reinforcePrice offsetof(::er::paramdef::equip_param_goods_st, reinforcePrice)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType0 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType0)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType1 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType1)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType2 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType2)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType3 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType3)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType4 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType4)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType5 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType5)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType6 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType6)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType7 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType7)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType8 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType8)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType9 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType9)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType10 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType10)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType11 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType11)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType12 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType12)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType13 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType13)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType14 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType14)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel_vowType15 offsetof(::er::paramdef::equip_param_goods_st, useLevel_vowType15)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_useLevel offsetof(::er::paramdef::equip_param_goods_st, useLevel)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_reserve5 offsetof(::er::paramdef::equip_param_goods_st, reserve5)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_itemGetTutorialFlagId offsetof(::er::paramdef::equip_param_goods_st, itemGetTutorialFlagId)
+#define ERD_OFFSET_EQUIP_PARAM_GOODS_ST_reserve3 offsetof(::er::paramdef::equip_param_goods_st, reserve3)

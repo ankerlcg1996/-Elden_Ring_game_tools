@@ -1,0 +1,130 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/MENU_COMMON_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_MENU_COMMON_PARAM_ST_FIELDS(X) \\
+    X(soloPlayDeath_ToFadeOutTime, offsetof(::er::paramdef::menu_common_param_st, soloPlayDeath_ToFadeOutTime)) \\
+    X(partyGhostDeath_ToFadeOutTime, offsetof(::er::paramdef::menu_common_param_st, partyGhostDeath_ToFadeOutTime)) \\
+    X(playerMaxHpLimit, offsetof(::er::paramdef::menu_common_param_st, playerMaxHpLimit)) \\
+    X(playerMaxMpLimit, offsetof(::er::paramdef::menu_common_param_st, playerMaxMpLimit)) \\
+    X(playerMaxSpLimit, offsetof(::er::paramdef::menu_common_param_st, playerMaxSpLimit)) \\
+    X(actionPanelChangeThreshold_Vel, offsetof(::er::paramdef::menu_common_param_st, actionPanelChangeThreshold_Vel)) \\
+    X(actionPanelChangeThreshold_PassTime, offsetof(::er::paramdef::menu_common_param_st, actionPanelChangeThreshold_PassTime)) \\
+    X(kgIconVspace, offsetof(::er::paramdef::menu_common_param_st, kgIconVspace)) \\
+    X(worldMapCursorSelectRadius, offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSelectRadius)) \\
+    X(reserved8, offsetof(::er::paramdef::menu_common_param_st, reserved8)) \\
+    X(decalPosOffsetX, offsetof(::er::paramdef::menu_common_param_st, decalPosOffsetX)) \\
+    X(decalPosOffsetY, offsetof(::er::paramdef::menu_common_param_st, decalPosOffsetY)) \\
+    X(targetStateSearchDurationTime, offsetof(::er::paramdef::menu_common_param_st, targetStateSearchDurationTime)) \\
+    X(targetStateBattleDurationTime, offsetof(::er::paramdef::menu_common_param_st, targetStateBattleDurationTime)) \\
+    X(worldMapCursorSpeed, offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSpeed)) \\
+    X(worldMapCursorFirstDistance, offsetof(::er::paramdef::menu_common_param_st, worldMapCursorFirstDistance)) \\
+    X(worldMapCursorFirstDelay, offsetof(::er::paramdef::menu_common_param_st, worldMapCursorFirstDelay)) \\
+    X(worldMapCursorWaitTime, offsetof(::er::paramdef::menu_common_param_st, worldMapCursorWaitTime)) \\
+    X(worldMapCursorSnapRadius, offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSnapRadius)) \\
+    X(worldMapCursorSnapTime, offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSnapTime)) \\
+    X(itemGetLogAliveTime, offsetof(::er::paramdef::menu_common_param_st, itemGetLogAliveTime)) \\
+    X(playerMaxSaLimit, offsetof(::er::paramdef::menu_common_param_st, playerMaxSaLimit)) \\
+    X(worldMap_IsChangeableLayerEventFlagId, offsetof(::er::paramdef::menu_common_param_st, worldMap_IsChangeableLayerEventFlagId)) \\
+    X(worldMap_TravelMargin, offsetof(::er::paramdef::menu_common_param_st, worldMap_TravelMargin)) \\
+    X(systemAnnounceScrollBufferTime, offsetof(::er::paramdef::menu_common_param_st, systemAnnounceScrollBufferTime)) \\
+    X(systemAnnounceScrollSpeed, offsetof(::er::paramdef::menu_common_param_st, systemAnnounceScrollSpeed)) \\
+    X(systemAnnounceNoScrollWaitTime, offsetof(::er::paramdef::menu_common_param_st, systemAnnounceNoScrollWaitTime)) \\
+    X(systemAnnounceScrollCount, offsetof(::er::paramdef::menu_common_param_st, systemAnnounceScrollCount)) \\
+    X(reserved17, offsetof(::er::paramdef::menu_common_param_st, reserved17)) \\
+    X(compassMemoDispDistance, offsetof(::er::paramdef::menu_common_param_st, compassMemoDispDistance)) \\
+    X(compassBonfireDispDistance, offsetof(::er::paramdef::menu_common_param_st, compassBonfireDispDistance)) \\
+    X(markerGoalThreshold, offsetof(::er::paramdef::menu_common_param_st, markerGoalThreshold)) \\
+    X(svSliderStep, offsetof(::er::paramdef::menu_common_param_st, svSliderStep)) \\
+    X(preOpeningMovie_WaitSec, offsetof(::er::paramdef::menu_common_param_st, preOpeningMovie_WaitSec)) \\
+    X(kgIconScale, offsetof(::er::paramdef::menu_common_param_st, kgIconScale)) \\
+    X(kgIconScale_forTable, offsetof(::er::paramdef::menu_common_param_st, kgIconScale_forTable)) \\
+    X(kgIconVspace_forTable, offsetof(::er::paramdef::menu_common_param_st, kgIconVspace_forTable)) \\
+    X(kgIconScale_forConfig, offsetof(::er::paramdef::menu_common_param_st, kgIconScale_forConfig)) \\
+    X(kgIconVspace_forConfig, offsetof(::er::paramdef::menu_common_param_st, kgIconVspace_forConfig)) \\
+    X(worldMap_SearchRadius, offsetof(::er::paramdef::menu_common_param_st, worldMap_SearchRadius)) \\
+    X(tutorialDisplayTime, offsetof(::er::paramdef::menu_common_param_st, tutorialDisplayTime)) \\
+    X(compassFriendHostInnerDistance, offsetof(::er::paramdef::menu_common_param_st, compassFriendHostInnerDistance)) \\
+    X(compassEnemyHostInnerDistance, offsetof(::er::paramdef::menu_common_param_st, compassEnemyHostInnerDistance)) \\
+    X(compassFriendGuestInnerDistance, offsetof(::er::paramdef::menu_common_param_st, compassFriendGuestInnerDistance)) \\
+    X(cutsceneKeyGuideAliveTime, offsetof(::er::paramdef::menu_common_param_st, cutsceneKeyGuideAliveTime)) \\
+    X(autoHideHpThresholdRatio, offsetof(::er::paramdef::menu_common_param_st, autoHideHpThresholdRatio)) \\
+    X(autoHideHpThresholdValue, offsetof(::er::paramdef::menu_common_param_st, autoHideHpThresholdValue)) \\
+    X(autoHideMpThresholdRatio, offsetof(::er::paramdef::menu_common_param_st, autoHideMpThresholdRatio)) \\
+    X(autoHideMpThresholdValue, offsetof(::er::paramdef::menu_common_param_st, autoHideMpThresholdValue)) \\
+    X(autoHideSpThresholdRatio, offsetof(::er::paramdef::menu_common_param_st, autoHideSpThresholdRatio)) \\
+    X(autoHideSpThresholdValue, offsetof(::er::paramdef::menu_common_param_st, autoHideSpThresholdValue)) \\
+    X(worldMapZoomAnimationTime, offsetof(::er::paramdef::menu_common_param_st, worldMapZoomAnimationTime)) \\
+    X(worldMapIconScaleMin, offsetof(::er::paramdef::menu_common_param_st, worldMapIconScaleMin)) \\
+    X(worldMap_TravelMargin_Point, offsetof(::er::paramdef::menu_common_param_st, worldMap_TravelMargin_Point)) \\
+    X(enemyTagSafeLeft, offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeLeft)) \\
+    X(enemyTagSafeRight, offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeRight)) \\
+    X(enemyTagSafeTop, offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeTop)) \\
+    X(enemyTagSafeBottom, offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeBottom)) \\
+    X(pcHorseHpRecoverDispThreshold, offsetof(::er::paramdef::menu_common_param_st, pcHorseHpRecoverDispThreshold)) \\
+    X(reserved33, offsetof(::er::paramdef::menu_common_param_st, reserved33))
+
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_soloPlayDeath_ToFadeOutTime offsetof(::er::paramdef::menu_common_param_st, soloPlayDeath_ToFadeOutTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_partyGhostDeath_ToFadeOutTime offsetof(::er::paramdef::menu_common_param_st, partyGhostDeath_ToFadeOutTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_playerMaxHpLimit offsetof(::er::paramdef::menu_common_param_st, playerMaxHpLimit)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_playerMaxMpLimit offsetof(::er::paramdef::menu_common_param_st, playerMaxMpLimit)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_playerMaxSpLimit offsetof(::er::paramdef::menu_common_param_st, playerMaxSpLimit)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_actionPanelChangeThreshold_Vel offsetof(::er::paramdef::menu_common_param_st, actionPanelChangeThreshold_Vel)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_actionPanelChangeThreshold_PassTime offsetof(::er::paramdef::menu_common_param_st, actionPanelChangeThreshold_PassTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_kgIconVspace offsetof(::er::paramdef::menu_common_param_st, kgIconVspace)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapCursorSelectRadius offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSelectRadius)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_reserved8 offsetof(::er::paramdef::menu_common_param_st, reserved8)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_decalPosOffsetX offsetof(::er::paramdef::menu_common_param_st, decalPosOffsetX)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_decalPosOffsetY offsetof(::er::paramdef::menu_common_param_st, decalPosOffsetY)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_targetStateSearchDurationTime offsetof(::er::paramdef::menu_common_param_st, targetStateSearchDurationTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_targetStateBattleDurationTime offsetof(::er::paramdef::menu_common_param_st, targetStateBattleDurationTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapCursorSpeed offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSpeed)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapCursorFirstDistance offsetof(::er::paramdef::menu_common_param_st, worldMapCursorFirstDistance)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapCursorFirstDelay offsetof(::er::paramdef::menu_common_param_st, worldMapCursorFirstDelay)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapCursorWaitTime offsetof(::er::paramdef::menu_common_param_st, worldMapCursorWaitTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapCursorSnapRadius offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSnapRadius)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapCursorSnapTime offsetof(::er::paramdef::menu_common_param_st, worldMapCursorSnapTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_itemGetLogAliveTime offsetof(::er::paramdef::menu_common_param_st, itemGetLogAliveTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_playerMaxSaLimit offsetof(::er::paramdef::menu_common_param_st, playerMaxSaLimit)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMap_IsChangeableLayerEventFlagId offsetof(::er::paramdef::menu_common_param_st, worldMap_IsChangeableLayerEventFlagId)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMap_TravelMargin offsetof(::er::paramdef::menu_common_param_st, worldMap_TravelMargin)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_systemAnnounceScrollBufferTime offsetof(::er::paramdef::menu_common_param_st, systemAnnounceScrollBufferTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_systemAnnounceScrollSpeed offsetof(::er::paramdef::menu_common_param_st, systemAnnounceScrollSpeed)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_systemAnnounceNoScrollWaitTime offsetof(::er::paramdef::menu_common_param_st, systemAnnounceNoScrollWaitTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_systemAnnounceScrollCount offsetof(::er::paramdef::menu_common_param_st, systemAnnounceScrollCount)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_reserved17 offsetof(::er::paramdef::menu_common_param_st, reserved17)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_compassMemoDispDistance offsetof(::er::paramdef::menu_common_param_st, compassMemoDispDistance)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_compassBonfireDispDistance offsetof(::er::paramdef::menu_common_param_st, compassBonfireDispDistance)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_markerGoalThreshold offsetof(::er::paramdef::menu_common_param_st, markerGoalThreshold)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_svSliderStep offsetof(::er::paramdef::menu_common_param_st, svSliderStep)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_preOpeningMovie_WaitSec offsetof(::er::paramdef::menu_common_param_st, preOpeningMovie_WaitSec)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_kgIconScale offsetof(::er::paramdef::menu_common_param_st, kgIconScale)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_kgIconScale_forTable offsetof(::er::paramdef::menu_common_param_st, kgIconScale_forTable)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_kgIconVspace_forTable offsetof(::er::paramdef::menu_common_param_st, kgIconVspace_forTable)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_kgIconScale_forConfig offsetof(::er::paramdef::menu_common_param_st, kgIconScale_forConfig)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_kgIconVspace_forConfig offsetof(::er::paramdef::menu_common_param_st, kgIconVspace_forConfig)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMap_SearchRadius offsetof(::er::paramdef::menu_common_param_st, worldMap_SearchRadius)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_tutorialDisplayTime offsetof(::er::paramdef::menu_common_param_st, tutorialDisplayTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_compassFriendHostInnerDistance offsetof(::er::paramdef::menu_common_param_st, compassFriendHostInnerDistance)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_compassEnemyHostInnerDistance offsetof(::er::paramdef::menu_common_param_st, compassEnemyHostInnerDistance)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_compassFriendGuestInnerDistance offsetof(::er::paramdef::menu_common_param_st, compassFriendGuestInnerDistance)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_cutsceneKeyGuideAliveTime offsetof(::er::paramdef::menu_common_param_st, cutsceneKeyGuideAliveTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_autoHideHpThresholdRatio offsetof(::er::paramdef::menu_common_param_st, autoHideHpThresholdRatio)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_autoHideHpThresholdValue offsetof(::er::paramdef::menu_common_param_st, autoHideHpThresholdValue)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_autoHideMpThresholdRatio offsetof(::er::paramdef::menu_common_param_st, autoHideMpThresholdRatio)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_autoHideMpThresholdValue offsetof(::er::paramdef::menu_common_param_st, autoHideMpThresholdValue)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_autoHideSpThresholdRatio offsetof(::er::paramdef::menu_common_param_st, autoHideSpThresholdRatio)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_autoHideSpThresholdValue offsetof(::er::paramdef::menu_common_param_st, autoHideSpThresholdValue)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapZoomAnimationTime offsetof(::er::paramdef::menu_common_param_st, worldMapZoomAnimationTime)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMapIconScaleMin offsetof(::er::paramdef::menu_common_param_st, worldMapIconScaleMin)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_worldMap_TravelMargin_Point offsetof(::er::paramdef::menu_common_param_st, worldMap_TravelMargin_Point)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_enemyTagSafeLeft offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeLeft)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_enemyTagSafeRight offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeRight)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_enemyTagSafeTop offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeTop)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_enemyTagSafeBottom offsetof(::er::paramdef::menu_common_param_st, enemyTagSafeBottom)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_pcHorseHpRecoverDispThreshold offsetof(::er::paramdef::menu_common_param_st, pcHorseHpRecoverDispThreshold)
+#define ERD_OFFSET_MENU_COMMON_PARAM_ST_reserved33 offsetof(::er::paramdef::menu_common_param_st, reserved33)

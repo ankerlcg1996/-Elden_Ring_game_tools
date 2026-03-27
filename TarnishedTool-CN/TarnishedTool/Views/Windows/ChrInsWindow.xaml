@@ -1,0 +1,179 @@
+<windows:TopmostWindow x:Class="TarnishedTool.Views.Windows.ChrInsWindow"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:controls="clr-namespace:TarnishedTool.Controls"
+                       xmlns:windows="clr-namespace:TarnishedTool.Views.Windows"
+                       mc:Ignorable="d"
+                       Style="{StaticResource DefaultWindowStyle}"
+                       WindowStyle="None"
+                       AllowsTransparency="True"
+                       Title="AI窗口" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:TitleBar Grid.Row="0" Title="角色" />
+        <Grid Grid.Row="1">
+            <CheckBox
+                x:Name="AlwaysOnTopCheckBox"
+                HorizontalAlignment="Right"
+                Margin="0,0,10,0"
+                Checked="AlwaysOnTopCheckBox_Checked"
+                Unchecked="AlwaysOnTopCheckBox_Unchecked">
+                Always on Top
+            </CheckBox>
+
+        </Grid>
+
+        <TextBox Grid.Row="2"
+                 Text="{Binding ChrInsSearchText, UpdateSourceTrigger=PropertyChanged}"
+                 Height="25"
+                 MinWidth="150"
+                 Width="250"
+                 MaxWidth="500"
+                 Margin="0,0,15,5">
+            <TextBox.Template>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="3">
+                        <Grid>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"
+                                          VerticalAlignment="Center"
+                                          Margin="5,0,0,0" />
+                            <TextBlock Text="搜索附近角色..."
+                                       VerticalAlignment="Center"
+                                       Margin="5,0,0,0"
+                                       Foreground="Gray"
+                                       IsHitTestVisible="False">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition
+                                                        Binding="{Binding Path=Text, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                        Value="" />
+                                                    <Condition
+                                                        Binding="{Binding Path=IsKeyboardFocused, RelativeSource={RelativeSource AncestorType=TextBox}}"
+                                                        Value="False" />
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush"
+                                    Value="{StaticResource AccentBrush}" />
+                            <Setter TargetName="border" Property="BorderThickness" Value="1.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+
+        <ListBox Grid.Row="3"
+                 ItemsSource="{Binding ChrInsView}"
+                 SelectedItem="{Binding SelectedChrInsEntry}"
+                 VirtualizingPanel.IsVirtualizing="True"
+                 VirtualizingPanel.VirtualizationMode="Recycling"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Expander IsExpanded="{Binding IsExpanded}"
+                              Expanded="Expander_Expanded"
+                              HorizontalAlignment="Stretch"
+                              Margin="0,4,0,4">
+                        <Expander.Header>
+                            <TextBlock Text="{Binding ChrInsHeader}" />
+                        </Expander.Header>
+                        <Grid Width="{Binding RelativeSource={RelativeSource AncestorType=ListBox}, Path=ActualWidth}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="195" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="20,5,0,5">
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <CheckBox Content="禁用 AI"
+                                              IsChecked="{Binding IsAiDisabled}" />
+                                    <CheckBox Content="锁定视角"
+                                              IsChecked="{Binding IsTargetViewEnabled}"
+                                              Margin="5,0,0,0" />
+                                    <CheckBox Content="不攻击"
+                                              IsChecked="{Binding IsNoAttackEnabled}"
+                                              Margin="5,0,0,0" />
+                                    <CheckBox Content="不移动"
+                                              IsChecked="{Binding IsNoMoveEnabled}"
+                                              Margin="5,0,0,0" />
+                                    <CheckBox Content="无伤"
+                                              IsChecked="{Binding IsNoDamageEnabled}"
+                                              Margin="5,0,0,0" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="传送" Command="{Binding WarpCommand}" />
+                                    <Button Content="打开目标" Command="{Binding OpenAiWindowCommand}"
+                                            Margin="5,0,0,0" />
+                                    <Button Content="设置 HP" Command="{Binding SetHpCommand}" Margin="5,0,0,0" />
+                                    <Button Content="击杀" Command="{Binding KillChrCommand}"
+                                            Margin="5,0,0,0" />
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10,5,0,0">
+                                <!-- Hp/MaxHp -->
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="15" Text="HP：" />
+                                    <TextBlock Text="{Binding CurrentHp, StringFormat={}{0:N0}}" FontSize="15"
+                                               Margin="5,0,0,0" />
+                                    <TextBlock Text="/" FontSize="15" Margin="2,0,2,0" />
+                                    <TextBlock Text="{Binding MaxHp, StringFormat={}{0:N0}}" FontSize="15" />
+                                </StackPanel>
+                                <!-- Dist -->
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <TextBlock FontSize="15" Text="距离：" />
+                                    <TextBlock Text="{Binding Distance, StringFormat={}{0:F2}}" FontSize="15"
+                                               TextAlignment="Right" Margin="5,0,0,0" />
+                                </StackPanel>
+                            </StackPanel>
+
+
+                            <TextBox Grid.Column="2"
+                                     Margin="0,0,15,0"
+                                     Text="{Binding ChrInsIds, Mode=OneWay}"
+                                     IsReadOnly="True"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     TextWrapping="Wrap"
+                                     IsTabStop="False"
+                                     Focusable="True" />
+
+                        </Grid>
+                    </Expander>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</windows:TopmostWindow>

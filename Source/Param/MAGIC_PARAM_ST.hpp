@@ -1,0 +1,166 @@
+#pragma once
+
+#include <cstddef>
+#include <elden-x/paramdef/MAGIC_PARAM_ST.hpp>
+
+// Auto-generated field offset macros for this param table.
+// Regenerate from elden-x paramdef headers when upstream changes.
+
+#define ERD_PARAM_MAGIC_PARAM_ST_FIELDS(X) \\
+    X(disableParamReserve2, offsetof(::er::paramdef::magic_param_st, disableParamReserve2)) \\
+    X(yesNoDialogMessageId, offsetof(::er::paramdef::magic_param_st, yesNoDialogMessageId)) \\
+    X(limitCancelSpEffectId, offsetof(::er::paramdef::magic_param_st, limitCancelSpEffectId)) \\
+    X(sortId, offsetof(::er::paramdef::magic_param_st, sortId)) \\
+    X(requirementLuck, offsetof(::er::paramdef::magic_param_st, requirementLuck)) \\
+    X(aiNotifyType, offsetof(::er::paramdef::magic_param_st, aiNotifyType)) \\
+    X(mp, offsetof(::er::paramdef::magic_param_st, mp)) \\
+    X(stamina, offsetof(::er::paramdef::magic_param_st, stamina)) \\
+    X(iconId, offsetof(::er::paramdef::magic_param_st, iconId)) \\
+    X(behaviorId, offsetof(::er::paramdef::magic_param_st, behaviorId)) \\
+    X(mtrlItemId, offsetof(::er::paramdef::magic_param_st, mtrlItemId)) \\
+    X(replaceMagicId, offsetof(::er::paramdef::magic_param_st, replaceMagicId)) \\
+    X(maxQuantity, offsetof(::er::paramdef::magic_param_st, maxQuantity)) \\
+    X(refCategory1, offsetof(::er::paramdef::magic_param_st, refCategory1)) \\
+    X(overDexterity, offsetof(::er::paramdef::magic_param_st, overDexterity)) \\
+    X(refCategory2, offsetof(::er::paramdef::magic_param_st, refCategory2)) \\
+    X(slotLength, offsetof(::er::paramdef::magic_param_st, slotLength)) \\
+    X(requirementIntellect, offsetof(::er::paramdef::magic_param_st, requirementIntellect)) \\
+    X(requirementFaith, offsetof(::er::paramdef::magic_param_st, requirementFaith)) \\
+    X(analogDexterityMin, offsetof(::er::paramdef::magic_param_st, analogDexterityMin)) \\
+    X(analogDexterityMax, offsetof(::er::paramdef::magic_param_st, analogDexterityMax)) \\
+    X(ezStateBehaviorType, offsetof(::er::paramdef::magic_param_st, ezStateBehaviorType)) \\
+    X(refCategory3, offsetof(::er::paramdef::magic_param_st, refCategory3)) \\
+    X(spEffectCategory, offsetof(::er::paramdef::magic_param_st, spEffectCategory)) \\
+    X(refType, offsetof(::er::paramdef::magic_param_st, refType)) \\
+    X(opmeMenuType, offsetof(::er::paramdef::magic_param_st, opmeMenuType)) \\
+    X(refCategory4, offsetof(::er::paramdef::magic_param_st, refCategory4)) \\
+    X(hasSpEffectType, offsetof(::er::paramdef::magic_param_st, hasSpEffectType)) \\
+    X(replaceCategory, offsetof(::er::paramdef::magic_param_st, replaceCategory)) \\
+    X(useLimitCategory, offsetof(::er::paramdef::magic_param_st, useLimitCategory)) \\
+    X(castSfxId, offsetof(::er::paramdef::magic_param_st, castSfxId)) \\
+    X(fireSfxId, offsetof(::er::paramdef::magic_param_st, fireSfxId)) \\
+    X(effectSfxId, offsetof(::er::paramdef::magic_param_st, effectSfxId)) \\
+    X(toughnessCorrectRate, offsetof(::er::paramdef::magic_param_st, toughnessCorrectRate)) \\
+    X(ReplacementStatusType, offsetof(::er::paramdef::magic_param_st, ReplacementStatusType)) \\
+    X(ReplacementStatus1, offsetof(::er::paramdef::magic_param_st, ReplacementStatus1)) \\
+    X(ReplacementStatus2, offsetof(::er::paramdef::magic_param_st, ReplacementStatus2)) \\
+    X(ReplacementStatus3, offsetof(::er::paramdef::magic_param_st, ReplacementStatus3)) \\
+    X(ReplacementStatus4, offsetof(::er::paramdef::magic_param_st, ReplacementStatus4)) \\
+    X(refCategory5, offsetof(::er::paramdef::magic_param_st, refCategory5)) \\
+    X(consumeSA, offsetof(::er::paramdef::magic_param_st, consumeSA)) \\
+    X(ReplacementMagic1, offsetof(::er::paramdef::magic_param_st, ReplacementMagic1)) \\
+    X(ReplacementMagic2, offsetof(::er::paramdef::magic_param_st, ReplacementMagic2)) \\
+    X(ReplacementMagic3, offsetof(::er::paramdef::magic_param_st, ReplacementMagic3)) \\
+    X(ReplacementMagic4, offsetof(::er::paramdef::magic_param_st, ReplacementMagic4)) \\
+    X(mp_charge, offsetof(::er::paramdef::magic_param_st, mp_charge)) \\
+    X(stamina_charge, offsetof(::er::paramdef::magic_param_st, stamina_charge)) \\
+    X(createLimitGroupId, offsetof(::er::paramdef::magic_param_st, createLimitGroupId)) \\
+    X(refCategory6, offsetof(::er::paramdef::magic_param_st, refCategory6)) \\
+    X(subCategory1, offsetof(::er::paramdef::magic_param_st, subCategory1)) \\
+    X(subCategory2, offsetof(::er::paramdef::magic_param_st, subCategory2)) \\
+    X(refCategory7, offsetof(::er::paramdef::magic_param_st, refCategory7)) \\
+    X(refCategory8, offsetof(::er::paramdef::magic_param_st, refCategory8)) \\
+    X(refCategory9, offsetof(::er::paramdef::magic_param_st, refCategory9)) \\
+    X(refCategory10, offsetof(::er::paramdef::magic_param_st, refCategory10)) \\
+    X(refId1, offsetof(::er::paramdef::magic_param_st, refId1)) \\
+    X(refId2, offsetof(::er::paramdef::magic_param_st, refId2)) \\
+    X(refId3, offsetof(::er::paramdef::magic_param_st, refId3)) \\
+    X(aiUseJudgeId, offsetof(::er::paramdef::magic_param_st, aiUseJudgeId)) \\
+    X(refId4, offsetof(::er::paramdef::magic_param_st, refId4)) \\
+    X(refId5, offsetof(::er::paramdef::magic_param_st, refId5)) \\
+    X(refId6, offsetof(::er::paramdef::magic_param_st, refId6)) \\
+    X(refId7, offsetof(::er::paramdef::magic_param_st, refId7)) \\
+    X(refId8, offsetof(::er::paramdef::magic_param_st, refId8)) \\
+    X(refId9, offsetof(::er::paramdef::magic_param_st, refId9)) \\
+    X(refId10, offsetof(::er::paramdef::magic_param_st, refId10)) \\
+    X(consumeType1, offsetof(::er::paramdef::magic_param_st, consumeType1)) \\
+    X(consumeType2, offsetof(::er::paramdef::magic_param_st, consumeType2)) \\
+    X(consumeType3, offsetof(::er::paramdef::magic_param_st, consumeType3)) \\
+    X(consumeType4, offsetof(::er::paramdef::magic_param_st, consumeType4)) \\
+    X(consumeType5, offsetof(::er::paramdef::magic_param_st, consumeType5)) \\
+    X(consumeType6, offsetof(::er::paramdef::magic_param_st, consumeType6)) \\
+    X(consumeType7, offsetof(::er::paramdef::magic_param_st, consumeType7)) \\
+    X(consumeType8, offsetof(::er::paramdef::magic_param_st, consumeType8)) \\
+    X(consumeType9, offsetof(::er::paramdef::magic_param_st, consumeType9)) \\
+    X(consumeType10, offsetof(::er::paramdef::magic_param_st, consumeType10)) \\
+    X(consumeLoopMP_forMenu, offsetof(::er::paramdef::magic_param_st, consumeLoopMP_forMenu)) \\
+    X(pad, offsetof(::er::paramdef::magic_param_st, pad))
+
+#define ERD_OFFSET_MAGIC_PARAM_ST_disableParamReserve2 offsetof(::er::paramdef::magic_param_st, disableParamReserve2)
+#define ERD_OFFSET_MAGIC_PARAM_ST_yesNoDialogMessageId offsetof(::er::paramdef::magic_param_st, yesNoDialogMessageId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_limitCancelSpEffectId offsetof(::er::paramdef::magic_param_st, limitCancelSpEffectId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_sortId offsetof(::er::paramdef::magic_param_st, sortId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_requirementLuck offsetof(::er::paramdef::magic_param_st, requirementLuck)
+#define ERD_OFFSET_MAGIC_PARAM_ST_aiNotifyType offsetof(::er::paramdef::magic_param_st, aiNotifyType)
+#define ERD_OFFSET_MAGIC_PARAM_ST_mp offsetof(::er::paramdef::magic_param_st, mp)
+#define ERD_OFFSET_MAGIC_PARAM_ST_stamina offsetof(::er::paramdef::magic_param_st, stamina)
+#define ERD_OFFSET_MAGIC_PARAM_ST_iconId offsetof(::er::paramdef::magic_param_st, iconId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_behaviorId offsetof(::er::paramdef::magic_param_st, behaviorId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_mtrlItemId offsetof(::er::paramdef::magic_param_st, mtrlItemId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_replaceMagicId offsetof(::er::paramdef::magic_param_st, replaceMagicId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_maxQuantity offsetof(::er::paramdef::magic_param_st, maxQuantity)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory1 offsetof(::er::paramdef::magic_param_st, refCategory1)
+#define ERD_OFFSET_MAGIC_PARAM_ST_overDexterity offsetof(::er::paramdef::magic_param_st, overDexterity)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory2 offsetof(::er::paramdef::magic_param_st, refCategory2)
+#define ERD_OFFSET_MAGIC_PARAM_ST_slotLength offsetof(::er::paramdef::magic_param_st, slotLength)
+#define ERD_OFFSET_MAGIC_PARAM_ST_requirementIntellect offsetof(::er::paramdef::magic_param_st, requirementIntellect)
+#define ERD_OFFSET_MAGIC_PARAM_ST_requirementFaith offsetof(::er::paramdef::magic_param_st, requirementFaith)
+#define ERD_OFFSET_MAGIC_PARAM_ST_analogDexterityMin offsetof(::er::paramdef::magic_param_st, analogDexterityMin)
+#define ERD_OFFSET_MAGIC_PARAM_ST_analogDexterityMax offsetof(::er::paramdef::magic_param_st, analogDexterityMax)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ezStateBehaviorType offsetof(::er::paramdef::magic_param_st, ezStateBehaviorType)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory3 offsetof(::er::paramdef::magic_param_st, refCategory3)
+#define ERD_OFFSET_MAGIC_PARAM_ST_spEffectCategory offsetof(::er::paramdef::magic_param_st, spEffectCategory)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refType offsetof(::er::paramdef::magic_param_st, refType)
+#define ERD_OFFSET_MAGIC_PARAM_ST_opmeMenuType offsetof(::er::paramdef::magic_param_st, opmeMenuType)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory4 offsetof(::er::paramdef::magic_param_st, refCategory4)
+#define ERD_OFFSET_MAGIC_PARAM_ST_hasSpEffectType offsetof(::er::paramdef::magic_param_st, hasSpEffectType)
+#define ERD_OFFSET_MAGIC_PARAM_ST_replaceCategory offsetof(::er::paramdef::magic_param_st, replaceCategory)
+#define ERD_OFFSET_MAGIC_PARAM_ST_useLimitCategory offsetof(::er::paramdef::magic_param_st, useLimitCategory)
+#define ERD_OFFSET_MAGIC_PARAM_ST_castSfxId offsetof(::er::paramdef::magic_param_st, castSfxId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_fireSfxId offsetof(::er::paramdef::magic_param_st, fireSfxId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_effectSfxId offsetof(::er::paramdef::magic_param_st, effectSfxId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_toughnessCorrectRate offsetof(::er::paramdef::magic_param_st, toughnessCorrectRate)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementStatusType offsetof(::er::paramdef::magic_param_st, ReplacementStatusType)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementStatus1 offsetof(::er::paramdef::magic_param_st, ReplacementStatus1)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementStatus2 offsetof(::er::paramdef::magic_param_st, ReplacementStatus2)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementStatus3 offsetof(::er::paramdef::magic_param_st, ReplacementStatus3)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementStatus4 offsetof(::er::paramdef::magic_param_st, ReplacementStatus4)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory5 offsetof(::er::paramdef::magic_param_st, refCategory5)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeSA offsetof(::er::paramdef::magic_param_st, consumeSA)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementMagic1 offsetof(::er::paramdef::magic_param_st, ReplacementMagic1)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementMagic2 offsetof(::er::paramdef::magic_param_st, ReplacementMagic2)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementMagic3 offsetof(::er::paramdef::magic_param_st, ReplacementMagic3)
+#define ERD_OFFSET_MAGIC_PARAM_ST_ReplacementMagic4 offsetof(::er::paramdef::magic_param_st, ReplacementMagic4)
+#define ERD_OFFSET_MAGIC_PARAM_ST_mp_charge offsetof(::er::paramdef::magic_param_st, mp_charge)
+#define ERD_OFFSET_MAGIC_PARAM_ST_stamina_charge offsetof(::er::paramdef::magic_param_st, stamina_charge)
+#define ERD_OFFSET_MAGIC_PARAM_ST_createLimitGroupId offsetof(::er::paramdef::magic_param_st, createLimitGroupId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory6 offsetof(::er::paramdef::magic_param_st, refCategory6)
+#define ERD_OFFSET_MAGIC_PARAM_ST_subCategory1 offsetof(::er::paramdef::magic_param_st, subCategory1)
+#define ERD_OFFSET_MAGIC_PARAM_ST_subCategory2 offsetof(::er::paramdef::magic_param_st, subCategory2)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory7 offsetof(::er::paramdef::magic_param_st, refCategory7)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory8 offsetof(::er::paramdef::magic_param_st, refCategory8)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory9 offsetof(::er::paramdef::magic_param_st, refCategory9)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refCategory10 offsetof(::er::paramdef::magic_param_st, refCategory10)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId1 offsetof(::er::paramdef::magic_param_st, refId1)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId2 offsetof(::er::paramdef::magic_param_st, refId2)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId3 offsetof(::er::paramdef::magic_param_st, refId3)
+#define ERD_OFFSET_MAGIC_PARAM_ST_aiUseJudgeId offsetof(::er::paramdef::magic_param_st, aiUseJudgeId)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId4 offsetof(::er::paramdef::magic_param_st, refId4)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId5 offsetof(::er::paramdef::magic_param_st, refId5)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId6 offsetof(::er::paramdef::magic_param_st, refId6)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId7 offsetof(::er::paramdef::magic_param_st, refId7)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId8 offsetof(::er::paramdef::magic_param_st, refId8)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId9 offsetof(::er::paramdef::magic_param_st, refId9)
+#define ERD_OFFSET_MAGIC_PARAM_ST_refId10 offsetof(::er::paramdef::magic_param_st, refId10)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType1 offsetof(::er::paramdef::magic_param_st, consumeType1)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType2 offsetof(::er::paramdef::magic_param_st, consumeType2)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType3 offsetof(::er::paramdef::magic_param_st, consumeType3)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType4 offsetof(::er::paramdef::magic_param_st, consumeType4)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType5 offsetof(::er::paramdef::magic_param_st, consumeType5)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType6 offsetof(::er::paramdef::magic_param_st, consumeType6)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType7 offsetof(::er::paramdef::magic_param_st, consumeType7)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType8 offsetof(::er::paramdef::magic_param_st, consumeType8)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType9 offsetof(::er::paramdef::magic_param_st, consumeType9)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeType10 offsetof(::er::paramdef::magic_param_st, consumeType10)
+#define ERD_OFFSET_MAGIC_PARAM_ST_consumeLoopMP_forMenu offsetof(::er::paramdef::magic_param_st, consumeLoopMP_forMenu)
+#define ERD_OFFSET_MAGIC_PARAM_ST_pad offsetof(::er::paramdef::magic_param_st, pad)

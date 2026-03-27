@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>106157</ID>
+  <Description>"Category"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+  </DropDownList>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>FlagManagerFilter</Address>
+</CheatEntry>

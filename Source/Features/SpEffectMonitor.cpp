@@ -2,6 +2,7 @@
 
 #include "../Game/Memory.hpp"
 #include "../Main/Logger.hpp"
+#include "../Param/SP_EFFECT_PARAM_ST.hpp"
 
 #include <unordered_set>
 
@@ -17,7 +18,8 @@ constexpr uintptr_t kSpEffectEntryIdOffset = 0x8;
 constexpr uintptr_t kSpEffectEntryNextOffset = 0x30;
 constexpr uintptr_t kSpEffectEntryTimeLeftOffset = 0x40;
 constexpr uintptr_t kSpEffectEntryDurationOffset = 0x48;
-constexpr uintptr_t kSpEffectParamStateInfoOffset = 0x156;
+constexpr uintptr_t kSpEffectParamSpCategoryOffset = ERD_OFFSET_SP_EFFECT_PARAM_ST_spCategory;
+constexpr uintptr_t kSpEffectParamStateInfoOffset = ERD_OFFSET_SP_EFFECT_PARAM_ST_stateInfo;
 
 constexpr int kMaxSpEffectEntries = 1024;
 constexpr std::array<const char*, 1> kSetSpEffectPatternCandidates{{
@@ -303,6 +305,7 @@ void SpEffectMonitor::RefreshSnapshot(uintptr_t player_base) {
         float time_left = 0.0f;
         float duration = 0.0f;
         uintptr_t next_ptr = 0;
+        std::uint8_t sp_category = 0;
         std::uint16_t state_info = 0;
 
         Game::ReadValue(current + kSpEffectEntryParamDataOffset, param_data);
@@ -311,6 +314,7 @@ void SpEffectMonitor::RefreshSnapshot(uintptr_t player_base) {
         Game::ReadValue(current + kSpEffectEntryDurationOffset, duration);
         Game::ReadValue(current + kSpEffectEntryNextOffset, next_ptr);
         if (param_data != 0) {
+            Game::ReadValue(param_data + kSpEffectParamSpCategoryOffset, sp_category);
             Game::ReadValue(param_data + kSpEffectParamStateInfoOffset, state_info);
         }
 
@@ -318,6 +322,7 @@ void SpEffectMonitor::RefreshSnapshot(uintptr_t player_base) {
             effect_id,
             time_left,
             duration,
+            sp_category,
             state_info,
         });
 

@@ -4,6 +4,7 @@
 #include "../Main/FeatureStatus.hpp"
 #include "../Main/Logger.hpp"
 
+#include <cstring>
 #include <string>
 #include <vector>
 
@@ -20,7 +21,14 @@ constexpr uintptr_t kRideNodeHorseHandleOffset = 0x18;
 constexpr uintptr_t kChrSetEntriesOffset = 0x18;
 constexpr uintptr_t kChrSetEntryStride = 0x10;
 constexpr uintptr_t kChrDbgFlagsSilentOffset = 0x9;
+constexpr uintptr_t kChrDbgFlagsInfiniteGoodsOffset = 0x3;
+constexpr uintptr_t kChrDbgFlagsInfiniteStaminaOffset = 0x4;
+constexpr uintptr_t kChrDbgFlagsInfiniteFpOffset = 0x5;
+constexpr uintptr_t kChrDbgFlagsInfiniteArrowsOffset = 0x6;
 constexpr const char* kChrDbgFlagsPattern = "80 3D ? ? ? ? 00 0F 85 6C";
+constexpr const char* kNoRuneLossOnDeathPattern =
+    "48 89 6C 24 78 41 8B F5 44 89 6C 24 28 45 0F B6 E0 4C 89 74 24 70 48 8B FA 4C 8B F9";
+constexpr uintptr_t kNoRuneLossOnDeathPatchOffset = 0x43;
 constexpr std::array<uintptr_t, 2> kChrSetPoolOffsets{0x1DED8, 0x18038};
 
 struct Region {
@@ -36,6 +44,13 @@ struct Pattern {
 uintptr_t g_chr_dbg_flags_base = 0;
 bool g_chr_dbg_flags_scanned = false;
 bool g_chr_dbg_flags_log_once = false;
+
+uintptr_t g_no_rune_loss_patch_address = 0;
+bool g_no_rune_loss_patch_scanned = false;
+bool g_no_rune_loss_patch_enabled = false;
+std::array<std::uint8_t, 6> g_no_rune_loss_original_bytes{};
+bool g_no_rune_loss_original_captured = false;
+bool g_no_rune_loss_scan_log_once = false;
 
 bool RegionFromMainModuleText(Region& region) {
     HMODULE module = GetModuleHandleW(nullptr);
@@ -212,6 +227,74 @@ void LogProtectedException(const char* scope, const char* detail) {
     Main::Logger::Instance().Error((std::string(scope) + " failed: " + detail).c_str());
 }
 
+bool ResolveNoRuneLossPatchAddress(uintptr_t& out_address) {
+    if (!g_no_rune_loss_patch_scanned) {
+        g_no_rune_loss_patch_scanned = true;
+        const uintptr_t match = FindPatternInText(kNoRuneLossOnDeathPattern);
+        if (match != 0) {
+            g_no_rune_loss_patch_address = match + kNoRuneLossOnDeathPatchOffset;
+        }
+    }
+
+    if (g_no_rune_loss_patch_address == 0) {
+        return false;
+    }
+
+    std::uint8_t probe = 0;
+    if (!Game::ReadValue(g_no_rune_loss_patch_address, probe)) {
+        return false;
+    }
+
+    out_address = g_no_rune_loss_patch_address;
+    return true;
+}
+
+void SetNoRuneLossPatchEnabled(bool enabled) {
+    uintptr_t patch_address = 0;
+    if (!ResolveNoRuneLossPatchAddress(patch_address)) {
+        if (!g_no_rune_loss_scan_log_once) {
+            g_no_rune_loss_scan_log_once = true;
+            Main::Logger::Instance().Error("No rune loss patch address not found.");
+        }
+        return;
+    }
+
+    if (enabled) {
+        if (!g_no_rune_loss_original_captured) {
+            if (!Game::ReadMemory(
+                    patch_address,
+                    g_no_rune_loss_original_bytes.data(),
+                    g_no_rune_loss_original_bytes.size())) {
+                Main::Logger::Instance().Error("Failed to read original bytes for no rune loss patch.");
+                return;
+            }
+            g_no_rune_loss_original_captured = true;
+        }
+
+        std::array<std::uint8_t, 6> patched = g_no_rune_loss_original_bytes;
+        patched[0] = 0xE9;
+        std::int32_t relative = 0;
+        std::memcpy(&relative, patched.data() + 2, sizeof(relative));
+        relative += 1;
+        std::memcpy(patched.data() + 1, &relative, sizeof(relative));
+        patched[5] = 0x90;
+
+        if (Game::WriteMemory(patch_address, patched.data(), patched.size())) {
+            g_no_rune_loss_patch_enabled = true;
+        }
+        return;
+    }
+
+    if (g_no_rune_loss_patch_enabled && g_no_rune_loss_original_captured) {
+        if (Game::WriteMemory(
+                patch_address,
+                g_no_rune_loss_original_bytes.data(),
+                g_no_rune_loss_original_bytes.size())) {
+            g_no_rune_loss_patch_enabled = false;
+        }
+    }
+}
+
 #define ERD_PROTECTED_STEP(SCOPE, CALL)                           \
     do {                                                          \
         try {                                                     \
@@ -296,11 +379,28 @@ void CharacterFlags::Tick(const Game::SingletonRegistry& singletons) const {
                 const std::uint8_t desired =
                     Main::g_FeatureStatus.silent_footsteps.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0);
                 Game::WriteValue<std::uint8_t>(chr_dbg_flags_base + kChrDbgFlagsSilentOffset, desired);
+                Game::WriteValue<std::uint8_t>(
+                    chr_dbg_flags_base + kChrDbgFlagsInfiniteGoodsOffset,
+                    Main::g_FeatureStatus.infinite_consumables.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));
+                Game::WriteValue<std::uint8_t>(
+                    chr_dbg_flags_base + kChrDbgFlagsInfiniteStaminaOffset,
+                    Main::g_FeatureStatus.infinite_stamina.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));
+                Game::WriteValue<std::uint8_t>(
+                    chr_dbg_flags_base + kChrDbgFlagsInfiniteFpOffset,
+                    Main::g_FeatureStatus.infinite_fp.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));
+                Game::WriteValue<std::uint8_t>(
+                    chr_dbg_flags_base + kChrDbgFlagsInfiniteArrowsOffset,
+                    Main::g_FeatureStatus.infinite_arrows.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));
             } else if (!g_chr_dbg_flags_log_once) {
                 g_chr_dbg_flags_log_once = true;
                 Main::Logger::Instance().Error("Silent footsteps: ChrDbgFlags base not found.");
             }
         }
+    );
+
+    ERD_PROTECTED_STEP(
+        "CharacterFlags.NoRuneLossOnDeath",
+        SetNoRuneLossPatchEnabled(Main::g_FeatureStatus.no_rune_loss_on_death.load())
     );
 }
 

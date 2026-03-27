@@ -41,6 +41,6 @@ inline std::atomic_bool g_KillSwitch = false;
 
 // 主功能循环的轮询间隔。
 // 当前功能大多是内存写值或一次性补丁，100ms 足够且不会太激进。
-constexpr DWORD kFeaturePollIntervalMs = 100;
+constexpr DWORD kFeaturePollIntervalMs = 20;
 
 }  // namespace ERD

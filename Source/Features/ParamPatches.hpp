@@ -29,6 +29,7 @@ private:
     void SyncNoCraftingMaterialCost(const Game::SingletonRegistry& singletons);
     void SyncNoUpgradeMaterialCost(const Game::SingletonRegistry& singletons);
     void SyncAllWeaponsEnchantable(const Game::SingletonRegistry& singletons);
+    void SyncAllWeaponsAshOfWarChangeable(const Game::SingletonRegistry& singletons);
     void SyncNoMagicRequirements(const Game::SingletonRegistry& singletons);
     void SyncAllMagicOneSlot(const Game::SingletonRegistry& singletons);
     void SyncWeightlessEquipment(const Game::SingletonRegistry& singletons);
@@ -38,9 +39,15 @@ private:
     void SyncCustomCameraDistance(const Game::SingletonRegistry& singletons);
     void SyncSpiritAshesAnywhere(const Game::SingletonRegistry& singletons);
     void SyncTorrentAnywhere(const Game::SingletonRegistry& singletons);
+    void SyncOpenMapInCombat(const Game::SingletonRegistry& singletons);
+    void SyncInfiniteJump(const Game::SingletonRegistry& singletons);
     void SyncItemDiscovery(const Game::SingletonRegistry& singletons);
+    void SyncPlayerDamageMultiplier(const Game::SingletonRegistry& singletons);
+    void SyncPlayerDamageCutMultiplier(const Game::SingletonRegistry& singletons);
+    void SyncEnemyHpMultiplier(const Game::SingletonRegistry& singletons);
     void SyncPermanentLantern(const Game::SingletonRegistry& singletons);
     void SyncInvisibleHelmets(const Game::SingletonRegistry& singletons);
+    void SyncBuffDurationExtend(const Game::SingletonRegistry& singletons);
 
     struct FasterRespawnState {
         MenuCommonParam* row = nullptr;
@@ -90,20 +97,52 @@ private:
         bool active = false;
     };
 
+    struct PlayerDamageMultiplierState {
+        std::uint8_t* row = nullptr;
+        std::array<float, 5> original_values{};
+        bool captured = false;
+        int applied_percent = 0;
+    };
+
+    struct PlayerDamageCutMultiplierState {
+        std::uint8_t* row = nullptr;
+        std::array<float, 5> original_values{};
+        bool captured = false;
+        int applied_percent = 0;
+    };
+
+    struct EnemyHpState {
+        std::uint8_t* row = nullptr;
+        std::int32_t hp = 0;
+    };
+
+    struct EnemyHpMultiplierState {
+        std::vector<EnemyHpState> rows;
+        bool captured = false;
+        int applied_percent = 0;
+    };
+
+    struct BuffDurationExtendState {
+        std::uint8_t* row = nullptr;
+        float original_extend_life_rate = 1.0f;
+        bool captured = false;
+        int applied_mode = 0;
+    };
+
     struct HelmetState {
         std::uint8_t* row = nullptr;
         std::array<std::uint8_t, 7> head_and_invisible_flags{};
     };
 
     struct MagicRequirementState {
-        std::uint8_t* row = nullptr;
+        std::uint64_t row_id = 0;
         std::uint8_t arcane_requirement = 0;
         std::uint8_t intelligence_requirement = 0;
         std::uint8_t faith_requirement = 0;
     };
 
     struct MagicSlotState {
-        std::uint8_t* row = nullptr;
+        std::uint64_t row_id = 0;
         std::uint8_t slot_length = 0;
     };
 
@@ -163,6 +202,10 @@ private:
     bool weapon_enhance_rows_captured_ = false;
     bool weapon_enhance_active_ = false;
 
+    std::vector<WeaponEnhanceState> weapon_ash_of_war_rows_;
+    bool weapon_ash_of_war_rows_captured_ = false;
+    bool weapon_ash_of_war_active_ = false;
+
     CodePatchState easier_parry_judge_patch_;
     CodePatchState easier_parry_branch_a_patch_;
     CodePatchState easier_parry_branch_b_patch_;
@@ -177,11 +220,20 @@ private:
     CodePatchState spirit_ashes_anywhere_patch_secondary_;
     CodePatchState torrent_anywhere_patch_underworld_;
     CodePatchState torrent_anywhere_patch_whistle_;
+    CodePatchState open_map_in_combat_patch_open_map_;
+    CodePatchState open_map_in_combat_patch_close_map_;
+    CodePatchState infinite_jump_horse_primary_patch_;
+    CodePatchState infinite_jump_horse_secondary_patch_;
+    CodePatchState infinite_jump_cmp_patch_;
     CodePatchState crafting_material_cost_patch_primary_;
     CodePatchState crafting_material_cost_patch_secondary_;
 
     ItemDiscoveryState item_discovery_;
+    PlayerDamageMultiplierState player_damage_multiplier_;
+    PlayerDamageCutMultiplierState player_damage_cut_multiplier_;
+    EnemyHpMultiplierState enemy_hp_multiplier_;
     PermanentLanternState permanent_lantern_;
+    BuffDurationExtendState buff_duration_extend_;
 
     std::vector<HelmetState> helmet_rows_;
     bool helmet_rows_captured_ = false;

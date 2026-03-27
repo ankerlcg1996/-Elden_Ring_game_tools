@@ -7,22 +7,38 @@ namespace ERD::Main {
 struct FeatureStatus {
     std::atomic_bool no_dead = false;
     std::atomic_bool infinite_fp = false;
+    std::atomic_bool infinite_stamina = false;
+    std::atomic_bool infinite_consumables = false;
+    std::atomic_bool infinite_arrows = false;
+    std::atomic_bool no_rune_loss_on_death = false;
 
-    std::atomic_bool faster_respawn = false;
-    std::atomic_bool warp_out_of_uncleared_minidungeons = false;
+    std::atomic_bool faster_respawn = true;
+    std::atomic_bool warp_out_of_uncleared_minidungeons = true;
+    std::atomic_bool open_map_in_combat = true;
     std::atomic_bool free_purchase = false;
     std::atomic_bool no_crafting_material_cost = false;
     std::atomic_bool no_upgrade_material_cost = false;
     std::atomic_bool all_weapons_enchantable = false;
+    std::atomic_bool all_weapons_ash_of_war_changeable = false;
     std::atomic_bool no_magic_requirements = false;
     std::atomic_bool all_magic_one_slot = false;
+    std::atomic_bool beast_not_hostile = false;
     std::atomic_bool silent_footsteps = false;
+    std::atomic_bool infinite_jump = false;
     std::atomic_bool torrent_no_death = false;
     std::atomic_bool torrent_anywhere = false;
     std::atomic_bool weightless_equipment = false;
     std::atomic_int equipment_weight_reduction_percent = 0;
     std::atomic_int weapon_requirement_reduction_percent = 0;
+    std::atomic_int player_speed_increase_percent = 0;
+    std::atomic_int buff_duration_extend_mode = 0;
+    std::atomic_int enemy_hp_increase_percent = 0;
+    std::atomic_int enemy_hp_decrease_percent = 0;
     std::atomic_int easier_parry_percent = 0;
+    std::atomic_int damage_multiplier_percent = 0;
+    std::atomic_int damage_cut_multiplier_percent = 0;
+    std::atomic_int damage_reduce_multiplier_percent = 0;
+    std::atomic_int damage_taken_multiplier_percent = 0;
     std::atomic_int easier_guard_percent = 0;
     std::atomic_bool custom_fov_enabled = false;
     std::atomic<float> custom_fov_value = 60.0f;
@@ -31,7 +47,7 @@ struct FeatureStatus {
     std::atomic_bool spirit_ashes_anywhere = false;
     std::atomic_bool damage_popup_overlay_enabled = true;
     std::atomic_int item_discovery_multiplier = 1;
-    std::atomic_bool permanent_lantern = false;
+    std::atomic_bool permanent_lantern = true;
     std::atomic_bool invisible_helmets = false;
     std::atomic_bool no_clip_enabled = false;
     std::atomic_bool freecam_enabled = false;
@@ -203,6 +219,7 @@ struct FeatureStatus {
     std::atomic_bool menu_visible = true;
     std::atomic_bool overlay_ready = false;
     std::atomic_bool game_ready = false;
+    std::atomic_bool debug_mode = false;
 };
 
 inline FeatureStatus g_FeatureStatus;

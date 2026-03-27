@@ -9,6 +9,7 @@ struct SpEffectEntrySnapshot {
     int id = 0;
     float time_left = 0.0f;
     float duration = 0.0f;
+    std::uint8_t sp_category = 0;
     std::uint16_t state_info = 0;
 };
 
@@ -48,4 +49,3 @@ private:
 SpEffectMonitorSnapshot GetSpEffectMonitorSnapshot();
 
 }  // namespace ERD::Features
-

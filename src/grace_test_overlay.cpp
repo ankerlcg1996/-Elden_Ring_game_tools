@@ -13,9 +13,12 @@
 #include <dxgi1_4.h>
 
 #include <algorithm>
+#include <cctype>
 #include <cmath>
 #include <cstdlib>
 #include <cstdio>
+#include <fstream>
+#include <sstream>
 #include <string>
 #include <memory>
 #include <unordered_map>
@@ -29,6 +32,8 @@ namespace {
 
 class D3D12PostureOverlay;
 std::unique_ptr<D3D12PostureOverlay> g_overlay;
+std::unordered_map<int, std::string> g_sp_effect_name_map;
+bool g_sp_effect_name_map_loaded = false;
 
 inline constexpr std::uint16_t kExecuteCommandListsIndex = 54;
 inline constexpr std::uint16_t kPresentIndex = 140;
@@ -60,6 +65,80 @@ std::unordered_map<std::uint64_t, AnchorState> g_LastAnchorByHandle;
 std::vector<DamagePopupEntry> g_DamagePopups;
 TrackedNpcState g_TargetedTracker{};
 TrackedNpcState g_LastHitTracker{};
+
+std::string Trim(std::string value) {
+    const auto begin = value.find_first_not_of(" \t\r\n");
+    if (begin == std::string::npos) {
+        return {};
+    }
+    const auto end = value.find_last_not_of(" \t\r\n");
+    return value.substr(begin, end - begin + 1);
+}
+
+bool LoadSpEffectNameMap(const std::filesystem::path& folder) {
+    g_sp_effect_name_map.clear();
+
+    const std::filesystem::path primary_path = folder / "Resources" / "SpEffectParam.txt";
+    const std::filesystem::path fallback_path = std::filesystem::current_path() / "Resources" / "SpEffectParam.txt";
+    std::filesystem::path load_path = primary_path;
+    if (!std::filesystem::exists(load_path)) {
+        load_path = fallback_path;
+    }
+    if (!std::filesystem::exists(load_path)) {
+        spdlog::warn("SpEffectParam.txt not found: {} / {}.", primary_path.string(), fallback_path.string());
+        return false;
+    }
+
+    std::ifstream file(load_path, std::ios::binary);
+    if (!file.is_open()) {
+        spdlog::warn("Failed to open SpEffectParam.txt: {}.", load_path.string());
+        return false;
+    }
+
+    std::string line;
+    std::size_t loaded_count = 0;
+    while (std::getline(file, line)) {
+        line = Trim(std::move(line));
+        if (line.empty() || line[0] == '#') {
+            continue;
+        }
+
+        std::size_t cursor = 0;
+        bool has_digit = false;
+        while (cursor < line.size() && std::isdigit(static_cast<unsigned char>(line[cursor]))) {
+            has_digit = true;
+            ++cursor;
+        }
+        if (!has_digit) {
+            continue;
+        }
+
+        const std::string id_part = line.substr(0, cursor);
+        std::string name_part = Trim(line.substr(cursor));
+        if (name_part.empty()) {
+            continue;
+        }
+
+        try {
+            const int id = std::stoi(id_part);
+            g_sp_effect_name_map[id] = std::move(name_part);
+            ++loaded_count;
+        } catch (...) {
+            continue;
+        }
+    }
+
+    spdlog::info("Loaded {} SpEffect names from {}.", loaded_count, load_path.string());
+    return loaded_count > 0;
+}
+
+const char* FindSpEffectName(int id) {
+    const auto it = g_sp_effect_name_map.find(id);
+    if (it == g_sp_effect_name_map.end()) {
+        return "Unknown";
+    }
+    return it->second.c_str();
+}
 
 GameViewportTransform BuildGameViewportTransform() {
     ImGuiViewport* viewport = ImGui::GetMainViewport();
@@ -321,6 +400,10 @@ void DrawDamagePopups(ImDrawList* draw_list, const ImVec2& anchor, std::uint64_t
 }
 
 void DrawIntegratedPostureBars() {
+    if (!ERD::Main::g_FeatureStatus.debug_mode.load()) {
+        return;
+    }
+
     if (!ERD::Main::g_FeatureStatus.game_ready.load()) {
         return;
     }
@@ -342,14 +425,17 @@ void DrawIntegratedPostureBars() {
     lines.reserve(snapshot.active_effects.size() + 1);
     lines.emplace_back("Player Active SpEffects");
     for (const auto& entry : snapshot.active_effects) {
-        char buffer[160]{};
+        const char* effect_name = FindSpEffectName(entry.id);
+        char buffer[320]{};
         std::snprintf(
             buffer,
             sizeof(buffer),
-            "ID:%d  Left:%.1f  Dur:%.1f  State:%u",
+            "%s | ID:%d  Left:%.1f  Dur:%.1f  Cat:%u  State:%u",
+            effect_name,
             entry.id,
             static_cast<double>(entry.time_left),
             static_cast<double>(entry.duration),
+            static_cast<unsigned>(entry.sp_category),
             static_cast<unsigned>(entry.state_info));
         lines.emplace_back(buffer);
         if (lines.size() >= 25) {
@@ -951,9 +1037,12 @@ private:
 
 }  // namespace
 
-void initialize(const std::filesystem::path&) {
+void initialize(const std::filesystem::path& folder) {
     if (!g_overlay) {
         g_overlay = std::make_unique<D3D12PostureOverlay>();
+    }
+    if (!g_sp_effect_name_map_loaded) {
+        g_sp_effect_name_map_loaded = LoadSpEffectNameMap(folder);
     }
 }
 
@@ -966,6 +1055,8 @@ void tick() {
 
 void shutdown() {
     g_overlay.reset();
+    g_sp_effect_name_map.clear();
+    g_sp_effect_name_map_loaded = false;
 }
 
 }  // namespace grace_test::overlay

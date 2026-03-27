@@ -856,6 +856,25 @@ InspectorSnapshot GetInspectorSnapshot() {
     return InspectorTools::Instance() != nullptr ? InspectorTools::Instance()->Snapshot() : InspectorSnapshot{};
 }
 
+bool ExecutePlayerTalkCommand(
+    const Game::SingletonRegistry& singletons,
+    int event_id,
+    const std::array<std::int64_t, 4>& params,
+    int param_count) {
+    const std::uint64_t player_handle = GetPlayerHandle(singletons);
+    if (player_handle == static_cast<std::uint64_t>(-1)) {
+        return false;
+    }
+    return ExecuteEzStateEvent(player_handle, event_id, params, param_count);
+}
+
+bool ExecuteTalkCommand(
+    int event_id,
+    const std::array<std::int64_t, 4>& params,
+    int param_count) {
+    return ExecuteEzStateEvent(0, event_id, params, param_count);
+}
+
 InspectorTools* InspectorTools::Instance() {
     return instance_;
 }

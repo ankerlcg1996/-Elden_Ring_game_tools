@@ -142,5 +142,14 @@ private:
 };
 
 InspectorSnapshot GetInspectorSnapshot();
+bool ExecutePlayerTalkCommand(
+    const Game::SingletonRegistry& singletons,
+    int event_id,
+    const std::array<std::int64_t, 4>& params,
+    int param_count);
+bool ExecuteTalkCommand(
+    int event_id,
+    const std::array<std::int64_t, 4>& params,
+    int param_count);
 
 }  // namespace ERD::Features

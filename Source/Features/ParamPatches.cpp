@@ -5,7 +5,11 @@
 #include "../Main/FeatureStatus.hpp"
 #include "../Main/Logger.hpp"
 #include "../Param/EQUIP_PARAM_WEAPON_ST.hpp"
+#include "../Param/MAGIC_PARAM_ST.hpp"
+#include "../Param/NPC_PARAM_ST.hpp"
+#include "../Param/SP_EFFECT_PARAM_ST.hpp"
 
+#include <algorithm>
 #include <cmath>
 
 namespace ERD::Features {
@@ -33,15 +37,34 @@ constexpr std::size_t kGemSellValueOffset = 0x24;
 constexpr std::size_t kProtectorHeadFlagOffset = 0xDC;
 constexpr std::size_t kProtectorHeadAndInvisibleFlagsSize = 7;
 constexpr std::uint8_t kProtectorHeadEquipBit = 1u << 1;
-constexpr std::size_t kMagicArcaneRequirementOffset = 0x0E;
-constexpr std::size_t kMagicSlotLengthOffset = 0x21;
-constexpr std::size_t kMagicIntelligenceRequirementOffset = 0x22;
-constexpr std::size_t kMagicFaithRequirementOffset = 0x23;
+constexpr std::size_t kMagicArcaneRequirementOffset = ERD_OFFSET_MAGIC_PARAM_ST_requirementLuck;
+constexpr std::size_t kMagicSlotLengthOffset = ERD_OFFSET_MAGIC_PARAM_ST_slotLength;
+constexpr std::size_t kMagicIntelligenceRequirementOffset = ERD_OFFSET_MAGIC_PARAM_ST_requirementIntellect;
+constexpr std::size_t kMagicFaithRequirementOffset = ERD_OFFSET_MAGIC_PARAM_ST_requirementFaith;
 constexpr std::uint8_t kMagicSingleSlotValue = 1;
 constexpr std::size_t kWeaponWeightOffset = 0x10;
 constexpr std::size_t kWeaponIsEnhanceOffset = 0x106;
+constexpr std::size_t kWeaponGemMountTypeOffset = ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_gemMountType;
 constexpr std::size_t kProtectorWeightOffset = 0x24;
 constexpr std::size_t kAccessoryWeightOffset = 0x0C;
+constexpr std::uint64_t kPlayerDamageMultiplierSpEffectRowId = 416;
+constexpr std::uint64_t kBuffDurationExtendSpEffectRowId = 330600;
+constexpr std::size_t kBuffDurationExtendOffset = ERD_OFFSET_SP_EFFECT_PARAM_ST_extendLifeRate;
+constexpr std::array<std::size_t, 5> kPlayerDamageMultiplierOffsets{{
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_physicsAttackPowerRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_magicAttackPowerRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_fireAttackPowerRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderAttackPowerRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_darkAttackPowerRate,
+}};
+constexpr std::array<std::size_t, 5> kPlayerDamageCutMultiplierOffsets{{
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_neutralDamageCutRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_magicDamageCutRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_fireDamageCutRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_thunderDamageCutRate,
+    ERD_OFFSET_SP_EFFECT_PARAM_ST_darkDamageCutRate,
+}};
+constexpr std::size_t kEnemyHpOffset = ERD_OFFSET_NPC_PARAM_ST_hp;
 constexpr std::array<std::size_t, 10> kWeaponRequirementOffsets{{
     ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attainmentWepStatusStr,
     ERD_OFFSET_EQUIP_PARAM_WEAPON_ST_attainmentWepStatusDex,
@@ -82,6 +105,47 @@ constexpr std::array<const char*, 1> kWhistleDisabledPatternCandidates{{
     "80 79 36 00 0F 95 C0 48 83 C4 28 C3",
 }};
 constexpr std::array<std::uint8_t, 3> kTorrentAnywherePatchBytes{0x30, 0xC0, 0x90};
+constexpr std::array<const char*, 1> kOpenMapInCombatPatternCandidates{{
+    "84 C0 74 2E C7",
+}};
+constexpr std::array<const char*, 1> kCloseMapInCombatPatternCandidates{{
+    "48 8B 03 48 8B CB 48 8B 94 24 ? ? ? ? FF 50 ? 48 8D 8B ? 27 00 00",
+}};
+constexpr std::uint8_t kOpenMapInCombatPatchByte = 0xEB;
+constexpr std::array<std::uint8_t, 3> kCloseMapInCombatPatchBytes{0x90, 0x90, 0x90};
+constexpr std::array<const char*, 1> kInfiniteJumpHorsePrimaryPatternCandidates{{
+    "88 87 ? ? ? ? 48 8B 83 ? ? ? ? 48 8B 48 ? 80 B9",
+}};
+constexpr std::array<const char*, 1> kInfiniteJumpHorseSecondaryPatternCandidates{{
+    "88 87 ? ? ? ? 48 8B 83 ? ? ? ? 48 8B 48 ? E8 ? ? ? ? 88 87",
+}};
+constexpr std::array<const char*, 1> kInfiniteJumpCmpPatternCandidates{{
+    "83 EC ?? 80 B9 D1 01 00 00 00 74 ?? 48",
+}};
+constexpr std::uint8_t kInfiniteJumpCmpImmediate = 0x92;
+
+template <typename Fn>
+bool ForEachMagicParamRowWithFallback(
+    const Game::SingletonRegistry& singletons,
+    Fn&& fn,
+    const wchar_t** used_table_name = nullptr) {
+    constexpr std::array<const wchar_t*, 4> kMagicParamTableCandidates{{
+        L"Magic",
+        L"MagicParam",
+        L"MAGIC_PARAM_ST",
+        L"MagicParam_PC",
+    }};
+
+    for (const wchar_t* table_name : kMagicParamTableCandidates) {
+        if (Game::ForEachParamRow<MagicParam>(singletons, table_name, fn)) {
+            if (used_table_name != nullptr) {
+                *used_table_name = table_name;
+            }
+            return true;
+        }
+    }
+    return false;
+}
 
 void LogProtectedException(const char* scope, const char* detail) {
     Main::Logger::Instance().Error((std::string(scope) + " failed: " + detail).c_str());
@@ -317,32 +381,67 @@ bool MatchesAnyBranchOpcodePair(uintptr_t branch_base_target) {
         return false;
     }
 
-    std::uint8_t a0 = 0, a1 = 0, b0 = 0, b1 = 0;
+    std::uint8_t a0 = 0, a1 = 0;
     if (!Game::ReadValue(branch_base_target + 0x0F, a0) ||
-        !Game::ReadValue(branch_base_target + 0x10, a1) ||
-        !Game::ReadValue(branch_base_target + 0x47, b0) ||
-        !Game::ReadValue(branch_base_target + 0x48, b1)) {
+        !Game::ReadValue(branch_base_target + 0x10, a1)) {
         return false;
     }
 
     const bool a_ok = (a0 == 0x0F && a1 == 0x85) || (a0 == 0xEB && a1 == 0x04);
-    const bool b_ok = (b0 == 0x0F && b1 == 0x84) || (b0 == 0xEB && b1 == 0x04);
-    return a_ok && b_ok;
+    if (!a_ok) {
+        return false;
+    }
+
+    for (uintptr_t cursor = branch_base_target + 0x11; cursor < branch_base_target + 0x90; ++cursor) {
+        std::uint8_t b0 = 0;
+        std::uint8_t b1 = 0;
+        if (!Game::ReadValue(cursor, b0) || !Game::ReadValue(cursor + 1, b1)) {
+            continue;
+        }
+        if ((b0 == 0x0F && b1 == 0x84) || (b0 == 0xEB && b1 == 0x04)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+uintptr_t ResolveEasierParryBranchSecondaryTarget(uintptr_t branch_base_target) {
+    if (branch_base_target == 0) {
+        return 0;
+    }
+
+    for (uintptr_t cursor = branch_base_target + 0x11; cursor < branch_base_target + 0x90; ++cursor) {
+        std::uint8_t b0 = 0;
+        std::uint8_t b1 = 0;
+        if (!Game::ReadValue(cursor, b0) || !Game::ReadValue(cursor + 1, b1)) {
+            continue;
+        }
+        if ((b0 == 0x0F && b1 == 0x84) || (b0 == 0xEB && b1 == 0x04)) {
+            return cursor;
+        }
+    }
+
+    return 0;
 }
 
 uintptr_t ResolveEasierParryBranchBaseTarget() {
+    uintptr_t fallback_match = 0;
     for (const char* pattern : kEasierParryBranchPatternCandidates) {
         if (pattern == nullptr) {
             continue;
         }
         const std::vector<uintptr_t> matches = FindAllPatternsInText(pattern);
+        if (fallback_match == 0 && !matches.empty()) {
+            fallback_match = matches.front();
+        }
         for (uintptr_t match : matches) {
             if (MatchesAnyBranchOpcodePair(match)) {
                 return match;
             }
         }
     }
-    return 0;
+    return fallback_match;
 }
 
 bool WriteProtectedMemory(uintptr_t address, const void* data, std::size_t size) {
@@ -716,6 +815,60 @@ bool InstallEasierParryJudgePatch(ParamPatches::CodePatchState& state) {
     return true;
 }
 
+bool InstallForceAlThenReplayPatch(ParamPatches::CodePatchState& state, uintptr_t target) {
+    if (!state.captured) {
+        if (!CapturePatchTarget(state, target, 6)) {
+            return false;
+        }
+    }
+
+    if (state.active) {
+        return true;
+    }
+
+    state.cave = AllocateNearbyExecutableMemory(state.target, 0x40);
+    if (state.cave == nullptr) {
+        return false;
+    }
+
+    auto* cave = reinterpret_cast<std::uint8_t*>(state.cave);
+    std::size_t cursor = 0;
+    const std::uint8_t set_al_true[] = {0xB0, 0x01};
+    std::memcpy(cave + cursor, set_al_true, sizeof(set_al_true));
+    cursor += sizeof(set_al_true);
+
+    std::memcpy(cave + cursor, state.original_bytes.data(), state.patch_size);
+    cursor += state.patch_size;
+
+    std::array<std::uint8_t, kInlinePatchSize> cave_jump{};
+    if (!MakeRelativeJump(cave_jump, reinterpret_cast<uintptr_t>(cave + cursor), state.target + state.patch_size)) {
+        VirtualFree(state.cave, 0, MEM_RELEASE);
+        state.cave = nullptr;
+        return false;
+    }
+    std::memcpy(cave + cursor, cave_jump.data(), cave_jump.size());
+
+    std::array<std::uint8_t, kInlinePatchSize> target_jump{};
+    if (!MakeRelativeJump(target_jump, state.target, reinterpret_cast<uintptr_t>(state.cave))) {
+        VirtualFree(state.cave, 0, MEM_RELEASE);
+        state.cave = nullptr;
+        return false;
+    }
+
+    std::array<std::uint8_t, 6> target_patch{};
+    std::memcpy(target_patch.data(), target_jump.data(), target_jump.size());
+    target_patch[5] = 0x90;
+
+    if (!WriteProtectedMemory(state.target, target_patch.data(), state.patch_size)) {
+        VirtualFree(state.cave, 0, MEM_RELEASE);
+        state.cave = nullptr;
+        return false;
+    }
+
+    state.active = true;
+    return true;
+}
+
 bool RestoreCodePatch(ParamPatches::CodePatchState& state) {
     if (!state.active) {
         return true;
@@ -743,6 +896,7 @@ void ParamPatches::Tick(const Game::SingletonRegistry& singletons) {
     ERD_PROTECTED_STEP("ParamPatches.NoCraftingMaterialCost", SyncNoCraftingMaterialCost(singletons));
     ERD_PROTECTED_STEP("ParamPatches.NoUpgradeMaterialCost", SyncNoUpgradeMaterialCost(singletons));
     ERD_PROTECTED_STEP("ParamPatches.AllWeaponsEnchantable", SyncAllWeaponsEnchantable(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.AllWeaponsAshOfWarChangeable", SyncAllWeaponsAshOfWarChangeable(singletons));
     ERD_PROTECTED_STEP("ParamPatches.NoMagicRequirements", SyncNoMagicRequirements(singletons));
     ERD_PROTECTED_STEP("ParamPatches.AllMagicOneSlot", SyncAllMagicOneSlot(singletons));
     ERD_PROTECTED_STEP("ParamPatches.WeightlessEquipment", SyncWeightlessEquipment(singletons));
@@ -752,7 +906,13 @@ void ParamPatches::Tick(const Game::SingletonRegistry& singletons) {
     ERD_PROTECTED_STEP("ParamPatches.CustomCameraDistance", SyncCustomCameraDistance(singletons));
     ERD_PROTECTED_STEP("ParamPatches.SpiritAshesAnywhere", SyncSpiritAshesAnywhere(singletons));
     ERD_PROTECTED_STEP("ParamPatches.TorrentAnywhere", SyncTorrentAnywhere(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.OpenMapInCombat", SyncOpenMapInCombat(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.InfiniteJump", SyncInfiniteJump(singletons));
     ERD_PROTECTED_STEP("ParamPatches.ItemDiscovery", SyncItemDiscovery(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.PlayerDamageMultiplier", SyncPlayerDamageMultiplier(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.PlayerDamageCutMultiplier", SyncPlayerDamageCutMultiplier(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.BuffDurationExtend", SyncBuffDurationExtend(singletons));
+    ERD_PROTECTED_STEP("ParamPatches.EnemyHpMultiplier", SyncEnemyHpMultiplier(singletons));
     ERD_PROTECTED_STEP("ParamPatches.PermanentLantern", SyncPermanentLantern(singletons));
     ERD_PROTECTED_STEP("ParamPatches.InvisibleHelmets", SyncInvisibleHelmets(singletons));
 }
@@ -1035,45 +1195,112 @@ void ParamPatches::SyncAllWeaponsEnchantable(const Game::SingletonRegistry& sing
     }
 }
 
-void ParamPatches::SyncNoMagicRequirements(const Game::SingletonRegistry& singletons) {
-    const bool desired = Main::g_FeatureStatus.no_magic_requirements.load();
-    if (!magic_requirement_rows_captured_ && desired) {
-        magic_requirement_rows_.clear();
-        const bool found_rows = Game::ForEachParamRow<MagicParam>(
+void ParamPatches::SyncAllWeaponsAshOfWarChangeable(const Game::SingletonRegistry& singletons) {
+    const bool desired = Main::g_FeatureStatus.all_weapons_ash_of_war_changeable.load();
+
+    if (!weapon_ash_of_war_rows_captured_ && desired) {
+        weapon_ash_of_war_rows_.clear();
+        const bool found_rows = Game::ForEachParamRow<EquipParamWeapon>(
             singletons,
-            L"MagicParam",
-            [this](std::uint64_t, MagicParam* row) {
+            L"EquipParamWeapon",
+            [this](std::uint64_t, EquipParamWeapon* row) {
                 auto* bytes = reinterpret_cast<std::uint8_t*>(row);
-                magic_requirement_rows_.push_back(MagicRequirementState{
+                weapon_ash_of_war_rows_.push_back(WeaponEnhanceState{
                     bytes,
-                    ReadOffsetValue<std::uint8_t>(bytes, kMagicArcaneRequirementOffset),
-                    ReadOffsetValue<std::uint8_t>(bytes, kMagicIntelligenceRequirementOffset),
-                    ReadOffsetValue<std::uint8_t>(bytes, kMagicFaithRequirementOffset),
+                    ReadOffsetValue<std::uint8_t>(bytes, kWeaponGemMountTypeOffset),
                 });
             }
         );
 
-        if (!found_rows || magic_requirement_rows_.empty()) {
+        if (!found_rows || weapon_ash_of_war_rows_.empty()) {
             return;
         }
 
+        weapon_ash_of_war_rows_captured_ = true;
+    }
+
+    if (!weapon_ash_of_war_rows_captured_) {
+        return;
+    }
+
+    if (desired && !weapon_ash_of_war_active_) {
+        for (const WeaponEnhanceState& entry : weapon_ash_of_war_rows_) {
+            WriteOffsetValue<std::uint8_t>(entry.row, kWeaponGemMountTypeOffset, 1);
+        }
+        weapon_ash_of_war_active_ = true;
+        Main::Logger::Instance().Info("All weapons Ash of War changeable patch applied.");
+    } else if (!desired && weapon_ash_of_war_active_) {
+        for (const WeaponEnhanceState& entry : weapon_ash_of_war_rows_) {
+            WriteOffsetValue<std::uint8_t>(entry.row, kWeaponGemMountTypeOffset, entry.is_enhance);
+        }
+        weapon_ash_of_war_active_ = false;
+        Main::Logger::Instance().Info("All weapons Ash of War changeable patch restored.");
+    }
+}
+
+void ParamPatches::SyncNoMagicRequirements(const Game::SingletonRegistry& singletons) {
+    const bool desired = Main::g_FeatureStatus.no_magic_requirements.load();
+    static bool s_logged_missing_magic_table = false;
+    static bool s_logged_capture_once = false;
+    if (!magic_requirement_rows_captured_ && desired) {
+        magic_requirement_rows_.clear();
+        const wchar_t* used_table_name = nullptr;
+        const bool found_rows = ForEachMagicParamRowWithFallback(
+            singletons,
+            [this](std::uint64_t row_id, MagicParam* row) {
+                auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+                magic_requirement_rows_.push_back(MagicRequirementState{
+                    row_id,
+                    ReadOffsetValue<std::uint8_t>(bytes, kMagicArcaneRequirementOffset),
+                    ReadOffsetValue<std::uint8_t>(bytes, kMagicIntelligenceRequirementOffset),
+                    ReadOffsetValue<std::uint8_t>(bytes, kMagicFaithRequirementOffset),
+                });
+            },
+            &used_table_name
+        );
+
+        if (!found_rows || magic_requirement_rows_.empty()) {
+            if (!s_logged_missing_magic_table) {
+                Main::Logger::Instance().Error("No magic requirements patch failed: MagicParam table not found.");
+                s_logged_missing_magic_table = true;
+            }
+            return;
+        }
+
+        s_logged_missing_magic_table = false;
         magic_requirement_rows_captured_ = true;
+        if (!s_logged_capture_once) {
+            std::wstring info = L"No magic requirements captured rows from table: ";
+            info += (used_table_name != nullptr ? used_table_name : L"(unknown)");
+            info += L", rows=" + std::to_wstring(magic_requirement_rows_.size());
+            Main::Logger::Instance().Info(std::string(info.begin(), info.end()).c_str());
+            s_logged_capture_once = true;
+        }
     }
 
     if (desired && magic_requirement_rows_captured_ && !magic_requirement_active_) {
-        for (MagicRequirementState& entry : magic_requirement_rows_) {
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicArcaneRequirementOffset, 0);
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicIntelligenceRequirementOffset, 0);
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicFaithRequirementOffset, 0);
-        }
+        ForEachMagicParamRowWithFallback(singletons, [this](std::uint64_t row_id, MagicParam* row) {
+            auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicArcaneRequirementOffset, 0);
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicIntelligenceRequirementOffset, 0);
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicFaithRequirementOffset, 0);
+        });
         magic_requirement_active_ = true;
         Main::Logger::Instance().Info("No magic requirements patch applied.");
     } else if (!desired && magic_requirement_active_) {
-        for (const MagicRequirementState& entry : magic_requirement_rows_) {
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicArcaneRequirementOffset, entry.arcane_requirement);
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicIntelligenceRequirementOffset, entry.intelligence_requirement);
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicFaithRequirementOffset, entry.faith_requirement);
-        }
+        ForEachMagicParamRowWithFallback(singletons, [this](std::uint64_t row_id, MagicParam* row) {
+            auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+            const auto it = std::find_if(
+                magic_requirement_rows_.begin(),
+                magic_requirement_rows_.end(),
+                [row_id](const MagicRequirementState& state) { return state.row_id == row_id; });
+            if (it == magic_requirement_rows_.end()) {
+                return;
+            }
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicArcaneRequirementOffset, it->arcane_requirement);
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicIntelligenceRequirementOffset, it->intelligence_requirement);
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicFaithRequirementOffset, it->faith_requirement);
+        });
         magic_requirement_active_ = false;
         Main::Logger::Instance().Info("No magic requirements patch restored.");
     }
@@ -1081,37 +1308,61 @@ void ParamPatches::SyncNoMagicRequirements(const Game::SingletonRegistry& single
 
 void ParamPatches::SyncAllMagicOneSlot(const Game::SingletonRegistry& singletons) {
     const bool desired = Main::g_FeatureStatus.all_magic_one_slot.load();
+    static bool s_logged_missing_magic_table = false;
+    static bool s_logged_capture_once = false;
     if (!magic_slot_rows_captured_ && desired) {
         magic_slot_rows_.clear();
-        const bool found_rows = Game::ForEachParamRow<MagicParam>(
+        const wchar_t* used_table_name = nullptr;
+        const bool found_rows = ForEachMagicParamRowWithFallback(
             singletons,
-            L"MagicParam",
-            [this](std::uint64_t, MagicParam* row) {
+            [this](std::uint64_t row_id, MagicParam* row) {
                 auto* bytes = reinterpret_cast<std::uint8_t*>(row);
                 magic_slot_rows_.push_back(MagicSlotState{
-                    bytes,
+                    row_id,
                     ReadOffsetValue<std::uint8_t>(bytes, kMagicSlotLengthOffset),
                 });
-            }
+            },
+            &used_table_name
         );
 
         if (!found_rows || magic_slot_rows_.empty()) {
+            if (!s_logged_missing_magic_table) {
+                Main::Logger::Instance().Error("All magic one slot patch failed: MagicParam table not found.");
+                s_logged_missing_magic_table = true;
+            }
             return;
         }
 
+        s_logged_missing_magic_table = false;
         magic_slot_rows_captured_ = true;
+        if (!s_logged_capture_once) {
+            std::wstring info = L"All magic one slot captured rows from table: ";
+            info += (used_table_name != nullptr ? used_table_name : L"(unknown)");
+            info += L", rows=" + std::to_wstring(magic_slot_rows_.size());
+            Main::Logger::Instance().Info(std::string(info.begin(), info.end()).c_str());
+            s_logged_capture_once = true;
+        }
     }
 
     if (desired && magic_slot_rows_captured_ && !magic_slot_active_) {
-        for (MagicSlotState& entry : magic_slot_rows_) {
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicSlotLengthOffset, kMagicSingleSlotValue);
-        }
+        ForEachMagicParamRowWithFallback(singletons, [](std::uint64_t, MagicParam* row) {
+            auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicSlotLengthOffset, kMagicSingleSlotValue);
+        });
         magic_slot_active_ = true;
         Main::Logger::Instance().Info("All magic one slot patch applied.");
     } else if (!desired && magic_slot_active_) {
-        for (const MagicSlotState& entry : magic_slot_rows_) {
-            WriteOffsetValue<std::uint8_t>(entry.row, kMagicSlotLengthOffset, entry.slot_length);
-        }
+        ForEachMagicParamRowWithFallback(singletons, [this](std::uint64_t row_id, MagicParam* row) {
+            auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+            const auto it = std::find_if(
+                magic_slot_rows_.begin(),
+                magic_slot_rows_.end(),
+                [row_id](const MagicSlotState& state) { return state.row_id == row_id; });
+            if (it == magic_slot_rows_.end()) {
+                return;
+            }
+            WriteOffsetValue<std::uint8_t>(bytes, kMagicSlotLengthOffset, it->slot_length);
+        });
         magic_slot_active_ = false;
         Main::Logger::Instance().Info("All magic one slot patch restored.");
     }
@@ -1272,7 +1523,7 @@ void ParamPatches::SyncEasierParry(const Game::SingletonRegistry&) {
 
     const uintptr_t branch_base_target = ResolveEasierParryBranchBaseTarget();
     const uintptr_t branch_a_target = branch_base_target == 0 ? 0 : (branch_base_target + 0x0F);
-    const uintptr_t branch_b_target = branch_base_target == 0 ? 0 : (branch_base_target + 0x47);
+    const uintptr_t branch_b_target = ResolveEasierParryBranchSecondaryTarget(branch_base_target);
     if (branch_base_target == 0 && desired_stage >= 2) {
         Main::Logger::Instance().Error("Easier parry branch target not found.");
         return;
@@ -1285,6 +1536,7 @@ void ParamPatches::SyncEasierParry(const Game::SingletonRegistry&) {
         ok = RestoreCodePatch(easier_parry_judge_patch_);
     }
     if (!ok) {
+        Main::Logger::Instance().Error("Easier parry judge patch failed.");
         return;
     }
 
@@ -1298,10 +1550,15 @@ void ParamPatches::SyncEasierParry(const Game::SingletonRegistry&) {
         ok = RestoreCodePatch(easier_parry_branch_a_patch_);
     }
     if (!ok) {
+        Main::Logger::Instance().Error("Easier parry branch-A patch failed.");
         return;
     }
 
     if (desired_stage >= 3) {
+        if (branch_b_target == 0) {
+            Main::Logger::Instance().Error("Easier parry branch-B target not found.");
+            return;
+        }
         ok = InstallDirectPatch(
             easier_parry_branch_b_patch_,
             branch_b_target,
@@ -1311,6 +1568,7 @@ void ParamPatches::SyncEasierParry(const Game::SingletonRegistry&) {
         ok = RestoreCodePatch(easier_parry_branch_b_patch_);
     }
     if (!ok) {
+        Main::Logger::Instance().Error("Easier parry branch-B patch failed.");
         return;
     }
 
@@ -1480,6 +1738,90 @@ void ParamPatches::SyncTorrentAnywhere(const Game::SingletonRegistry&) {
     }
 }
 
+void ParamPatches::SyncOpenMapInCombat(const Game::SingletonRegistry&) {
+    const bool desired = Main::g_FeatureStatus.open_map_in_combat.load();
+    const bool was_active =
+        open_map_in_combat_patch_open_map_.active ||
+        open_map_in_combat_patch_close_map_.active;
+
+    const uintptr_t open_map_target = FindFirstPatternInText(kOpenMapInCombatPatternCandidates);
+    const uintptr_t close_map_target = FindFirstPatternInText(kCloseMapInCombatPatternCandidates);
+
+    if (desired) {
+        const bool open_ok = InstallDirectPatch(
+            open_map_in_combat_patch_open_map_,
+            open_map_target == 0 ? 0 : (open_map_target + 2),
+            &kOpenMapInCombatPatchByte,
+            1);
+        if (!open_ok) {
+            return;
+        }
+
+        const bool close_ok = InstallDirectPatch(
+            open_map_in_combat_patch_close_map_,
+            close_map_target == 0 ? 0 : (close_map_target + 14),
+            kCloseMapInCombatPatchBytes.data(),
+            kCloseMapInCombatPatchBytes.size());
+        if (!close_ok) {
+            RestoreCodePatch(open_map_in_combat_patch_open_map_);
+            return;
+        }
+
+        if (!was_active) {
+            Main::Logger::Instance().Info("Open map in combat patch applied.");
+        }
+    } else {
+        const bool restored_a = RestoreCodePatch(open_map_in_combat_patch_open_map_);
+        const bool restored_b = RestoreCodePatch(open_map_in_combat_patch_close_map_);
+        if (was_active && restored_a && restored_b) {
+            Main::Logger::Instance().Info("Open map in combat patch restored.");
+        }
+    }
+}
+
+void ParamPatches::SyncInfiniteJump(const Game::SingletonRegistry&) {
+    const bool desired = Main::g_FeatureStatus.infinite_jump.load();
+    const bool was_active =
+        infinite_jump_horse_primary_patch_.active ||
+        infinite_jump_horse_secondary_patch_.active ||
+        infinite_jump_cmp_patch_.active;
+
+    const uintptr_t horse_primary_target = FindFirstPatternInText(kInfiniteJumpHorsePrimaryPatternCandidates);
+    const uintptr_t horse_secondary_target = FindFirstPatternInText(kInfiniteJumpHorseSecondaryPatternCandidates);
+    const uintptr_t cmp_target = FindFirstPatternInText(kInfiniteJumpCmpPatternCandidates);
+
+    if (desired) {
+        bool ok = InstallForceAlThenReplayPatch(infinite_jump_horse_primary_patch_, horse_primary_target);
+        if (!ok) {
+            return;
+        }
+
+        ok = InstallForceAlThenReplayPatch(infinite_jump_horse_secondary_patch_, horse_secondary_target);
+        if (!ok) {
+            RestoreCodePatch(infinite_jump_horse_primary_patch_);
+            return;
+        }
+
+        ok = InstallDirectPatch(infinite_jump_cmp_patch_, cmp_target == 0 ? 0 : (cmp_target + 9), &kInfiniteJumpCmpImmediate, 1);
+        if (!ok) {
+            RestoreCodePatch(infinite_jump_horse_primary_patch_);
+            RestoreCodePatch(infinite_jump_horse_secondary_patch_);
+            return;
+        }
+
+        if (!was_active) {
+            Main::Logger::Instance().Info("Infinite jump patch applied.");
+        }
+    } else {
+        const bool restored_a = RestoreCodePatch(infinite_jump_horse_primary_patch_);
+        const bool restored_b = RestoreCodePatch(infinite_jump_horse_secondary_patch_);
+        const bool restored_c = RestoreCodePatch(infinite_jump_cmp_patch_);
+        if (was_active && restored_a && restored_b && restored_c) {
+            Main::Logger::Instance().Info("Infinite jump patch restored.");
+        }
+    }
+}
+
 void ParamPatches::SyncItemDiscovery(const Game::SingletonRegistry& singletons) {
     const int desired_multiplier = std::clamp(Main::g_FeatureStatus.item_discovery_multiplier.load(), 1, 100);
     if (!item_discovery_.captured) {
@@ -1516,6 +1858,224 @@ void ParamPatches::SyncItemDiscovery(const Game::SingletonRegistry& singletons) 
             ("Item discovery multiplier applied: x" + std::to_string(desired_multiplier)).c_str()
         );
     }
+}
+
+void ParamPatches::SyncPlayerDamageMultiplier(const Game::SingletonRegistry& singletons) {
+    const int desired_increase_percent = std::clamp(Main::g_FeatureStatus.damage_multiplier_percent.load(), 0, 500);
+    const int desired_reduce_percent =
+        std::clamp(Main::g_FeatureStatus.damage_reduce_multiplier_percent.load(), 0, 500);
+    if (!player_damage_multiplier_.captured) {
+        auto* row = Game::FindParamRow<SpEffectParam>(
+            singletons,
+            L"SpEffectParam",
+            kPlayerDamageMultiplierSpEffectRowId);
+        if (row == nullptr) {
+            return;
+        }
+
+        auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+        player_damage_multiplier_.row = bytes;
+        for (std::size_t i = 0; i < kPlayerDamageMultiplierOffsets.size(); ++i) {
+            player_damage_multiplier_.original_values[i] =
+                ReadOffsetValue<float>(bytes, kPlayerDamageMultiplierOffsets[i]);
+        }
+        player_damage_multiplier_.captured = true;
+    }
+
+    const int desired_signature = desired_increase_percent > 0 ? desired_increase_percent : -desired_reduce_percent;
+    if (player_damage_multiplier_.row == nullptr ||
+        desired_signature == player_damage_multiplier_.applied_percent) {
+        return;
+    }
+
+    if (desired_signature == 0) {
+        for (std::size_t i = 0; i < kPlayerDamageMultiplierOffsets.size(); ++i) {
+            WriteOffsetValue<float>(
+                player_damage_multiplier_.row,
+                kPlayerDamageMultiplierOffsets[i],
+                player_damage_multiplier_.original_values[i]);
+        }
+        player_damage_multiplier_.applied_percent = 0;
+        Main::Logger::Instance().Info("Player damage multiplier restored.");
+        return;
+    }
+
+    float rate = 1.0f;
+    std::string mode_text;
+    if (desired_signature > 0) {
+        rate = 1.0f + static_cast<float>(desired_increase_percent) / 100.0f;
+        mode_text = "increase";
+    } else {
+        rate = 1.0f / (1.0f + static_cast<float>(desired_reduce_percent) / 100.0f);
+        mode_text = "reduce-hard";
+    }
+    for (const std::size_t offset : kPlayerDamageMultiplierOffsets) {
+        WriteOffsetValue<float>(player_damage_multiplier_.row, offset, rate);
+    }
+    player_damage_multiplier_.applied_percent = desired_signature;
+    Main::Logger::Instance().Info(
+        ("Player damage multiplier applied: mode=" + mode_text +
+         ", value=" + std::to_string(desired_signature) +
+         ", rate=" + std::to_string(rate)).c_str());
+}
+
+void ParamPatches::SyncPlayerDamageCutMultiplier(const Game::SingletonRegistry& singletons) {
+    const int desired_cut_percent = std::clamp(Main::g_FeatureStatus.damage_cut_multiplier_percent.load(), 0, 500);
+    const int desired_taken_percent =
+        std::clamp(Main::g_FeatureStatus.damage_taken_multiplier_percent.load(), 0, 500);
+    if (!player_damage_cut_multiplier_.captured) {
+        auto* row = Game::FindParamRow<SpEffectParam>(
+            singletons,
+            L"SpEffectParam",
+            kPlayerDamageMultiplierSpEffectRowId);
+        if (row == nullptr) {
+            return;
+        }
+
+        auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+        player_damage_cut_multiplier_.row = bytes;
+        for (std::size_t i = 0; i < kPlayerDamageCutMultiplierOffsets.size(); ++i) {
+            player_damage_cut_multiplier_.original_values[i] =
+                ReadOffsetValue<float>(bytes, kPlayerDamageCutMultiplierOffsets[i]);
+        }
+        player_damage_cut_multiplier_.captured = true;
+    }
+
+    const int desired_signature = desired_cut_percent > 0 ? desired_cut_percent : -desired_taken_percent;
+    if (player_damage_cut_multiplier_.row == nullptr ||
+        desired_signature == player_damage_cut_multiplier_.applied_percent) {
+        return;
+    }
+
+    if (desired_signature == 0) {
+        for (std::size_t i = 0; i < kPlayerDamageCutMultiplierOffsets.size(); ++i) {
+            WriteOffsetValue<float>(
+                player_damage_cut_multiplier_.row,
+                kPlayerDamageCutMultiplierOffsets[i],
+                player_damage_cut_multiplier_.original_values[i]);
+        }
+        player_damage_cut_multiplier_.applied_percent = 0;
+        Main::Logger::Instance().Info("Player damage cut multiplier restored.");
+        return;
+    }
+
+    const float delta = static_cast<float>(std::abs(desired_signature)) / 100.0f;
+    const bool is_cut_mode = desired_signature > 0;
+    for (std::size_t i = 0; i < kPlayerDamageCutMultiplierOffsets.size(); ++i) {
+        const float value = is_cut_mode
+                                ? (player_damage_cut_multiplier_.original_values[i] - delta)
+                                : (player_damage_cut_multiplier_.original_values[i] + delta);
+        WriteOffsetValue<float>(player_damage_cut_multiplier_.row, kPlayerDamageCutMultiplierOffsets[i], value);
+    }
+    player_damage_cut_multiplier_.applied_percent = desired_signature;
+    Main::Logger::Instance().Info(
+        ("Player damage cut multiplier applied: mode=" + std::string(is_cut_mode ? "cut" : "taken-hard") +
+         ", value=" + std::to_string(desired_signature) +
+         ", delta=" + std::to_string(delta)).c_str());
+}
+
+void ParamPatches::SyncBuffDurationExtend(const Game::SingletonRegistry& singletons) {
+    int desired_mode = Main::g_FeatureStatus.buff_duration_extend_mode.load();
+    switch (desired_mode) {
+    case 0:
+    case 50:
+    case 100:
+    case 200:
+    case 300:
+    case 500:
+    case 99999:
+        break;
+    default:
+        desired_mode = 0;
+        break;
+    }
+
+    if (!buff_duration_extend_.captured) {
+        auto* row = Game::FindParamRow<SpEffectParam>(
+            singletons,
+            L"SpEffectParam",
+            kBuffDurationExtendSpEffectRowId);
+        if (row == nullptr) {
+            return;
+        }
+
+        auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+        buff_duration_extend_.row = bytes;
+        buff_duration_extend_.original_extend_life_rate =
+            ReadOffsetValue<float>(bytes, kBuffDurationExtendOffset);
+        buff_duration_extend_.captured = true;
+    }
+
+    if (buff_duration_extend_.row == nullptr ||
+        desired_mode == buff_duration_extend_.applied_mode) {
+        return;
+    }
+
+    float value = 1.0f;
+    if (desired_mode == 99999) {
+        value = 99999.0f;
+    } else {
+        value = 1.0f + static_cast<float>(desired_mode) / 100.0f;
+    }
+
+    WriteOffsetValue<float>(buff_duration_extend_.row, kBuffDurationExtendOffset, value);
+    buff_duration_extend_.applied_mode = desired_mode;
+    Main::Logger::Instance().Info(
+        ("Buff duration extend applied: mode=" + std::to_string(desired_mode) +
+         ", extendLifeRate=" + std::to_string(value)).c_str());
+}
+
+void ParamPatches::SyncEnemyHpMultiplier(const Game::SingletonRegistry& singletons) {
+    const int desired_increase_percent = std::clamp(Main::g_FeatureStatus.enemy_hp_increase_percent.load(), 0, 1000);
+    const int desired_decrease_percent = std::clamp(Main::g_FeatureStatus.enemy_hp_decrease_percent.load(), 0, 1000);
+    const int desired_signature = desired_increase_percent > 0 ? desired_increase_percent : -desired_decrease_percent;
+
+    if (!enemy_hp_multiplier_.captured && desired_signature != 0) {
+        enemy_hp_multiplier_.rows.clear();
+        const bool found_rows = Game::ForEachParamRow<NpcParam>(
+            singletons,
+            L"NpcParam",
+            [this](std::uint64_t, NpcParam* row) {
+                auto* bytes = reinterpret_cast<std::uint8_t*>(row);
+                enemy_hp_multiplier_.rows.push_back(EnemyHpState{
+                    bytes,
+                    ReadOffsetValue<std::int32_t>(bytes, kEnemyHpOffset),
+                });
+            });
+
+        if (!found_rows || enemy_hp_multiplier_.rows.empty()) {
+            return;
+        }
+        enemy_hp_multiplier_.captured = true;
+    }
+
+    if (!enemy_hp_multiplier_.captured || desired_signature == enemy_hp_multiplier_.applied_percent) {
+        return;
+    }
+
+    if (desired_signature == 0) {
+        for (const EnemyHpState& state : enemy_hp_multiplier_.rows) {
+            WriteOffsetValue<std::int32_t>(state.row, kEnemyHpOffset, state.hp);
+        }
+        enemy_hp_multiplier_.applied_percent = 0;
+        Main::Logger::Instance().Info("Enemy HP multiplier restored.");
+        return;
+    }
+
+    const float rate = desired_signature > 0
+                           ? (1.0f + static_cast<float>(desired_increase_percent) / 100.0f)
+                           : (1.0f / (1.0f + static_cast<float>(desired_decrease_percent) / 100.0f));
+    for (const EnemyHpState& state : enemy_hp_multiplier_.rows) {
+        if (state.hp <= 0) {
+            continue;
+        }
+        const int scaled = static_cast<int>(std::lround(static_cast<float>(state.hp) * rate));
+        WriteOffsetValue<std::int32_t>(state.row, kEnemyHpOffset, std::max(1, scaled));
+    }
+    enemy_hp_multiplier_.applied_percent = desired_signature;
+    Main::Logger::Instance().Info(
+        ("Enemy HP multiplier applied: value=" + std::to_string(desired_signature) +
+         ", rate=" + std::to_string(rate)).c_str());
 }
 
 void ParamPatches::SyncPermanentLantern(const Game::SingletonRegistry& singletons) {

@@ -77,6 +77,10 @@ struct MagicParam {
     std::byte reserved[1];
 };
 
+struct NpcParam {
+    std::byte reserved[1];
+};
+
 struct LockCamParam {
     float camDistTarget = 0.0f;
     std::byte reserved0[0x14 - sizeof(float)];
@@ -219,6 +223,7 @@ using Game::EquipParamProtector;
 using Game::EquipParamWeapon;
 using Game::MenuCommonParam;
 using Game::MagicParam;
+using Game::NpcParam;
 using Game::LockCamParam;
 using Game::ShopLineupParam;
 using Game::SpEffectParam;

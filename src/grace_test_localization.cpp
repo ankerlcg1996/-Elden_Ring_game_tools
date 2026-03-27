@@ -56,35 +56,66 @@ std::unordered_map<std::string, std::wstring> default_strings_for(const std::str
             {"root", L"erdGameTools"},
             {"player_mods", L"玩家修改"},
             {"game_mods", L"游戏修改"},
+            {"enemy_mods", L"敌人修改"},
+            {"boss_revive", L"复活BOSS"},
+            {"boss_revive_action", L"BOSS操作"},
+            {"boss_revive_do_revive", L"复活BOSS"},
+            {"boss_revive_do_warp", L"传送到BOSS"},
+            {"enemy_mods_empty", L"暂无功能"},
             {"unlocks", L"解锁功能"},
+            {"portable_grace", L"随身大赐福"},
             {"back", L"返回"},
             {"toggle_suffix_on", L"[开]"},
             {"toggle_suffix_off", L"[关]"},
             {"toggle_weightless_equipment", L"装备无重量"},
             {"setting_equipment_weight_reduction", L"装备减重"},
             {"setting_weapon_requirement_reduction", L"装备需求降低"},
+            {"setting_player_speed_increase", L"玩家速度增加"},
+            {"setting_buff_duration_extend", L"BUFF持续时间延长"},
+            {"setting_enemy_hp_increase", L"增加敌人血量"},
+            {"setting_enemy_hp_decrease", L"减少敌人血量[互斥]"},
             {"setting_easier_parry", L"更容易弹反"},
+            {"setting_damage_multiplier", L"伤害倍率调整"},
+            {"setting_damage_multiplier_up", L"玩家增加伤害倍率调整"},
+            {"setting_damage_multiplier_cut", L"玩家减免伤害倍率调整"},
+            {"setting_damage_multiplier_reduce", L"玩家减少伤害倍率[增加难度]"},
+            {"setting_damage_multiplier_taken", L"玩家增加伤害倍率[增加难度]"},
             {"toggle_no_item_consume", L"道具不消耗"},
             {"toggle_no_damage", L"无伤"},
             {"toggle_free_purchase", L"商店免费购买"},
             {"toggle_no_craft_cost", L"制作不消耗材料"},
             {"toggle_no_upgrade_cost", L"强化不消耗材料"},
             {"toggle_all_weapons_enchantable", L"所有武器可附魔"},
+            {"toggle_all_weapons_ash_of_war_changeable", L"所有武器可更换战灰"},
             {"toggle_no_magic_req", L"魔法没有使用需求"},
             {"toggle_one_slot_magic", L"所有魔法只占一个栏位"},
+            {"toggle_beast_not_hostile", L"野兽不会主动攻击（驱兽火把）"},
             {"toggle_silent_footsteps", L"消除脚步声"},
+            {"toggle_infinite_consumables", L"消耗品无限"},
+            {"toggle_infinite_arrows", L"箭矢无限"},
+            {"toggle_infinite_stamina", L"耐力无限"},
+            {"toggle_infinite_fp", L"FP无限"},
+            {"toggle_no_rune_loss_on_death", L"死亡不掉卢恩"},
+            {"toggle_infinite_jump", L"无限跳（骑马可用）"},
             {"toggle_mount_anywhere", L"随处骑马"},
             {"toggle_spirit_anywhere", L"随处召唤骨灰"},
             {"toggle_torrent_no_death", L"灵马不死"},
             {"toggle_torrent_anywhere", L"任意地点骑马"},
             {"toggle_posture_bars", L"架势条显示"},
-            {"unlock_maps", L"解锁全部地图"},
+            {"unlock_maps", L"解锁地图"},
+            {"unlock_maps_all", L"全部解锁"},
+            {"unlock_maps_base", L"仅解锁本体"},
+            {"unlock_maps_dlc", L"仅解锁DLC"},
             {"unlock_cookbooks", L"解锁全部制作笔记"},
             {"unlock_whetblades", L"解锁全部砥石刀"},
             {"unlock_graces", L"解锁全部赐福"},
             {"unlock_summoning_pools", L"解锁全部召唤池"},
             {"unlock_colosseums", L"解锁全部竞技场"},
             {"unlock_gestures", L"解锁全部肢体动作"},
+            {"portable_upgrade", L"强化"},
+            {"portable_rebirth", L"重生"},
+            {"portable_mirror", L"打开镜子"},
+            {"option_permanent", L"永久"},
         };
     }
 
@@ -92,35 +123,66 @@ std::unordered_map<std::string, std::wstring> default_strings_for(const std::str
         {"root", L"erdGameTools"},
         {"player_mods", L"Player Mods"},
         {"game_mods", L"Game Mods"},
+        {"enemy_mods", L"Enemy Mods"},
+        {"boss_revive", L"Boss Revive"},
+        {"boss_revive_action", L"Boss Action"},
+        {"boss_revive_do_revive", L"Revive Boss"},
+        {"boss_revive_do_warp", L"Warp To Boss"},
+        {"enemy_mods_empty", L"No features yet"},
         {"unlocks", L"Unlocks"},
+        {"portable_grace", L"Portable Grace"},
         {"back", L"Back"},
         {"toggle_suffix_on", L"[On]"},
         {"toggle_suffix_off", L"[Off]"},
         {"toggle_weightless_equipment", L"Weightless Equipment"},
         {"setting_equipment_weight_reduction", L"Equipment Weight Reduction"},
         {"setting_weapon_requirement_reduction", L"Equipment Requirement Reduction"},
+        {"setting_player_speed_increase", L"Player Speed Increase"},
+        {"setting_buff_duration_extend", L"Buff Duration Extension"},
+        {"setting_enemy_hp_increase", L"Increase Enemy HP"},
+        {"setting_enemy_hp_decrease", L"Decrease Enemy HP [Exclusive]"},
         {"setting_easier_parry", L"Easier Parry"},
+        {"setting_damage_multiplier", L"Damage Multiplier"},
+        {"setting_damage_multiplier_up", L"Player Damage Increase Multiplier"},
+        {"setting_damage_multiplier_cut", L"Player Damage Reduction Multiplier"},
+        {"setting_damage_multiplier_reduce", L"Player Damage Decrease Multiplier [Hard]"},
+        {"setting_damage_multiplier_taken", L"Player Damage Taken Increase Multiplier [Hard]"},
         {"toggle_no_item_consume", L"Infinite Item Usage"},
         {"toggle_no_damage", L"No Damage"},
         {"toggle_free_purchase", L"Free Purchase"},
         {"toggle_no_craft_cost", L"No Craft Material Cost"},
         {"toggle_no_upgrade_cost", L"No Upgrade Material Cost"},
         {"toggle_all_weapons_enchantable", L"All Weapons Enchantable"},
+        {"toggle_all_weapons_ash_of_war_changeable", L"All Weapons Ash of War Changeable"},
         {"toggle_no_magic_req", L"No Magic Requirements"},
         {"toggle_one_slot_magic", L"All Magic Uses One Slot"},
+        {"toggle_beast_not_hostile", L"Beasts Not Aggressive (Beast-Repellent Torch)"},
         {"toggle_silent_footsteps", L"Silent Footsteps"},
+        {"toggle_infinite_consumables", L"Infinite Consumables"},
+        {"toggle_infinite_arrows", L"Infinite Arrows"},
+        {"toggle_infinite_stamina", L"Infinite Stamina"},
+        {"toggle_infinite_fp", L"Infinite FP"},
+        {"toggle_no_rune_loss_on_death", L"No Rune Loss On Death"},
+        {"toggle_infinite_jump", L"Infinite Jump (Works on Torrent)"},
         {"toggle_mount_anywhere", L"Mount Anywhere"},
         {"toggle_spirit_anywhere", L"Spirit Ashes Anywhere"},
         {"toggle_torrent_no_death", L"Torrent No Death"},
         {"toggle_torrent_anywhere", L"Torrent Anywhere"},
         {"toggle_posture_bars", L"Posture Bars"},
-        {"unlock_maps", L"Unlock All Maps"},
+        {"unlock_maps", L"Unlock Maps"},
+        {"unlock_maps_all", L"Unlock All"},
+        {"unlock_maps_base", L"Unlock Base Game"},
+        {"unlock_maps_dlc", L"Unlock DLC"},
         {"unlock_cookbooks", L"Unlock All Cookbooks"},
         {"unlock_whetblades", L"Unlock All Whetblades"},
         {"unlock_graces", L"Unlock All Graces"},
         {"unlock_summoning_pools", L"Unlock All Summoning Pools"},
         {"unlock_colosseums", L"Unlock All Colosseums"},
         {"unlock_gestures", L"Unlock All Gestures"},
+        {"portable_upgrade", L"Upgrade"},
+        {"portable_rebirth", L"Rebirth"},
+        {"portable_mirror", L"Open Mirror"},
+        {"option_permanent", L"Permanent"},
     };
 }
 
@@ -233,16 +295,20 @@ std::wstring make_toggle_label(std::string_view key, bool enabled) {
 
 std::wstring make_percent_setting_label(std::string_view key, int percent) {
     const std::wstring base = get(key);
-    return base + L" [" + std::to_wstring(std::clamp(percent, 0, 100)) + L"%]";
+    return base + L" [" + std::to_wstring(std::max(percent, 0)) + L"%]";
 }
 
 std::wstring make_percent_option_label(int percent) {
-    return std::to_wstring(std::clamp(percent, 0, 100)) + L"%";
+    return std::to_wstring(std::max(percent, 0)) + L"%";
 }
 
 std::string active_language_code() {
     std::scoped_lock lock(g_mutex);
     return g_active_language;
+}
+
+std::wstring utf8_to_wide_copy(std::string_view value) {
+    return utf8_to_wide(std::string(value));
 }
 
 }  // namespace grace_test::localization

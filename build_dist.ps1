@@ -8,7 +8,8 @@ $projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $buildDir = Join-Path $projectRoot "build"
 $buildOutputDir = Join-Path $buildDir $Configuration
 $distDir = Join-Path $projectRoot "dist"
-$distLangDir = Join-Path $distDir "Resources\\Lang"
+$distResourcesDir = Join-Path $distDir "Resources"
+$distLangDir = Join-Path $distResourcesDir "Lang"
 
 Write-Host "[1/4] Building ($Configuration)..."
 cmake --build $buildDir --config $Configuration
@@ -27,6 +28,12 @@ if (Test-Path (Join-Path $distDir "config.ini")) {
 Write-Host "[3/4] Copying DLL and language files..."
 Copy-Item -Force $dllPath (Join-Path $distDir "erdGameTools.dll")
 Copy-Item -Force (Join-Path $projectRoot "Resources\\Lang\\*.txt") $distLangDir
+if (Test-Path (Join-Path $projectRoot "Resources\\SpEffectParam.txt")) {
+    Copy-Item -Force (Join-Path $projectRoot "Resources\\SpEffectParam.txt") (Join-Path $distResourcesDir "SpEffectParam.txt")
+}
+Get-ChildItem (Join-Path $projectRoot "Resources\\BossRevives*.csv") -ErrorAction SilentlyContinue | ForEach-Object {
+    Copy-Item -Force $_.FullName (Join-Path $distResourcesDir $_.Name)
+}
 
 $configCandidates = @(
     (Join-Path $buildOutputDir "erdGameTools.ini"),

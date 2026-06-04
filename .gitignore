@@ -2,6 +2,7 @@
 /build-selfcontained/
 /build-erdGameTools/
 /build-root-verify/
+/dist/
 /erdGameTools/
 /out/
 /.vs/

@@ -329,7 +329,6 @@ void CharacterFlags::Tick(const Game::SingletonRegistry& singletons) const {
                 kCommonFlagsOffset,
                 common_flags_address)) {
             Game::SetBitFlag(common_flags_address, 0, Main::g_FeatureStatus.no_dead.load());
-            Game::SetBitFlag(common_flags_address, 2, Main::g_FeatureStatus.infinite_fp.load());
         }
     );
 
@@ -382,12 +381,8 @@ void CharacterFlags::Tick(const Game::SingletonRegistry& singletons) const {
                 Game::WriteValue<std::uint8_t>(
                     chr_dbg_flags_base + kChrDbgFlagsInfiniteGoodsOffset,
                     Main::g_FeatureStatus.infinite_consumables.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));
-                Game::WriteValue<std::uint8_t>(
-                    chr_dbg_flags_base + kChrDbgFlagsInfiniteStaminaOffset,
-                    Main::g_FeatureStatus.infinite_stamina.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));
-                Game::WriteValue<std::uint8_t>(
-                    chr_dbg_flags_base + kChrDbgFlagsInfiniteFpOffset,
-                    Main::g_FeatureStatus.infinite_fp.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));
+                Game::WriteValue<std::uint8_t>(chr_dbg_flags_base + kChrDbgFlagsInfiniteStaminaOffset, static_cast<std::uint8_t>(0));
+                Game::WriteValue<std::uint8_t>(chr_dbg_flags_base + kChrDbgFlagsInfiniteFpOffset, static_cast<std::uint8_t>(0));
                 Game::WriteValue<std::uint8_t>(
                     chr_dbg_flags_base + kChrDbgFlagsInfiniteArrowsOffset,
                     Main::g_FeatureStatus.infinite_arrows.load() ? static_cast<std::uint8_t>(1) : static_cast<std::uint8_t>(0));

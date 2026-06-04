@@ -9,17 +9,7 @@
 GitHub 仓库地址：
 
 - [https://github.com/ankerlcg1996/-Elden_Ring_game_tools](https://github.com/ankerlcg1996/-Elden_Ring_game_tools)
-- 双语功能说明： [MOD_FEATURES.md](./MOD_FEATURES.md)
-
-## 截图
-
-![主菜单](./men1.png)
-
-![二级菜单](./menu2.png)
-
-![三级菜单](./menu3.png)
-
-![伤害弹字](./hit%20numer%20show.png)
+- 功能说明： [PROJECT_FEATURES.md](./PROJECT_FEATURES.md)
 
 ## 详细功能介绍
 
@@ -170,6 +160,9 @@ external_dlls = [
 |   |-- Lang/
 |   |   |-- en-US.txt
 |   |   `-- zh-CN.txt
+|   |-- OverlayAssets/
+|   |-- BossRevives*.csv
+|   |-- Shops*.csv
 |   |-- NpcMenus.zh.txt
 |   `-- ParamScripts.zh.txt
 |-- Source/
@@ -183,6 +176,7 @@ external_dlls = [
     |-- grace_test_config.cpp
     |-- grace_test_localization.cpp
     |-- grace_test_messages.cpp
+    |-- grace_test_plugins.cpp
     |-- grace_test_overlay.cpp
     |-- grace_test_runtime.cpp
     `-- grace_test_talkscript.cpp
@@ -201,6 +195,7 @@ external_dlls = [
 - [gabime/spdlog](https://github.com/gabime/spdlog)
 - [TsudaKageyu/minhook](https://github.com/TsudaKageyu/minhook)
 - [ocornut/imgui](https://github.com/ocornut/imgui)
+- [nothings/stb](https://github.com/nothings/stb)
 
 具体借鉴点：
 

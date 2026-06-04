@@ -2,15 +2,31 @@
 
 #include "../Common.hpp"
 
+#if defined(ERD_FEATURE_STATUS_EXPORTS)
+#define ERD_FEATURE_STATUS_API __declspec(dllexport)
+#elif defined(ERD_FEATURE_STATUS_IMPORTS)
+#define ERD_FEATURE_STATUS_API __declspec(dllimport)
+#else
+#define ERD_FEATURE_STATUS_API
+#endif
+
 namespace ERD::Main {
 
 struct FeatureStatus {
     std::atomic_bool no_dead = false;
-    std::atomic_bool infinite_fp = false;
-    std::atomic_bool infinite_stamina = false;
     std::atomic_bool infinite_consumables = false;
     std::atomic_bool infinite_arrows = false;
     std::atomic_bool no_rune_loss_on_death = false;
+    std::atomic_bool no_rune_arc_loss_on_death = false;
+    std::atomic_bool no_time_pass_on_death = false;
+    std::atomic_bool attack_life_steal_on_hit = false;
+    std::atomic<float> rally_time_seconds = 4.0f;
+    std::atomic_bool rally_hit_reset = true;
+    std::atomic_bool rally_only_heal = true;
+    std::atomic_bool rally_exponential_decay = true;
+    std::atomic<float> rally_half_life_seconds = 7.5f;
+    std::atomic<float> rally_decay_seconds = 15.0f;
+    std::atomic<float> model_scale_uniform = 1.0f;
 
     std::atomic_bool faster_respawn = true;
     std::atomic_bool warp_out_of_uncleared_minidungeons = true;
@@ -27,34 +43,61 @@ struct FeatureStatus {
     std::atomic_bool infinite_jump = false;
     std::atomic_bool torrent_no_death = false;
     std::atomic_bool torrent_anywhere = false;
+    std::atomic_bool no_fall_death = false;
     std::atomic_bool weightless_equipment = false;
     std::atomic_int equipment_weight_reduction_percent = 0;
     std::atomic_int weapon_requirement_reduction_percent = 0;
     std::atomic_int player_speed_increase_percent = 0;
     std::atomic_int buff_duration_extend_mode = 0;
+    std::atomic_int weapon_parry_mode = 0;
     std::atomic_int enemy_hp_increase_percent = 0;
     std::atomic_int enemy_hp_decrease_percent = 0;
-    std::atomic_int easier_parry_percent = 0;
     std::atomic_int damage_multiplier_percent = 0;
     std::atomic_int damage_cut_multiplier_percent = 0;
     std::atomic_int damage_reduce_multiplier_percent = 0;
     std::atomic_int damage_taken_multiplier_percent = 0;
-    std::atomic_int easier_guard_percent = 0;
+    std::atomic_int stamina_cost_reduction_percent = 0;
+    std::atomic_int fp_cost_reduction_percent = 0;
     std::atomic_bool custom_fov_enabled = false;
     std::atomic<float> custom_fov_value = 60.0f;
     std::atomic_bool custom_camera_distance_enabled = false;
     std::atomic<float> custom_camera_distance_value = 8.0f;
     std::atomic_bool spirit_ashes_anywhere = false;
-    std::atomic_bool damage_popup_overlay_enabled = true;
+    std::atomic_bool enemy_poise_overlay_enabled = true;
+    std::atomic_bool enemy_resistance_overlay_enabled = true;
+    std::atomic_bool enemy_resistance_bleed_enabled = true;
+    std::atomic_bool enemy_resistance_frost_enabled = true;
+    std::atomic_bool enemy_resistance_rot_enabled = true;
+    std::atomic_bool enemy_resistance_poison_enabled = true;
+    std::atomic_bool enemy_resistance_sleep_enabled = true;
+    std::atomic_bool enemy_resistance_madness_enabled = true;
+    std::atomic_bool target_status_debug_logging = false;
+    std::atomic<float> overlay_poise_width_scale = 1.0f;
+    std::atomic<float> overlay_poise_height_scale = 1.0f;
+    std::atomic<float> overlay_status_width_scale = 1.0f;
+    std::atomic<float> overlay_status_height_scale = 1.0f;
+    std::atomic<float> overlay_poise_vertical_offset = 86.0f;
+    std::atomic<float> overlay_entity_status_vertical_offset = 0.0f;
+    std::atomic<float> overlay_boss_status_gap = 12.0f;
     std::atomic_int item_discovery_multiplier = 1;
     std::atomic_bool permanent_lantern = true;
     std::atomic_bool invisible_helmets = false;
+    std::atomic_bool auto_pickup_enabled = false;
+    std::atomic_bool auto_pickup_materials = true;
+    std::atomic_bool auto_pickup_items = false;
+    std::atomic_bool auto_pickup_corpse_loot = false;
+    std::atomic_bool auto_pickup_lost_runes = true;
+    std::atomic_bool auto_pickup_in_combat = true;
+    std::atomic_int auto_pickup_range_percent = 100;
     std::atomic_bool no_clip_enabled = false;
     std::atomic_bool freecam_enabled = false;
     std::atomic_bool no_fall_camera = false;
     std::atomic<float> movement_speed = 1.0f;
 
     std::atomic_bool start_next_cycle = false;
+    std::atomic_int current_ng_cycle = 0;
+    std::atomic_int requested_ng_cycle = 0;
+    std::atomic_bool requested_ng_cycle_apply = false;
     std::atomic_int give_runes_amount = 100000;
     std::atomic_bool give_runes_requested = false;
     std::atomic_int custom_item_id = 0x40000000;
@@ -114,6 +157,10 @@ struct FeatureStatus {
     std::atomic_int character_intelligence = 10;
     std::atomic_int character_faith = 10;
     std::atomic_int character_arcane = 10;
+    std::atomic_int character_runes = 0;
+    std::atomic_int character_rune_memory = 0;
+    std::atomic_int character_scadutree_blessing = 0;
+    std::atomic_int character_revered_spirit_ash_blessing = 0;
     std::atomic_int current_hp = 0;
     std::atomic_int max_hp = 0;
     std::atomic_int current_mp = 0;
@@ -127,6 +174,31 @@ struct FeatureStatus {
     std::atomic_bool character_apply_requested = false;
     std::atomic_bool resource_read_requested = false;
     std::atomic_bool resource_apply_requested = false;
+
+    std::atomic_bool player_equipment_snapshot_valid = false;
+    std::atomic_int player_hand_style = 0;
+    std::atomic_int player_current_weapon_slot_left = 0;
+    std::atomic_int player_current_weapon_slot_right = 0;
+    std::atomic_int player_left_weapon_1_id = -1;
+    std::atomic_int player_right_weapon_1_id = -1;
+    std::atomic_int player_left_weapon_2_id = -1;
+    std::atomic_int player_right_weapon_2_id = -1;
+    std::atomic_int player_left_weapon_3_id = -1;
+    std::atomic_int player_right_weapon_3_id = -1;
+    std::atomic_int player_arrow_1_id = -1;
+    std::atomic_int player_bolt_1_id = -1;
+    std::atomic_int player_arrow_2_id = -1;
+    std::atomic_int player_bolt_2_id = -1;
+    std::atomic_int player_arrow_3_id = -1;
+    std::atomic_int player_bolt_3_id = -1;
+    std::atomic_int player_talisman_1_id = -1;
+    std::atomic_int player_talisman_2_id = -1;
+    std::atomic_int player_talisman_3_id = -1;
+    std::atomic_int player_talisman_4_id = -1;
+    std::atomic_int player_talisman_5_id = -1;
+    std::atomic<float> player_model_scale_width_current = 1.0f;
+    std::atomic<float> player_model_scale_height_current = 1.0f;
+    std::atomic<float> player_model_scale_depth_current = 1.0f;
 
     std::atomic_int equip_slot = 1;
     std::atomic_int equip_item_id = 0;
@@ -168,6 +240,8 @@ struct FeatureStatus {
     std::atomic_int targeted_npc_team_type = 0;
     std::atomic_int targeted_npc_hp = 0;
     std::atomic_int targeted_npc_max_hp = 0;
+    std::atomic_int targeted_npc_poise = 0;
+    std::atomic_int targeted_npc_max_poise = 0;
     std::atomic_int targeted_npc_poison = 0;
     std::atomic_int targeted_npc_poison_max = 0;
     std::atomic_int targeted_npc_rot = 0;
@@ -182,9 +256,21 @@ struct FeatureStatus {
     std::atomic_int targeted_npc_sleep_max = 0;
     std::atomic_int targeted_npc_madness = 0;
     std::atomic_int targeted_npc_madness_max = 0;
+    std::atomic<float> targeted_npc_poison_mod = 0.0f;
+    std::atomic<float> targeted_npc_rot_mod = 0.0f;
+    std::atomic<float> targeted_npc_bleed_mod = 0.0f;
+    std::atomic<float> targeted_npc_blight_mod = 0.0f;
+    std::atomic<float> targeted_npc_frost_mod = 0.0f;
+    std::atomic<float> targeted_npc_sleep_mod = 0.0f;
+    std::atomic<float> targeted_npc_madness_mod = 0.0f;
     std::atomic<float> targeted_npc_x = 0.0f;
     std::atomic<float> targeted_npc_y = 0.0f;
     std::atomic<float> targeted_npc_z = 0.0f;
+    std::atomic<float> targeted_npc_ui_x = 0.0f;
+    std::atomic<float> targeted_npc_ui_y = 0.0f;
+    std::atomic<float> targeted_npc_ui_mod = 1.0f;
+    std::atomic_int targeted_npc_ui_slot = -1;
+    std::atomic_bool targeted_npc_ui_is_boss = false;
     std::atomic_bool teleport_self_to_targeted_npc_requested = false;
     std::atomic_bool teleport_targeted_npc_to_self_requested = false;
 
@@ -222,6 +308,6 @@ struct FeatureStatus {
     std::atomic_bool debug_mode = false;
 };
 
-inline FeatureStatus g_FeatureStatus;
+ERD_FEATURE_STATUS_API extern FeatureStatus g_FeatureStatus;
 
 }  // namespace ERD::Main

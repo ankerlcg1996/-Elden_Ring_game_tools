@@ -3,6 +3,8 @@
 #include <elden-x/ezstate/ezstate.hpp>
 #include <elden-x/ezstate/talk_commands.hpp>
 
+#include <Windows.h>
+
 #include <array>
 #include <memory>
 #include <vector>
@@ -50,9 +52,15 @@ static auto placeholder_expression = make_int_expression(-1);
 static auto generic_dialog_shop_message = make_int_expression(0);
 static auto show_generic_dialog_shop_message_args =
     std::array{er::ezstate::expression(generic_dialog_shop_message)};
+static auto generic_dialog_mode = make_int_expression(7);
+static auto generic_dialog_one = make_int_expression(1);
+static auto generic_dialog_zero = make_int_expression(0);
 static auto true_expression = std::array<unsigned char, 2>{0x41, 0xa1};
 static auto talk_menu_closed_expression = std::array<unsigned char, 15>{
     0x7b, 0x41, 0x40, 0x86, 0x41, 0x95, 0x7a, 0x40, 0x85, 0x40, 0x95, 0x98, 0x40, 0x95, 0xa1
+};
+static auto generic_dialog_closed_expression = std::array<unsigned char, 14>{
+    0x7a, 0x82, 0x00, 0x00, 0x00, 0x00, 0x85, 0x82, 0x00, 0x00, 0x00, 0x00, 0x95, 0xa1
 };
 
 class talkscript_menu_option {
@@ -141,23 +149,60 @@ struct callback_state : public er::ezstate::state {
 
     er::ezstate::transition transition;
     std::array<er::ezstate::transition*, 1> transition_array{&transition};
+    int_expression generic_dialog_message_id = make_int_expression(0);
+    std::array<er::ezstate::expression, 5> generic_dialog_args;
+    std::array<er::ezstate::event, 1> generic_dialog_events;
+    er::ezstate::transition generic_dialog_transition;
+    std::array<er::ezstate::transition*, 1> generic_dialog_transition_array{&generic_dialog_transition};
+    er::ezstate::state generic_dialog_state;
     Callback callback = nullptr;
     int payload = 0;
+    bool uses_generic_dialog = false;
 
-    callback_state(Callback callback_fn, int payload_value, er::ezstate::state* return_state)
+    callback_state(
+        Callback callback_fn,
+        int payload_value,
+        er::ezstate::state* return_state,
+        bool use_generic_dialog = false,
+        int dialog_message_id = 0)
         : transition(return_state, er::ezstate::expression{true_expression}),
+          generic_dialog_message_id(make_int_expression(dialog_message_id)),
+          generic_dialog_args{
+              er::ezstate::expression{generic_dialog_mode},
+              er::ezstate::expression{generic_dialog_message_id},
+              er::ezstate::expression{generic_dialog_one},
+              er::ezstate::expression{generic_dialog_zero},
+              er::ezstate::expression{generic_dialog_one},
+          },
+          generic_dialog_events{
+              er::ezstate::event{er::talk_command::open_generic_dialog, generic_dialog_args},
+          },
+          generic_dialog_transition(return_state, er::ezstate::expression{generic_dialog_closed_expression}),
           callback(callback_fn),
-          payload(payload_value) {
+          payload(payload_value),
+          uses_generic_dialog(use_generic_dialog) {
+        if (uses_generic_dialog) {
+            generic_dialog_state.entry_events = er::ezstate::events{generic_dialog_events};
+            generic_dialog_state.transitions = er::ezstate::transitions{generic_dialog_transition_array};
+            transition.target_state = &generic_dialog_state;
+        }
         transitions = er::ezstate::transitions{transition_array};
     }
 
     void set_return_state(er::ezstate::state* return_state) {
-        transition.target_state = return_state;
+        if (uses_generic_dialog) {
+            generic_dialog_transition.target_state = return_state;
+        } else {
+            transition.target_state = return_state;
+        }
     }
 
     void execute() const {
         if (callback != nullptr) {
-            callback(payload);
+            __try {
+                callback(payload);
+            } __except (EXCEPTION_EXECUTE_HANDLER) {
+            }
         }
     }
 };

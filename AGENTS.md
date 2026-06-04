@@ -8,9 +8,9 @@ This repository is centered on the native `erdGameTools` DLL:
 - `Source/Game/`: game memory/event abstractions.
 - `Source/Main/`: shared app infrastructure (for example logging).
 - `Source/ThirdParty/`: vendored libraries (ImGui, MinHook); avoid edits unless explicitly upgrading dependencies.
-- `Resources/`: runtime data copied next to the built DLL (`Lang/`, `NpcMenus.zh.txt`, `ParamScripts.zh.txt`).
-
-`TarnishedTool-*`, `Elden-Ring-CT-TGA-master`, and `Erd-Tools-CPP-main` are reference/mirror projects; keep changes scoped unless a task explicitly targets them.
+- `Resources/`: runtime data copied under the runtime root (`Lang/`, `OverlayAssets/`, CSV data, `NpcMenus.zh.txt`, `ParamScripts.zh.txt`).
+- Runtime packaging/layout rule:
+  `erdGameTools.dll`, `erdGameTools.ini`, and `Resources/` stay together at the runtime root.
 
 ## Build, Test, and Development Commands
 Primary workflow (Visual Studio 2022 toolchain + CMake):
@@ -20,7 +20,9 @@ cmake -S . -B .\build-selfcontained -G "Visual Studio 17 2022" -A x64
 cmake --build .\build-selfcontained --config Release
 ```
 
-Output: `build-selfcontained\Release\erdGameTools.dll` (with copied `Resources/`).
+Output layout:
+`build-selfcontained\Release\erdGameTools.dll`
+`build-selfcontained\Release\Resources\...`
 
 Useful variants:
 

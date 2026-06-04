@@ -9,17 +9,7 @@ Instead of relying on a separate trainer window, it injects a new `erdGameTools`
 GitHub repository:
 
 - [https://github.com/ankerlcg1996/-Elden_Ring_game_tools](https://github.com/ankerlcg1996/-Elden_Ring_game_tools)
-- Feature overview (bilingual): [MOD_FEATURES.md](./MOD_FEATURES.md)
-
-## Screenshots
-
-![Main menu](./men1.png)
-
-![Second-level menu](./menu2.png)
-
-![Third-level menu](./menu3.png)
-
-![Damage popup](./hit%20numer%20show.png)
+- Feature overview: [PROJECT_FEATURES.md](./PROJECT_FEATURES.md)
 
 ## Main Features
 
@@ -170,6 +160,9 @@ Build output:
 |   |-- Lang/
 |   |   |-- en-US.txt
 |   |   `-- zh-CN.txt
+|   |-- OverlayAssets/
+|   |-- BossRevives*.csv
+|   |-- Shops*.csv
 |   |-- NpcMenus.zh.txt
 |   `-- ParamScripts.zh.txt
 |-- Source/
@@ -183,6 +176,7 @@ Build output:
     |-- grace_test_config.cpp
     |-- grace_test_localization.cpp
     |-- grace_test_messages.cpp
+    |-- grace_test_plugins.cpp
     |-- grace_test_overlay.cpp
     |-- grace_test_runtime.cpp
     `-- grace_test_talkscript.cpp
@@ -201,6 +195,7 @@ Supporting libraries:
 - [gabime/spdlog](https://github.com/gabime/spdlog)
 - [TsudaKageyu/minhook](https://github.com/TsudaKageyu/minhook)
 - [ocornut/imgui](https://github.com/ocornut/imgui)
+- [nothings/stb](https://github.com/nothings/stb)
 
 What was referenced:
 

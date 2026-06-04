@@ -1,7 +1,0 @@
-<CheatEntry>
-  <ID>105272</ID>
-  <Description>"resist_curse"</Description>
-  <ShowAsSigned>0</ShowAsSigned>
-  <VariableType>2 Bytes</VariableType>
-  <Address>+10E</Address>
-</CheatEntry>

@@ -4,6 +4,7 @@
 
 #include "Params.hpp"
 #include "SingletonRegistry.hpp"
+#include "../Main/Logger.hpp"
 
 #include <algorithm>
 #include <memory>
@@ -157,6 +158,18 @@ public:
         return ReloadParam(std::move(new_param_storage));
     }
 
+    uintptr_t GetHeaderHolderAddress() const {
+        return header_holder_;
+    }
+
+    uintptr_t GetCurrentTableAddress() const {
+        if (header_holder_ == 0) {
+            return 0;
+        }
+        return reinterpret_cast<uintptr_t>(
+            *reinterpret_cast<std::uint8_t* const*>(header_holder_ + detail::kParamHeaderTableOffset));
+    }
+
 private:
     bool ReloadParam(std::vector<std::uint8_t>&& rebuilt_param) {
         if (header_holder_ == 0 || rebuilt_param.size() <= 0x10) {
@@ -165,7 +178,23 @@ private:
 
         auto storage = std::make_shared<std::vector<std::uint8_t>>(std::move(rebuilt_param));
         auto* new_table = reinterpret_cast<std::uint8_t*>(storage->data() + 0x10);
+        const uintptr_t old_table = reinterpret_cast<uintptr_t>(
+            *reinterpret_cast<std::uint8_t**>(header_holder_ + detail::kParamHeaderTableOffset));
         *reinterpret_cast<std::uint8_t**>(header_holder_ + detail::kParamHeaderTableOffset) = new_table;
+
+        Main::Logger::Instance().Info(
+            (std::string("ParamEditor reloaded ") +
+             std::string(param_name_.begin(), param_name_.end()) +
+             ": old_table=0x" + [&]() {
+                 char buffer[32]{};
+                 std::snprintf(buffer, sizeof(buffer), "%p", reinterpret_cast<void*>(old_table));
+                 return std::string(buffer);
+             }() +
+             ", new_table=0x" + [&]() {
+                 char buffer[32]{};
+                 std::snprintf(buffer, sizeof(buffer), "%p", reinterpret_cast<void*>(reinterpret_cast<uintptr_t>(new_table)));
+                 return std::string(buffer);
+             }()).c_str());
 
         reloaded_param_storage_.push_back(std::move(storage));
         return true;

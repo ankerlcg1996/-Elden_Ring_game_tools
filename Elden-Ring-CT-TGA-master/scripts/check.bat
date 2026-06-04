@@ -1,1 +1,0 @@
-ce2fs -i .\CheatTable --check %*

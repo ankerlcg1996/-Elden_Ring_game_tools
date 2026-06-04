@@ -1,1 +1,0 @@
-pip install --upgrade -r ./scripts/pip_build_deps.txt

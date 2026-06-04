@@ -25,7 +25,7 @@ public:
     void Clear();
     SpEffectMonitorSnapshot Snapshot() const;
 
-    // 从 TarnishedTool-CN 提取：先保留底层接口，暂不接菜单调用。
+    // 保留底层接口，暂不接菜单调用。
     bool ApplySpEffect(uintptr_t chr_ins, std::uint32_t sp_effect_id);
     bool RemoveSpEffect(uintptr_t chr_ins, std::uint32_t sp_effect_id);
 

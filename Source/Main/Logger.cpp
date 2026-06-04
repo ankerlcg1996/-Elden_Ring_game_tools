@@ -37,15 +37,23 @@ void Logger::Initialize(const fs::path& log_path, bool enable_file_log) {
 
     std::error_code ec;
     fs::create_directories(log_path.parent_path(), ec);
-    file_.open(log_path, std::ios::out | std::ios::app);
+    file_.open(log_path, std::ios::out | std::ios::trunc);
 }
 
 void Logger::Info(std::string_view message) {
     Write("INFO", message);
 }
 
+void Logger::Info(std::string_view category, std::string_view message) {
+    Write("INFO", "[" + std::string(category) + "] " + std::string(message));
+}
+
 void Logger::Error(std::string_view message) {
     Write("ERROR", message);
+}
+
+void Logger::Error(std::string_view category, std::string_view message) {
+    Write("ERROR", "[" + std::string(category) + "] " + std::string(message));
 }
 
 void Logger::Write(std::string_view level, std::string_view message) {

@@ -1,7 +1,0 @@
-<CheatEntry>
-  <ID>102598</ID>
-  <Description>"changeTeamType"</Description>
-  <ShowAsSigned>1</ShowAsSigned>
-  <VariableType>Byte</VariableType>
-  <Address>+016D</Address>
-</CheatEntry>

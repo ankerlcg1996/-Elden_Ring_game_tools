@@ -4,13 +4,14 @@
 #include "grace_test_config.hpp"
 #include "grace_test_localization.hpp"
 #include "grace_test_messages.hpp"
+#include "grace_test_plugins.hpp"
 #include "grace_test_runtime.hpp"
 #include "grace_test_talkscript.hpp"
 
 #include <elden-x/singletons.hpp>
 #include <elden-x/utils/modutils.hpp>
 
-#include <spdlog/sinks/daily_file_sink.h>
+#include <spdlog/sinks/basic_file_sink.h>
 #include <spdlog/spdlog.h>
 
 #include <windows.h>
@@ -18,25 +19,35 @@
 #include <filesystem>
 #include <memory>
 #include <stdexcept>
-#include <thread>
 
 namespace fs = std::filesystem;
 
 namespace {
 
-std::thread mod_thread;
+constexpr DWORD kAltSavesCompatibilityDelayMs = 5000;
 
 void setup_logger(const fs::path& folder) {
-    fs::create_directories(folder / "logs");
-    auto logger = std::make_shared<spdlog::logger>("erdGameTools");
-    logger->sinks().push_back(std::make_shared<spdlog::sinks::daily_file_sink_st>(
-        (folder / "logs" / "erdGameTools.log").string(), 0, 0, false, 5));
+    const fs::path log_folder = folder / "logs";
+    std::error_code ec;
+    fs::create_directories(log_folder, ec);
+    fs::remove(log_folder / "erdGameTools.log", ec);
+    fs::remove(log_folder / "erd_game_tools.log", ec);
+
+    auto logger = std::make_shared<spdlog::logger>(
+        "erdGameTools",
+        std::make_shared<spdlog::sinks::basic_file_sink_mt>((log_folder / "erdGameTools.log").string(), true));
     logger->flush_on(spdlog::level::info);
     logger->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%l] %v");
     spdlog::set_default_logger(logger);
 }
 
-void setup_mod() {
+void wait_for_game_startup() {
+    if (ERD::g_Running) {
+        Sleep(kAltSavesCompatibilityDelayMs);
+    }
+}
+
+void setup_mod(const fs::path& folder) {
     modutils::initialize();
     er::FD4::find_singletons();
 
@@ -50,49 +61,55 @@ void setup_mod() {
     SPDLOG_INFO("erdGameTools initialized, starting native feature runtime.");
 }
 
+DWORD WINAPI run_mod(LPVOID parameter) {
+    const HMODULE dll_instance = static_cast<HMODULE>(parameter);
+    try {
+        wchar_t dll_filename[MAX_PATH] = {0};
+        GetModuleFileNameW(dll_instance, dll_filename, MAX_PATH);
+        const fs::path folder = fs::path(dll_filename).parent_path();
+
+        wait_for_game_startup();
+        if (!ERD::g_Running) {
+            return 0;
+        }
+
+        setup_logger(folder);
+        grace_test::config::initialize(folder);
+        grace_test::localization::initialize(folder);
+        SPDLOG_INFO("Startup wait complete after {} ms compatibility delay.", kAltSavesCompatibilityDelayMs);
+        SPDLOG_INFO("erdGameTools version {}", PROJECT_VERSION);
+        setup_mod(folder);
+        grace_test::runtime::run(folder);
+    } catch (const std::exception& error) {
+        const std::string message = "erdGameTools initialization failed:\n" + std::string(error.what());
+        OutputDebugStringA((message + "\n").c_str());
+        MessageBoxA(nullptr, message.c_str(), "erdGameTools", MB_OK | MB_ICONERROR | MB_SYSTEMMODAL);
+        if (spdlog::default_logger() != nullptr) {
+            SPDLOG_ERROR("Initialization failed: {}", error.what());
+        }
+        modutils::deinitialize();
+        spdlog::shutdown();
+        ERD::g_Running = false;
+    }
+    return 0;
+}
+
 }  // namespace
 
 bool WINAPI DllMain(HINSTANCE dll_instance, unsigned int reason, void* reserved) {
     if (reason == DLL_PROCESS_ATTACH) {
         ERD::g_Module = dll_instance;
         ERD::g_Running = true;
-        wchar_t dll_filename[MAX_PATH] = {0};
-        GetModuleFileNameW(dll_instance, dll_filename, MAX_PATH);
-        const fs::path folder = fs::path(dll_filename).parent_path();
-
-        try {
-            setup_logger(folder);
-            grace_test::config::initialize(folder);
-            grace_test::localization::initialize(folder);
-            SPDLOG_INFO("erdGameTools version {}", PROJECT_VERSION);
-        } catch (const std::exception& error) {
-            OutputDebugStringA(("erdGameTools logger setup failed: " + std::string(error.what()) + "\n").c_str());
+        DisableThreadLibraryCalls(dll_instance);
+        HANDLE thread = CreateThread(nullptr, 0, &run_mod, dll_instance, 0, nullptr);
+        if (thread != nullptr) {
+            CloseHandle(thread);
+        } else {
+            ERD::g_Running = false;
             return FALSE;
         }
-
-        mod_thread = std::thread([folder]() {
-            try {
-                setup_mod();
-                grace_test::runtime::run(folder);
-            } catch (const std::runtime_error& error) {
-                SPDLOG_ERROR("Initialization failed: {}", error.what());
-                modutils::deinitialize();
-            }
-        });
     } else if (reason == DLL_PROCESS_DETACH && reserved != nullptr) {
-        try {
-            grace_test::runtime::request_stop();
-            if (mod_thread.joinable()) {
-                mod_thread.join();
-            }
-            modutils::deinitialize();
-            SPDLOG_INFO("erdGameTools deinitialized.");
-        } catch (const std::runtime_error& error) {
-            SPDLOG_ERROR("Deinitialization failed: {}", error.what());
-            spdlog::shutdown();
-            return false;
-        }
-        spdlog::shutdown();
+        grace_test::runtime::request_stop();
     }
     return true;
 }

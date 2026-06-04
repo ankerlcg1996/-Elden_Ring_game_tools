@@ -12,7 +12,9 @@ public:
 
     void Initialize(const fs::path& log_path, bool enable_file_log);
     void Info(std::string_view message);
+    void Info(std::string_view category, std::string_view message);
     void Error(std::string_view message);
+    void Error(std::string_view category, std::string_view message);
 
 private:
     Logger() = default;

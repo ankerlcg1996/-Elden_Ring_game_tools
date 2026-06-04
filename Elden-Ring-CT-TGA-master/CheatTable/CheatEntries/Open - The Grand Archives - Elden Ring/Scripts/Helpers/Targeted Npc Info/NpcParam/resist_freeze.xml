@@ -1,7 +1,0 @@
-<CheatEntry>
-  <ID>105423</ID>
-  <Description>"resist_freeze"</Description>
-  <ShowAsSigned>0</ShowAsSigned>
-  <VariableType>2 Bytes</VariableType>
-  <Address>+1E0</Address>
-</CheatEntry>

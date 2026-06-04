@@ -1,9 +1,0 @@
-<CheatEntry>
-  <ID>108092</ID>
-  <Description>"Current FPS"</Description>
-  <VariableType>Float</VariableType>
-  <Address>CSFlipper</Address>
-  <Offsets>
-    <Offset>2C0</Offset>
-  </Offsets>
-</CheatEntry>

@@ -5,11 +5,10 @@ param(
 $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$buildDir = Join-Path $projectRoot "build"
+$buildDir = Join-Path $projectRoot "build-selfcontained"
 $buildOutputDir = Join-Path $buildDir $Configuration
-$distDir = Join-Path $projectRoot "dist"
+$distDir = Join-Path $projectRoot "dist\erdGameTools"
 $distResourcesDir = Join-Path $distDir "Resources"
-$distLangDir = Join-Path $distResourcesDir "Lang"
 
 Write-Host "[1/4] Building ($Configuration)..."
 cmake --build $buildDir --config $Configuration
@@ -20,20 +19,14 @@ if (-not (Test-Path $dllPath)) {
 }
 
 Write-Host "[2/4] Preparing dist directory..."
-New-Item -ItemType Directory -Force -Path $distLangDir | Out-Null
+New-Item -ItemType Directory -Force -Path $distResourcesDir | Out-Null
 if (Test-Path (Join-Path $distDir "config.ini")) {
     Remove-Item -Force (Join-Path $distDir "config.ini")
 }
 
-Write-Host "[3/4] Copying DLL and language files..."
+Write-Host "[3/4] Copying DLL and runtime resources..."
 Copy-Item -Force $dllPath (Join-Path $distDir "erdGameTools.dll")
-Copy-Item -Force (Join-Path $projectRoot "Resources\\Lang\\*.txt") $distLangDir
-if (Test-Path (Join-Path $projectRoot "Resources\\SpEffectParam.txt")) {
-    Copy-Item -Force (Join-Path $projectRoot "Resources\\SpEffectParam.txt") (Join-Path $distResourcesDir "SpEffectParam.txt")
-}
-Get-ChildItem (Join-Path $projectRoot "Resources\\BossRevives*.csv") -ErrorAction SilentlyContinue | ForEach-Object {
-    Copy-Item -Force $_.FullName (Join-Path $distResourcesDir $_.Name)
-}
+Copy-Item -Force -Recurse (Join-Path $projectRoot "Resources\\*") $distResourcesDir
 
 $configCandidates = @(
     (Join-Path $buildOutputDir "erdGameTools.ini"),

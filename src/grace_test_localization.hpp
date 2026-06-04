@@ -12,6 +12,8 @@ std::wstring get(std::string_view key);
 std::wstring make_toggle_label(std::string_view key, bool enabled);
 std::wstring make_percent_setting_label(std::string_view key, int percent);
 std::wstring make_percent_option_label(int percent);
+std::wstring make_feedback_set_label(std::wstring_view name, std::wstring_view value);
+std::wstring make_feedback_action_label(std::wstring_view action);
 std::string active_language_code();
 std::wstring utf8_to_wide_copy(std::string_view value);
 

@@ -1,9 +1,0 @@
-<CheatEntry>
-  <ID>102386</ID>
-  <Description>"isAiInterruptShootNoDamageBullet"</Description>
-  <VariableType>Binary</VariableType>
-  <BitStart>7</BitStart>
-  <BitLength>1</BitLength>
-  <ShowAsBinary>0</ShowAsBinary>
-  <Address>+C3</Address>
-</CheatEntry>

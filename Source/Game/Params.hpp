@@ -73,7 +73,15 @@ struct EquipParamGem {
     std::byte reserved[1];
 };
 
+struct ActionButtonParam {
+    std::byte reserved[1];
+};
+
 struct MagicParam {
+    std::byte reserved[1];
+};
+
+struct BehaviorParam {
     std::byte reserved[1];
 };
 
@@ -216,6 +224,7 @@ namespace ERD {
 
 using Game::CalcCorrectGraph;
 using Game::EquipMtrlSetParam;
+using Game::ActionButtonParam;
 using Game::EquipParamAccessory;
 using Game::EquipParamGem;
 using Game::EquipParamGoods;
@@ -223,6 +232,7 @@ using Game::EquipParamProtector;
 using Game::EquipParamWeapon;
 using Game::MenuCommonParam;
 using Game::MagicParam;
+using Game::BehaviorParam;
 using Game::NpcParam;
 using Game::LockCamParam;
 using Game::ShopLineupParam;
